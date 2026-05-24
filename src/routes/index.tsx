@@ -407,11 +407,11 @@ function LandingPage() {
               ))}
             </ul>
           </div>
-          <div className="bg-slate-100 aspect-[16/11] md:aspect-[4/3] rounded-xl overflow-hidden shadow-2xl relative w-full">
+          <div className="relative w-full">
             <img 
               src="https://i.imgur.com/sDHjn2m.png" 
               alt="Criança lendo com alegria" 
-              className="w-full h-full object-contain bg-slate-100"
+              className="w-full h-auto rounded-2xl shadow-xl"
             />
           </div>
         </div>
@@ -599,7 +599,7 @@ function LandingPage() {
                   "Nível 2: Conexão e Aceleração",
                   "Nível 3: Domínio e Confiança"
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-3 items-center justify-start w-full max-w-[250px]">
+                  <div key={i} className="flex gap-3 items-center justify-start w-full max-w-[250px] text-left">
                     <Check className="text-slate-300 w-4 h-4 shrink-0" />
                     <span className="text-slate-600 font-medium">{item}</span>
                   </div>
@@ -663,7 +663,7 @@ function LandingPage() {
                       "Letra Bastão e Cursiva detalhado em passo a passo.",
                       "Suporte exclusivo para dúvidas."
                     ].map((item, i) => (
-                      <div key={i} className="flex gap-3 items-start justify-start w-full max-w-[280px]">
+                      <div key={i} className="flex gap-3 items-start justify-start w-full max-w-[280px] text-left">
                         <div className="mt-1 bg-[#D4AF37] rounded-full p-0.5 shrink-0"><Check className="text-white w-3 h-3" /></div>
                         <span className="font-bold text-slate-700 text-sm leading-snug">{item}</span>
                       </div>
@@ -685,7 +685,7 @@ function LandingPage() {
                       "Bônus 5: Desafio dos 50 Textos Fatiados",
                       "Bônus 6: Fundação da Leitura Rápida"
                     ].map((item, i) => (
-                      <div key={i} className="flex gap-3 items-center justify-start w-full max-w-[280px]">
+                      <div key={i} className="flex gap-3 items-center justify-start w-full max-w-[280px] text-left">
                         <Check className="text-[#D4AF37] w-4 h-4 shrink-0" />
                         <span className="font-bold text-slate-600 text-sm">{item}</span>
                       </div>
