@@ -380,8 +380,90 @@ function LandingPage() {
         </div>
       </section>
 
+      {/* Section Bônus Exclusivos (O Empilhamento de Valor) */}
+      <section className="py-24 px-6 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight text-slate-900">
+            Ao garantir seu acesso hoje, você leva 6 Presentes Exclusivos
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            {[
+              { 
+                title: "Acelerador de Consciência Silábica", 
+                desc: "Técnicas práticas para a criança dominar a estrutura das sílabas rapidamente.",
+                oldPrice: "47,90",
+                img: "https://i.imgur.com/EjFLXae.png"
+              },
+              { 
+                title: "Jogo de Retenção Acelerada - Fichas Silábicas", 
+                desc: "Material lúdico para fixar o aprendizado de forma divertida e eficiente.",
+                oldPrice: "37,90",
+                img: "https://i.imgur.com/U2UOFMX.png"
+              },
+              { 
+                title: "Protocolo de Fluência Leitora", 
+                desc: "O guia definitivo para eliminar a leitura pausada e robotizada.",
+                oldPrice: "57,90",
+                img: "https://i.imgur.com/v8RHNIB.png"
+              },
+              { 
+                title: "Tiras de Leitura Dinâmica", 
+                desc: "Exercícios rápidos de 10 minutos para destravar a leitura natural.",
+                oldPrice: "27,90",
+                img: "https://i.imgur.com/sDHjn2m.png"
+              },
+              { 
+                title: "Desafio dos 50 Textos Fatiados", 
+                desc: "Atividades progressivas que constroem a confiança na leitura de frases.",
+                oldPrice: "67,90",
+                img: "https://i.imgur.com/v8RHNIB.png"
+              },
+              { 
+                title: "Fundação da Leitura Rápida", 
+                desc: "O segredo para acelerar a compreensão de textos sem cansaço.",
+                oldPrice: "37,90",
+                img: "https://i.imgur.com/EjFLXae.png"
+              }
+            ].map((bonus, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-slate-100 flex flex-col md:flex-row items-center gap-6 group hover:shadow-2xl transition-all"
+              >
+                <div className="w-full md:w-40 aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden shrink-0">
+                  <img src={bonus.img} alt={bonus.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-lg font-black text-[#D4AF37] mb-2 uppercase tracking-tight">{bonus.title}</h3>
+                  <p className="text-sm text-slate-600 font-medium leading-relaxed mb-4">{bonus.desc}</p>
+                  <div className="flex items-center justify-center md:justify-start gap-3">
+                    <span className="text-slate-400 line-through text-xs font-bold">R$ {bonus.oldPrice}</span>
+                    <span className="bg-emerald-500 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm">
+                      R$ 0,00 (ZERO)
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
-      {/* Section 8: A Oferta (Pricing) */}
+          <div className="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl border-4 border-[#D4AF37]/20 text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]" />
+            <p className="text-slate-500 font-bold mb-2 uppercase tracking-widest text-sm">Empilhamento Total de Valor</p>
+            <h4 className="text-xl md:text-2xl font-black text-slate-900 mb-2">
+              Valor total dos bônus: <span className="text-slate-400 line-through">R$ 277,30</span>
+            </h4>
+            <div className="text-[#D4AF37] font-black text-3xl md:text-4xl uppercase tracking-tighter">
+              Levando a oferta hoje: TUDO GRÁTIS
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 px-6 bg-white relative">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
