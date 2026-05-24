@@ -240,7 +240,33 @@ function LandingPage() {
           ))}
         </div>
       </section>
-
+      {/* Section 7: O que você desbloqueia agora mesmo */}
+      <section className="py-24 px-6 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que você desbloqueia agora mesmo</h2>
+          <div className="space-y-6">
+            {programItems.map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="bg-white p-8 rounded-[2rem] shadow-lg border border-slate-100 flex flex-col md:flex-row items-center gap-8 text-center md:text-left"
+              >
+                <div className="w-20 h-20 bg-[#D4AF37]/10 rounded-2xl flex items-center justify-center shrink-0">
+                  {i === 0 && <BookOpen className="w-10 h-10 text-[#D4AF37]" />}
+                  {i === 1 && <Puzzle className="w-10 h-10 text-[#D4AF37]" />}
+                  {i === 2 && <Trophy className="w-10 h-10 text-[#D4AF37]" />}
+                </div>
+                <div>
+                  <h3 className="text-xl font-black mb-2 text-slate-900">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed font-medium">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
 
       {/* Section 8: A Oferta (Pricing) */}
