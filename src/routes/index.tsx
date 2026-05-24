@@ -248,24 +248,24 @@ function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
             {/* Basic Plan */}
-            <div className="bg-white p-10 rounded-[2.5rem] border border-slate-100 flex flex-col shadow-sm">
-              <h3 className="text-2xl font-black text-slate-400 mb-8 uppercase tracking-widest text-center">Plano Básico</h3>
-              <div className="mb-10 text-center">
+            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-100 flex flex-col shadow-sm text-center">
+              <h3 className="text-2xl font-black text-slate-400 mb-8 uppercase tracking-widest">Plano Básico</h3>
+              <div className="mb-10">
                 <p className="text-slate-400 line-through text-lg">R$ 27,90</p>
-                <div className="flex items-baseline justify-center gap-1">
+                <div className="flex flex-wrap items-baseline justify-center gap-1">
                   <span className="text-2xl font-bold text-slate-900">R$</span>
                   <span className="text-6xl font-black text-slate-900">10,00</span>
                   <span className="text-slate-500 font-medium">à vista</span>
                 </div>
               </div>
 
-              <div className="space-y-4 mb-12 flex-1">
+              <div className="space-y-4 mb-12 flex-1 flex flex-col items-center">
                 {[
                   "Nível 1: O Despertar Fonético",
                   "Nível 2: Conexão e Aceleração",
                   "Nível 3: Domínio e Confiança"
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-3 items-center">
+                  <div key={i} className="flex gap-3 items-center justify-center">
                     <Check className="text-slate-300 w-4 h-4 shrink-0" />
                     <span className="text-slate-600 font-medium">{item}</span>
                   </div>
@@ -286,41 +286,38 @@ function LandingPage() {
               
               <div className="relative group flex-1">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] rounded-[3rem] blur opacity-40 group-hover:opacity-60 transition duration-1000"></div>
-                <div className="relative bg-white p-10 rounded-[2.5rem] border-4 border-[#D4AF37] flex flex-col h-full shadow-[0_30px_60px_rgba(212,175,55,0.25)] overflow-hidden">
-                  <div className="absolute top-0 right-0 bg-red-600 text-white font-black px-8 py-2 rounded-bl-3xl text-sm shadow-xl flex items-center gap-2">
+                <div className="relative bg-white p-8 md:p-10 rounded-[3rem] border-4 border-[#D4AF37] flex flex-col h-full shadow-[0_30px_60px_rgba(212,175,55,0.25)] overflow-hidden text-center">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 bg-red-600 text-white font-black px-8 py-2 md:rounded-bl-3xl rounded-b-xl text-sm shadow-xl flex items-center gap-2 z-10">
                     🔥 MAIS VENDIDO
                   </div>
                   
-                  <h3 className="text-3xl font-black text-slate-900 mb-2 uppercase tracking-tight">Plano Premium</h3>
+                  <h3 className="text-3xl font-black text-slate-900 mb-2 mt-6 md:mt-0 uppercase tracking-tight">Plano Premium</h3>
                   <p className="text-[#D4AF37] font-black mb-8 uppercase tracking-widest text-xs">Acesso Vitalício + Todos os Bônus</p>
                   
                   <div className="mb-6">
                     <p className="text-slate-400 line-through text-lg">R$ 297,00</p>
-                    <div className="flex flex-col">
-                      <div className="flex items-baseline gap-1">
+                    <div className="flex flex-col items-center">
+                      <div className="flex flex-wrap items-baseline justify-center gap-1">
                         <span className="text-2xl font-bold text-slate-900">R$</span>
-                        <span className="text-7xl font-black text-slate-900">59,90</span>
+                        <span className="text-6xl md:text-7xl font-black text-slate-900">59,90</span>
                         <span className="text-slate-500 font-medium">à vista</span>
                       </div>
                       <p className="text-[#D4AF37] font-black text-lg mt-1 uppercase tracking-tighter">Ou 6x de R$ 5,49 no cartão</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 mb-8 text-slate-500 text-xs font-bold bg-slate-50 p-3 rounded-xl border border-slate-100">
-                    <div className="flex">
-                      {[1, 2, 3, 4, 5].map((s) => <Star key={s} className="w-3 h-3 fill-yellow-400 text-yellow-400" />)}
-                    </div>
+                  <div className="flex flex-col items-center gap-2 mb-8 text-slate-500 text-xs font-bold bg-slate-50 p-4 rounded-xl border border-slate-100 text-center">
                     <span>+2.157 mães já usaram o material e conquistaram a leitura fluente</span>
                   </div>
 
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-4 mb-8 flex flex-col items-center">
                     {[
                       "O Programa Completo (Níveis 1, 2 e 3).",
                       "Letra Bastão e Cursiva detalhado em passo a passo.",
                       "Suporte exclusivo para dúvidas."
                     ].map((item, i) => (
-                      <div key={i} className="flex gap-3 items-start">
-                        <div className="mt-1 bg-[#D4AF37] rounded-full p-0.5"><Check className="text-white w-3 h-3" /></div>
+                      <div key={i} className="flex gap-3 items-start justify-center text-left">
+                        <div className="mt-1 bg-[#D4AF37] rounded-full p-0.5 shrink-0"><Check className="text-white w-3 h-3" /></div>
                         <span className="font-bold text-slate-700 text-sm leading-snug">{item}</span>
                       </div>
                     ))}
@@ -328,11 +325,11 @@ function LandingPage() {
 
                   <div className="h-px bg-slate-100 mb-8" />
                   
-                  <h4 className="font-black text-slate-900 mb-6 flex items-center gap-2 uppercase tracking-widest text-xs">
+                  <h4 className="font-black text-slate-900 mb-6 flex items-center justify-center gap-2 uppercase tracking-widest text-xs">
                     <span>🎁</span> 6 Bônus Exclusivos (Acesso Imediato)
                   </h4>
                   
-                  <div className="space-y-4 mb-10">
+                  <div className="space-y-4 mb-10 flex flex-col items-center">
                     {[
                       "Bônus 1: Acelerador de Consciência Silábica",
                       "Bônus 2: Jogo de Retenção Acelerada",
@@ -341,7 +338,7 @@ function LandingPage() {
                       "Bônus 5: Desafio dos 50 Textos Fatiados",
                       "Bônus 6: Fundação da Leitura Rápida"
                     ].map((item, i) => (
-                      <div key={i} className="flex gap-3 items-center">
+                      <div key={i} className="flex gap-3 items-center justify-center text-left w-full max-w-[280px]">
                         <Check className="text-[#D4AF37] w-4 h-4 shrink-0" />
                         <span className="font-bold text-slate-600 text-sm">{item}</span>
                       </div>
@@ -351,7 +348,7 @@ function LandingPage() {
                   <motion.button 
                     animate={{ scale: [1, 1.03, 1] }}
                     transition={{ repeat: Infinity, duration: 1.5 }}
-                    className="w-full py-7 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black text-2xl shadow-[0_15px_40px_rgba(212,175,55,0.4)] uppercase tracking-tight mb-4"
+                    className="w-full py-7 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black text-xl md:text-2xl shadow-[0_15px_40px_rgba(212,175,55,0.4)] uppercase tracking-tight mb-4"
                   >
                     QUERO O MATERIAL COMPLETO
                   </motion.button>
