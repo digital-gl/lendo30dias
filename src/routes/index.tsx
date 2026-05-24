@@ -330,11 +330,11 @@ function LandingPage() {
               ))}
             </ul>
           </div>
-          <div className="bg-slate-100 aspect-square rounded-xl overflow-hidden shadow-2xl relative">
+          <div className="bg-slate-100 aspect-video rounded-xl overflow-hidden shadow-2xl relative">
             <img 
               src="https://i.imgur.com/sDHjn2m.png" 
               alt="Criança lendo com alegria" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain bg-slate-100"
             />
           </div>
         </div>
