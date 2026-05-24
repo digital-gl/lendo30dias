@@ -255,18 +255,33 @@ function LandingPage() {
             {[
               { 
                 emoji: "📘", 
-                title: "Caderno Nível 1: O Despertar Fonético (Bastão e Cursiva)", 
-                desc: "O fim do \"chute\" de palavras. Um passo a passo detalhado e visual onde seu filho entende, de uma vez por todas, o som real de cada letra. É a fundação sólida que a escola não construiu." 
+                title: "Caderno Nível 1: O Despertar Fonético", 
+                bullets: [
+                  "Material de apoio em PDF liberado na hora para baixar e imprimir.",
+                  "Conteúdo organizado em um passo a passo detalhado e à prova de falhas.",
+                  "Exercícios práticos de fixação em Letra Bastão e Letra Cursiva.",
+                  "Foco: Eliminar o vício de \"chutar\" palavras e fixar o som real de cada letra."
+                ]
               },
               { 
                 emoji: "🧩", 
-                title: "Caderno Nível 2: Conexão e Aceleração (Bastão e Cursiva)", 
-                desc: "Onde a mágica acontece. O cérebro da criança começa a unir os sons de forma automática, formando as primeiras palavras reais sem sofrimento e sem decoreba." 
+                title: "Caderno Nível 2: Conexão e Aceleração", 
+                bullets: [
+                  "Material em PDF estruturado visualmente para reter a atenção da criança.",
+                  "Progressão lógica focada na junção rápida de sílabas e sons.",
+                  "Atividades completas disponíveis em Letra Bastão e Letra Cursiva.",
+                  "Foco: Fazer o cérebro da criança formar as primeiras palavras reais sem bloqueios."
+                ]
               },
               { 
                 emoji: "🏆", 
-                title: "Caderno Nível 3: Domínio e Confiança (Bastão e Cursiva)", 
-                desc: "O passaporte para a autonomia. Exercícios avançados focados na leitura fluente e na escrita firme. O momento em que você respira aliviada ao ver seu filho lendo sozinho." 
+                title: "Caderno Nível 3: Domínio e Confiança", 
+                bullets: [
+                  "Material em PDF de nível avançado para consolidação da leitura.",
+                  "Páginas de treino estruturadas com frases inteiras e fixação da escrita.",
+                  "Refinamento motor final em Letra Bastão e Letra Cursiva.",
+                  "Foco: Garantir a autonomia absoluta para o seu filho ler sozinho."
+                ]
               }
             ].map((item, i) => (
               <motion.div 
@@ -275,12 +290,19 @@ function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-[#FFFBEB] p-10 rounded-[2.5rem] shadow-xl border border-[#D4AF37]/30 flex flex-col gap-6 text-center hover:shadow-2xl transition-all"
+                className="bg-[#FFFBEB] p-10 rounded-[2.5rem] shadow-xl border border-[#D4AF37]/30 flex flex-col gap-6 text-left hover:shadow-2xl transition-all"
               >
-                <div className="text-6xl">{item.emoji}</div>
+                <div className="text-6xl text-center">{item.emoji}</div>
                 <div>
-                  <h3 className="text-xl font-black mb-4 text-slate-900 leading-tight">{item.title}</h3>
-                  <p className="text-slate-600 leading-relaxed font-medium">{item.desc}</p>
+                  <h3 className="text-xl font-black mb-6 text-slate-900 leading-tight text-center">{item.title}</h3>
+                  <ul className="space-y-4">
+                    {item.bullets.map((bullet, idx) => (
+                      <li key={idx} className="flex gap-3 items-start">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2 shrink-0" />
+                        <span className="text-slate-700 leading-relaxed font-medium">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </motion.div>
             ))}
