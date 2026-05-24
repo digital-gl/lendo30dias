@@ -188,8 +188,8 @@ function LandingPage() {
   ];
 
   const testimonials = [
-    { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!", image: "https://i.imgur.com/CSHkF2d.png" },
-    { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado.", image: "https://i.imgur.com/CSHkF2d.png" },
+    { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!", image: "https://i.imgur.com/PHQ6tpy.png" },
+    { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado.", image: "https://i.imgur.com/gpEBlEG.png" },
     { name: "Patrícia Mendes", text: "O método é muito simples de aplicar, mesmo eu não sendo pedagoga.", image: "https://i.imgur.com/CSHkF2d.png" }
   ];
 
@@ -700,6 +700,17 @@ function LandingPage() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 max-w-4xl mx-auto">
+          <div className="bg-slate-100 rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white aspect-[9/16] max-w-[320px] mx-auto">
+            <iframe 
+              src="https://imgur.com/sCrLF00/embed" 
+              className="w-full h-full"
+              frameBorder="0" 
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
       </section>
 
