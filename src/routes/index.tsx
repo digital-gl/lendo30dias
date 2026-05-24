@@ -275,8 +275,8 @@ function LandingPage() {
 
             {/* Premium Plan */}
             <div className="flex flex-col gap-4">
-              <div className="bg-slate-900 text-white py-3 px-6 rounded-2xl text-center text-sm font-bold flex items-center justify-center gap-2 shadow-xl">
-                <span>⚠️</span>
+              <div className="bg-slate-900 text-white py-4 px-6 rounded-2xl text-center text-sm font-bold flex flex-col md:flex-row items-center justify-center gap-2 shadow-xl border border-[#D4AF37]/30">
+                <span className="text-xl">⚠️</span>
                 <span>Ainda dá tempo de levar a melhor opção: atualizações e os 6 Bônus Exclusivos!</span>
               </div>
               
