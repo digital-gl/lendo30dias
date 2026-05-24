@@ -261,32 +261,52 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Carousel Social Proof */}
-      <section className="py-24 bg-slate-50 overflow-hidden">
-        <div className="text-center mb-16 px-6">
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Resultados que Devolvem o Alívio</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">Veja como a rotina de estudos dessas famílias foi transformada definitivamente.</p>
+      {/* Section 5: EXEMPLOS REAIS */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-16">
+          <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">EXEMPLOS REAIS</h2>
+          <p className="text-xl text-slate-600 font-medium">Veja o que você vai receber</p>
         </div>
         
-        <div className="relative max-w-5xl mx-auto px-6 md:px-12">
+        <div className="relative max-w-7xl mx-auto px-6">
           <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
-            <div className="flex gap-4 md:gap-6">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="flex-[0_0_90%] md:flex-[0_0_60%] aspect-video bg-white rounded-[2rem] shadow-xl border border-slate-100 flex items-center justify-center text-slate-300 italic font-medium overflow-hidden">
-                   <div className="bg-slate-100 w-full h-full flex items-center justify-center">
-                    {i === 1 ? "Prints de WhatsApp (Horizontal)" : `Resultado ${i} (Horizontal)`}
-                   </div>
+            <div className="flex gap-6">
+              {productExamples.map((example, i) => (
+                <div key={i} className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] aspect-video bg-slate-100 rounded-[2.5rem] shadow-2xl border border-slate-100 relative overflow-hidden group">
+                  {/* Placeholder for real product images */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center text-slate-400 italic font-medium">
+                    Imagem do Produto: {example.title}
+                  </div>
+                  
+                  {/* Bottom-Left Overlay */}
+                  <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                    <div className="max-w-2xl">
+                      <div className="inline-block bg-[#D4AF37] text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest mb-4 shadow-lg">
+                        Material Digital
+                      </div>
+                      <h3 className="text-2xl md:text-4xl font-black text-white mb-3 leading-tight uppercase tracking-tighter">
+                        {example.title}
+                      </h3>
+                      <p className="text-lg md:text-xl text-slate-200 font-medium leading-relaxed">
+                        {example.subtitle}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
-          <button onClick={() => emblaApi?.scrollPrev()} className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full items-center justify-center text-slate-600 hover:text-[#D4AF37] transition-all"><ChevronLeft className="w-8 h-8" /></button>
-          <button onClick={() => emblaApi?.scrollNext()} className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full items-center justify-center text-slate-600 hover:text-[#D4AF37] transition-all"><ChevronRight className="w-8 h-8" /></button>
           
-          <div className="flex justify-center gap-2 mt-8">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="w-2.5 h-2.5 rounded-full bg-slate-300" />
-            ))}
+          <div className="flex items-center justify-between mt-12">
+            <div className="flex gap-2">
+              {productExamples.map((_, i) => (
+                <div key={i} className="w-2.5 h-2.5 rounded-full bg-slate-200" />
+              ))}
+            </div>
+            <div className="flex gap-4">
+              <button onClick={() => emblaApi?.scrollPrev()} className="w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all"><ChevronLeft className="w-8 h-8" /></button>
+              <button onClick={() => emblaApi?.scrollNext()} className="w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all"><ChevronRight className="w-8 h-8" /></button>
+            </div>
           </div>
         </div>
       </section>
