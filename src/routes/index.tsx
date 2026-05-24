@@ -685,7 +685,7 @@ function LandingPage() {
                       "Bônus 5: Desafio dos 50 Textos Fatiados",
                       "Bônus 6: Fundação da Leitura Rápida"
                     ].map((item, i) => (
-                      <div key={i} className="flex gap-3 items-center justify-start w-full max-w-[280px]">
+                      <div key={i} className="flex gap-3 items-center justify-start w-full max-w-[280px] text-left">
                         <Check className="text-[#D4AF37] w-4 h-4 shrink-0" />
                         <span className="font-bold text-slate-600 text-sm">{item}</span>
                       </div>
