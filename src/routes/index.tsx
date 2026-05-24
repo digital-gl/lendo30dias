@@ -16,63 +16,104 @@ const recentSales = [
   "Letícia Rocha (AL)", "Marcela Nunes (SE)", "Isabela Pinto (PI)", "Silvia Teixeira (MA)"
 ];
 
+interface Notification {
+  id: number;
+  name: string;
+}
+
 function SalesToast() {
-  const [currentName, setCurrentName] = useState<string | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [lastIndex, setLastIndex] = useState<number>(-1);
+  const [notifications, setNotifications] = useState<Notification[]>([]);
+  const [nextId, setNextId] = useState(0);
 
-  const triggerNotification = useCallback(() => {
-    let newIndex;
-    do {
-      newIndex = Math.floor(Math.random() * recentSales.length);
-    } while (newIndex === lastIndex && recentSales.length > 1);
-
-    setLastIndex(newIndex);
-    setCurrentName(recentSales[newIndex]);
-    setIsVisible(true);
-
-    setTimeout(() => {
-      setIsVisible(false);
-    }, 4000);
-  }, [lastIndex]);
+  const addNotification = useCallback((count: number = 1) => {
+    setNotifications(prev => {
+      const newNotifications = [...prev];
+      for (let i = 0; i < count; i++) {
+        const randomName = recentSales[Math.floor(Math.random() * recentSales.length)];
+        const id = Date.now() + i;
+        newNotifications.push({ id, name: randomName });
+        
+        // Remove after 4 seconds
+        setTimeout(() => {
+          setNotifications(current => current.filter(n => n.id !== id));
+        }, 4000);
+      }
+      return newNotifications;
+    });
+  }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      triggerNotification();
-    }, 30000);
+    let timeoutId: NodeJS.Timeout;
 
-    // Trigger first notification after a short delay
-    const firstTimeout = setTimeout(triggerNotification, 5000);
+    const runSequence = async () => {
+      const wait = (ms: number) => new Promise(resolve => timeoutId = setTimeout(resolve, ms));
 
-    return () => {
-      clearInterval(interval);
-      clearTimeout(firstTimeout);
+      while (true) {
+        // 1. Primeira aparece
+        addNotification(1);
+        await wait(5000); // "após segundos" -> assumindo 5s
+
+        // 2. Próxima aparece
+        addNotification(1);
+        await wait(2000); // "com segundos de diferença" -> assumindo 2s
+
+        // 3. Mais 3 em seguida com diferença
+        for (let i = 0; i < 2; i++) {
+          addNotification(1);
+          await wait(2000);
+        }
+
+        // 4. Depois de 10 segundos aparece 3 empilhadas
+        await wait(10000);
+        addNotification(3);
+
+        // 5. Após isso 2 a cada 5 segundos
+        await wait(5000);
+        addNotification(1);
+        await wait(5000);
+        addNotification(1);
+
+        // 6. Após isso 2 cada 2 segundos
+        await wait(2000);
+        addNotification(1);
+        await wait(2000);
+        addNotification(1);
+
+        // Aguarda um pouco antes de reiniciar o ciclo
+        await wait(10000);
+      }
     };
-  }, [triggerNotification]);
+
+    runSequence();
+    return () => clearTimeout(timeoutId);
+  }, [addNotification]);
 
   return (
-    <AnimatePresence>
-      {isVisible && currentName && (
-        <motion.div
-          initial={{ opacity: 0, x: -50, scale: 0.9 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          exit={{ opacity: 0, x: -50, scale: 0.9 }}
-          className="fixed bottom-4 left-4 z-[100] bg-white border border-slate-100 shadow-2xl rounded-2xl p-4 flex items-center gap-4 min-w-[260px]"
-        >
-          <div className="bg-green-100 p-2 rounded-full">
-            <ShoppingBag className="w-5 h-5 text-green-600" />
-          </div>
-          <div className="flex flex-col text-left">
-            <span className="text-slate-900 font-bold text-sm">
-              {currentName}
-            </span>
-            <span className="text-green-600 text-xs font-semibold">
-              Comprou o Premium
-            </span>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <div className="fixed bottom-4 left-4 z-[100] flex flex-col-reverse gap-3 pointer-events-none">
+      <AnimatePresence>
+        {notifications.map((n) => (
+          <motion.div
+            key={n.id}
+            initial={{ opacity: 0, x: -50, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: -50, scale: 0.9 }}
+            className="bg-white border border-slate-100 shadow-2xl rounded-2xl p-4 flex items-center gap-4 min-w-[260px] pointer-events-auto"
+          >
+            <div className="bg-green-100 p-2 rounded-full">
+              <ShoppingBag className="w-5 h-5 text-green-600" />
+            </div>
+            <div className="flex flex-col text-left">
+              <span className="text-slate-900 font-bold text-sm">
+                {n.name}
+              </span>
+              <span className="text-green-600 text-xs font-semibold">
+                Comprou o Premium
+              </span>
+            </div>
+          </motion.div>
+        ))}
+      </AnimatePresence>
+    </div>
   );
 }
 
