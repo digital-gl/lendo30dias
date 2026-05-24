@@ -102,13 +102,13 @@ function SalesToast() {
             className="bg-white border border-slate-100 shadow-2xl rounded-2xl p-4 flex items-center gap-4 min-w-[260px] pointer-events-auto"
           >
             <div className="bg-green-100 p-2 rounded-full">
-              <ShoppingBag className="w-5 h-5 text-green-600" />
+              <span className="text-xl">🛒</span>
             </div>
             <div className="flex flex-col text-left">
               <span className="text-slate-900 font-bold text-sm">
                 {n.name}
               </span>
-              <span className="text-green-600 text-xs font-semibold">
+              <span className="text-slate-600 text-xs">
                 Comprou o Premium
               </span>
             </div>
