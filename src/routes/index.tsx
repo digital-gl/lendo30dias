@@ -8,49 +8,51 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const salesData = [
-  { name: "Maria Silva", state: "MG" },
-  { name: "Ana Paula", state: "SP" },
-  { name: "Juliana Costa", state: "RJ" },
-  { name: "Fernanda Lima", state: "RS" },
-  { name: "Camila Souza", state: "BA" },
-  { name: "Letícia Oliveira", state: "PR" },
-  { name: "Beatriz Santos", state: "SC" },
-  { name: "Amanda Rocha", state: "GO" },
-  { name: "Renata Neves", state: "CE" },
-  { name: "Patrícia Gomes", state: "PE" }
+const recentSales = [
+  "Ana Clara (MG)", "Juliana Silva (SP)", "Mariana Costa (RJ)", "Fernanda Oliveira (PR)",
+  "Beatriz Santos (SC)", "Camila Mendes (RS)", "Amanda Ferreira (BA)", "Larissa Gomes (PE)",
+  "Patricia Lima (CE)", "Renata Alves (DF)", "Bruna Ribeiro (GO)", "Carla Martins (ES)",
+  "Paula Rodrigues (MT)", "Vanessa Araújo (MS)", "Tatiana Souza (RN)", "Aline Castro (PB)",
+  "Letícia Rocha (AL)", "Marcela Nunes (SE)", "Isabela Pinto (PI)", "Silvia Teixeira (MA)"
 ];
 
 function SalesToast() {
-  const [currentSale, setCurrentSale] = useState<typeof salesData[0] | null>(null);
+  const [currentName, setCurrentName] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [lastIndex, setLastIndex] = useState<number>(-1);
 
   const triggerNotification = useCallback(() => {
-    const randomSale = salesData[Math.floor(Math.random() * salesData.length)];
-    setCurrentSale(randomSale);
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * recentSales.length);
+    } while (newIndex === lastIndex && recentSales.length > 1);
+
+    setLastIndex(newIndex);
+    setCurrentName(recentSales[newIndex]);
     setIsVisible(true);
 
     setTimeout(() => {
       setIsVisible(false);
     }, 4000);
-  }, []);
+  }, [lastIndex]);
 
   useEffect(() => {
-    const initialDelay = setTimeout(triggerNotification, 3000);
-    
     const interval = setInterval(() => {
       triggerNotification();
-    }, Math.floor(Math.random() * (15000 - 8000 + 1) + 8000));
+    }, 30000);
+
+    // Trigger first notification after a short delay
+    const firstTimeout = setTimeout(triggerNotification, 5000);
 
     return () => {
-      clearTimeout(initialDelay);
       clearInterval(interval);
+      clearTimeout(firstTimeout);
     };
   }, [triggerNotification]);
 
   return (
     <AnimatePresence>
-      {isVisible && currentSale && (
+      {isVisible && currentName && (
         <motion.div
           initial={{ opacity: 0, x: -50, scale: 0.9 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -60,11 +62,11 @@ function SalesToast() {
           <div className="bg-green-100 p-2 rounded-full">
             <ShoppingBag className="w-5 h-5 text-green-600" />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col text-left">
             <span className="text-slate-900 font-bold text-sm">
-              {currentSale.name} ({currentSale.state})
+              {currentName}
             </span>
-            <span className="text-green-600 text-xs font-medium uppercase tracking-tight">
+            <span className="text-green-600 text-xs font-semibold">
               Comprou o Premium
             </span>
           </div>
@@ -194,22 +196,24 @@ function LandingPage() {
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">Veja como a rotina de estudos dessas famílias foi transformada definitivamente.</p>
         </div>
         
-        <div className="relative max-w-4xl mx-auto px-12">
+        <div className="relative max-w-5xl mx-auto px-6 md:px-12">
           <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
-            <div className="flex gap-6">
+            <div className="flex gap-4 md:gap-6">
               {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="flex-[0_0_80%] md:flex-[0_0_45%] aspect-[4/5] bg-white rounded-[2rem] shadow-xl border border-slate-100 flex items-center justify-center text-slate-300 italic font-medium">
-                  {i === 1 ? "Prints de WhatsApp" : `Resultado ${i}`}
+                <div key={i} className="flex-[0_0_90%] md:flex-[0_0_60%] aspect-video bg-white rounded-[2rem] shadow-xl border border-slate-100 flex items-center justify-center text-slate-300 italic font-medium overflow-hidden">
+                   <div className="bg-slate-100 w-full h-full flex items-center justify-center">
+                    {i === 1 ? "Prints de WhatsApp (Horizontal)" : `Resultado ${i} (Horizontal)`}
+                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <button onClick={() => emblaApi?.scrollPrev()} className="absolute -left-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] transition-all"><ChevronLeft className="w-8 h-8" /></button>
-          <button onClick={() => emblaApi?.scrollNext()} className="absolute -right-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] transition-all"><ChevronRight className="w-8 h-8" /></button>
+          <button onClick={() => emblaApi?.scrollPrev()} className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full items-center justify-center text-slate-600 hover:text-[#D4AF37] transition-all"><ChevronLeft className="w-8 h-8" /></button>
+          <button onClick={() => emblaApi?.scrollNext()} className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full items-center justify-center text-slate-600 hover:text-[#D4AF37] transition-all"><ChevronRight className="w-8 h-8" /></button>
           
-          <div className="flex justify-center gap-2 mt-12">
+          <div className="flex justify-center gap-2 mt-8">
             {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="w-3 h-3 rounded-full bg-slate-300" />
+              <div key={i} className="w-2.5 h-2.5 rounded-full bg-slate-300" />
             ))}
           </div>
         </div>
@@ -236,7 +240,37 @@ function LandingPage() {
           ))}
         </div>
       </section>
-
+      {/* Section 7: O que você desbloqueia agora mesmo */}
+      <section className="py-24 px-6 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que você desbloqueia agora mesmo</h2>
+          <div className="space-y-6">
+            {programItems.map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="bg-white p-8 rounded-[2rem] shadow-lg border border-slate-100 flex flex-col md:flex-row items-center gap-8 text-center md:text-left"
+              >
+                <div className={`w-24 h-24 rounded-[2rem] flex items-center justify-center shrink-0 ${
+                  i === 0 ? 'bg-amber-100 shadow-[0_10px_20px_rgba(251,191,36,0.2)]' : 
+                  i === 1 ? 'bg-indigo-100 shadow-[0_10px_20px_rgba(129,140,248,0.2)]' : 
+                  'bg-emerald-100 shadow-[0_10px_20px_rgba(52,211,153,0.2)]'
+                }`}>
+                  {i === 0 && <BookOpen className="w-12 h-12 text-amber-600" />}
+                  {i === 1 && <Puzzle className="w-12 h-12 text-indigo-600" />}
+                  {i === 2 && <Trophy className="w-12 h-12 text-emerald-600" />}
+                </div>
+                <div>
+                  <h3 className="text-xl font-black mb-2 text-slate-900">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed font-medium">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
 
       {/* Section 8: A Oferta (Pricing) */}
@@ -244,24 +278,24 @@ function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
             {/* Basic Plan */}
-            <div className="bg-white p-10 rounded-[2.5rem] border border-slate-100 flex flex-col shadow-sm">
-              <h3 className="text-2xl font-black text-slate-400 mb-8 uppercase tracking-widest text-center">Plano Básico</h3>
-              <div className="mb-10 text-center">
+            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-100 flex flex-col shadow-sm text-center">
+              <h3 className="text-2xl font-black text-slate-400 mb-8 uppercase tracking-widest">Plano Básico</h3>
+              <div className="mb-10">
                 <p className="text-slate-400 line-through text-lg">R$ 27,90</p>
-                <div className="flex items-baseline justify-center gap-1">
+                <div className="flex flex-wrap items-baseline justify-center gap-1">
                   <span className="text-2xl font-bold text-slate-900">R$</span>
                   <span className="text-6xl font-black text-slate-900">10,00</span>
                   <span className="text-slate-500 font-medium">à vista</span>
                 </div>
               </div>
 
-              <div className="space-y-4 mb-12 flex-1">
+              <div className="space-y-4 mb-12 flex-1 flex flex-col items-center">
                 {[
                   "Nível 1: O Despertar Fonético",
                   "Nível 2: Conexão e Aceleração",
                   "Nível 3: Domínio e Confiança"
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-3 items-center">
+                  <div key={i} className="flex gap-3 items-center justify-center">
                     <Check className="text-slate-300 w-4 h-4 shrink-0" />
                     <span className="text-slate-600 font-medium">{item}</span>
                   </div>
@@ -282,41 +316,38 @@ function LandingPage() {
               
               <div className="relative group flex-1">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] rounded-[3rem] blur opacity-40 group-hover:opacity-60 transition duration-1000"></div>
-                <div className="relative bg-white p-10 rounded-[2.5rem] border-4 border-[#D4AF37] flex flex-col h-full shadow-[0_30px_60px_rgba(212,175,55,0.25)] overflow-hidden">
-                  <div className="absolute top-0 right-0 bg-red-600 text-white font-black px-8 py-2 rounded-bl-3xl text-sm shadow-xl flex items-center gap-2">
+                <div className="relative bg-white p-8 md:p-10 rounded-[3rem] border-4 border-[#D4AF37] flex flex-col h-full shadow-[0_30px_60px_rgba(212,175,55,0.25)] overflow-hidden text-center">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 bg-red-600 text-white font-black px-8 py-2 md:rounded-bl-3xl rounded-b-xl text-sm shadow-xl flex items-center gap-2 z-10">
                     🔥 MAIS VENDIDO
                   </div>
                   
-                  <h3 className="text-3xl font-black text-slate-900 mb-2 uppercase tracking-tight">Plano Premium</h3>
+                  <h3 className="text-3xl font-black text-slate-900 mb-2 mt-6 md:mt-0 uppercase tracking-tight">Plano Premium</h3>
                   <p className="text-[#D4AF37] font-black mb-8 uppercase tracking-widest text-xs">Acesso Vitalício + Todos os Bônus</p>
                   
                   <div className="mb-6">
                     <p className="text-slate-400 line-through text-lg">R$ 297,00</p>
-                    <div className="flex flex-col">
-                      <div className="flex items-baseline gap-1">
+                    <div className="flex flex-col items-center">
+                      <div className="flex flex-wrap items-baseline justify-center gap-1">
                         <span className="text-2xl font-bold text-slate-900">R$</span>
-                        <span className="text-7xl font-black text-slate-900">59,90</span>
+                        <span className="text-6xl md:text-7xl font-black text-slate-900">59,90</span>
                         <span className="text-slate-500 font-medium">à vista</span>
                       </div>
                       <p className="text-[#D4AF37] font-black text-lg mt-1 uppercase tracking-tighter">Ou 6x de R$ 5,49 no cartão</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 mb-8 text-slate-500 text-xs font-bold bg-slate-50 p-3 rounded-xl border border-slate-100">
-                    <div className="flex">
-                      {[1, 2, 3, 4, 5].map((s) => <Star key={s} className="w-3 h-3 fill-yellow-400 text-yellow-400" />)}
-                    </div>
+                  <div className="flex flex-col items-center gap-2 mb-8 text-slate-500 text-xs font-bold bg-slate-50 p-4 rounded-xl border border-slate-100 text-center">
                     <span>+2.157 mães já usaram o material e conquistaram a leitura fluente</span>
                   </div>
 
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-4 mb-8 flex flex-col items-center">
                     {[
                       "O Programa Completo (Níveis 1, 2 e 3).",
                       "Letra Bastão e Cursiva detalhado em passo a passo.",
                       "Suporte exclusivo para dúvidas."
                     ].map((item, i) => (
-                      <div key={i} className="flex gap-3 items-start">
-                        <div className="mt-1 bg-[#D4AF37] rounded-full p-0.5"><Check className="text-white w-3 h-3" /></div>
+                      <div key={i} className="flex gap-3 items-start justify-center text-left">
+                        <div className="mt-1 bg-[#D4AF37] rounded-full p-0.5 shrink-0"><Check className="text-white w-3 h-3" /></div>
                         <span className="font-bold text-slate-700 text-sm leading-snug">{item}</span>
                       </div>
                     ))}
@@ -324,11 +355,11 @@ function LandingPage() {
 
                   <div className="h-px bg-slate-100 mb-8" />
                   
-                  <h4 className="font-black text-slate-900 mb-6 flex items-center gap-2 uppercase tracking-widest text-xs">
+                  <h4 className="font-black text-slate-900 mb-6 flex items-center justify-center gap-2 uppercase tracking-widest text-xs">
                     <span>🎁</span> 6 Bônus Exclusivos (Acesso Imediato)
                   </h4>
                   
-                  <div className="space-y-4 mb-10">
+                  <div className="space-y-4 mb-10 flex flex-col items-center">
                     {[
                       "Bônus 1: Acelerador de Consciência Silábica",
                       "Bônus 2: Jogo de Retenção Acelerada",
@@ -337,7 +368,7 @@ function LandingPage() {
                       "Bônus 5: Desafio dos 50 Textos Fatiados",
                       "Bônus 6: Fundação da Leitura Rápida"
                     ].map((item, i) => (
-                      <div key={i} className="flex gap-3 items-center">
+                      <div key={i} className="flex gap-3 items-center justify-center text-left w-full max-w-[280px]">
                         <Check className="text-[#D4AF37] w-4 h-4 shrink-0" />
                         <span className="font-bold text-slate-600 text-sm">{item}</span>
                       </div>
@@ -347,7 +378,7 @@ function LandingPage() {
                   <motion.button 
                     animate={{ scale: [1, 1.03, 1] }}
                     transition={{ repeat: Infinity, duration: 1.5 }}
-                    className="w-full py-7 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black text-2xl shadow-[0_15px_40px_rgba(212,175,55,0.4)] uppercase tracking-tight mb-4"
+                    className="w-full py-7 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black text-xl md:text-2xl shadow-[0_15px_40px_rgba(212,175,55,0.4)] uppercase tracking-tight mb-4"
                   >
                     QUERO O MATERIAL COMPLETO
                   </motion.button>
@@ -365,10 +396,10 @@ function LandingPage() {
 
       {/* Section 9: Garantia */}
       <section className="py-24 px-6 bg-slate-50">
-        <div className="max-w-4xl mx-auto bg-white p-12 rounded-[3rem] shadow-2xl border-2 border-[#D4AF37]/20 flex flex-col items-center text-center">
-          <ShieldCheck className="w-24 h-24 text-[#D4AF37] mb-8" />
+        <div className="max-w-4xl mx-auto bg-[#D4AF37] p-8 md:p-12 rounded-[3rem] shadow-2xl border-4 border-white/20 flex flex-col items-center text-center text-white">
+          <ShieldCheck className="w-20 h-20 text-white mb-8" />
           <h2 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">Risco Zero para Você!</h2>
-          <p className="text-2xl text-slate-700 leading-relaxed max-w-3xl mb-0">
+          <p className="text-lg md:text-xl leading-relaxed max-w-3xl mb-0 opacity-90">
             Você tem <strong>7 dias de garantia incondicional</strong>. Baixe o material, aplique nosso método e veja com os próprios olhos. Se por qualquer motivo você achar que não é para o seu filho, devolvemos 100% do seu dinheiro. Sem burocracia.
           </p>
         </div>
@@ -380,12 +411,9 @@ function LandingPage() {
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((t, i) => (
             <div key={i} className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center text-center">
-              <div className="flex mb-6">
-                {[1, 2, 3, 4, 5].map((s) => <Star key={s} className="w-6 h-6 fill-yellow-400 text-yellow-400" />)}
-              </div>
-              <p className="text-slate-600 italic mb-10 flex-1 text-lg">"{t.text}"</p>
+              <p className="text-slate-600 italic mb-10 flex-1 text-lg leading-relaxed">"{t.text}"</p>
               <div className="flex flex-col items-center gap-3">
-                <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-[#D4AF37]/20" />
+                <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-[#D4AF37]/20 overflow-hidden" />
                 <span className="font-black text-slate-900 uppercase tracking-tight">{t.name}</span>
               </div>
             </div>
@@ -396,8 +424,8 @@ function LandingPage() {
       {/* Section 11: Quem Somos */}
       <section className="py-24 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
-          <div className="w-40 h-40 rounded-full bg-white p-2 shadow-2xl mb-12 overflow-hidden border-4 border-[#D4AF37]/20">
-             <div className="bg-slate-100 w-full h-full rounded-full flex items-center justify-center text-slate-400 text-xs text-center px-4 font-medium italic">
+          <div className="w-32 h-32 rounded-full bg-white p-2 shadow-2xl mb-12 overflow-hidden border-4 border-[#D4AF37]/20">
+             <div className="bg-slate-100 w-full h-full rounded-full flex items-center justify-center text-slate-400 text-[10px] text-center px-4 font-medium italic">
                 Foto Profissional
              </div>
           </div>
