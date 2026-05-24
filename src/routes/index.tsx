@@ -253,10 +253,14 @@ function LandingPage() {
                 viewport={{ once: true }}
                 className="bg-white p-8 rounded-[2rem] shadow-lg border border-slate-100 flex flex-col md:flex-row items-center gap-8 text-center md:text-left"
               >
-                <div className="w-20 h-20 bg-[#D4AF37]/10 rounded-2xl flex items-center justify-center shrink-0">
-                  {i === 0 && <BookOpen className="w-10 h-10 text-[#D4AF37]" />}
-                  {i === 1 && <Puzzle className="w-10 h-10 text-[#D4AF37]" />}
-                  {i === 2 && <Trophy className="w-10 h-10 text-[#D4AF37]" />}
+                <div className={`w-24 h-24 rounded-[2rem] flex items-center justify-center shrink-0 ${
+                  i === 0 ? 'bg-amber-100 shadow-[0_10px_20px_rgba(251,191,36,0.2)]' : 
+                  i === 1 ? 'bg-indigo-100 shadow-[0_10px_20px_rgba(129,140,248,0.2)]' : 
+                  'bg-emerald-100 shadow-[0_10px_20px_rgba(52,211,153,0.2)]'
+                }`}>
+                  {i === 0 && <BookOpen className="w-12 h-12 text-amber-600" />}
+                  {i === 1 && <Puzzle className="w-12 h-12 text-indigo-600" />}
+                  {i === 2 && <Trophy className="w-12 h-12 text-emerald-600" />}
                 </div>
                 <div>
                   <h3 className="text-xl font-black mb-2 text-slate-900">{item.title}</h3>
