@@ -196,22 +196,24 @@ function LandingPage() {
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">Veja como a rotina de estudos dessas famílias foi transformada definitivamente.</p>
         </div>
         
-        <div className="relative max-w-4xl mx-auto px-12">
+        <div className="relative max-w-5xl mx-auto px-6 md:px-12">
           <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
-            <div className="flex gap-6">
+            <div className="flex gap-4 md:gap-6">
               {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="flex-[0_0_80%] md:flex-[0_0_45%] aspect-[4/5] bg-white rounded-[2rem] shadow-xl border border-slate-100 flex items-center justify-center text-slate-300 italic font-medium">
-                  {i === 1 ? "Prints de WhatsApp" : `Resultado ${i}`}
+                <div key={i} className="flex-[0_0_90%] md:flex-[0_0_60%] aspect-video bg-white rounded-[2rem] shadow-xl border border-slate-100 flex items-center justify-center text-slate-300 italic font-medium overflow-hidden">
+                   <div className="bg-slate-100 w-full h-full flex items-center justify-center">
+                    {i === 1 ? "Prints de WhatsApp (Horizontal)" : `Resultado ${i} (Horizontal)`}
+                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <button onClick={() => emblaApi?.scrollPrev()} className="absolute -left-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] transition-all"><ChevronLeft className="w-8 h-8" /></button>
-          <button onClick={() => emblaApi?.scrollNext()} className="absolute -right-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] transition-all"><ChevronRight className="w-8 h-8" /></button>
+          <button onClick={() => emblaApi?.scrollPrev()} className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full items-center justify-center text-slate-600 hover:text-[#D4AF37] transition-all"><ChevronLeft className="w-8 h-8" /></button>
+          <button onClick={() => emblaApi?.scrollNext()} className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full items-center justify-center text-slate-600 hover:text-[#D4AF37] transition-all"><ChevronRight className="w-8 h-8" /></button>
           
-          <div className="flex justify-center gap-2 mt-12">
+          <div className="flex justify-center gap-2 mt-8">
             {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="w-3 h-3 rounded-full bg-slate-300" />
+              <div key={i} className="w-2.5 h-2.5 rounded-full bg-slate-300" />
             ))}
           </div>
         </div>
