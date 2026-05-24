@@ -428,11 +428,11 @@ function LandingPage() {
           <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
             <div className="flex gap-6">
               {productExamples.map((example, i) => (
-                <div key={i} className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] aspect-[4/3] md:aspect-[3/2] bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 relative overflow-hidden group">
+                <div key={i} className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] aspect-[4/5] md:aspect-[3/2] bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 relative overflow-hidden group">
                   <img 
                     src={example.image} 
                     alt={example.title}
-                    className="absolute inset-0 w-full h-full object-contain p-4 bg-white"
+                    className="absolute inset-0 w-full h-full object-cover md:object-contain bg-white"
                   />
                   
                   {/* Bottom-Center Overlay */}
