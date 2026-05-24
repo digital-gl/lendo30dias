@@ -237,6 +237,33 @@ function LandingPage() {
         </div>
       </section>
 
+      {/* Grid Features */}
+      <section className="py-24 px-6 bg-slate-50">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que você desbloqueia agora mesmo</h2>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[
+            { emoji: "📖", title: "Nível 1: O Despertar Fonético", text: "O fim das adivinhações. Um processo detalhado onde a criança entende o som real de cada letra." },
+            { emoji: "🧩", title: "Nível 2: Conexão e Aceleração", text: "A mágica acontece. O cérebro da criança começa a juntar as peças e formar as primeiras palavras reais." },
+            { emoji: "🏆", title: "Nível 3: Domínio e Confiança", text: "Leitura autônoma e escrita firme. O momento em que você respira aliviada ao ver seu filho lendo sozinho." }
+          ].map((card, i) => (
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-white p-10 rounded-3xl border border-slate-200 hover:border-[#D4AF37] transition-all shadow-sm hover:shadow-xl group flex flex-col items-center text-center"
+            >
+              <div className="w-24 h-24 rounded-full flex items-center justify-center mb-8 bg-slate-50 shadow-inner text-5xl">
+                {card.emoji}
+              </div>
+              <h3 className="text-2xl font-bold mb-4">{card.title}</h3>
+              <p className="text-slate-600 leading-relaxed">{card.text}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
 
       {/* Section 8: A Oferta (Pricing) */}
       <section className="py-24 px-6 bg-white relative">
