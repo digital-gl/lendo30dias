@@ -8,49 +8,51 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const salesData = [
-  { name: "Maria Silva", state: "MG" },
-  { name: "Ana Paula", state: "SP" },
-  { name: "Juliana Costa", state: "RJ" },
-  { name: "Fernanda Lima", state: "RS" },
-  { name: "Camila Souza", state: "BA" },
-  { name: "Letícia Oliveira", state: "PR" },
-  { name: "Beatriz Santos", state: "SC" },
-  { name: "Amanda Rocha", state: "GO" },
-  { name: "Renata Neves", state: "CE" },
-  { name: "Patrícia Gomes", state: "PE" }
+const recentSales = [
+  "Ana Clara (MG)", "Juliana Silva (SP)", "Mariana Costa (RJ)", "Fernanda Oliveira (PR)",
+  "Beatriz Santos (SC)", "Camila Mendes (RS)", "Amanda Ferreira (BA)", "Larissa Gomes (PE)",
+  "Patricia Lima (CE)", "Renata Alves (DF)", "Bruna Ribeiro (GO)", "Carla Martins (ES)",
+  "Paula Rodrigues (MT)", "Vanessa Araújo (MS)", "Tatiana Souza (RN)", "Aline Castro (PB)",
+  "Letícia Rocha (AL)", "Marcela Nunes (SE)", "Isabela Pinto (PI)", "Silvia Teixeira (MA)"
 ];
 
 function SalesToast() {
-  const [currentSale, setCurrentSale] = useState<typeof salesData[0] | null>(null);
+  const [currentName, setCurrentName] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [lastIndex, setLastIndex] = useState<number>(-1);
 
   const triggerNotification = useCallback(() => {
-    const randomSale = salesData[Math.floor(Math.random() * salesData.length)];
-    setCurrentSale(randomSale);
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * recentSales.length);
+    } while (newIndex === lastIndex && recentSales.length > 1);
+
+    setLastIndex(newIndex);
+    setCurrentName(recentSales[newIndex]);
     setIsVisible(true);
 
     setTimeout(() => {
       setIsVisible(false);
     }, 4000);
-  }, []);
+  }, [lastIndex]);
 
   useEffect(() => {
-    const initialDelay = setTimeout(triggerNotification, 3000);
-    
     const interval = setInterval(() => {
       triggerNotification();
-    }, Math.floor(Math.random() * (15000 - 8000 + 1) + 8000));
+    }, 30000);
+
+    // Trigger first notification after a short delay
+    const firstTimeout = setTimeout(triggerNotification, 5000);
 
     return () => {
-      clearTimeout(initialDelay);
       clearInterval(interval);
+      clearTimeout(firstTimeout);
     };
   }, [triggerNotification]);
 
   return (
     <AnimatePresence>
-      {isVisible && currentSale && (
+      {isVisible && currentName && (
         <motion.div
           initial={{ opacity: 0, x: -50, scale: 0.9 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -60,11 +62,11 @@ function SalesToast() {
           <div className="bg-green-100 p-2 rounded-full">
             <ShoppingBag className="w-5 h-5 text-green-600" />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col text-left">
             <span className="text-slate-900 font-bold text-sm">
-              {currentSale.name} ({currentSale.state})
+              {currentName}
             </span>
-            <span className="text-green-600 text-xs font-medium uppercase tracking-tight">
+            <span className="text-green-600 text-xs font-semibold">
               Comprou o Premium
             </span>
           </div>
