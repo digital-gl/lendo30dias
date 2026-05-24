@@ -51,33 +51,33 @@ function SalesToast() {
       while (true) {
         // 1. Primeira aparece
         addNotification(1);
-        await wait(5000); // "após segundos" -> assumindo 5s
+        await wait(5000); // 5 segundos de espera
 
         // 2. Próxima aparece
         addNotification(1);
-        await wait(2000); // "com segundos de diferença" -> assumindo 2s
+        await wait(2000); // 2 segundos de diferença
 
-        // 3. Mais 3 em seguida com diferença
-        for (let i = 0; i < 2; i++) {
+        // 3. Aparecem 3 em seguida
+        for (let i = 0; i < 3; i++) {
           addNotification(1);
           await wait(2000);
         }
 
-        // 4. Depois de 10 segundos aparece 3 empilhadas
+        // 4. Depois de 10 segundos aparece 3 empilhadas de uma vez
         await wait(10000);
         addNotification(3);
 
         // 5. Após isso 2 a cada 5 segundos
-        await wait(5000);
-        addNotification(1);
-        await wait(5000);
-        addNotification(1);
+        for (let i = 0; i < 2; i++) {
+          await wait(5000);
+          addNotification(1);
+        }
 
-        // 6. Após isso 2 cada 2 segundos
-        await wait(2000);
-        addNotification(1);
-        await wait(2000);
-        addNotification(1);
+        // 6. Após isso 2 a cada 2 segundos
+        for (let i = 0; i < 2; i++) {
+          await wait(2000);
+          addNotification(1);
+        }
 
         // Aguarda um pouco antes de reiniciar o ciclo
         await wait(10000);
@@ -266,7 +266,7 @@ function LandingPage() {
               ))}
             </ul>
           </div>
-          <div className="bg-slate-100 aspect-square rounded-3xl overflow-hidden shadow-2xl relative">
+          <div className="bg-slate-100 aspect-square rounded-xl overflow-hidden shadow-2xl relative">
             <img 
               src="https://i.imgur.com/sDHjn2m.png" 
               alt="Criança lendo com alegria" 
