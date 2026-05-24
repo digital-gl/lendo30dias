@@ -297,81 +297,123 @@ function LandingPage() {
       {/* Section 8: A Oferta (Pricing) */}
       <section className="py-24 px-6 bg-white relative">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-stretch">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
             {/* Basic Plan */}
-            <div className="bg-white p-12 rounded-[2.5rem] border border-slate-200 flex flex-col items-center text-center">
-              <h3 className="text-2xl font-bold mb-8">Plano Básico</h3>
-              <div className="mb-8">
-                <p className="text-slate-400 line-through text-xl">R$ 27,90</p>
-                <p className="text-5xl font-black text-slate-900 mt-2">R$ 10,00</p>
+            <div className="bg-white p-10 rounded-[2.5rem] border border-slate-100 flex flex-col shadow-sm">
+              <h3 className="text-2xl font-black text-slate-400 mb-8 uppercase tracking-widest text-center">Plano Básico</h3>
+              <div className="mb-10 text-center">
+                <p className="text-slate-400 line-through text-lg">R$ 27,90</p>
+                <div className="flex items-baseline justify-center gap-1">
+                  <span className="text-2xl font-bold text-slate-900">R$</span>
+                  <span className="text-6xl font-black text-slate-900">10,00</span>
+                  <span className="text-slate-500 font-medium">à vista</span>
+                </div>
               </div>
-              <p className="text-slate-600 mb-12">Ideal para quem quer apenas testar a metodologia básica.</p>
-              <button className="mt-auto w-full py-5 rounded-2xl bg-slate-100 text-slate-500 font-bold hover:bg-slate-200 transition-colors uppercase">
-                Escolher Básico
+
+              <div className="space-y-4 mb-12 flex-1">
+                {[
+                  "Nível 1: O Despertar Fonético",
+                  "Nível 2: Conexão e Aceleração",
+                  "Nível 3: Domínio e Confiança"
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-3 items-center">
+                    <Check className="text-slate-300 w-4 h-4 shrink-0" />
+                    <span className="text-slate-600 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <button className="w-full py-5 rounded-2xl border-2 border-slate-200 text-slate-400 font-black hover:bg-slate-50 transition-colors uppercase tracking-tight">
+                Quero apenas o básico
               </button>
             </div>
 
             {/* Premium Plan */}
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] rounded-[3rem] blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative bg-white p-12 rounded-[2.5rem] border-4 border-[#D4AF37] flex flex-col h-full shadow-[0_20px_50px_rgba(212,175,55,0.3)]">
-                <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-red-600 text-white font-black px-8 py-2 rounded-full text-sm shadow-xl flex items-center gap-2">
-                  🔥 MAIS VENDIDO
-                </div>
-                
-                <h3 className="text-3xl font-extrabold text-center mb-4">Plano Premium</h3>
-                <p className="text-center text-[#D4AF37] font-bold mb-8 uppercase tracking-widest text-sm">O Método Completo + Todos os Bônus</p>
-                
-                <div className="text-center mb-8">
-                  <p className="text-slate-400 line-through text-xl">R$ 297,00</p>
-                  <div className="flex flex-col items-center">
-                    <p className="text-6xl font-black text-slate-900 mt-2">R$ 59,90</p>
-                    <p className="text-[#D4AF37] font-bold mt-2">ou 6x de R$ 5,49 no cartão</p>
+            <div className="flex flex-col gap-4">
+              <div className="bg-slate-900 text-white py-3 px-6 rounded-2xl text-center text-sm font-bold flex items-center justify-center gap-2 shadow-xl">
+                <span>⚠️</span>
+                <span>Ainda dá tempo de levar a melhor opção: atualizações e os 6 Bônus Exclusivos!</span>
+              </div>
+              
+              <div className="relative group flex-1">
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] rounded-[3rem] blur opacity-40 group-hover:opacity-60 transition duration-1000"></div>
+                <div className="relative bg-white p-10 rounded-[2.5rem] border-4 border-[#D4AF37] flex flex-col h-full shadow-[0_30px_60px_rgba(212,175,55,0.25)] overflow-hidden">
+                  <div className="absolute top-0 right-0 bg-red-600 text-white font-black px-8 py-2 rounded-bl-3xl text-sm shadow-xl flex items-center gap-2">
+                    🔥 MAIS VENDIDO
                   </div>
-                </div>
-
-                <div className="flex justify-center items-center gap-2 mb-10 bg-slate-50 py-4 rounded-2xl border border-slate-100">
-                  <div className="flex">
-                    {[1, 2, 3, 4, 5].map((s) => <Star key={s} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
+                  
+                  <h3 className="text-3xl font-black text-slate-900 mb-2 uppercase tracking-tight">Plano Premium</h3>
+                  <p className="text-[#D4AF37] font-black mb-8 uppercase tracking-widest text-xs">Acesso Vitalício + Todos os Bônus</p>
+                  
+                  <div className="mb-6">
+                    <p className="text-slate-400 line-through text-lg">R$ 297,00</p>
+                    <div className="flex flex-col">
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-2xl font-bold text-slate-900">R$</span>
+                        <span className="text-7xl font-black text-slate-900">59,90</span>
+                        <span className="text-slate-500 font-medium">à vista</span>
+                      </div>
+                      <p className="text-[#D4AF37] font-black text-lg mt-1 uppercase tracking-tighter">Ou 6x de R$ 5,49 no cartão</p>
+                    </div>
                   </div>
-                  <span className="text-slate-600 text-sm font-bold tracking-tight">+2.157 mães já usaram e conquistaram a leitura fluente</span>
+
+                  <div className="flex items-center gap-2 mb-8 text-slate-500 text-xs font-bold bg-slate-50 p-3 rounded-xl border border-slate-100">
+                    <div className="flex">
+                      {[1, 2, 3, 4, 5].map((s) => <Star key={s} className="w-3 h-3 fill-yellow-400 text-yellow-400" />)}
+                    </div>
+                    <span>+2.157 mães já usaram o material e conquistaram a leitura fluente</span>
+                  </div>
+
+                  <div className="space-y-4 mb-8">
+                    {[
+                      "O Programa Completo (Níveis 1, 2 e 3).",
+                      "Letra Bastão e Cursiva detalhado em passo a passo.",
+                      "Suporte exclusivo para dúvidas."
+                    ].map((item, i) => (
+                      <div key={i} className="flex gap-3 items-start">
+                        <div className="mt-1 bg-[#D4AF37] rounded-full p-0.5"><Check className="text-white w-3 h-3" /></div>
+                        <span className="font-bold text-slate-700 text-sm leading-snug">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="h-px bg-slate-100 mb-8" />
+                  
+                  <h4 className="font-black text-slate-900 mb-6 flex items-center gap-2 uppercase tracking-widest text-xs">
+                    <span>🎁</span> 6 Bônus Exclusivos (Acesso Imediato)
+                  </h4>
+                  
+                  <div className="space-y-4 mb-10">
+                    {[
+                      "Bônus 1: Acelerador de Consciência Silábica",
+                      "Bônus 2: Jogo de Retenção Acelerada",
+                      "Bônus 3: Protocolo de Fluência Leitora",
+                      "Bônus 4: Tiras de Leitura Dinâmica",
+                      "Bônus 5: Desafio dos 50 Textos Fatiados",
+                      "Bônus 6: Fundação da Leitura Rápida"
+                    ].map((item, i) => (
+                      <div key={i} className="flex gap-3 items-center">
+                        <Check className="text-[#D4AF37] w-4 h-4 shrink-0" />
+                        <span className="font-bold text-slate-600 text-sm">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <motion.button 
+                    animate={{ scale: [1, 1.03, 1] }}
+                    transition={{ repeat: Infinity, duration: 1.5 }}
+                    className="w-full py-7 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black text-2xl shadow-[0_15px_40px_rgba(212,175,55,0.4)] uppercase tracking-tight mb-4"
+                  >
+                    QUERO O MATERIAL COMPLETO
+                  </motion.button>
+                  <p className="text-center text-red-600 font-black text-xs uppercase tracking-wider">
+                    Último dia com desconto do material completo. 
+                    <br />
+                    Preço normal a partir do dia {tomorrow}
+                  </p>
                 </div>
-
-                <ul className="space-y-4 mb-12">
-                  {[
-                    "Material Completo Passo a Passo (Níveis 1, 2 e 3)",
-                    "Protocolo de Letra Bastão e Cursiva",
-                    "6 Bônus Exclusivos (Acesso Imediato)",
-                    "Suporte prioritário para dúvidas"
-                  ].map((item, i) => (
-                    <li key={i} className="flex gap-3 items-center">
-                      <div className="bg-[#D4AF37] rounded-full p-1 shadow-sm"><Check className="text-white w-4 h-4" /></div>
-                      <span className="font-bold text-slate-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <motion.button 
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
-                  className="w-full py-6 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black text-xl shadow-xl uppercase tracking-tight mb-4"
-                >
-                  QUERO O ACESSO COMPLETO AGORA
-                </motion.button>
-                <p className="text-center text-red-600 font-bold text-sm">
-                  Último dia com desconto do material completo. 
-                  <br />
-                  Preço normal a partir do dia {tomorrow}
-                </p>
               </div>
             </div>
-          </div>
-
-          <div className="mt-16 bg-slate-900 p-8 rounded-3xl text-center max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 border-2 border-[#D4AF37]">
-            <span className="text-4xl">⚠️</span>
-            <p className="text-white text-xl font-bold">
-              Ainda dá tempo de levar a melhor opção com todas as atualizações e os <span className="text-[#D4AF37]">6 Bônus Exclusivos!</span>
-            </p>
           </div>
         </div>
       </section>
