@@ -432,7 +432,7 @@ function LandingPage() {
       </section>
 
       {/* Section 6: Para quem é este material? */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-16 px-6 bg-white">
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">Reconhece algum destes sinais no seu dia a dia?</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {[
@@ -454,7 +454,7 @@ function LandingPage() {
       </section>
 
       {/* Section Bônus Exclusivos (O Empilhamento de Valor) */}
-      <section className="py-24 px-6 bg-slate-50">
+      <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight text-slate-900">
             Ao garantir seu acesso hoje, você leva 6 Presentes Exclusivos
@@ -541,7 +541,7 @@ function LandingPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-white relative">
+      <section className="py-16 px-6 bg-white relative">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
             {/* Basic Plan */}
@@ -675,7 +675,7 @@ function LandingPage() {
       </section>
 
       {/* Section 9: Garantia */}
-      <section className="py-24 px-6 bg-slate-50">
+      <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto bg-[#D4AF37] p-8 md:p-12 rounded-[3rem] shadow-2xl border-4 border-white/20 flex flex-col items-center text-center text-white">
           <ShieldCheck className="w-16 h-16 md:w-20 md:h-20 text-white mb-6 md:mb-8" />
           <h2 className="text-2xl md:text-4xl font-extrabold mb-6 md:mb-8 tracking-tight uppercase">Risco Zero para Você!</h2>
@@ -686,7 +686,7 @@ function LandingPage() {
       </section>
 
       {/* Section 10: Prova Social (Avaliações) */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-16 px-6 bg-white">
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que dizem as mamães</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((t, i) => (
