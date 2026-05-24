@@ -411,7 +411,7 @@ function LandingPage() {
             <img 
               src="https://i.imgur.com/sDHjn2m.png" 
               alt="Criança lendo com alegria" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain bg-slate-100"
             />
           </div>
         </div>
@@ -428,11 +428,11 @@ function LandingPage() {
           <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
             <div className="flex gap-6">
               {productExamples.map((example, i) => (
-                <div key={i} className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] aspect-[4/3] md:aspect-[3/2] bg-slate-100 rounded-[2.5rem] shadow-2xl border border-slate-100 relative overflow-hidden group">
+                <div key={i} className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] aspect-[4/3] md:aspect-[3/2] bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 relative overflow-hidden group">
                   <img 
                     src={example.image} 
                     alt={example.title}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-contain p-4 bg-white"
                   />
                   
                   {/* Bottom-Center Overlay */}
@@ -740,13 +740,16 @@ function LandingPage() {
         </div>
 
         <div className="mt-16 max-w-4xl mx-auto">
-          <div className="bg-slate-100 rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white aspect-[9/16] max-w-[320px] mx-auto">
-            <iframe 
-              src="https://imgur.com/sCrLF00/embed" 
-              className="w-full h-full"
-              frameBorder="0" 
-              allowFullScreen
-            ></iframe>
+          <div className="bg-black rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white aspect-[9/16] max-w-[320px] mx-auto relative">
+            <video 
+              className="w-full h-full object-cover"
+              controls
+              playsInline
+              loop
+            >
+              <source src="https://i.imgur.com/sCrLF00.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeos.
+            </video>
           </div>
         </div>
       </section>
