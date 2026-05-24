@@ -247,7 +247,6 @@ function LandingPage() {
         </motion.button>
       </section>
 
-
       {/* Logic */}
       <section className="py-24 px-6 max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
