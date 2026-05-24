@@ -293,36 +293,6 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Section 7: Bônus Exclusivos */}
-      <section className="py-24 px-6 bg-slate-50">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Ao garantir seu acesso hoje, você leva 6 Presentes Exclusivos</h2>
-          <p className="text-xl text-slate-600">O empilhamento de valor definitivo para o sucesso do seu filho.</p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
-          {bonusItems.map((bonus, i) => (
-            <div key={i} className="bg-white p-8 rounded-[2rem] shadow-md border border-slate-100 flex flex-col items-center text-center gap-6">
-              <div className="w-full aspect-[16/9] bg-slate-50 rounded-2xl flex items-center justify-center text-slate-300 font-black text-2xl border-2 border-dashed border-slate-200 uppercase tracking-tighter">BÔNUS {i+1}</div>
-              <div className="flex-1 flex flex-col items-center">
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">{bonus.title}</h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">{bonus.desc}</p>
-                <div className="flex items-center gap-3">
-                  <span className="bg-[#D4AF37] text-white text-xs font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-lg shadow-[#D4AF37]/20">Grátis hoje</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="max-w-3xl mx-auto bg-white p-10 rounded-[2.5rem] shadow-2xl border-4 border-[#D4AF37]/20 text-center">
-          <p className="text-2xl font-bold text-slate-800">
-            Valor total dos bônus: <span className="text-slate-400 line-through">R$ 277,30</span>. 
-            <br />
-            <span className="text-[#D4AF37] text-3xl mt-2 block">Levando a oferta hoje: TUDO GRÁTIS.</span>
-          </p>
-        </div>
-      </section>
 
       {/* Section 8: A Oferta (Pricing) */}
       <section className="py-24 px-6 bg-white relative">
