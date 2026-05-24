@@ -351,6 +351,7 @@ function LandingPage() {
             ))}
           </div>
         </div>
+      </section>
 
       {/* Logic */}
       <section className="py-24 px-6 max-w-5xl mx-auto">
