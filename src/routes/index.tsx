@@ -141,13 +141,18 @@ function LandingPage() {
           Chega de promessas escolares vazias. Assuma o controle com o passo a passo domiciliar que destrava a leitura e devolve a autoestima da criança, mesmo que você não seja professora.
         </p>
 
-        <div className="w-full max-w-[320px] aspect-[9/16] bg-slate-100 rounded-3xl mb-12 shadow-2xl overflow-hidden border-8 border-white relative group mx-auto">
-          <div className="absolute inset-0 bg-gradient-to-tr from-slate-200 to-transparent flex items-center justify-center">
-             <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform cursor-pointer">
-                <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-[#D4AF37] border-b-[10px] border-b-transparent ml-1" />
-             </div>
-          </div>
-          <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-slate-400 text-sm font-medium">Video demonstrativo do método</p>
+        <div className="w-full max-w-[320px] aspect-[9/16] bg-black rounded-3xl mb-12 shadow-2xl overflow-hidden border-8 border-white relative mx-auto">
+          <video 
+            className="w-full h-full object-cover"
+            controls
+            playsInline
+            autoPlay
+            muted
+            loop
+          >
+            <source src="https://i.imgur.com/1TVH4Pt.mp4" type="video/mp4" />
+            Seu navegador não suporta vídeos.
+          </video>
         </div>
 
         <motion.button 
