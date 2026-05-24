@@ -503,9 +503,14 @@ function LandingPage() {
       {/* Section Bônus Exclusivos (O Empilhamento de Valor) */}
       <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight text-slate-900">
-            Ao garantir seu acesso hoje, você leva 6 Presentes Exclusivos
-          </h2>
+          <div className="text-center mb-16">
+            <h3 className="text-4xl md:text-6xl font-black text-[#D4AF37] mb-4 flex items-center justify-center gap-3">
+              <span className="text-5xl md:text-7xl">🎁</span> BÔNUS
+            </h3>
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+              Ao garantir seu acesso hoje, você leva 6 Presentes Exclusivos
+            </h2>
+          </div>
           
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {[
@@ -797,10 +802,11 @@ function LandingPage() {
       {/* Section 11: Quem Somos */}
       <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
-          <div className="w-32 h-32 rounded-full bg-white p-2 shadow-2xl mb-12 overflow-hidden border-4 border-[#D4AF37]/20">
-             <img src="https://i.imgur.com/7ILP61C.png" alt="Equipe Resgate Educacional" className="w-full h-full object-cover rounded-full" />
+          <div className="w-48 h-48 rounded-full bg-white p-2 shadow-2xl mb-12 overflow-hidden border-4 border-[#D4AF37]/20">
+             <img src="https://i.imgur.com/L0YnL4p.jpeg" alt="Equipe Resgate Educacional" className="w-full h-full object-cover rounded-full" />
           </div>
           
+          <span className="font-bold text-[#D4AF37] text-xl mb-2 block uppercase tracking-widest">Quem somos</span>
           <h2 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">Por trás do Resgate Educacional</h2>
           
           <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
