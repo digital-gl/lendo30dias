@@ -715,7 +715,7 @@ function LandingPage() {
       </section>
 
       {/* Section 11: Quem Somos */}
-      <section className="py-24 px-6 bg-slate-50">
+      <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
           <div className="w-32 h-32 rounded-full bg-white p-2 shadow-2xl mb-12 overflow-hidden border-4 border-[#D4AF37]/20">
              <img src="https://i.imgur.com/7ILP61C.png" alt="Equipe Resgate Educacional" className="w-full h-full object-cover rounded-full" />
@@ -738,7 +738,7 @@ function LandingPage() {
       </section>
 
       {/* Section 12: Perguntas Frequentes (FAQ) */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-16 px-6 bg-white">
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">Perguntas Frequentes</h2>
         <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, i) => (
@@ -765,7 +765,7 @@ function LandingPage() {
       </section>
 
       {/* Section 13: Rodapé (Footer) */}
-      <footer className="bg-slate-900 py-20 px-6 text-white text-center">
+      <footer className="bg-slate-900 py-12 px-6 text-white text-center">
         <div className="max-w-6xl mx-auto flex flex-col items-center">
           <div className="text-[#D4AF37] font-black text-3xl mb-12">RESGATE EDUCACIONAL</div>
           
