@@ -147,6 +147,29 @@ function LandingPage() {
     { title: "Bônus 6: Fundação da Leitura Rápida (Sílabas Simples)", desc: "O guia de consulta para a criança reconhecer padrões simples imediatamente." }
   ];
 
+  const productExamples = [
+    {
+      title: "Caderno de Grafismo Fônico - Nível 1",
+      subtitle: "Fundação fônica completa em Letra Bastão e Cursiva para acabar com o hábito de chutar palavras."
+    },
+    {
+      title: "Conexão Silábica - Nível 2",
+      subtitle: "O cérebro da criança começa a juntar os sons de forma automatizada para formar as primeiras palavras reais."
+    },
+    {
+      title: "Domínio e Autonomia - Nível 3",
+      subtitle: "Passo a passo avançado focado na leitura fluente de frases longas e fixação da escrita firme."
+    },
+    {
+      title: "Jogos e Fichas Silábicas Práticas",
+      subtitle: "Gamificação domiciliar para prender a atenção da criança e acelerar a memorização sem cansaço."
+    },
+    {
+      title: "Protocolo de Fluência Leitora",
+      subtitle: "Tiras de leitura dinâmica de 10 minutos para eliminar o ritmo robotizado e destravar a leitura natural."
+    }
+  ];
+
   const testimonials = [
     { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!" },
     { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado." },
