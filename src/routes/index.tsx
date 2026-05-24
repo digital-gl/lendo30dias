@@ -48,7 +48,7 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#D4AF37]/30">
       {/* Top Bar */}
-      <div className="bg-[#D4AF37] text-white py-2 text-center text-sm font-bold uppercase tracking-wider sticky top-0 z-50">
+      <div className="bg-black text-[#D4AF37] py-2 text-center text-sm font-bold uppercase tracking-wider sticky top-0 z-50">
         ⚠️ OFERTA VÁLIDA SOMENTE HOJE - {date}
       </div>
 
@@ -63,10 +63,10 @@ function LandingPage() {
         </h1>
         
         <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mb-12 leading-relaxed">
-          Chega de promessas escolares vazias. Assuma o controle com o passo a passo domiciliar que destrava a leitura e devolve a autoestima da criança — mesmo que você não seja professora.
+          Chega de promessas escolares vazias. Assuma o controle com o passo a passo domiciliar que destrava a leitura e devolve a autoestima da criança, mesmo que você não seja professora.
         </p>
 
-        <div className="w-full max-w-2xl aspect-video bg-slate-100 rounded-3xl mb-12 shadow-2xl overflow-hidden border-8 border-white relative group">
+        <div className="w-full max-w-[320px] aspect-[9/16] bg-slate-100 rounded-3xl mb-12 shadow-2xl overflow-hidden border-8 border-white relative group mx-auto">
           <div className="absolute inset-0 bg-gradient-to-tr from-slate-200 to-transparent flex items-center justify-center">
              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform cursor-pointer">
                 <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-[#D4AF37] border-b-[10px] border-b-transparent ml-1" />
@@ -80,7 +80,7 @@ function LandingPage() {
           whileTap={{ scale: 0.95 }}
           animate={{ scale: [1, 1.02, 1] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black text-xl py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(212,175,55,0.4)] uppercase tracking-tight"
+          className="bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black text-xl py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(212,175,55,0.4)] uppercase tracking-tight w-full max-w-sm"
         >
           QUERO DESTRAVAR A LEITURA DO MEU FILHO
         </motion.button>
@@ -91,9 +91,9 @@ function LandingPage() {
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que você desbloqueia agora mesmo</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
-            { icon: BookOpen, title: "Nível 1: O Despertar Fonético", text: "O fim das adivinhações. Um processo detalhado onde a criança entende o som real de cada letra." },
-            { icon: Puzzle, title: "Nível 2: Conexão e Aceleração", text: "A mágica acontece. O cérebro da criança começa a juntar as peças e formar as primeiras palavras reais." },
-            { icon: Trophy, title: "Nível 3: Domínio e Confiança", text: "Leitura autônoma e escrita firme. O momento em que você respira aliviada ao ver seu filho lendo sozinho." }
+            { emoji: "📖", title: "Nível 1: O Despertar Fonético", text: "O fim das adivinhações. Um processo detalhado onde a criança entende o som real de cada letra." },
+            { emoji: "🧩", title: "Nível 2: Conexão e Aceleração", text: "A mágica acontece. O cérebro da criança começa a juntar as peças e formar as primeiras palavras reais." },
+            { emoji: "🏆", title: "Nível 3: Domínio e Confiança", text: "Leitura autônoma e escrita firme. O momento em que você respira aliviada ao ver seu filho lendo sozinho." }
           ].map((card, i) => (
             <motion.div 
               key={i} 
@@ -101,10 +101,10 @@ function LandingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white p-10 rounded-3xl border border-slate-200 hover:border-[#D4AF37] transition-all shadow-sm hover:shadow-xl group"
+              className="bg-white p-10 rounded-3xl border border-slate-200 hover:border-[#D4AF37] transition-all shadow-sm hover:shadow-xl group flex flex-col items-center text-center"
             >
-              <div className="bg-[#D4AF37]/10 w-20 h-20 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#D4AF37] transition-colors">
-                <card.icon className="text-[#D4AF37] w-10 h-10 group-hover:text-white transition-colors" />
+              <div className="w-24 h-24 rounded-full flex items-center justify-center mb-8 bg-slate-50 shadow-inner text-5xl">
+                {card.emoji}
               </div>
               <h3 className="text-2xl font-bold mb-4">{card.title}</h3>
               <p className="text-slate-600 leading-relaxed">{card.text}</p>
@@ -181,9 +181,9 @@ function LandingPage() {
             <motion.div 
               key={i}
               whileHover={{ y: -5 }}
-              className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm flex flex-col items-start gap-4 h-full"
+              className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm flex flex-col items-center text-center gap-4 h-full"
             >
-              <span className="text-4xl">{item.emoji}</span>
+              <span className="text-5xl">{item.emoji}</span>
               <p className="text-slate-800 font-medium leading-relaxed">{item.text}</p>
             </motion.div>
           ))}
@@ -199,14 +199,14 @@ function LandingPage() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
           {bonuses.map((bonus, i) => (
-            <div key={i} className="bg-white p-8 rounded-[2rem] shadow-md border border-slate-100 flex flex-col md:flex-row gap-8 items-center">
-              <div className="w-full md:w-48 aspect-[4/3] bg-slate-100 rounded-xl flex items-center justify-center text-slate-400 font-bold">BONUS {i+1}</div>
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-[#D4AF37] mb-2">{bonus.title}</h3>
-                <p className="text-slate-600 mb-4">{bonus.desc}</p>
+            <div key={i} className="bg-white p-8 rounded-[2rem] shadow-md border border-slate-100 flex flex-col items-center text-center gap-6">
+              <div className="w-full aspect-[4/3] bg-slate-50 rounded-2xl flex items-center justify-center text-slate-300 font-black text-2xl border-2 border-dashed border-slate-200">BÔNUS {i+1}</div>
+              <div className="flex-1 flex flex-col items-center">
+                <h3 className="text-2xl font-bold text-[#D4AF37] mb-3">{bonus.title}</h3>
+                <p className="text-slate-600 mb-6 leading-relaxed">{bonus.desc}</p>
                 <div className="flex items-center gap-3">
                   <span className="text-slate-400 line-through">R$ {bonus.oldPrice}</span>
-                  <span className="bg-[#D4AF37] text-white text-xs font-bold px-3 py-1 rounded-full">R$ 0,00 (ZERO)</span>
+                  <span className="bg-black text-[#D4AF37] text-xs font-black px-4 py-2 rounded-full uppercase tracking-tighter">GRÁTIS HOJE</span>
                 </div>
               </div>
             </div>
@@ -305,11 +305,11 @@ function LandingPage() {
       </section>
 
       {/* Section 9: Garantia */}
-      <section className="py-24 px-6 bg-[#D4AF37]/5">
-        <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+      <section className="py-24 px-6 bg-slate-50">
+        <div className="max-w-4xl mx-auto bg-white p-12 rounded-[3rem] shadow-2xl border-2 border-[#D4AF37]/20 flex flex-col items-center text-center">
           <ShieldCheck className="w-24 h-24 text-[#D4AF37] mb-8" />
           <h2 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">Risco Zero para Você!</h2>
-          <p className="text-2xl text-slate-700 leading-relaxed max-w-3xl">
+          <p className="text-2xl text-slate-700 leading-relaxed max-w-3xl mb-0">
             Você tem <strong>7 dias de garantia incondicional</strong>. Baixe o material, aplique nosso método e veja com os próprios olhos. Se por qualquer motivo você achar que não é para o seu filho, devolvemos 100% do seu dinheiro. Sem burocracia.
           </p>
         </div>
@@ -320,15 +320,14 @@ function LandingPage() {
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que dizem as mamães</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((t, i) => (
-            <div key={i} className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100 flex flex-col">
-              <div className="flex mb-4">
-                {[1, 2, 3, 4, 5].map((s) => <Star key={s} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
+            <div key={i} className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center text-center">
+              <div className="flex mb-6">
+                {[1, 2, 3, 4, 5].map((s) => <Star key={s} className="w-6 h-6 fill-yellow-400 text-yellow-400" />)}
               </div>
-              <p className="font-bold text-lg mb-4 text-slate-900">"{t.impact}"</p>
-              <p className="text-slate-600 italic mb-8 flex-1">"{t.text}"</p>
-              <div className="flex items-center gap-4 border-t pt-6">
-                <div className="w-12 h-12 rounded-full bg-slate-200" />
-                <span className="font-bold">{t.name}</span>
+              <p className="text-slate-600 italic mb-10 flex-1 text-lg">"{t.text}"</p>
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-[#D4AF37]/20" />
+                <span className="font-black text-slate-900 uppercase tracking-tight">{t.name}</span>
               </div>
             </div>
           ))}
@@ -337,25 +336,25 @@ function LandingPage() {
 
       {/* Section 11: Quem Somos */}
       <section className="py-24 px-6 bg-slate-50">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">Por trás do Resgate Educacional</h2>
-            <div className="space-y-6 text-xl text-slate-700 leading-relaxed">
-              <p>
-                Somos uma iniciativa focada em devolver às famílias o poder de transformar a educação de seus filhos dentro de casa.
-              </p>
-              <p>
-                Entendemos profundamente a angústia de uma mãe que vê o tempo passar e o filho ficar para trás. Por isso, criamos um método estruturado que foca no que realmente importa: resultados práticos e rápidos.
-              </p>
-              <p className="font-bold italic">
-                Nossa missão é destravar o potencial de cada criança através de uma alfabetização consciente e acolhedora.
-              </p>
-            </div>
-          </div>
-          <div className="order-1 md:order-2 bg-white p-4 rounded-[4rem] shadow-2xl rotate-3">
-             <div className="bg-slate-100 aspect-[3/4] rounded-[3.5rem] flex items-center justify-center text-slate-400 italic overflow-hidden">
-                Foto Profissional Acessível
+        <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+          <div className="w-40 h-40 rounded-full bg-white p-2 shadow-2xl mb-12 overflow-hidden border-4 border-[#D4AF37]/20">
+             <div className="bg-slate-100 w-full h-full rounded-full flex items-center justify-center text-slate-400 text-xs text-center px-4 font-medium italic">
+                Foto Profissional
              </div>
+          </div>
+          
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">Por trás do Resgate Educacional</h2>
+          
+          <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <p>
+              Somos uma iniciativa focada em devolver às famílias o poder de transformar a educação de seus filhos dentro de casa.
+            </p>
+            <p>
+              Entendemos profundamente a angústia de uma mãe que vê o tempo passar e o filho ficar para trás. Por isso, criamos um método estruturado que foca no que realmente importa: resultados práticos e rápidos.
+            </p>
+            <p className="font-bold italic text-slate-900 text-xl">
+              Nossa missão é destravar o potencial de cada criança através de uma alfabetização consciente e acolhedora.
+            </p>
           </div>
         </div>
       </section>
