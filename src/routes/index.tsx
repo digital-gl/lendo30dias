@@ -160,30 +160,35 @@ function LandingPage() {
   const productExamples = [
     {
       title: "Caderno de Grafismo Fônico - Nível 1",
-      subtitle: "Fundação fônica completa em Letra Bastão e Cursiva para acabar com o hábito de chutar palavras."
+      subtitle: "Fundação fônica completa em Letra Bastão e Cursiva para acabar com o hábito de chutar palavras.",
+      image: "https://i.imgur.com/v8RHNIB.png"
     },
     {
       title: "Conexão Silábica - Nível 2",
-      subtitle: "O cérebro da criança começa a juntar os sons de forma automatizada para formar as primeiras palavras reais."
+      subtitle: "O cérebro da criança começa a juntar os sons de forma automatizada para formar as primeiras palavras reais.",
+      image: "https://i.imgur.com/EjFLXae.png"
     },
     {
       title: "Domínio e Autonomia - Nível 3",
-      subtitle: "Passo a passo avançado focado na leitura fluente de frases longas e fixação da escrita firme."
+      subtitle: "Passo a passo avançado focado na leitura fluente de frases longas e fixação da escrita firme.",
+      image: "https://i.imgur.com/v8RHNIB.png"
     },
     {
       title: "Jogos e Fichas Silábicas Práticas",
-      subtitle: "Gamificação domiciliar para prender a atenção da criança e acelerar a memorização sem cansaço."
+      subtitle: "Gamificação domiciliar para prender a atenção da criança e acelerar a memorização sem cansaço.",
+      image: "https://i.imgur.com/U2UOFMX.png"
     },
     {
       title: "Protocolo de Fluência Leitora",
-      subtitle: "Tiras de leitura dinâmica de 10 minutos para eliminar o ritmo robotizado e destravar a leitura natural."
+      subtitle: "Tiras de leitura dinâmica de 10 minutos para eliminar o ritmo robotizado e destravar a leitura natural.",
+      image: "https://i.imgur.com/sDHjn2m.png"
     }
   ];
 
   const testimonials = [
-    { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!" },
-    { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado." },
-    { name: "Patrícia Mendes", text: "O método é muito simples de aplicar, mesmo eu não sendo pedagoga." }
+    { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!", image: "https://i.imgur.com/PHQ6tpy.png" },
+    { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado.", image: "https://i.imgur.com/gpEBlEG.png" },
+    { name: "Patrícia Mendes", text: "O método é muito simples de aplicar, mesmo eu não sendo pedagoga.", image: "https://i.imgur.com/CSHkF2d.png" }
   ];
 
   const faqs = [
@@ -273,7 +278,7 @@ function LandingPage() {
 
       {/* Section 5: EXEMPLOS REAIS */}
       <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 mb-16">
+        <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
           <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">EXEMPLOS REAIS</h2>
           <p className="text-xl text-slate-600 font-medium">Veja o que você vai receber</p>
         </div>
@@ -283,10 +288,11 @@ function LandingPage() {
             <div className="flex gap-6">
               {productExamples.map((example, i) => (
                 <div key={i} className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] aspect-video bg-slate-100 rounded-[2.5rem] shadow-2xl border border-slate-100 relative overflow-hidden group">
-                  {/* Placeholder for real product images */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center text-slate-400 italic font-medium">
-                    Imagem do Produto: {example.title}
-                  </div>
+                  <img 
+                    src={example.image} 
+                    alt={example.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
                   
                   {/* Bottom-Left Overlay */}
                   <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
@@ -515,7 +521,9 @@ function LandingPage() {
             <div key={i} className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center text-center">
               <p className="text-slate-600 italic mb-10 flex-1 text-lg leading-relaxed">"{t.text}"</p>
               <div className="flex flex-col items-center gap-3">
-                <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-[#D4AF37]/20 overflow-hidden" />
+                <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-[#D4AF37]/20 overflow-hidden">
+                  <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                </div>
                 <span className="font-black text-slate-900 uppercase tracking-tight">{t.name}</span>
               </div>
             </div>
@@ -527,9 +535,7 @@ function LandingPage() {
       <section className="py-24 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
           <div className="w-32 h-32 rounded-full bg-white p-2 shadow-2xl mb-12 overflow-hidden border-4 border-[#D4AF37]/20">
-             <div className="bg-slate-100 w-full h-full rounded-full flex items-center justify-center text-slate-400 text-[10px] text-center px-4 font-medium italic">
-                Foto Profissional
-             </div>
+             <img src="https://i.imgur.com/7ILP61C.png" alt="Equipe Resgate Educacional" className="w-full h-full object-cover rounded-full" />
           </div>
           
           <h2 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">Por trás do Resgate Educacional</h2>
