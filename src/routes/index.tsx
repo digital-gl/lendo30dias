@@ -159,62 +159,6 @@ function LandingPage() {
         </motion.button>
       </section>
 
-      {/* Section 2: Entregáveis e Bônus */}
-      <section className="py-24 px-6 bg-slate-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que você desbloqueia agora mesmo</h2>
-          
-          <div className="space-y-12">
-            <div>
-              <h3 className="text-xl font-black text-slate-400 uppercase tracking-widest mb-8 border-l-4 border-[#D4AF37] pl-4">O Programa Principal</h3>
-              <div className="space-y-6">
-                {programItems.map((item, i) => (
-                  <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex gap-4 items-start bg-white p-6 rounded-2xl shadow-sm border border-slate-100"
-                  >
-                    <div className="mt-1 bg-[#D4AF37] rounded-full p-1 shrink-0">
-                      <Check className="text-white w-4 h-4" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg text-slate-900 mb-1">{item.title}</h4>
-                      <p className="text-slate-600 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-black text-slate-400 uppercase tracking-widest mb-8 border-l-4 border-[#D4AF37] pl-4">Os 6 Bônus Exclusivos</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                {bonusItems.map((item, i) => (
-                  <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex gap-4 items-start bg-white p-6 rounded-2xl shadow-sm border border-slate-100"
-                  >
-                    <div className="mt-1 bg-[#D4AF37] rounded-full p-1 shrink-0">
-                      <Check className="text-white w-4 h-4" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900 mb-1">{item.title}</h4>
-                      <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Logic */}
       <section className="py-24 px-6 max-w-5xl mx-auto">
