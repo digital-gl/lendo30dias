@@ -186,8 +186,8 @@ function LandingPage() {
   ];
 
   const testimonials = [
-    { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!", image: "https://i.imgur.com/PHQ6tpy.png" },
-    { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado.", image: "https://i.imgur.com/gpEBlEG.png" },
+    { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!", image: "https://i.imgur.com/CSHkF2d.png" },
+    { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado.", image: "https://i.imgur.com/CSHkF2d.png" },
     { name: "Patrícia Mendes", text: "O método é muito simples de aplicar, mesmo eu não sendo pedagoga.", image: "https://i.imgur.com/CSHkF2d.png" }
   ];
 
