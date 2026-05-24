@@ -1,12 +1,78 @@
-import { motion } from "framer-motion";
-import { Check, BookOpen, Puzzle, Trophy, ChevronLeft, ChevronRight, Star, ShieldCheck, ChevronDown, ChevronUp } from "lucide-react";
-import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Check, BookOpen, Puzzle, Trophy, ChevronLeft, ChevronRight, Star, ShieldCheck, ChevronDown, ChevronUp, ShoppingBag } from "lucide-react";
+import { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from 'embla-carousel-react';
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
 });
+
+const salesData = [
+  { name: "Maria Silva", state: "MG" },
+  { name: "Ana Paula", state: "SP" },
+  { name: "Juliana Costa", state: "RJ" },
+  { name: "Fernanda Lima", state: "RS" },
+  { name: "Camila Souza", state: "BA" },
+  { name: "Letícia Oliveira", state: "PR" },
+  { name: "Beatriz Santos", state: "SC" },
+  { name: "Amanda Rocha", state: "GO" },
+  { name: "Renata Neves", state: "CE" },
+  { name: "Patrícia Gomes", state: "PE" }
+];
+
+function SalesToast() {
+  const [currentSale, setCurrentSale] = useState<typeof salesData[0] | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const triggerNotification = useCallback(() => {
+    const randomSale = salesData[Math.floor(Math.random() * salesData.length)];
+    setCurrentSale(randomSale);
+    setIsVisible(true);
+
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 4000);
+  }, []);
+
+  useEffect(() => {
+    const initialDelay = setTimeout(triggerNotification, 3000);
+    
+    const interval = setInterval(() => {
+      triggerNotification();
+    }, Math.floor(Math.random() * (15000 - 8000 + 1) + 8000));
+
+    return () => {
+      clearTimeout(initialDelay);
+      clearInterval(interval);
+    };
+  }, [triggerNotification]);
+
+  return (
+    <AnimatePresence>
+      {isVisible && currentSale && (
+        <motion.div
+          initial={{ opacity: 0, x: -50, scale: 0.9 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          exit={{ opacity: 0, x: -50, scale: 0.9 }}
+          className="fixed bottom-4 left-4 z-[100] bg-white border border-slate-100 shadow-2xl rounded-2xl p-4 flex items-center gap-4 min-w-[260px]"
+        >
+          <div className="bg-green-100 p-2 rounded-full">
+            <ShoppingBag className="w-5 h-5 text-green-600" />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-slate-900 font-bold text-sm">
+              {currentSale.name} ({currentSale.state})
+            </span>
+            <span className="text-green-600 text-xs font-medium uppercase tracking-tight">
+              Comprou o Premium
+            </span>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
 
 function LandingPage() {
   const [date, setDate] = useState("");
@@ -23,19 +89,25 @@ function LandingPage() {
     setTomorrow(nextDay.toLocaleDateString("pt-BR"));
   }, []);
 
-  const bonuses = [
-    { title: "Acelerador de Consciência Silábica", oldPrice: "47,90", desc: "Exercícios práticos para acelerar a percepção sonora." },
-    { title: "Jogo de Retenção Acelerada - Fichas Silábicas", oldPrice: "37,90", desc: "Material lúdico para fixar o conteúdo brincando." },
-    { title: "Protocolo de Fluência Leitora", oldPrice: "57,90", desc: "Guia passo a passo para aumentar a velocidade da leitura." },
-    { title: "Tiras de Leitura Dinâmica", oldPrice: "27,90", desc: "Ferramenta visual para focar nas palavras-chave." },
-    { title: "Desafio dos 50 Textos Fatiados", oldPrice: "67,90", desc: "Textos estruturados para prática diária progressiva." },
-    { title: "Fundação da Leitura Rápida", oldPrice: "37,90", desc: "As bases para uma leitura eficiente e compreensiva." }
+  const programItems = [
+    { title: "Nível 1: O Despertar Fonético (Letra Bastão e Cursiva)", desc: "O fim das adivinhações. Um passo a passo detalhado onde a criança entende o som real de cada letra, formando a conexão inicial." },
+    { title: "Nível 2: Conexão e Aceleração (Letra Bastão e Cursiva)", desc: "A mágica acontece. O cérebro da criança junta as peças e forma palavras reais sem esforço." },
+    { title: "Nível 3: Domínio e Confiança (Letra Bastão e Cursiva)", desc: "Leitura autônoma e escrita firme. O momento em que você respira aliviada ao ver seu filho lendo sozinho." }
+  ];
+
+  const bonusItems = [
+    { title: "Bônus 1: Acelerador de Consciência Silábica", desc: "O treino prático para fatiar e entender a estrutura das palavras sem decoreba." },
+    { title: "Bônus 2: Jogo de Retenção Acelerada (Fichas Silábicas)", desc: "Cartões visuais que transformam o aprendizado de palavras longas em brincadeira." },
+    { title: "Bônus 3: Protocolo de Fluência Leitora", desc: "Focado em fazer a leitura sair natural e com ritmo, usando frases curtas e imagens de apoio." },
+    { title: "Bônus 4: Tiras de Leitura Dinâmica", desc: "Pílulas de leitura rápida. Frases em bastão e cursiva para treinar o olhar em poucos minutos por dia." },
+    { title: "Bônus 5: Desafio dos 50 Textos Fatiados", desc: "Um sistema de quebra-cabeças com textos curtos que resolve as dificuldades mais avançadas." },
+    { title: "Bônus 6: Fundação da Leitura Rápida (Sílabas Simples)", desc: "O guia de consulta para a criança reconhecer padrões simples imediatamente." }
   ];
 
   const testimonials = [
-    { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!", impact: "Resultados impressionantes em 3 semanas" },
-    { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado.", impact: "Paz na hora dos estudos" },
-    { name: "Patrícia Mendes", text: "O método é muito simples de aplicar, mesmo eu não sendo pedagoga.", impact: "Fácil e prático" }
+    { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!" },
+    { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado." },
+    { name: "Patrícia Mendes", text: "O método é muito simples de aplicar, mesmo eu não sendo pedagoga." }
   ];
 
   const faqs = [
