@@ -212,7 +212,7 @@ function LandingPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 px-6 flex flex-col items-center text-center">
+      <section className="py-12 px-6 flex flex-col items-center text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="px-4 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-sm mb-6 uppercase tracking-widest font-bold">
           O FIM DA GUERRA NA HORA DA TAREFA
         </motion.div>
@@ -251,7 +251,7 @@ function LandingPage() {
       </section>
 
       {/* Section 7: O que você desbloqueia agora mesmo */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que você desbloqueia agora mesmo</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -314,7 +314,7 @@ function LandingPage() {
       </section>
 
       {/* NEW SECTION: Encontre o exercício certo em segundos */}
-      <section className="py-24 px-6 bg-slate-50">
+      <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
@@ -325,28 +325,25 @@ function LandingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { emoji: "🅰️", title: "Sons das Vogais", desc: "A base absoluta para destravar o reconhecimento visual e fonético inicial." },
-              { emoji: "✏️", title: "Letra Bastão Nativa", desc: "Desenhos limpos para gerar o primeiro choque de aprendizado rápido e simples." },
-              { emoji: "🖋️", title: "Transição Cursiva", desc: "O passo a passo para conectar e refinar a coordenação motora fina da criança." },
-              { emoji: "🧩", title: "Conexão Silábica", desc: "Exercícios cirúrgicos para o seu filho parar definitivamente de adivinhar palavras." },
-              { emoji: "🎲", title: "Jogos de Retenção", desc: "Atividades táteis e divertidas que substituem as telas e fixam o conteúdo na mente." },
-              { emoji: "⏱️", title: "Treinos de 10 Minutos", desc: "Pílulas diárias desenhadas sob medida para a rotina da mãe sobrecarregada." },
-              { emoji: "🚀", title: "Sílabas Complexas", desc: "Estágio focado em superar os travamentos mais avançados e difíceis da leitura." },
-              { emoji: "📖", title: "Fluência Leitora", desc: "Roteiro de ritmo natural para acabar de vez com a leitura pausada e robotizada." },
-              { emoji: "✍️", title: "Escrita Firme", desc: "Fixação completa para a criança começar a escrever frases inteiras com autonomia." }
+              { emoji: "🅰️", title: "Sons das Vogais" },
+              { emoji: "✏️", title: "Letra Bastão Nativa" },
+              { emoji: "🖋️", title: "Transição Cursiva" },
+              { emoji: "🧩", title: "Conexão Silábica" },
+              { emoji: "🎲", title: "Jogos de Retenção" },
+              { emoji: "⏱️", title: "Treinos de 10 Minutos" },
+              { emoji: "🚀", title: "Sílabas Complexas" },
+              { emoji: "📖", title: "Fluência Leitora" },
+              { emoji: "✍️", title: "Escrita Firme" }
             ].map((card, i) => (
               <motion.div
                 key={i}
                 whileHover={{ y: -5, borderColor: "#D4AF37" }}
-                className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all flex flex-col items-start gap-3"
+                className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all flex flex-col items-center text-center gap-3"
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">{card.emoji}</span>
-                  <h3 className="font-bold text-slate-900">{card.title}</h3>
-                </div>
-                <p className="text-sm text-slate-600 leading-relaxed">{card.desc}</p>
+                <span className="text-3xl">{card.emoji}</span>
+                <h3 className="font-bold text-slate-900 leading-tight">{card.title}</h3>
               </motion.div>
             ))}
           </div>
@@ -354,7 +351,7 @@ function LandingPage() {
       </section>
 
       {/* Logic */}
-      <section className="py-24 px-6 max-w-5xl mx-auto">
+      <section className="py-16 px-6 max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tight">Por que nosso método funciona quando a escola falha?</h2>
