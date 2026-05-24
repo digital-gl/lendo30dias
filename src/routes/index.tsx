@@ -263,7 +263,7 @@ function LandingPage() {
           </div>
           <div className="bg-slate-100 aspect-square rounded-3xl overflow-hidden shadow-2xl relative">
             <img 
-              src="https://i.imgur.com/CUW0w50.png" 
+              src="https://i.imgur.com/sDHjn2m.png" 
               alt="Criança lendo com alegria" 
               className="w-full h-full object-cover"
             />
