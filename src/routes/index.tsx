@@ -1,12 +1,78 @@
-import { motion } from "framer-motion";
-import { Check, BookOpen, Puzzle, Trophy, ChevronLeft, ChevronRight, Star, ShieldCheck, ChevronDown, ChevronUp } from "lucide-react";
-import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Check, BookOpen, Puzzle, Trophy, ChevronLeft, ChevronRight, Star, ShieldCheck, ChevronDown, ChevronUp, ShoppingBag } from "lucide-react";
+import { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from 'embla-carousel-react';
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
 });
+
+const salesData = [
+  { name: "Maria Silva", state: "MG" },
+  { name: "Ana Paula", state: "SP" },
+  { name: "Juliana Costa", state: "RJ" },
+  { name: "Fernanda Lima", state: "RS" },
+  { name: "Camila Souza", state: "BA" },
+  { name: "Letícia Oliveira", state: "PR" },
+  { name: "Beatriz Santos", state: "SC" },
+  { name: "Amanda Rocha", state: "GO" },
+  { name: "Renata Neves", state: "CE" },
+  { name: "Patrícia Gomes", state: "PE" }
+];
+
+function SalesToast() {
+  const [currentSale, setCurrentSale] = useState<typeof salesData[0] | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const triggerNotification = useCallback(() => {
+    const randomSale = salesData[Math.floor(Math.random() * salesData.length)];
+    setCurrentSale(randomSale);
+    setIsVisible(true);
+
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 4000);
+  }, []);
+
+  useEffect(() => {
+    const initialDelay = setTimeout(triggerNotification, 3000);
+    
+    const interval = setInterval(() => {
+      triggerNotification();
+    }, Math.floor(Math.random() * (15000 - 8000 + 1) + 8000));
+
+    return () => {
+      clearTimeout(initialDelay);
+      clearInterval(interval);
+    };
+  }, [triggerNotification]);
+
+  return (
+    <AnimatePresence>
+      {isVisible && currentSale && (
+        <motion.div
+          initial={{ opacity: 0, x: -50, scale: 0.9 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          exit={{ opacity: 0, x: -50, scale: 0.9 }}
+          className="fixed bottom-4 left-4 z-[100] bg-white border border-slate-100 shadow-2xl rounded-2xl p-4 flex items-center gap-4 min-w-[260px]"
+        >
+          <div className="bg-green-100 p-2 rounded-full">
+            <ShoppingBag className="w-5 h-5 text-green-600" />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-slate-900 font-bold text-sm">
+              {currentSale.name} ({currentSale.state})
+            </span>
+            <span className="text-green-600 text-xs font-medium uppercase tracking-tight">
+              Comprou o Premium
+            </span>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
 
 function LandingPage() {
   const [date, setDate] = useState("");
@@ -23,19 +89,25 @@ function LandingPage() {
     setTomorrow(nextDay.toLocaleDateString("pt-BR"));
   }, []);
 
-  const bonuses = [
-    { title: "Acelerador de Consciência Silábica", oldPrice: "47,90", desc: "Exercícios práticos para acelerar a percepção sonora." },
-    { title: "Jogo de Retenção Acelerada - Fichas Silábicas", oldPrice: "37,90", desc: "Material lúdico para fixar o conteúdo brincando." },
-    { title: "Protocolo de Fluência Leitora", oldPrice: "57,90", desc: "Guia passo a passo para aumentar a velocidade da leitura." },
-    { title: "Tiras de Leitura Dinâmica", oldPrice: "27,90", desc: "Ferramenta visual para focar nas palavras-chave." },
-    { title: "Desafio dos 50 Textos Fatiados", oldPrice: "67,90", desc: "Textos estruturados para prática diária progressiva." },
-    { title: "Fundação da Leitura Rápida", oldPrice: "37,90", desc: "As bases para uma leitura eficiente e compreensiva." }
+  const programItems = [
+    { title: "Nível 1: O Despertar Fonético (Letra Bastão e Cursiva)", desc: "O fim das adivinhações. Um passo a passo detalhado onde a criança entende o som real de cada letra, formando a conexão inicial." },
+    { title: "Nível 2: Conexão e Aceleração (Letra Bastão e Cursiva)", desc: "A mágica acontece. O cérebro da criança junta as peças e forma palavras reais sem esforço." },
+    { title: "Nível 3: Domínio e Confiança (Letra Bastão e Cursiva)", desc: "Leitura autônoma e escrita firme. O momento em que você respira aliviada ao ver seu filho lendo sozinho." }
+  ];
+
+  const bonusItems = [
+    { title: "Bônus 1: Acelerador de Consciência Silábica", desc: "O treino prático para fatiar e entender a estrutura das palavras sem decoreba." },
+    { title: "Bônus 2: Jogo de Retenção Acelerada (Fichas Silábicas)", desc: "Cartões visuais que transformam o aprendizado de palavras longas em brincadeira." },
+    { title: "Bônus 3: Protocolo de Fluência Leitora", desc: "Focado em fazer a leitura sair natural e com ritmo, usando frases curtas e imagens de apoio." },
+    { title: "Bônus 4: Tiras de Leitura Dinâmica", desc: "Pílulas de leitura rápida. Frases em bastão e cursiva para treinar o olhar em poucos minutos por dia." },
+    { title: "Bônus 5: Desafio dos 50 Textos Fatiados", desc: "Um sistema de quebra-cabeças com textos curtos que resolve as dificuldades mais avançadas." },
+    { title: "Bônus 6: Fundação da Leitura Rápida (Sílabas Simples)", desc: "O guia de consulta para a criança reconhecer padrões simples imediatamente." }
   ];
 
   const testimonials = [
-    { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!", impact: "Resultados impressionantes em 3 semanas" },
-    { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado.", impact: "Paz na hora dos estudos" },
-    { name: "Patrícia Mendes", text: "O método é muito simples de aplicar, mesmo eu não sendo pedagoga.", impact: "Fácil e prático" }
+    { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!" },
+    { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado." },
+    { name: "Patrícia Mendes", text: "O método é muito simples de aplicar, mesmo eu não sendo pedagoga." }
   ];
 
   const faqs = [
@@ -47,6 +119,7 @@ function LandingPage() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#D4AF37]/30">
+      <SalesToast />
       {/* Top Bar */}
       <div className="bg-black text-[#D4AF37] py-2 text-center text-sm font-bold uppercase tracking-wider sticky top-0 z-50">
         ⚠️ OFERTA VÁLIDA SOMENTE HOJE - {date}
@@ -86,30 +159,60 @@ function LandingPage() {
         </motion.button>
       </section>
 
-      {/* Grid Features */}
+      {/* Section 2: Entregáveis e Bônus */}
       <section className="py-24 px-6 bg-slate-50">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que você desbloqueia agora mesmo</h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[
-            { emoji: "📖", title: "Nível 1: O Despertar Fonético", text: "O fim das adivinhações. Um processo detalhado onde a criança entende o som real de cada letra." },
-            { emoji: "🧩", title: "Nível 2: Conexão e Aceleração", text: "A mágica acontece. O cérebro da criança começa a juntar as peças e formar as primeiras palavras reais." },
-            { emoji: "🏆", title: "Nível 3: Domínio e Confiança", text: "Leitura autônoma e escrita firme. O momento em que você respira aliviada ao ver seu filho lendo sozinho." }
-          ].map((card, i) => (
-            <motion.div 
-              key={i} 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-white p-10 rounded-3xl border border-slate-200 hover:border-[#D4AF37] transition-all shadow-sm hover:shadow-xl group flex flex-col items-center text-center"
-            >
-              <div className="w-24 h-24 rounded-full flex items-center justify-center mb-8 bg-slate-50 shadow-inner text-5xl">
-                {card.emoji}
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que você desbloqueia agora mesmo</h2>
+          
+          <div className="space-y-12">
+            <div>
+              <h3 className="text-xl font-black text-slate-400 uppercase tracking-widest mb-8 border-l-4 border-[#D4AF37] pl-4">O Programa Principal</h3>
+              <div className="space-y-6">
+                {programItems.map((item, i) => (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex gap-4 items-start bg-white p-6 rounded-2xl shadow-sm border border-slate-100"
+                  >
+                    <div className="mt-1 bg-[#D4AF37] rounded-full p-1 shrink-0">
+                      <Check className="text-white w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-lg text-slate-900 mb-1">{item.title}</h4>
+                      <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-              <h3 className="text-2xl font-bold mb-4">{card.title}</h3>
-              <p className="text-slate-600 leading-relaxed">{card.text}</p>
-            </motion.div>
-          ))}
+            </div>
+
+            <div>
+              <h3 className="text-xl font-black text-slate-400 uppercase tracking-widest mb-8 border-l-4 border-[#D4AF37] pl-4">Os 6 Bônus Exclusivos</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {bonusItems.map((item, i) => (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex gap-4 items-start bg-white p-6 rounded-2xl shadow-sm border border-slate-100"
+                  >
+                    <div className="mt-1 bg-[#D4AF37] rounded-full p-1 shrink-0">
+                      <Check className="text-white w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900 mb-1">{item.title}</h4>
+                      <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -198,15 +301,14 @@ function LandingPage() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
-          {bonuses.map((bonus, i) => (
+          {bonusItems.map((bonus, i) => (
             <div key={i} className="bg-white p-8 rounded-[2rem] shadow-md border border-slate-100 flex flex-col items-center text-center gap-6">
-              <div className="w-full aspect-[4/3] bg-slate-50 rounded-2xl flex items-center justify-center text-slate-300 font-black text-2xl border-2 border-dashed border-slate-200">BÔNUS {i+1}</div>
+              <div className="w-full aspect-[16/9] bg-slate-50 rounded-2xl flex items-center justify-center text-slate-300 font-black text-2xl border-2 border-dashed border-slate-200 uppercase tracking-tighter">BÔNUS {i+1}</div>
               <div className="flex-1 flex flex-col items-center">
-                <h3 className="text-2xl font-bold text-[#D4AF37] mb-3">{bonus.title}</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mb-3">{bonus.title}</h3>
                 <p className="text-slate-600 mb-6 leading-relaxed">{bonus.desc}</p>
                 <div className="flex items-center gap-3">
-                  <span className="text-slate-400 line-through">R$ {bonus.oldPrice}</span>
-                  <span className="bg-black text-[#D4AF37] text-xs font-black px-4 py-2 rounded-full uppercase tracking-tighter">GRÁTIS HOJE</span>
+                  <span className="bg-[#D4AF37] text-white text-xs font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-lg shadow-[#D4AF37]/20">Grátis hoje</span>
                 </div>
               </div>
             </div>
@@ -258,23 +360,23 @@ function LandingPage() {
                   </div>
                 </div>
 
-                <div className="flex justify-center items-center gap-1 mb-10 bg-slate-50 py-3 rounded-2xl">
+                <div className="flex justify-center items-center gap-2 mb-10 bg-slate-50 py-4 rounded-2xl border border-slate-100">
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((s) => <Star key={s} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
                   </div>
-                  <span className="text-slate-600 text-sm font-medium">+2.157 mães já usaram o material</span>
+                  <span className="text-slate-600 text-sm font-bold tracking-tight">+2.157 mães já usaram e conquistaram a leitura fluente</span>
                 </div>
 
                 <ul className="space-y-4 mb-12">
                   {[
                     "Material Completo Passo a Passo (Níveis 1, 2 e 3)",
-                    "Letra Bastão e Cursiva detalhado",
+                    "Protocolo de Letra Bastão e Cursiva",
                     "6 Bônus Exclusivos (Acesso Imediato)",
                     "Suporte prioritário para dúvidas"
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3 items-center">
-                      <div className="bg-[#D4AF37] rounded-full p-1"><Check className="text-white w-4 h-4" /></div>
-                      <span className="font-semibold text-slate-700">{item}</span>
+                      <div className="bg-[#D4AF37] rounded-full p-1 shadow-sm"><Check className="text-white w-4 h-4" /></div>
+                      <span className="font-bold text-slate-700">{item}</span>
                     </li>
                   ))}
                 </ul>
