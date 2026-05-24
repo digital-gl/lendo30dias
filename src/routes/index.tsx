@@ -663,7 +663,7 @@ function LandingPage() {
                       "Letra Bastão e Cursiva detalhado em passo a passo.",
                       "Suporte exclusivo para dúvidas."
                     ].map((item, i) => (
-                      <div key={i} className="flex gap-3 items-start justify-start w-full max-w-[280px]">
+                      <div key={i} className="flex gap-3 items-start justify-start w-full max-w-[280px] text-left">
                         <div className="mt-1 bg-[#D4AF37] rounded-full p-0.5 shrink-0"><Check className="text-white w-3 h-3" /></div>
                         <span className="font-bold text-slate-700 text-sm leading-snug">{item}</span>
                       </div>
