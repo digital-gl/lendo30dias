@@ -129,13 +129,23 @@ function LandingPage() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showPlayButton, setShowPlayButton] = useState(true);
+  const [showSocialPlayButton, setShowSocialPlayButton] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const socialVideoRef = useRef<HTMLVideoElement>(null);
 
   const handlePlayVideo = () => {
     if (videoRef.current) {
       videoRef.current.muted = false;
       videoRef.current.play();
       setShowPlayButton(false);
+    }
+  };
+
+  const handlePlaySocialVideo = () => {
+    if (socialVideoRef.current) {
+      socialVideoRef.current.muted = false;
+      socialVideoRef.current.play();
+      setShowSocialPlayButton(false);
     }
   };
 
@@ -724,7 +734,51 @@ function LandingPage() {
 
       {/* Section 10: Prova Social (Avaliações) */}
       <section className="py-16 px-6 bg-white">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que dizem as mamães</h2>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-8 tracking-tight">O que dizem as mamães</h2>
+        
+        <div className="mb-16 max-w-4xl mx-auto">
+          <div className="bg-black rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white aspect-[9/16] max-w-[320px] mx-auto relative group">
+            <video 
+              ref={socialVideoRef}
+              className="w-full h-full object-cover"
+              controls
+              playsInline
+              autoPlay
+              muted
+              loop
+            >
+              <source src="https://i.imgur.com/wmLSca4.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeos.
+            </video>
+
+            <AnimatePresence>
+              {showSocialPlayButton && (
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]"
+                >
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handlePlaySocialVideo}
+                    className="bg-[#D4AF37] hover:bg-[#B8860B] text-white p-6 rounded-full shadow-[0_0_50px_rgba(212,175,55,0.6)] mb-4 animate-pulse"
+                  >
+                    <Play className="w-10 h-10 fill-current" />
+                  </motion.button>
+                  <button 
+                    onClick={handlePlaySocialVideo}
+                    className="bg-[#D4AF37] hover:bg-[#B8860B] text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20 flex items-center gap-2 animate-bounce"
+                  >
+                    Olha o que aconteceu com essa mãe <ArrowDown className="w-4 h-4" />
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((t, i) => (
             <div key={i} className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center text-center">
@@ -737,20 +791,6 @@ function LandingPage() {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-16 max-w-4xl mx-auto">
-          <div className="bg-black rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white aspect-[9/16] max-w-[320px] mx-auto relative">
-            <video 
-              className="w-full h-full object-cover"
-              controls
-              playsInline
-              loop
-            >
-              <source src="https://i.imgur.com/wmLSca4.mp4" type="video/mp4" />
-              Seu navegador não suporta vídeos.
-            </video>
-          </div>
         </div>
       </section>
 
