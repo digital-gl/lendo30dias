@@ -366,10 +366,10 @@ function LandingPage() {
 
       {/* Section 9: Garantia */}
       <section className="py-24 px-6 bg-slate-50">
-        <div className="max-w-4xl mx-auto bg-white p-12 rounded-[3rem] shadow-2xl border-2 border-[#D4AF37]/20 flex flex-col items-center text-center">
-          <ShieldCheck className="w-24 h-24 text-[#D4AF37] mb-8" />
+        <div className="max-w-4xl mx-auto bg-[#D4AF37] p-8 md:p-12 rounded-[3rem] shadow-2xl border-4 border-white/20 flex flex-col items-center text-center text-white">
+          <ShieldCheck className="w-20 h-20 text-white mb-8" />
           <h2 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">Risco Zero para Você!</h2>
-          <p className="text-2xl text-slate-700 leading-relaxed max-w-3xl mb-0">
+          <p className="text-lg md:text-xl leading-relaxed max-w-3xl mb-0 opacity-90">
             Você tem <strong>7 dias de garantia incondicional</strong>. Baixe o material, aplique nosso método e veja com os próprios olhos. Se por qualquer motivo você achar que não é para o seu filho, devolvemos 100% do seu dinheiro. Sem burocracia.
           </p>
         </div>
@@ -381,12 +381,9 @@ function LandingPage() {
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((t, i) => (
             <div key={i} className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center text-center">
-              <div className="flex mb-6">
-                {[1, 2, 3, 4, 5].map((s) => <Star key={s} className="w-6 h-6 fill-yellow-400 text-yellow-400" />)}
-              </div>
-              <p className="text-slate-600 italic mb-10 flex-1 text-lg">"{t.text}"</p>
+              <p className="text-slate-600 italic mb-10 flex-1 text-lg leading-relaxed">"{t.text}"</p>
               <div className="flex flex-col items-center gap-3">
-                <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-[#D4AF37]/20" />
+                <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-[#D4AF37]/20 overflow-hidden" />
                 <span className="font-black text-slate-900 uppercase tracking-tight">{t.name}</span>
               </div>
             </div>
@@ -397,8 +394,8 @@ function LandingPage() {
       {/* Section 11: Quem Somos */}
       <section className="py-24 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
-          <div className="w-40 h-40 rounded-full bg-white p-2 shadow-2xl mb-12 overflow-hidden border-4 border-[#D4AF37]/20">
-             <div className="bg-slate-100 w-full h-full rounded-full flex items-center justify-center text-slate-400 text-xs text-center px-4 font-medium italic">
+          <div className="w-32 h-32 rounded-full bg-white p-2 shadow-2xl mb-12 overflow-hidden border-4 border-[#D4AF37]/20">
+             <div className="bg-slate-100 w-full h-full rounded-full flex items-center justify-center text-slate-400 text-[10px] text-center px-4 font-medium italic">
                 Foto Profissional
              </div>
           </div>
