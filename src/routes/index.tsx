@@ -747,7 +747,7 @@ function LandingPage() {
               playsInline
               loop
             >
-              <source src="https://i.imgur.com/sCrLF00.mp4" type="video/mp4" />
+              <source src="https://i.imgur.com/wmLSca4.mp4" type="video/mp4" />
               Seu navegador não suporta vídeos.
             </video>
           </div>
