@@ -251,9 +251,9 @@ function LandingPage() {
             className="w-full h-full object-cover"
             controls
             playsInline
-            autoPlay
-            muted
             loop
+            onPause={() => setShowPlayButton(true)}
+            onPlay={() => setShowPlayButton(false)}
           >
             <source src="https://i.imgur.com/1TVH4Pt.mp4" type="video/mp4" />
             Seu navegador não suporta vídeos.
