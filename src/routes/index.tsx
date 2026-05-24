@@ -295,15 +295,15 @@ function LandingPage() {
                   />
                   
                   {/* Bottom-Left Overlay */}
-                  <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-                    <div className="max-w-2xl">
-                      <div className="inline-block bg-[#D4AF37] text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest mb-4 shadow-lg">
+                  <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                    <div className="max-w-xl">
+                      <div className="inline-block bg-[#D4AF37] text-white px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-2 shadow-lg">
                         Material Digital
                       </div>
-                      <h3 className="text-2xl md:text-4xl font-black text-white mb-3 leading-tight uppercase tracking-tighter">
+                      <h3 className="text-lg md:text-xl font-black text-white mb-2 leading-tight uppercase tracking-tighter">
                         {example.title}
                       </h3>
-                      <p className="text-lg md:text-xl text-slate-200 font-medium leading-relaxed">
+                      <p className="text-sm md:text-base text-slate-200 font-medium leading-relaxed line-clamp-2 md:line-clamp-none">
                         {example.subtitle}
                       </p>
                     </div>
