@@ -330,11 +330,11 @@ function LandingPage() {
               ))}
             </ul>
           </div>
-          <div className="bg-slate-100 aspect-square rounded-xl overflow-hidden shadow-2xl relative">
+          <div className="bg-slate-100 aspect-video rounded-xl overflow-hidden shadow-2xl relative">
             <img 
               src="https://i.imgur.com/sDHjn2m.png" 
               alt="Criança lendo com alegria" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain bg-slate-100"
             />
           </div>
         </div>
@@ -511,14 +511,18 @@ function LandingPage() {
                   <img src={bonus.img} alt={bonus.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-lg font-black text-[#D4AF37] mb-2 uppercase tracking-tight">{bonus.title}</h3>
-                  <p className="text-sm text-slate-600 font-medium leading-relaxed mb-4">{bonus.desc}</p>
-                  <div className="flex items-center justify-center md:justify-start gap-3">
+                  <div className="flex flex-col items-center md:items-start gap-1 mb-2">
+                    <span className="text-xl">🎁</span>
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">BÔNUS {i + 1}</span>
+                  </div>
+                  <h3 className="text-lg font-black text-[#D4AF37] mb-1 uppercase tracking-tight">{bonus.title}</h3>
+                  <div className="flex flex-col items-center md:items-start mb-4">
                     <span className="text-red-600 line-through text-xs font-bold">R$ {bonus.oldPrice}</span>
-                    <span className="bg-emerald-500 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm">
-                      R$ 0,00 (ZERO)
+                    <span className="text-emerald-600 text-sm font-black uppercase tracking-tighter">
+                      Por R$ 0,00
                     </span>
                   </div>
+                  <p className="text-sm text-slate-600 font-medium leading-relaxed">{bonus.desc}</p>
                 </div>
               </motion.div>
             ))}
