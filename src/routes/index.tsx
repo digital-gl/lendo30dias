@@ -9,11 +9,18 @@ export const Route = createFileRoute("/")({
 });
 
 const recentSales = [
-  "Ana Clara (MG)", "Juliana Silva (SP)", "Mariana Costa (RJ)", "Fernanda Oliveira (PR)",
-  "Beatriz Santos (SC)", "Camila Mendes (RS)", "Amanda Ferreira (BA)", "Larissa Gomes (PE)",
-  "Patricia Lima (CE)", "Renata Alves (DF)", "Bruna Ribeiro (GO)", "Carla Martins (ES)",
-  "Paula Rodrigues (MT)", "Vanessa Araújo (MS)", "Tatiana Souza (RN)", "Aline Castro (PB)",
-  "Letícia Rocha (AL)", "Marcela Nunes (SE)", "Isabela Pinto (PI)", "Silvia Teixeira (MA)"
+  "Ana - MG", "Juliana - SP", "Mariana - RJ", "Fernanda - PR", "Beatriz - SC", 
+  "Camila - RS", "Amanda - BA", "Larissa - PE", "Patricia - CE", "Renata - DF", 
+  "Bruna - GO", "Carla - ES", "Paula - MT", "Vanessa - MS", "Tatiana - RN", 
+  "Aline - PB", "Letícia - AL", "Marcela - SE", "Isabela - PI", "Silvia - MA", 
+  "Carolina - MG", "Helena - SP", "Laura - RS", "Alice - PR", "Sophia - SC", 
+  "Manuela - BA", "Isabella - RJ", "Luiza - GO", "Valentina - MT", "Giovanna - MS", 
+  "Eduarda - PE", "Lorena - CE", "Lívia - RN", "Maitê - PB", "Antonella - AL", 
+  "Aurora - SE", "Catarina - PI", "Melissa - MA", "Agatha - RO", "Natália - AC", 
+  "Alícia - AP", "Rebeca - RR", "Cecília - TO", "Lavínia - PA", "Bianca - AM", 
+  "Emanuelly - MG", "Sarah - SP", "Elisa - RJ", "Esther - PR", "Clara - SC", 
+  "Marina - RS", "Isadora - BA", "Nina - PE", "Mirella - CE", "Stella - DF", 
+  "Evelyn - GO", "Joana - ES", "Milena - MT", "Heloísa - MS", "Bárbara - RN"
 ];
 
 interface Notification {
@@ -23,14 +30,13 @@ interface Notification {
 
 function SalesToast() {
   const [notifications, setNotifications] = useState<Notification[]>([]);
-  const [nextId, setNextId] = useState(0);
 
   const addNotification = useCallback((count: number = 1) => {
     setNotifications(prev => {
       const newNotifications = [...prev];
       for (let i = 0; i < count; i++) {
         const randomName = recentSales[Math.floor(Math.random() * recentSales.length)];
-        const id = Date.now() + i;
+        const id = Date.now() + i + Math.random();
         newNotifications.push({ id, name: randomName });
         
         // Remove after 4 seconds
@@ -43,7 +49,7 @@ function SalesToast() {
   }, []);
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: any;
 
     const runSequence = async () => {
       const wait = (ms: number) => new Promise(resolve => timeoutId = setTimeout(resolve, ms));
@@ -51,36 +57,32 @@ function SalesToast() {
       while (true) {
         // 1. Primeira aparece
         addNotification(1);
-        await wait(5000); // 5 segundos de espera
+        await wait(5000); // Próxima só deve aparecer após 5 segundos
 
-        // 2. Próxima aparece
-        addNotification(1);
-        await wait(2000); // 2 segundos de diferença
-
-        // 3. Aparecem 3 em seguida
+        // 2. Aparece 3 em seguida com 2 segundos de diferença
         for (let i = 0; i < 3; i++) {
           addNotification(1);
           await wait(2000);
         }
 
-        // 4. Depois de 10 segundos aparece 3 empilhadas de uma vez
+        // 3. Depois de 10 segundos aparece 3 empilhadas de uma vez
         await wait(10000);
         addNotification(3);
 
-        // 5. Após isso 2 a cada 5 segundos
+        // 4. Após isso 2 a cada 5 segundos
         for (let i = 0; i < 2; i++) {
           await wait(5000);
           addNotification(1);
         }
 
-        // 6. Após isso 2 a cada 2 segundos
+        // 5. Após isso 2 a cada 2 segundos
         for (let i = 0; i < 2; i++) {
           await wait(2000);
           addNotification(1);
         }
 
-        // Aguarda um pouco antes de reiniciar o ciclo
-        await wait(10000);
+        // Reinicia o ciclo
+        await wait(5000);
       }
     };
 
@@ -100,13 +102,13 @@ function SalesToast() {
             className="bg-white border border-slate-100 shadow-2xl rounded-2xl p-4 flex items-center gap-4 min-w-[260px] pointer-events-auto"
           >
             <div className="bg-green-100 p-2 rounded-full">
-              <ShoppingBag className="w-5 h-5 text-green-600" />
+              <span className="text-xl">🛒</span>
             </div>
             <div className="flex flex-col text-left">
               <span className="text-slate-900 font-bold text-sm">
                 {n.name}
               </span>
-              <span className="text-green-600 text-xs font-semibold">
+              <span className="text-slate-600 text-xs">
                 Comprou o Premium
               </span>
             </div>
@@ -245,6 +247,46 @@ function LandingPage() {
         </motion.button>
       </section>
 
+      {/* Section 7: O que você desbloqueia agora mesmo */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que você desbloqueia agora mesmo</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { 
+                emoji: "📘", 
+                title: "Caderno Nível 1: O Despertar Fonético (Bastão e Cursiva)", 
+                desc: "O fim do \"chute\" de palavras. Um passo a passo detalhado e visual onde seu filho entende, de uma vez por todas, o som real de cada letra. É a fundação sólida que a escola não construiu." 
+              },
+              { 
+                emoji: "🧩", 
+                title: "Caderno Nível 2: Conexão e Aceleração (Bastão e Cursiva)", 
+                desc: "Onde a mágica acontece. O cérebro da criança começa a unir os sons de forma automática, formando as primeiras palavras reais sem sofrimento e sem decoreba." 
+              },
+              { 
+                emoji: "🏆", 
+                title: "Caderno Nível 3: Domínio e Confiança (Bastão e Cursiva)", 
+                desc: "O passaporte para a autonomia. Exercícios avançados focados na leitura fluente e na escrita firme. O momento em que você respira aliviada ao ver seu filho lendo sozinho." 
+              }
+            ].map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-[#FFFBEB] p-10 rounded-[2.5rem] shadow-xl border border-[#D4AF37]/30 flex flex-col gap-6 text-center hover:shadow-2xl transition-all"
+              >
+                <div className="text-6xl">{item.emoji}</div>
+                <div>
+                  <h3 className="text-xl font-black mb-4 text-slate-900 leading-tight">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed font-medium">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Logic */}
       <section className="py-24 px-6 max-w-5xl mx-auto">
@@ -349,29 +391,38 @@ function LandingPage() {
         </div>
       </section>
       {/* Section 7: O que você desbloqueia agora mesmo */}
-      <section className="py-24 px-6 bg-slate-50">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que você desbloqueia agora mesmo</h2>
-          <div className="space-y-6">
-            {programItems.map((item, i) => (
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { 
+                emoji: "📘", 
+                title: "Caderno Nível 1: O Despertar Fonético (Bastão e Cursiva)", 
+                desc: "O fim do \"chute\" de palavras. Um passo a passo detalhado e visual onde seu filho entende, de uma vez por todas, o som real de cada letra. É a fundação sólida que a escola não construiu." 
+              },
+              { 
+                emoji: "🧩", 
+                title: "Caderno Nível 2: Conexão e Aceleração (Bastão e Cursiva)", 
+                desc: "Onde a mágica acontece. O cérebro da criança começa a unir os sons de forma automática, formando as primeiras palavras reais sem sofrimento e sem decoreba." 
+              },
+              { 
+                emoji: "🏆", 
+                title: "Caderno Nível 3: Domínio e Confiança (Bastão e Cursiva)", 
+                desc: "O passaporte para a autonomia. Exercícios avançados focados na leitura fluente e na escrita firme. O momento em que você respira aliviada ao ver seu filho lendo sozinho." 
+              }
+            ].map((item, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 rounded-[2rem] shadow-lg border border-slate-100 flex flex-col md:flex-row items-center gap-8 text-center md:text-left"
+                transition={{ delay: i * 0.1 }}
+                className="bg-[#FFFBEB] p-10 rounded-[2.5rem] shadow-xl border border-[#D4AF37]/30 flex flex-col gap-6 text-center hover:shadow-2xl transition-all"
               >
-                <div className={`w-24 h-24 rounded-[2rem] flex items-center justify-center shrink-0 ${
-                  i === 0 ? 'bg-amber-100 shadow-[0_10px_20px_rgba(251,191,36,0.2)]' : 
-                  i === 1 ? 'bg-indigo-100 shadow-[0_10px_20px_rgba(129,140,248,0.2)]' : 
-                  'bg-emerald-100 shadow-[0_10px_20px_rgba(52,211,153,0.2)]'
-                }`}>
-                  {i === 0 && <BookOpen className="w-12 h-12 text-amber-600" />}
-                  {i === 1 && <Puzzle className="w-12 h-12 text-indigo-600" />}
-                  {i === 2 && <Trophy className="w-12 h-12 text-emerald-600" />}
-                </div>
+                <div className="text-6xl">{item.emoji}</div>
                 <div>
-                  <h3 className="text-xl font-black mb-2 text-slate-900">{item.title}</h3>
+                  <h3 className="text-xl font-black mb-4 text-slate-900 leading-tight">{item.title}</h3>
                   <p className="text-slate-600 leading-relaxed font-medium">{item.desc}</p>
                 </div>
               </motion.div>
