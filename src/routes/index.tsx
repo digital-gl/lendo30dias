@@ -181,7 +181,7 @@ function LandingPage() {
     {
       title: "Protocolo de Fluência Leitora",
       subtitle: "Tiras de leitura dinâmica de 10 minutos para eliminar o ritmo robotizado e destravar a leitura natural.",
-      image: "https://i.imgur.com/sDHjn2m.png"
+      image: "https://i.imgur.com/Nna0yec.png"
     }
   ];
 
@@ -393,37 +393,37 @@ function LandingPage() {
                 title: "Acelerador de Consciência Silábica", 
                 desc: "Técnicas práticas para a criança dominar a estrutura das sílabas rapidamente.",
                 oldPrice: "47,90",
-                img: "https://i.imgur.com/EjFLXae.png"
+                img: "https://i.imgur.com/bMUryOw.png"
               },
               { 
                 title: "Jogo de Retenção Acelerada - Fichas Silábicas", 
                 desc: "Material lúdico para fixar o aprendizado de forma divertida e eficiente.",
                 oldPrice: "37,90",
-                img: "https://i.imgur.com/U2UOFMX.png"
+                img: "https://i.imgur.com/qFAa7Zz.png"
               },
               { 
                 title: "Protocolo de Fluência Leitora", 
                 desc: "O guia definitivo para eliminar a leitura pausada e robotizada.",
                 oldPrice: "57,90",
-                img: "https://i.imgur.com/v8RHNIB.png"
+                img: "https://i.imgur.com/WW7ZQ4G.png"
               },
               { 
                 title: "Tiras de Leitura Dinâmica", 
                 desc: "Exercícios rápidos de 10 minutos para destravar a leitura natural.",
                 oldPrice: "27,90",
-                img: "https://i.imgur.com/sDHjn2m.png"
+                img: "https://i.imgur.com/gSfIeGC.png"
               },
               { 
                 title: "Desafio dos 50 Textos Fatiados", 
                 desc: "Atividades progressivas que constroem a confiança na leitura de frases.",
                 oldPrice: "67,90",
-                img: "https://i.imgur.com/v8RHNIB.png"
+                img: "https://i.imgur.com/cteIyFd.png"
               },
               { 
                 title: "Fundação da Leitura Rápida", 
                 desc: "O segredo para acelerar a compreensão de textos sem cansaço.",
                 oldPrice: "37,90",
-                img: "https://i.imgur.com/EjFLXae.png"
+                img: "https://i.imgur.com/ao2RRIJ.png"
               }
             ].map((bonus, i) => (
               <motion.div 
@@ -441,7 +441,7 @@ function LandingPage() {
                   <h3 className="text-lg font-black text-[#D4AF37] mb-2 uppercase tracking-tight">{bonus.title}</h3>
                   <p className="text-sm text-slate-600 font-medium leading-relaxed mb-4">{bonus.desc}</p>
                   <div className="flex items-center justify-center md:justify-start gap-3">
-                    <span className="text-slate-400 line-through text-xs font-bold">R$ {bonus.oldPrice}</span>
+                    <span className="text-red-600 line-through text-xs font-bold">R$ {bonus.oldPrice}</span>
                     <span className="bg-emerald-500 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm">
                       R$ 0,00 (ZERO)
                     </span>
@@ -455,7 +455,7 @@ function LandingPage() {
             <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]" />
             <p className="text-slate-500 font-bold mb-2 uppercase tracking-widest text-sm">Empilhamento Total de Valor</p>
             <h4 className="text-xl md:text-2xl font-black text-slate-900 mb-2">
-              Valor total dos bônus: <span className="text-slate-400 line-through">R$ 277,30</span>
+              Valor total dos bônus: <span className="text-red-600 line-through">R$ 277,30</span>
             </h4>
             <div className="text-[#D4AF37] font-black text-3xl md:text-4xl uppercase tracking-tighter">
               Levando a oferta hoje: TUDO GRÁTIS
@@ -471,7 +471,7 @@ function LandingPage() {
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-100 flex flex-col shadow-sm text-center">
               <h3 className="text-2xl font-black text-slate-400 mb-8 uppercase tracking-widest">Plano Básico</h3>
               <div className="mb-10">
-                <p className="text-slate-400 line-through text-lg">R$ 27,90</p>
+                <p className="text-red-600 line-through text-lg">R$ 27,90</p>
                 <div className="flex flex-wrap items-baseline justify-center gap-1">
                   <span className="text-2xl font-bold text-slate-900">R$</span>
                   <span className="text-6xl font-black text-slate-900">10,00</span>
@@ -515,7 +515,7 @@ function LandingPage() {
                   <p className="text-[#D4AF37] font-black mb-8 uppercase tracking-widest text-xs">Acesso Vitalício + Todos os Bônus</p>
                   
                   <div className="mb-6">
-                    <p className="text-slate-400 line-through text-lg">R$ 297,00</p>
+                    <p className="text-red-600 line-through text-lg">R$ 297,00</p>
                     <div className="flex flex-col items-center justify-center gap-1">
                       <div className="flex items-baseline justify-center gap-2">
                         <span className="text-xl font-bold text-slate-900">R$</span>
