@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, BookOpen, Puzzle, Trophy, ChevronLeft, ChevronRight, Star, ShieldCheck, ChevronDown, ChevronUp, ShoppingBag } from "lucide-react";
+import { Check, BookOpen, Puzzle, Trophy, ChevronLeft, ChevronRight, Star, ShieldCheck, ChevronDown, ChevronUp, ShoppingBag, ArrowDown } from "lucide-react";
 import { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from 'embla-carousel-react';
 import { createFileRoute } from "@tanstack/react-router";
@@ -569,18 +569,31 @@ function LandingPage() {
                 ))}
               </div>
 
-              <button className="w-full py-5 rounded-2xl border-2 border-slate-200 text-slate-400 font-black hover:bg-slate-50 transition-colors uppercase tracking-tight">
+              <button className="w-full py-5 rounded-2xl border-2 border-slate-200 text-slate-400 font-black hover:bg-slate-50 transition-colors uppercase tracking-tight mb-8">
                 Quero apenas o básico
               </button>
+
+              <div className="bg-slate-900 text-white py-4 px-6 rounded-2xl text-center text-xs font-bold flex flex-col items-center justify-center gap-3 shadow-xl border border-[#D4AF37]/30">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">⚠️</span>
+                  <span>Ainda dá tempo de levar a melhor opção: atualizações e os 6 Bônus Exclusivos!</span>
+                </div>
+                <div className="flex justify-center gap-4">
+                  {[1, 2, 3].map((i) => (
+                    <motion.div
+                      key={i}
+                      animate={{ y: [0, 5, 0] }}
+                      transition={{ repeat: Infinity, duration: 1, delay: i * 0.2 }}
+                    >
+                      <ArrowDown className="w-5 h-5 text-[#D4AF37]" />
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Premium Plan */}
             <div className="flex flex-col gap-4">
-              <div className="bg-slate-900 text-white py-4 px-6 rounded-2xl text-center text-sm font-bold flex flex-col md:flex-row items-center justify-center gap-2 shadow-xl border border-[#D4AF37]/30">
-                <span className="text-xl">⚠️</span>
-                <span>Ainda dá tempo de levar a melhor opção: atualizações e os 6 Bônus Exclusivos!</span>
-              </div>
-              
               <div className="relative group flex-1">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] rounded-[3rem] blur opacity-40 group-hover:opacity-60 transition duration-1000"></div>
                 <div className="relative bg-white p-8 md:p-10 rounded-[3rem] border-4 border-[#D4AF37] flex flex-col h-full shadow-[0_30px_60px_rgba(212,175,55,0.25)] overflow-hidden text-center">
