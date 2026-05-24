@@ -428,11 +428,11 @@ function LandingPage() {
           <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
             <div className="flex gap-6">
               {productExamples.map((example, i) => (
-                <div key={i} className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] aspect-[4/3] md:aspect-[3/2] bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 relative overflow-hidden group">
+                <div key={i} className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] aspect-[4/5] md:aspect-[3/2] bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 relative overflow-hidden group">
                   <img 
                     src={example.image} 
                     alt={example.title}
-                    className="absolute inset-0 w-full h-full object-contain p-4 bg-white"
+                    className="absolute inset-0 w-full h-full object-cover md:object-contain bg-white"
                   />
                   
                   {/* Bottom-Center Overlay */}
@@ -454,15 +454,15 @@ function LandingPage() {
             </div>
           </div>
           
-          <div className="flex items-center justify-between mt-12">
+          <div className="flex flex-col items-center justify-center mt-12 gap-6">
+            <div className="flex gap-4">
+              <button onClick={() => emblaApi?.scrollPrev()} className="w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all"><ChevronLeft className="w-8 h-8" /></button>
+              <button onClick={() => emblaApi?.scrollNext()} className="w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all"><ChevronRight className="w-8 h-8" /></button>
+            </div>
             <div className="flex gap-2">
               {productExamples.map((_, i) => (
                 <div key={i} className={`w-2.5 h-2.5 rounded-full transition-all ${selectedIndex === i ? 'bg-[#D4AF37] w-8' : 'bg-slate-200'}`} />
               ))}
-            </div>
-            <div className="flex gap-4">
-              <button onClick={() => emblaApi?.scrollPrev()} className="w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all"><ChevronLeft className="w-8 h-8" /></button>
-              <button onClick={() => emblaApi?.scrollNext()} className="w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all"><ChevronRight className="w-8 h-8" /></button>
             </div>
           </div>
         </div>
