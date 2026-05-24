@@ -57,7 +57,7 @@ function SalesToast() {
       while (true) {
         // 1. Primeira aparece
         addNotification(1);
-        await wait(5000); // Próxima só deve aparecer após 5 segundos
+        await wait(10000); // Próxima só deve aparecer após 10 segundos (5+5)
 
         // 2. Aparece 3 em seguida com 2 segundos de diferença
         for (let i = 0; i < 3; i++) {
@@ -65,24 +65,27 @@ function SalesToast() {
           await wait(2000);
         }
 
-        // 3. Depois de 10 segundos aparece 3 empilhadas de uma vez
-        await wait(10000);
-        addNotification(3);
+        // 3. Depois de 15 segundos aparece 3 em seguida (não de uma vez)
+        await wait(15000); // (10+5)
+        for (let i = 0; i < 3; i++) {
+          addNotification(1);
+          await wait(2000);
+        }
 
-        // 4. Após isso 2 a cada 5 segundos
+        // 4. Após isso 2 a cada 10 segundos
         for (let i = 0; i < 2; i++) {
-          await wait(5000);
+          await wait(10000); // (5+5)
           addNotification(1);
         }
 
-        // 5. Após isso 2 a cada 2 segundos
+        // 5. Após isso 2 a cada 7 segundos
         for (let i = 0; i < 2; i++) {
-          await wait(2000);
+          await wait(7000); // (2+5)
           addNotification(1);
         }
 
         // Reinicia o ciclo
-        await wait(5000);
+        await wait(10000); // (5+5)
       }
     };
 
@@ -310,6 +313,46 @@ function LandingPage() {
         </div>
       </section>
 
+      {/* NEW SECTION: Encontre o exercício certo em segundos */}
+      <section className="py-24 px-6 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+              Encontre o exercício certo em segundos
+            </h2>
+            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Um ecossistema perfeitamente organizado para você identificar a dificuldade exata do seu filho e aplicar a solução imediata.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { emoji: "🅰️", title: "Sons das Vogais", desc: "A base absoluta para destravar o reconhecimento visual e fonético inicial." },
+              { emoji: "✏️", title: "Letra Bastão Nativa", desc: "Desenhos limpos para gerar o primeiro choque de aprendizado rápido e simples." },
+              { emoji: "🖋️", title: "Transição Cursiva", desc: "O passo a passo para conectar e refinar a coordenação motora fina da criança." },
+              { emoji: "🧩", title: "Conexão Silábica", desc: "Exercícios cirúrgicos para o seu filho parar definitivamente de adivinhar palavras." },
+              { emoji: "🎲", title: "Jogos de Retenção", desc: "Atividades táteis e divertidas que substituem as telas e fixam o conteúdo na mente." },
+              { emoji: "⏱️", title: "Treinos de 10 Minutos", desc: "Pílulas diárias desenhadas sob medida para a rotina da mãe sobrecarregada." },
+              { emoji: "🚀", title: "Sílabas Complexas", desc: "Estágio focado em superar os travamentos mais avançados e difíceis da leitura." },
+              { emoji: "📖", title: "Fluência Leitora", desc: "Roteiro de ritmo natural para acabar de vez com a leitura pausada e robotizada." },
+              { emoji: "✍️", title: "Escrita Firme", desc: "Fixação completa para a criança começar a escrever frases inteiras com autonomia." }
+            ].map((card, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -5, borderColor: "#D4AF37" }}
+                className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all flex flex-col items-start gap-3"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">{card.emoji}</span>
+                  <h3 className="font-bold text-slate-900">{card.title}</h3>
+                </div>
+                <p className="text-sm text-slate-600 leading-relaxed">{card.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Logic */}
       <section className="py-24 px-6 max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -330,11 +373,11 @@ function LandingPage() {
               ))}
             </ul>
           </div>
-          <div className="bg-slate-100 aspect-video rounded-xl overflow-hidden shadow-2xl relative">
+          <div className="bg-slate-100 aspect-[16/11] md:aspect-[4/3] rounded-xl overflow-hidden shadow-2xl relative w-full">
             <img 
               src="https://i.imgur.com/sDHjn2m.png" 
               alt="Criança lendo com alegria" 
-              className="w-full h-full object-contain bg-slate-100"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
@@ -351,7 +394,7 @@ function LandingPage() {
           <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
             <div className="flex gap-6">
               {productExamples.map((example, i) => (
-                <div key={i} className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] aspect-video bg-slate-100 rounded-[2.5rem] shadow-2xl border border-slate-100 relative overflow-hidden group">
+                <div key={i} className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] aspect-[4/3] md:aspect-[3/2] bg-slate-100 rounded-[2.5rem] shadow-2xl border border-slate-100 relative overflow-hidden group">
                   <img 
                     src={example.image} 
                     alt={example.title}
@@ -410,46 +453,6 @@ function LandingPage() {
               <p className="text-slate-800 font-medium leading-relaxed">{item.text}</p>
             </motion.div>
           ))}
-        </div>
-      </section>
-      {/* Section 7: O que você desbloqueia agora mesmo */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que você desbloqueia agora mesmo</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { 
-                emoji: "📘", 
-                title: "Caderno Nível 1: O Despertar Fonético (Bastão e Cursiva)", 
-                desc: "O fim do \"chute\" de palavras. Um passo a passo detalhado e visual onde seu filho entende, de uma vez por todas, o som real de cada letra. É a fundação sólida que a escola não construiu." 
-              },
-              { 
-                emoji: "🧩", 
-                title: "Caderno Nível 2: Conexão e Aceleração (Bastão e Cursiva)", 
-                desc: "Onde a mágica acontece. O cérebro da criança começa a unir os sons de forma automática, formando as primeiras palavras reais sem sofrimento e sem decoreba." 
-              },
-              { 
-                emoji: "🏆", 
-                title: "Caderno Nível 3: Domínio e Confiança (Bastão e Cursiva)", 
-                desc: "O passaporte para a autonomia. Exercícios avançados focados na leitura fluente e na escrita firme. O momento em que você respira aliviada ao ver seu filho lendo sozinho." 
-              }
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-[#FFFBEB] p-10 rounded-[2.5rem] shadow-xl border border-[#D4AF37]/30 flex flex-col gap-6 text-center hover:shadow-2xl transition-all"
-              >
-                <div className="text-6xl">{item.emoji}</div>
-                <div>
-                  <h3 className="text-xl font-black mb-4 text-slate-900 leading-tight">{item.title}</h3>
-                  <p className="text-slate-600 leading-relaxed font-medium">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -562,7 +565,7 @@ function LandingPage() {
                   "Nível 2: Conexão e Aceleração",
                   "Nível 3: Domínio e Confiança"
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-3 items-center justify-center">
+                  <div key={i} className="flex gap-3 items-center justify-start w-full max-w-[250px]">
                     <Check className="text-slate-300 w-4 h-4 shrink-0" />
                     <span className="text-slate-600 font-medium">{item}</span>
                   </div>
@@ -626,7 +629,7 @@ function LandingPage() {
                       "Letra Bastão e Cursiva detalhado em passo a passo.",
                       "Suporte exclusivo para dúvidas."
                     ].map((item, i) => (
-                      <div key={i} className="flex gap-3 items-start justify-center text-left">
+                      <div key={i} className="flex gap-3 items-start justify-start w-full max-w-[280px]">
                         <div className="mt-1 bg-[#D4AF37] rounded-full p-0.5 shrink-0"><Check className="text-white w-3 h-3" /></div>
                         <span className="font-bold text-slate-700 text-sm leading-snug">{item}</span>
                       </div>
@@ -648,7 +651,7 @@ function LandingPage() {
                       "Bônus 5: Desafio dos 50 Textos Fatiados",
                       "Bônus 6: Fundação da Leitura Rápida"
                     ].map((item, i) => (
-                      <div key={i} className="flex gap-3 items-center justify-center text-left w-full max-w-[280px]">
+                      <div key={i} className="flex gap-3 items-center justify-start w-full max-w-[280px]">
                         <Check className="text-[#D4AF37] w-4 h-4 shrink-0" />
                         <span className="font-bold text-slate-600 text-sm">{item}</span>
                       </div>
