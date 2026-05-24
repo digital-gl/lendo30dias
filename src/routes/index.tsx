@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, BookOpen, Puzzle, Trophy, ChevronLeft, ChevronRight, Star, ShieldCheck, ChevronDown, ChevronUp, ShoppingBag } from "lucide-react";
+import { Check, BookOpen, Puzzle, Trophy, ChevronLeft, ChevronRight, Star, ShieldCheck, ChevronDown, ChevronUp, ShoppingBag, ArrowDown } from "lucide-react";
 import { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from 'embla-carousel-react';
 import { createFileRoute } from "@tanstack/react-router";
