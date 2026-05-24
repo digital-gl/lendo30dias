@@ -9,11 +9,18 @@ export const Route = createFileRoute("/")({
 });
 
 const recentSales = [
-  "Ana Clara (MG)", "Juliana Silva (SP)", "Mariana Costa (RJ)", "Fernanda Oliveira (PR)",
-  "Beatriz Santos (SC)", "Camila Mendes (RS)", "Amanda Ferreira (BA)", "Larissa Gomes (PE)",
-  "Patricia Lima (CE)", "Renata Alves (DF)", "Bruna Ribeiro (GO)", "Carla Martins (ES)",
-  "Paula Rodrigues (MT)", "Vanessa Araújo (MS)", "Tatiana Souza (RN)", "Aline Castro (PB)",
-  "Letícia Rocha (AL)", "Marcela Nunes (SE)", "Isabela Pinto (PI)", "Silvia Teixeira (MA)"
+  "Ana - MG", "Juliana - SP", "Mariana - RJ", "Fernanda - PR", "Beatriz - SC", 
+  "Camila - RS", "Amanda - BA", "Larissa - PE", "Patricia - CE", "Renata - DF", 
+  "Bruna - GO", "Carla - ES", "Paula - MT", "Vanessa - MS", "Tatiana - RN", 
+  "Aline - PB", "Letícia - AL", "Marcela - SE", "Isabela - PI", "Silvia - MA", 
+  "Carolina - MG", "Helena - SP", "Laura - RS", "Alice - PR", "Sophia - SC", 
+  "Manuela - BA", "Isabella - RJ", "Luiza - GO", "Valentina - MT", "Giovanna - MS", 
+  "Eduarda - PE", "Lorena - CE", "Lívia - RN", "Maitê - PB", "Antonella - AL", 
+  "Aurora - SE", "Catarina - PI", "Melissa - MA", "Agatha - RO", "Natália - AC", 
+  "Alícia - AP", "Rebeca - RR", "Cecília - TO", "Lavínia - PA", "Bianca - AM", 
+  "Emanuelly - MG", "Sarah - SP", "Elisa - RJ", "Esther - PR", "Clara - SC", 
+  "Marina - RS", "Isadora - BA", "Nina - PE", "Mirella - CE", "Stella - DF", 
+  "Evelyn - GO", "Joana - ES", "Milena - MT", "Heloísa - MS", "Bárbara - RN"
 ];
 
 interface Notification {
@@ -23,14 +30,13 @@ interface Notification {
 
 function SalesToast() {
   const [notifications, setNotifications] = useState<Notification[]>([]);
-  const [nextId, setNextId] = useState(0);
 
   const addNotification = useCallback((count: number = 1) => {
     setNotifications(prev => {
       const newNotifications = [...prev];
       for (let i = 0; i < count; i++) {
         const randomName = recentSales[Math.floor(Math.random() * recentSales.length)];
-        const id = Date.now() + i;
+        const id = Date.now() + i + Math.random();
         newNotifications.push({ id, name: randomName });
         
         // Remove after 4 seconds
@@ -43,7 +49,7 @@ function SalesToast() {
   }, []);
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: any;
 
     const runSequence = async () => {
       const wait = (ms: number) => new Promise(resolve => timeoutId = setTimeout(resolve, ms));
@@ -51,36 +57,32 @@ function SalesToast() {
       while (true) {
         // 1. Primeira aparece
         addNotification(1);
-        await wait(5000); // 5 segundos de espera
+        await wait(5000); // Próxima só deve aparecer após 5 segundos
 
-        // 2. Próxima aparece
-        addNotification(1);
-        await wait(2000); // 2 segundos de diferença
-
-        // 3. Aparecem 3 em seguida
+        // 2. Aparece 3 em seguida com 2 segundos de diferença
         for (let i = 0; i < 3; i++) {
           addNotification(1);
           await wait(2000);
         }
 
-        // 4. Depois de 10 segundos aparece 3 empilhadas de uma vez
+        // 3. Depois de 10 segundos aparece 3 empilhadas de uma vez
         await wait(10000);
         addNotification(3);
 
-        // 5. Após isso 2 a cada 5 segundos
+        // 4. Após isso 2 a cada 5 segundos
         for (let i = 0; i < 2; i++) {
           await wait(5000);
           addNotification(1);
         }
 
-        // 6. Após isso 2 a cada 2 segundos
+        // 5. Após isso 2 a cada 2 segundos
         for (let i = 0; i < 2; i++) {
           await wait(2000);
           addNotification(1);
         }
 
-        // Aguarda um pouco antes de reiniciar o ciclo
-        await wait(10000);
+        // Reinicia o ciclo
+        await wait(5000);
       }
     };
 
