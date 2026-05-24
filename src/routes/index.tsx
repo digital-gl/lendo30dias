@@ -294,8 +294,8 @@ function LandingPage() {
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   
-                  {/* Bottom-Left Overlay */}
-                  <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                  {/* Bottom-Center Overlay */}
+                  <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col items-center text-center">
                     <div className="max-w-xl">
                       <div className="inline-block bg-[#D4AF37] text-white px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-2 shadow-lg">
                         Material Digital
