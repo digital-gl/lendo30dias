@@ -188,8 +188,11 @@ function LandingPage() {
             </ul>
           </div>
           <div className="bg-slate-100 aspect-square rounded-[3rem] overflow-hidden shadow-2xl relative">
-             <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/20 to-transparent" />
-             <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-medium italic">Espaço para Foto de Criança Lendo</div>
+            <img 
+              src="https://i.imgur.com/CUW0w50.png" 
+              alt="Criança lendo com alegria" 
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>
