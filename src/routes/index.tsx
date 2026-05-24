@@ -129,13 +129,23 @@ function LandingPage() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showPlayButton, setShowPlayButton] = useState(true);
+  const [showSocialPlayButton, setShowSocialPlayButton] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const socialVideoRef = useRef<HTMLVideoElement>(null);
 
   const handlePlayVideo = () => {
     if (videoRef.current) {
       videoRef.current.muted = false;
       videoRef.current.play();
       setShowPlayButton(false);
+    }
+  };
+
+  const handlePlaySocialVideo = () => {
+    if (socialVideoRef.current) {
+      socialVideoRef.current.muted = false;
+      socialVideoRef.current.play();
+      setShowSocialPlayButton(false);
     }
   };
 
