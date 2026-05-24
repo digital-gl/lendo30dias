@@ -16,63 +16,104 @@ const recentSales = [
   "Letícia Rocha (AL)", "Marcela Nunes (SE)", "Isabela Pinto (PI)", "Silvia Teixeira (MA)"
 ];
 
+interface Notification {
+  id: number;
+  name: string;
+}
+
 function SalesToast() {
-  const [currentName, setCurrentName] = useState<string | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [lastIndex, setLastIndex] = useState<number>(-1);
+  const [notifications, setNotifications] = useState<Notification[]>([]);
+  const [nextId, setNextId] = useState(0);
 
-  const triggerNotification = useCallback(() => {
-    let newIndex;
-    do {
-      newIndex = Math.floor(Math.random() * recentSales.length);
-    } while (newIndex === lastIndex && recentSales.length > 1);
-
-    setLastIndex(newIndex);
-    setCurrentName(recentSales[newIndex]);
-    setIsVisible(true);
-
-    setTimeout(() => {
-      setIsVisible(false);
-    }, 4000);
-  }, [lastIndex]);
+  const addNotification = useCallback((count: number = 1) => {
+    setNotifications(prev => {
+      const newNotifications = [...prev];
+      for (let i = 0; i < count; i++) {
+        const randomName = recentSales[Math.floor(Math.random() * recentSales.length)];
+        const id = Date.now() + i;
+        newNotifications.push({ id, name: randomName });
+        
+        // Remove after 4 seconds
+        setTimeout(() => {
+          setNotifications(current => current.filter(n => n.id !== id));
+        }, 4000);
+      }
+      return newNotifications;
+    });
+  }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      triggerNotification();
-    }, 30000);
+    let timeoutId: NodeJS.Timeout;
 
-    // Trigger first notification after a short delay
-    const firstTimeout = setTimeout(triggerNotification, 5000);
+    const runSequence = async () => {
+      const wait = (ms: number) => new Promise(resolve => timeoutId = setTimeout(resolve, ms));
 
-    return () => {
-      clearInterval(interval);
-      clearTimeout(firstTimeout);
+      while (true) {
+        // 1. Primeira aparece
+        addNotification(1);
+        await wait(5000); // "após segundos" -> assumindo 5s
+
+        // 2. Próxima aparece
+        addNotification(1);
+        await wait(2000); // "com segundos de diferença" -> assumindo 2s
+
+        // 3. Mais 3 em seguida com diferença
+        for (let i = 0; i < 2; i++) {
+          addNotification(1);
+          await wait(2000);
+        }
+
+        // 4. Depois de 10 segundos aparece 3 empilhadas
+        await wait(10000);
+        addNotification(3);
+
+        // 5. Após isso 2 a cada 5 segundos
+        await wait(5000);
+        addNotification(1);
+        await wait(5000);
+        addNotification(1);
+
+        // 6. Após isso 2 cada 2 segundos
+        await wait(2000);
+        addNotification(1);
+        await wait(2000);
+        addNotification(1);
+
+        // Aguarda um pouco antes de reiniciar o ciclo
+        await wait(10000);
+      }
     };
-  }, [triggerNotification]);
+
+    runSequence();
+    return () => clearTimeout(timeoutId);
+  }, [addNotification]);
 
   return (
-    <AnimatePresence>
-      {isVisible && currentName && (
-        <motion.div
-          initial={{ opacity: 0, x: -50, scale: 0.9 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          exit={{ opacity: 0, x: -50, scale: 0.9 }}
-          className="fixed bottom-4 left-4 z-[100] bg-white border border-slate-100 shadow-2xl rounded-2xl p-4 flex items-center gap-4 min-w-[260px]"
-        >
-          <div className="bg-green-100 p-2 rounded-full">
-            <ShoppingBag className="w-5 h-5 text-green-600" />
-          </div>
-          <div className="flex flex-col text-left">
-            <span className="text-slate-900 font-bold text-sm">
-              {currentName}
-            </span>
-            <span className="text-green-600 text-xs font-semibold">
-              Comprou o Premium
-            </span>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <div className="fixed bottom-4 left-4 z-[100] flex flex-col-reverse gap-3 pointer-events-none">
+      <AnimatePresence>
+        {notifications.map((n) => (
+          <motion.div
+            key={n.id}
+            initial={{ opacity: 0, x: -50, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: -50, scale: 0.9 }}
+            className="bg-white border border-slate-100 shadow-2xl rounded-2xl p-4 flex items-center gap-4 min-w-[260px] pointer-events-auto"
+          >
+            <div className="bg-green-100 p-2 rounded-full">
+              <ShoppingBag className="w-5 h-5 text-green-600" />
+            </div>
+            <div className="flex flex-col text-left">
+              <span className="text-slate-900 font-bold text-sm">
+                {n.name}
+              </span>
+              <span className="text-green-600 text-xs font-semibold">
+                Comprou o Premium
+              </span>
+            </div>
+          </motion.div>
+        ))}
+      </AnimatePresence>
+    </div>
   );
 }
 
@@ -80,7 +121,17 @@ function LandingPage() {
   const [date, setDate] = useState("");
   const [tomorrow, setTomorrow] = useState("");
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaApi.on('select', onSelect);
+    return () => {
+      emblaApi.off('select', onSelect);
+    };
+  }, [emblaApi]);
 
   useEffect(() => {
     const today = new Date();
@@ -104,6 +155,29 @@ function LandingPage() {
     { title: "Bônus 4: Tiras de Leitura Dinâmica", desc: "Pílulas de leitura rápida. Frases em bastão e cursiva para treinar o olhar em poucos minutos por dia." },
     { title: "Bônus 5: Desafio dos 50 Textos Fatiados", desc: "Um sistema de quebra-cabeças com textos curtos que resolve as dificuldades mais avançadas." },
     { title: "Bônus 6: Fundação da Leitura Rápida (Sílabas Simples)", desc: "O guia de consulta para a criança reconhecer padrões simples imediatamente." }
+  ];
+
+  const productExamples = [
+    {
+      title: "Caderno de Grafismo Fônico - Nível 1",
+      subtitle: "Fundação fônica completa em Letra Bastão e Cursiva para acabar com o hábito de chutar palavras."
+    },
+    {
+      title: "Conexão Silábica - Nível 2",
+      subtitle: "O cérebro da criança começa a juntar os sons de forma automatizada para formar as primeiras palavras reais."
+    },
+    {
+      title: "Domínio e Autonomia - Nível 3",
+      subtitle: "Passo a passo avançado focado na leitura fluente de frases longas e fixação da escrita firme."
+    },
+    {
+      title: "Jogos e Fichas Silábicas Práticas",
+      subtitle: "Gamificação domiciliar para prender a atenção da criança e acelerar a memorização sem cansaço."
+    },
+    {
+      title: "Protocolo de Fluência Leitora",
+      subtitle: "Tiras de leitura dinâmica de 10 minutos para eliminar o ritmo robotizado e destravar a leitura natural."
+    }
   ];
 
   const testimonials = [
@@ -187,7 +261,7 @@ function LandingPage() {
               ))}
             </ul>
           </div>
-          <div className="bg-slate-100 aspect-square rounded-[3rem] overflow-hidden shadow-2xl relative">
+          <div className="bg-slate-100 aspect-square rounded-3xl overflow-hidden shadow-2xl relative">
             <img 
               src="https://i.imgur.com/CUW0w50.png" 
               alt="Criança lendo com alegria" 
@@ -197,32 +271,52 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Carousel Social Proof */}
-      <section className="py-24 bg-slate-50 overflow-hidden">
-        <div className="text-center mb-16 px-6">
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Resultados que Devolvem o Alívio</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">Veja como a rotina de estudos dessas famílias foi transformada definitivamente.</p>
+      {/* Section 5: EXEMPLOS REAIS */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-16">
+          <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">EXEMPLOS REAIS</h2>
+          <p className="text-xl text-slate-600 font-medium">Veja o que você vai receber</p>
         </div>
         
-        <div className="relative max-w-5xl mx-auto px-6 md:px-12">
+        <div className="relative max-w-7xl mx-auto px-6">
           <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
-            <div className="flex gap-4 md:gap-6">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="flex-[0_0_90%] md:flex-[0_0_60%] aspect-video bg-white rounded-[2rem] shadow-xl border border-slate-100 flex items-center justify-center text-slate-300 italic font-medium overflow-hidden">
-                   <div className="bg-slate-100 w-full h-full flex items-center justify-center">
-                    {i === 1 ? "Prints de WhatsApp (Horizontal)" : `Resultado ${i} (Horizontal)`}
-                   </div>
+            <div className="flex gap-6">
+              {productExamples.map((example, i) => (
+                <div key={i} className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] aspect-video bg-slate-100 rounded-[2.5rem] shadow-2xl border border-slate-100 relative overflow-hidden group">
+                  {/* Placeholder for real product images */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center text-slate-400 italic font-medium">
+                    Imagem do Produto: {example.title}
+                  </div>
+                  
+                  {/* Bottom-Left Overlay */}
+                  <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                    <div className="max-w-2xl">
+                      <div className="inline-block bg-[#D4AF37] text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest mb-4 shadow-lg">
+                        Material Digital
+                      </div>
+                      <h3 className="text-2xl md:text-4xl font-black text-white mb-3 leading-tight uppercase tracking-tighter">
+                        {example.title}
+                      </h3>
+                      <p className="text-lg md:text-xl text-slate-200 font-medium leading-relaxed">
+                        {example.subtitle}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
-          <button onClick={() => emblaApi?.scrollPrev()} className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full items-center justify-center text-slate-600 hover:text-[#D4AF37] transition-all"><ChevronLeft className="w-8 h-8" /></button>
-          <button onClick={() => emblaApi?.scrollNext()} className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full items-center justify-center text-slate-600 hover:text-[#D4AF37] transition-all"><ChevronRight className="w-8 h-8" /></button>
           
-          <div className="flex justify-center gap-2 mt-8">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="w-2.5 h-2.5 rounded-full bg-slate-300" />
-            ))}
+          <div className="flex items-center justify-between mt-12">
+            <div className="flex gap-2">
+              {productExamples.map((_, i) => (
+                <div key={i} className={`w-2.5 h-2.5 rounded-full transition-all ${selectedIndex === i ? 'bg-[#D4AF37] w-8' : 'bg-slate-200'}`} />
+              ))}
+            </div>
+            <div className="flex gap-4">
+              <button onClick={() => emblaApi?.scrollPrev()} className="w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all"><ChevronLeft className="w-8 h-8" /></button>
+              <button onClick={() => emblaApi?.scrollNext()} className="w-14 h-14 bg-white shadow-xl border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all"><ChevronRight className="w-8 h-8" /></button>
+            </div>
           </div>
         </div>
       </section>
@@ -334,13 +428,13 @@ function LandingPage() {
                   
                   <div className="mb-6">
                     <p className="text-slate-400 line-through text-lg">R$ 297,00</p>
-                    <div className="flex flex-col items-center">
-                      <div className="flex flex-wrap items-baseline justify-center gap-1">
-                        <span className="text-2xl font-bold text-slate-900">R$</span>
+                    <div className="flex flex-col items-center justify-center gap-1">
+                      <div className="flex items-baseline justify-center gap-2">
+                        <span className="text-xl font-bold text-slate-900">R$</span>
                         <span className="text-6xl md:text-7xl font-black text-slate-900">59,90</span>
-                        <span className="text-slate-500 font-medium">à vista</span>
+                        <span className="text-slate-500 font-bold text-sm uppercase tracking-tighter">à vista</span>
                       </div>
-                      <p className="text-[#D4AF37] font-black text-lg mt-1 uppercase tracking-tighter">Ou 6x de R$ 5,49 no cartão</p>
+                      <p className="text-[#D4AF37] font-black text-lg md:text-xl mt-1 uppercase tracking-tighter">Ou 6x de R$ 5,49 no cartão</p>
                     </div>
                   </div>
 
@@ -405,9 +499,9 @@ function LandingPage() {
       {/* Section 9: Garantia */}
       <section className="py-24 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto bg-[#D4AF37] p-8 md:p-12 rounded-[3rem] shadow-2xl border-4 border-white/20 flex flex-col items-center text-center text-white">
-          <ShieldCheck className="w-20 h-20 text-white mb-8" />
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">Risco Zero para Você!</h2>
-          <p className="text-lg md:text-xl leading-relaxed max-w-3xl mb-0 opacity-90">
+          <ShieldCheck className="w-16 h-16 md:w-20 md:h-20 text-white mb-6 md:mb-8" />
+          <h2 className="text-2xl md:text-4xl font-extrabold mb-6 md:mb-8 tracking-tight uppercase">Risco Zero para Você!</h2>
+          <p className="text-sm md:text-lg leading-relaxed max-w-2xl mb-0 font-medium">
             Você tem <strong>7 dias de garantia incondicional</strong>. Baixe o material, aplique nosso método e veja com os próprios olhos. Se por qualquer motivo você achar que não é para o seu filho, devolvemos 100% do seu dinheiro. Sem burocracia.
           </p>
         </div>
