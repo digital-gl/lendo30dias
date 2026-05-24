@@ -350,6 +350,47 @@ function LandingPage() {
           ))}
         </div>
       </section>
+
+      {/* Section 7: O que você desbloqueia agora mesmo */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que você desbloqueia agora mesmo</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { 
+                emoji: "📘", 
+                title: "Caderno Nível 1: O Despertar Fonético (Bastão e Cursiva)", 
+                desc: "O fim do \"chute\" de palavras. Um passo a passo detalhado e visual onde seu filho entende, de uma vez por todas, o som real de cada letra. É a fundação sólida que a escola não construiu." 
+              },
+              { 
+                emoji: "🧩", 
+                title: "Caderno Nível 2: Conexão e Aceleração (Bastão e Cursiva)", 
+                desc: "Onde a mágica acontece. O cérebro da criança começa a unir os sons de forma automática, formando as primeiras palavras reais sem sofrimento e sem decoreba." 
+              },
+              { 
+                emoji: "🏆", 
+                title: "Caderno Nível 3: Domínio e Confiança (Bastão e Cursiva)", 
+                desc: "O passaporte para a autonomia. Exercícios avançados focados na leitura fluente e na escrita firme. O momento em que você respira aliviada ao ver seu filho lendo sozinho." 
+              }
+            ].map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-[#FFFBEB] p-10 rounded-[2.5rem] shadow-xl border border-[#D4AF37]/30 flex flex-col gap-6 text-center hover:shadow-2xl transition-all"
+              >
+                <div className="text-6xl">{item.emoji}</div>
+                <div>
+                  <h3 className="text-xl font-black mb-4 text-slate-900 leading-tight">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed font-medium">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Section 7: O que você desbloqueia agora mesmo */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
