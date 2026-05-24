@@ -599,7 +599,7 @@ function LandingPage() {
                   "Nível 2: Conexão e Aceleração",
                   "Nível 3: Domínio e Confiança"
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-3 items-center justify-start w-full max-w-[250px]">
+                  <div key={i} className="flex gap-3 items-center justify-start w-full max-w-[250px] text-left">
                     <Check className="text-slate-300 w-4 h-4 shrink-0" />
                     <span className="text-slate-600 font-medium">{item}</span>
                   </div>
