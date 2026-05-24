@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, BookOpen, Puzzle, Trophy, ChevronLeft, ChevronRight, Star, ShieldCheck, ChevronDown, ChevronUp, ShoppingBag, ArrowDown } from "lucide-react";
-import { useEffect, useState, useCallback } from "react";
+import { Check, BookOpen, Puzzle, Trophy, ChevronLeft, ChevronRight, Star, ShieldCheck, ChevronDown, ChevronUp, ShoppingBag, ArrowDown, Play } from "lucide-react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import useEmblaCarousel from 'embla-carousel-react';
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -128,6 +128,16 @@ function LandingPage() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [showPlayButton, setShowPlayButton] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlayVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+      videoRef.current.play();
+      setShowPlayButton(false);
+    }
+  };
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -225,8 +235,9 @@ function LandingPage() {
           Chega de promessas escolares vazias. Assuma o controle com o passo a passo domiciliar que destrava a leitura e devolve a autoestima da criança, mesmo que você não seja professora.
         </p>
 
-        <div className="w-full max-w-[320px] aspect-[9/16] bg-black rounded-3xl mb-12 shadow-2xl overflow-hidden border-8 border-white relative mx-auto">
+        <div className="w-full max-w-[320px] aspect-[9/16] bg-black rounded-3xl mb-12 shadow-2xl overflow-hidden border-8 border-white relative mx-auto group">
           <video 
+            ref={videoRef}
             className="w-full h-full object-cover"
             controls
             playsInline
@@ -237,6 +248,32 @@ function LandingPage() {
             <source src="https://i.imgur.com/1TVH4Pt.mp4" type="video/mp4" />
             Seu navegador não suporta vídeos.
           </video>
+
+          <AnimatePresence>
+            {showPlayButton && (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]"
+              >
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handlePlayVideo}
+                  className="bg-[#D4AF37] hover:bg-[#B8860B] text-white p-6 rounded-full shadow-[0_0_50px_rgba(212,175,55,0.6)] mb-4 animate-pulse"
+                >
+                  <Play className="w-10 h-10 fill-current" />
+                </motion.button>
+                <button 
+                  onClick={handlePlayVideo}
+                  className="bg-[#D4AF37] hover:bg-[#B8860B] text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20"
+                >
+                  Veja como seu filho aprenderá rapidinho!
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         <motion.button 
