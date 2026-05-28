@@ -271,13 +271,13 @@ function LandingPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={handlePlayVideo}
-                  className="bg-[#D4AF37] hover:bg-[#B8860B] text-white p-6 rounded-full shadow-[0_0_50px_rgba(212,175,55,0.6)] mb-4 animate-pulse"
+                  className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white p-6 rounded-full shadow-[0_0_50px_rgba(34,197,94,0.5)] mb-4 animate-pulse"
                 >
                   <Play className="w-10 h-10 fill-current" />
                 </motion.button>
                 <button 
                   onClick={handlePlayVideo}
-                  className="bg-[#D4AF37] hover:bg-[#B8860B] text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20"
+                  className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20"
                 >
                   Veja como seu filho aprenderá rapidinho!
                 </button>
@@ -291,7 +291,7 @@ function LandingPage() {
           whileTap={{ scale: 0.95 }}
           animate={{ scale: [1, 1.02, 1] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black text-xl py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(212,175,55,0.4)] uppercase tracking-tight w-full max-w-sm"
+          className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-xl py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight w-full max-w-sm"
         >
           QUERO DESTRAVAR A LEITURA DO MEU FILHO
         </motion.button>
@@ -625,7 +625,7 @@ function LandingPage() {
                 href="https://pay.kirvano.com/ed693073-011c-4fc0-a8f6-332ec1815d19"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-5 rounded-2xl border-2 border-slate-200 text-slate-400 font-black hover:bg-slate-50 transition-colors uppercase tracking-tight mb-8 inline-block text-center"
+                className="w-full py-5 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black uppercase tracking-tight mb-8 inline-block text-center shadow-lg"
               >
                 Quero apenas o básico
               </a>
@@ -718,7 +718,7 @@ function LandingPage() {
                     rel="noopener noreferrer"
                     animate={{ scale: [1, 1.03, 1] }}
                     transition={{ repeat: Infinity, duration: 1.5 }}
-                    className="w-full py-7 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black text-xl md:text-2xl shadow-[0_15px_40px_rgba(212,175,55,0.4)] uppercase tracking-tight mb-4 inline-block text-center"
+                    className="w-full py-7 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-xl md:text-2xl shadow-[0_15px_40px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-4 inline-block text-center"
                   >
                     QUERO O MATERIAL COMPLETO
                   </motion.a>
@@ -776,13 +776,13 @@ function LandingPage() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handlePlaySocialVideo}
-                    className="bg-[#D4AF37] hover:bg-[#B8860B] text-white p-6 rounded-full shadow-[0_0_50px_rgba(212,175,55,0.6)] mb-4 animate-pulse"
+                    className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white p-6 rounded-full shadow-[0_0_50px_rgba(34,197,94,0.5)] mb-4 animate-pulse"
                   >
                     <Play className="w-10 h-10 fill-current" />
                   </motion.button>
                   <button 
                     onClick={handlePlaySocialVideo}
-                    className="bg-[#D4AF37] hover:bg-[#B8860B] text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20 flex items-center gap-2 animate-bounce"
+                    className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20 flex items-center gap-2 animate-bounce"
                   >
                     Olha o que aconteceu com essa mãe <ArrowDown className="w-4 h-4" />
                   </button>
