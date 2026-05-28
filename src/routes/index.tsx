@@ -378,7 +378,7 @@ function LandingPage() {
               { emoji: "✏️", title: "Letra Bastão Nativa" },
               { emoji: "🖋️", title: "Transição Cursiva" },
               { emoji: "🧩", title: "Conexão Silábica" },
-              { emoji: "🎲", title: "Jogos de Retenção" },
+              
               { emoji: "⏱️", title: "Treinos de 10 Minutos" },
               { emoji: "🚀", title: "Sílabas Complexas" },
               { emoji: "📖", title: "Fluência Leitora" },
