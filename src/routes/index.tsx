@@ -57,35 +57,35 @@ function SalesToast() {
       while (true) {
         // 1. Primeira aparece
         addNotification(1);
-        await wait(10000); // Próxima só deve aparecer após 10 segundos (5+5)
+        await wait(25000);
 
-        // 2. Aparece 3 em seguida com 2 segundos de diferença
+        // 2. Aparece 3 em seguida com pausa maior
         for (let i = 0; i < 3; i++) {
           addNotification(1);
-          await wait(2000);
+          await wait(6000);
         }
 
-        // 3. Depois de 15 segundos aparece 3 em seguida (não de uma vez)
-        await wait(15000); // (10+5)
+        // 3. Pausa longa, depois 3 em seguida
+        await wait(35000);
         for (let i = 0; i < 3; i++) {
           addNotification(1);
-          await wait(2000);
+          await wait(6000);
         }
 
-        // 4. Após isso 2 a cada 10 segundos
+        // 4. 2 a cada 25 segundos
         for (let i = 0; i < 2; i++) {
-          await wait(10000); // (5+5)
+          await wait(25000);
           addNotification(1);
         }
 
-        // 5. Após isso 2 a cada 7 segundos
+        // 5. 2 a cada 20 segundos
         for (let i = 0; i < 2; i++) {
-          await wait(7000); // (2+5)
+          await wait(20000);
           addNotification(1);
         }
 
         // Reinicia o ciclo
-        await wait(10000); // (5+5)
+        await wait(30000);
       }
     };
 
@@ -621,9 +621,14 @@ function LandingPage() {
                 ))}
               </div>
 
-              <button className="w-full py-5 rounded-2xl border-2 border-slate-200 text-slate-400 font-black hover:bg-slate-50 transition-colors uppercase tracking-tight mb-8">
+              <a
+                href="https://pay.kirvano.com/ed693073-011c-4fc0-a8f6-332ec1815d19"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-5 rounded-2xl border-2 border-slate-200 text-slate-400 font-black hover:bg-slate-50 transition-colors uppercase tracking-tight mb-8 inline-block text-center"
+              >
                 Quero apenas o básico
-              </button>
+              </a>
 
               <div className="bg-slate-900 text-white py-4 px-6 rounded-2xl text-center text-xs font-bold flex flex-col items-center justify-center gap-3 shadow-xl border border-[#D4AF37]/30">
                 <div className="flex items-center gap-2">
@@ -657,14 +662,14 @@ function LandingPage() {
                   <p className="text-[#D4AF37] font-black mb-8 uppercase tracking-widest text-xs">Acesso Vitalício + Todos os Bônus</p>
                   
                   <div className="mb-6">
-                    <p className="text-red-600 line-through text-lg">R$ 297,00</p>
+                     <p className="text-red-600 line-through text-lg">R$ 297,00</p>
                     <div className="flex flex-col items-center justify-center gap-1">
                       <div className="flex items-baseline justify-center gap-2">
                         <span className="text-xl font-bold text-slate-900">R$</span>
-                        <span className="text-6xl md:text-7xl font-black text-slate-900">59,90</span>
+                        <span className="text-6xl md:text-7xl font-black text-slate-900">39,90</span>
                         <span className="text-slate-500 font-bold text-sm uppercase tracking-tighter">à vista</span>
                       </div>
-                      <p className="text-[#D4AF37] font-black text-lg md:text-xl mt-1 uppercase tracking-tighter">Ou 6x de R$ 5,49 no cartão</p>
+                      <p className="text-[#D4AF37] font-black text-lg md:text-xl mt-1 uppercase tracking-tighter">Ou 6x de R$ 6,65 no cartão</p>
                     </div>
                   </div>
 
@@ -707,13 +712,16 @@ function LandingPage() {
                     ))}
                   </div>
 
-                  <motion.button 
+                  <motion.a
+                    href="https://pay.kirvano.com/d8d06c9f-e81b-4a4e-af6a-1a259dfe4fc7"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     animate={{ scale: [1, 1.03, 1] }}
                     transition={{ repeat: Infinity, duration: 1.5 }}
-                    className="w-full py-7 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black text-xl md:text-2xl shadow-[0_15px_40px_rgba(212,175,55,0.4)] uppercase tracking-tight mb-4"
+                    className="w-full py-7 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black text-xl md:text-2xl shadow-[0_15px_40px_rgba(212,175,55,0.4)] uppercase tracking-tight mb-4 inline-block text-center"
                   >
                     QUERO O MATERIAL COMPLETO
-                  </motion.button>
+                  </motion.a>
                   <p className="text-center text-red-600 font-black text-xs uppercase tracking-wider">
                     Último dia com desconto do material completo. 
                     <br />
@@ -782,6 +790,19 @@ function LandingPage() {
               )}
             </AnimatePresence>
           </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
+          {[
+            "https://i.imgur.com/X0ZwkvB.jpeg",
+            "https://i.imgur.com/AVTtPHm.jpeg",
+            "https://i.imgur.com/GcM5DRs.jpeg",
+            "https://i.imgur.com/keJhWpy.jpeg",
+          ].map((src, i) => (
+            <div key={i} className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
+              <img src={src} alt={`Prova social ${i + 1}`} className="w-full h-auto object-contain" loading="lazy" />
+            </div>
+          ))}
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
