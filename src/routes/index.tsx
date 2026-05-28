@@ -271,7 +271,7 @@ function LandingPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={handlePlayVideo}
-                  className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white p-6 rounded-full shadow-[0_0_50px_rgba(34,197,94,0.5)] mb-4 animate-pulse"
+                  className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] hover:from-[#D4AF37] hover:to-[#FFEA70] text-white p-6 rounded-full shadow-[0_0_50px_rgba(212,175,55,0.6)] mb-4 animate-pulse"
                 >
                   <Play className="w-10 h-10 fill-current" />
                 </motion.button>
