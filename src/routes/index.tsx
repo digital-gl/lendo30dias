@@ -792,7 +792,7 @@ function LandingPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
+        <div className="grid grid-cols-2 gap-3 sm:gap-6 max-w-4xl mx-auto mb-16">
           {[
             "https://i.imgur.com/X0ZwkvB.jpeg",
             "https://i.imgur.com/AVTtPHm.jpeg",
