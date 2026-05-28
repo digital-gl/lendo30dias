@@ -795,8 +795,8 @@ function LandingPage() {
         <div className="grid grid-cols-2 gap-3 sm:gap-6 max-w-4xl mx-auto mb-16">
           {[
             "https://i.imgur.com/X0ZwkvB.jpeg",
-            "https://i.imgur.com/AVTtPHm.jpeg",
             "https://i.imgur.com/GcM5DRs.jpeg",
+            "https://i.imgur.com/AVTtPHm.jpeg",
             "https://i.imgur.com/keJhWpy.jpeg",
           ].map((src, i) => (
             <div key={i} className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
