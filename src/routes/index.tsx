@@ -518,37 +518,37 @@ function LandingPage() {
                 title: "Acelerador de Consciência Silábica", 
                 desc: "Técnicas práticas para a criança dominar a estrutura das sílabas rapidamente.",
                 oldPrice: "47,90",
-                img: "https://i.imgur.com/bMUryOw.png"
+                img: "https://i.imgur.com/K1FlMpX.png"
               },
               { 
                 title: "Jogo de Retenção Acelerada - Fichas Silábicas", 
                 desc: "Material lúdico para fixar o aprendizado de forma divertida e eficiente.",
                 oldPrice: "37,90",
-                img: "https://i.imgur.com/qFAa7Zz.png"
+                img: "https://i.imgur.com/b6Is6u1.png"
               },
               { 
                 title: "Protocolo de Fluência Leitora", 
                 desc: "O guia definitivo para eliminar a leitura pausada e robotizada.",
                 oldPrice: "57,90",
-                img: "https://i.imgur.com/WW7ZQ4G.png"
+                img: "https://i.imgur.com/G0VWwVm.png"
               },
               { 
                 title: "Tiras de Leitura Dinâmica", 
                 desc: "Exercícios rápidos de 10 minutos para destravar a leitura natural.",
                 oldPrice: "27,90",
-                img: "https://i.imgur.com/gSfIeGC.png"
+                img: "https://i.imgur.com/hW2TZJo.png"
               },
               { 
                 title: "Desafio dos 50 Textos Fatiados", 
                 desc: "Atividades progressivas que constroem a confiança na leitura de frases.",
                 oldPrice: "67,90",
-                img: "https://i.imgur.com/cteIyFd.png"
+                img: "https://i.imgur.com/iOWJrLt.png"
               },
               { 
                 title: "Fundação da Leitura Rápida", 
                 desc: "O segredo para acelerar a compreensão de textos sem cansaço.",
                 oldPrice: "37,90",
-                img: "https://i.imgur.com/ao2RRIJ.png"
+                img: "https://i.imgur.com/2q7pzfO.png"
               }
             ].map((bonus, i) => (
               <motion.div 
