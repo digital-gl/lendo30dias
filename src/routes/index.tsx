@@ -760,7 +760,7 @@ function LandingPage() {
               onPause={() => setShowSocialPlayButton(true)}
               onPlay={() => setShowSocialPlayButton(false)}
             >
-              <source src="https://i.imgur.com/wmLSca4.mp4" type="video/mp4" />
+              <source src="https://i.imgur.com/O6sRb8J.mp4" type="video/mp4" />
               Seu navegador não suporta vídeos.
             </video>
 
