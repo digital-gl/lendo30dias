@@ -760,7 +760,7 @@ function LandingPage() {
               onPause={() => setShowSocialPlayButton(true)}
               onPlay={() => setShowSocialPlayButton(false)}
             >
-              <source src="https://i.imgur.com/wmLSca4.mp4" type="video/mp4" />
+              <source src="https://i.imgur.com/O6sRb8J.mp4" type="video/mp4" />
               Seu navegador não suporta vídeos.
             </video>
 
@@ -784,7 +784,7 @@ function LandingPage() {
                     onClick={handlePlaySocialVideo}
                     className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] hover:from-[#D4AF37] hover:to-[#FFEA70] text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20 flex items-center gap-2 animate-bounce"
                   >
-                    Olha o que aconteceu com essa mãe <ArrowDown className="w-4 h-4" />
+                    Olha o que aconteceu com essa mãe uma semana após adquirir o material! <ArrowDown className="w-4 h-4" />
                   </button>
                 </motion.div>
               )}
