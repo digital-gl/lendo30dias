@@ -621,9 +621,14 @@ function LandingPage() {
                 ))}
               </div>
 
-              <button className="w-full py-5 rounded-2xl border-2 border-slate-200 text-slate-400 font-black hover:bg-slate-50 transition-colors uppercase tracking-tight mb-8">
+              <a
+                href="https://pay.kirvano.com/ed693073-011c-4fc0-a8f6-332ec1815d19"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-5 rounded-2xl border-2 border-slate-200 text-slate-400 font-black hover:bg-slate-50 transition-colors uppercase tracking-tight mb-8 inline-block text-center"
+              >
                 Quero apenas o básico
-              </button>
+              </a>
 
               <div className="bg-slate-900 text-white py-4 px-6 rounded-2xl text-center text-xs font-bold flex flex-col items-center justify-center gap-3 shadow-xl border border-[#D4AF37]/30">
                 <div className="flex items-center gap-2">
@@ -657,14 +662,14 @@ function LandingPage() {
                   <p className="text-[#D4AF37] font-black mb-8 uppercase tracking-widest text-xs">Acesso Vitalício + Todos os Bônus</p>
                   
                   <div className="mb-6">
-                    <p className="text-red-600 line-through text-lg">R$ 297,00</p>
+                     <p className="text-red-600 line-through text-lg">R$ 297,00</p>
                     <div className="flex flex-col items-center justify-center gap-1">
                       <div className="flex items-baseline justify-center gap-2">
                         <span className="text-xl font-bold text-slate-900">R$</span>
-                        <span className="text-6xl md:text-7xl font-black text-slate-900">59,90</span>
+                        <span className="text-6xl md:text-7xl font-black text-slate-900">39,90</span>
                         <span className="text-slate-500 font-bold text-sm uppercase tracking-tighter">à vista</span>
                       </div>
-                      <p className="text-[#D4AF37] font-black text-lg md:text-xl mt-1 uppercase tracking-tighter">Ou 6x de R$ 5,49 no cartão</p>
+                      <p className="text-[#D4AF37] font-black text-lg md:text-xl mt-1 uppercase tracking-tighter">Ou 6x de R$ 6,65 no cartão</p>
                     </div>
                   </div>
 
@@ -707,13 +712,16 @@ function LandingPage() {
                     ))}
                   </div>
 
-                  <motion.button 
+                  <motion.a
+                    href="https://pay.kirvano.com/d8d06c9f-e81b-4a4e-af6a-1a259dfe4fc7"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     animate={{ scale: [1, 1.03, 1] }}
                     transition={{ repeat: Infinity, duration: 1.5 }}
-                    className="w-full py-7 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black text-xl md:text-2xl shadow-[0_15px_40px_rgba(212,175,55,0.4)] uppercase tracking-tight mb-4"
+                    className="w-full py-7 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black text-xl md:text-2xl shadow-[0_15px_40px_rgba(212,175,55,0.4)] uppercase tracking-tight mb-4 inline-block text-center"
                   >
                     QUERO O MATERIAL COMPLETO
-                  </motion.button>
+                  </motion.a>
                   <p className="text-center text-red-600 font-black text-xs uppercase tracking-wider">
                     Último dia com desconto do material completo. 
                     <br />
