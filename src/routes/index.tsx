@@ -559,7 +559,7 @@ function LandingPage() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-slate-100 flex flex-col md:flex-row items-center gap-6 group hover:shadow-2xl transition-all"
               >
-                <div className="w-full md:w-40 aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden shrink-0">
+                <div className="w-full md:w-40 aspect-square bg-slate-100 rounded-2xl overflow-hidden shrink-0">
                   <img src={bonus.img} alt={bonus.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className="flex-1 text-center md:text-left">
