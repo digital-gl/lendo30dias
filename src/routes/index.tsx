@@ -57,35 +57,35 @@ function SalesToast() {
       while (true) {
         // 1. Primeira aparece
         addNotification(1);
-        await wait(10000); // Próxima só deve aparecer após 10 segundos (5+5)
+        await wait(25000);
 
-        // 2. Aparece 3 em seguida com 2 segundos de diferença
+        // 2. Aparece 3 em seguida com pausa maior
         for (let i = 0; i < 3; i++) {
           addNotification(1);
-          await wait(2000);
+          await wait(6000);
         }
 
-        // 3. Depois de 15 segundos aparece 3 em seguida (não de uma vez)
-        await wait(15000); // (10+5)
+        // 3. Pausa longa, depois 3 em seguida
+        await wait(35000);
         for (let i = 0; i < 3; i++) {
           addNotification(1);
-          await wait(2000);
+          await wait(6000);
         }
 
-        // 4. Após isso 2 a cada 10 segundos
+        // 4. 2 a cada 25 segundos
         for (let i = 0; i < 2; i++) {
-          await wait(10000); // (5+5)
+          await wait(25000);
           addNotification(1);
         }
 
-        // 5. Após isso 2 a cada 7 segundos
+        // 5. 2 a cada 20 segundos
         for (let i = 0; i < 2; i++) {
-          await wait(7000); // (2+5)
+          await wait(20000);
           addNotification(1);
         }
 
         // Reinicia o ciclo
-        await wait(10000); // (5+5)
+        await wait(30000);
       }
     };
 
