@@ -122,6 +122,95 @@ function SalesToast() {
   );
 }
 
+function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }) {
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={onClose}
+        >
+          <motion.div
+            initial={{ scale: 0.8, y: 40, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            exit={{ scale: 0.8, y: 40, opacity: 0 }}
+            transition={{ type: "spring", duration: 0.5 }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative bg-white rounded-[2rem] max-w-md w-full p-6 md:p-8 shadow-2xl border-4 border-[#D4AF37] text-center overflow-hidden"
+          >
+            <button
+              onClick={onClose}
+              aria-label="Fechar"
+              className="absolute top-3 right-4 text-slate-400 hover:text-slate-700 text-3xl font-light leading-none"
+            >
+              ×
+            </button>
+
+            <div className="inline-block bg-red-600 text-white px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest mb-4 animate-pulse">
+              ⚠️ Oferta Limitada
+            </div>
+
+            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-3 leading-tight uppercase tracking-tight">
+              Espera, Mãe! <br />Última Chance Real
+            </h2>
+
+            <p className="text-slate-600 font-medium mb-5 text-sm md:text-base leading-relaxed">
+              Só agora, nesta tela, liberamos o <strong>Plano Premium completo + 6 bônus</strong> por um preço que <strong>não volta a aparecer</strong>.
+            </p>
+
+            <div className="bg-[#FFFBEB] border-2 border-dashed border-[#D4AF37] rounded-2xl p-5 mb-5">
+              <p className="text-red-600 line-through text-base font-bold">De R$ 59,90</p>
+              <p className="text-xs uppercase tracking-widest text-slate-500 font-bold mb-1">Por apenas</p>
+              <div className="flex items-baseline justify-center gap-1">
+                <span className="text-2xl font-bold text-slate-900">R$</span>
+                <motion.span
+                  animate={{ scale: [1, 1.12, 1] }}
+                  transition={{ repeat: Infinity, duration: 1 }}
+                  className="text-6xl md:text-7xl font-black text-[#D4AF37] inline-block"
+                  style={{ textShadow: "0 6px 24px rgba(212,175,55,0.4)" }}
+                >
+                  19,90
+                </motion.span>
+              </div>
+              <p className="text-emerald-600 font-black text-xs uppercase tracking-tighter mt-2">
+                Economia de R$ 40,00 agora
+              </p>
+            </div>
+
+            <p className="text-red-600 font-black uppercase text-xs tracking-wider mb-5">
+              ⏳ Essa oferta some assim que você fechar esta janela
+            </p>
+
+            <motion.a
+              href="https://pay.kirvano.com/a06e7ea1-ecef-4f82-a02d-14adcd5fe27f"
+              target="_blank"
+              rel="noopener noreferrer"
+              animate={{ scale: [1, 1.04, 1] }}
+              transition={{ repeat: Infinity, duration: 1.3 }}
+              className="block w-full py-5 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-3"
+            >
+              SIM! QUERO AGORA POR R$ 19,90
+            </motion.a>
+
+            <a
+              href="https://pay.kirvano.com/ed693073-011c-4fc0-a8f6-332ec1815d19"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onClose}
+              className="block text-slate-400 hover:text-slate-600 text-xs font-medium underline underline-offset-2"
+            >
+              Não, prefiro recusar essa oferta única
+            </a>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 function LandingPage() {
   const [date, setDate] = useState("");
   const [tomorrow, setTomorrow] = useState("");
@@ -130,8 +219,34 @@ function LandingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showPlayButton, setShowPlayButton] = useState(true);
   const [showSocialPlayButton, setShowSocialPlayButton] = useState(true);
+  const [showDiscount, setShowDiscount] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const socialVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (sessionStorage.getItem("discountShown")) return;
+
+    let shown = false;
+    const trigger = () => {
+      if (shown) return;
+      shown = true;
+      sessionStorage.setItem("discountShown", "1");
+      setShowDiscount(true);
+    };
+
+    const onMouseLeave = (e: MouseEvent) => {
+      if (e.clientY <= 0) trigger();
+    };
+
+    const timeoutId = window.setTimeout(trigger, 45000);
+    document.addEventListener("mouseleave", onMouseLeave);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+      document.removeEventListener("mouseleave", onMouseLeave);
+    };
+  }, []);
 
   const handlePlayVideo = () => {
     if (videoRef.current) {
