@@ -30,6 +30,8 @@ interface Notification {
 
 function SalesToast() {
   const [notifications, setNotifications] = useState<Notification[]>([]);
+  const timeoutsRef = useRef<Set<ReturnType<typeof setTimeout>>>(new Set());
+  const cancelledRef = useRef(false);
 
   const addNotification = useCallback((count: number = 1) => {
     setNotifications(prev => {
@@ -38,49 +40,64 @@ function SalesToast() {
         const randomName = recentSales[Math.floor(Math.random() * recentSales.length)];
         const id = Date.now() + i + Math.random();
         newNotifications.push({ id, name: randomName });
-        
-        // Remove after 4 seconds
-        setTimeout(() => {
+
+        // Remove after 4 seconds (tracked for cleanup)
+        const t = setTimeout(() => {
+          timeoutsRef.current.delete(t);
           setNotifications(current => current.filter(n => n.id !== id));
         }, 4000);
+        timeoutsRef.current.add(t);
       }
       return newNotifications;
     });
   }, []);
 
   useEffect(() => {
-    let timeoutId: any;
+    cancelledRef.current = false;
 
     const runSequence = async () => {
-      const wait = (ms: number) => new Promise(resolve => timeoutId = setTimeout(resolve, ms));
+      const wait = (ms: number) =>
+        new Promise<void>(resolve => {
+          const t = setTimeout(() => {
+            timeoutsRef.current.delete(t);
+            resolve();
+          }, ms);
+          timeoutsRef.current.add(t);
+        });
 
-      while (true) {
+      while (!cancelledRef.current) {
         // 1. Primeira aparece
         addNotification(1);
         await wait(25000);
+        if (cancelledRef.current) return;
 
         // 2. Aparece 3 em seguida com pausa maior
         for (let i = 0; i < 3; i++) {
           addNotification(1);
           await wait(6000);
+          if (cancelledRef.current) return;
         }
 
         // 3. Pausa longa, depois 3 em seguida
         await wait(35000);
+        if (cancelledRef.current) return;
         for (let i = 0; i < 3; i++) {
           addNotification(1);
           await wait(6000);
+          if (cancelledRef.current) return;
         }
 
         // 4. 2 a cada 25 segundos
         for (let i = 0; i < 2; i++) {
           await wait(25000);
+          if (cancelledRef.current) return;
           addNotification(1);
         }
 
         // 5. 2 a cada 20 segundos
         for (let i = 0; i < 2; i++) {
           await wait(20000);
+          if (cancelledRef.current) return;
           addNotification(1);
         }
 
@@ -90,7 +107,11 @@ function SalesToast() {
     };
 
     runSequence();
-    return () => clearTimeout(timeoutId);
+    return () => {
+      cancelledRef.current = true;
+      timeoutsRef.current.forEach(t => clearTimeout(t));
+      timeoutsRef.current.clear();
+    };
   }, [addNotification]);
 
   return (
@@ -479,6 +500,10 @@ function LandingPage() {
               src="https://i.imgur.com/sDHjn2m.png" 
               alt="Criança lendo com alegria" 
               className="w-full h-auto rounded-2xl shadow-xl"
+              loading="lazy"
+              decoding="async"
+              width="1024"
+              height="1024"
             />
           </div>
         </div>
@@ -537,6 +562,8 @@ function LandingPage() {
                     src={example.image} 
                     alt={example.title}
                     className="absolute inset-0 w-full h-full object-cover md:object-contain bg-white"
+                    loading="lazy"
+                    decoding="async"
                   />
                   
                   {/* Bottom-Center Overlay */}
@@ -654,7 +681,7 @@ function LandingPage() {
                 className="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-slate-100 flex flex-col md:flex-row items-center gap-6 group hover:shadow-2xl transition-all"
               >
                 <div className="w-full md:w-40 aspect-square bg-slate-100 rounded-2xl overflow-hidden shrink-0">
-                  <img src={bonus.img} alt={bonus.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img src={bonus.img} alt={bonus.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <div className="flex flex-col items-center md:items-start gap-1 mb-2">
@@ -904,7 +931,7 @@ function LandingPage() {
               <p className="text-slate-600 italic mb-10 flex-1 text-lg leading-relaxed">"{t.text}"</p>
               <div className="flex flex-col items-center gap-3">
                 <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-[#D4AF37]/20 overflow-hidden">
-                  <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                  <img src={t.image} alt={t.name} loading="lazy" decoding="async" width="64" height="64" className="w-full h-full object-cover" />
                 </div>
                 <span className="font-black text-slate-900 uppercase tracking-tight">{t.name}</span>
               </div>
@@ -917,7 +944,7 @@ function LandingPage() {
       <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
           <div className="w-48 h-48 rounded-full bg-white p-2 shadow-2xl mb-12 overflow-hidden border-4 border-[#D4AF37]/20">
-             <img src="https://i.imgur.com/L0YnL4p.jpeg" alt="Equipe Resgate Educacional" className="w-full h-full object-cover rounded-full" />
+             <img src="https://i.imgur.com/L0YnL4p.jpeg" alt="Equipe Resgate Educacional" loading="lazy" decoding="async" width="192" height="192" className="w-full h-full object-cover rounded-full" />
           </div>
           
           <span className="font-bold text-[#D4AF37] text-xl mb-2 block uppercase tracking-widest">Quem somos</span>
