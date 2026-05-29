@@ -103,6 +103,24 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+          data-utmify-prevent-xcod-sck=""
+          data-utmify-prevent-subids=""
+          async
+          defer
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.pixelId = "69e94c8859eb2e685b155a29";
+var a = document.createElement("script");
+a.setAttribute("async", "");
+a.setAttribute("defer", "");
+a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+a.setAttribute("data-pixel-id", window.pixelId);
+document.head.appendChild(a);`,
+          }}
+        />
       </head>
       <body>
         {children}
