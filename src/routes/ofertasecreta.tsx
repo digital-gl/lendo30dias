@@ -230,7 +230,7 @@ function OfertaSecretaPage() {
                 <p className="text-slate-700 italic mb-5 flex-1 text-sm leading-relaxed">"{t.text}"</p>
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-12 h-12 rounded-full bg-slate-100 border-2 border-[#D4AF37]/30 overflow-hidden">
-                    <img src={t.image} alt={t.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                    <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
                   </div>
                   <span className="font-black text-slate-900 text-xs uppercase tracking-tight">{t.name}</span>
                 </div>
