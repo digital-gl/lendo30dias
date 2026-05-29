@@ -325,7 +325,7 @@ function LandingPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-12 px-6 flex flex-col items-center text-center">
+      <section className="py-12 px-6 flex flex-col items-center text-center bg-[radial-gradient(50%_50%_at_50%_50%,_#FFFFFF_0%,_#FFF4CC_100%)]">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="px-4 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-sm mb-6 uppercase tracking-widest font-bold">
           O FIM DA GUERRA NA HORA DA TAREFA
         </motion.div>
@@ -454,6 +454,36 @@ function LandingPage() {
         </div>
       </section>
 
+      {/* Logic */}
+      <section className="py-16 px-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tight">Por que nosso método funciona quando a escola falha?</h2>
+            <ul className="space-y-6">
+              {[
+                "Abordagem Clínica Simplificada: Traduzimos táticas avançadas para uma linguagem que qualquer mãe consegue aplicar.",
+                "Retenção Acelerada: O cérebro aprende por associação de sons, não por memorização forçada do alfabeto.",
+                "Foco na Autonomia: Resgatamos a confiança da criança, transformando o aprendizado em um desafio lógico."
+              ].map((item, i) => (
+                <li key={i} className="flex gap-4 items-start">
+                  <div className="bg-[#D4AF37]/20 p-1 rounded-full mt-1">
+                    <Check className="text-[#D4AF37] w-5 h-5" />
+                  </div>
+                  <span className="text-lg text-slate-700 font-medium">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="relative w-full">
+            <img 
+              src="https://i.imgur.com/sDHjn2m.png" 
+              alt="Criança lendo com alegria" 
+              className="w-full h-auto rounded-2xl shadow-xl"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* NEW SECTION: Encontre o exercício certo em segundos */}
       <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-6xl mx-auto">
@@ -487,36 +517,6 @@ function LandingPage() {
                 <h3 className="font-bold text-slate-900 leading-tight">{card.title}</h3>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Logic */}
-      <section className="py-16 px-6 max-w-5xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tight">Por que nosso método funciona quando a escola falha?</h2>
-            <ul className="space-y-6">
-              {[
-                "Abordagem Clínica Simplificada: Traduzimos táticas avançadas para uma linguagem que qualquer mãe consegue aplicar.",
-                "Retenção Acelerada: O cérebro aprende por associação de sons, não por memorização forçada do alfabeto.",
-                "Foco na Autonomia: Resgatamos a confiança da criança, transformando o aprendizado em um desafio lógico."
-              ].map((item, i) => (
-                <li key={i} className="flex gap-4 items-start">
-                  <div className="bg-[#D4AF37]/20 p-1 rounded-full mt-1">
-                    <Check className="text-[#D4AF37] w-5 h-5" />
-                  </div>
-                  <span className="text-lg text-slate-700 font-medium">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="relative w-full">
-            <img 
-              src="https://i.imgur.com/sDHjn2m.png" 
-              alt="Criança lendo com alegria" 
-              className="w-full h-auto rounded-2xl shadow-xl"
-            />
           </div>
         </div>
       </section>
