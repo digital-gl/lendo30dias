@@ -341,6 +341,7 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#D4AF37]/30">
       <SalesToast />
+      <DiscountPopup open={showDiscount} onClose={() => setShowDiscount(false)} />
       {/* Top Bar */}
       <div className="bg-black text-[#D4AF37] py-2 text-center text-sm font-bold uppercase tracking-wider sticky top-0 z-50">
         ⚠️ OFERTA VÁLIDA SOMENTE HOJE - {date}
