@@ -16,7 +16,7 @@ export const Route = createFileRoute("/ofertasecreta5")({
   component: OfertaSecreta5Page,
 });
 
-const CHECKOUT_URL = "https://pay.kirvano.com/a06e7ea1-ecef-4f82-a02d-14adcd5fe27f";
+const CHECKOUT_URL = "https://pay.kirvano.com/570d4784-0352-4c55-9987-cbdb1a2369fd";
 
 function Countdown() {
   const [time, setTime] = useState({ m: 9, s: 59 });
