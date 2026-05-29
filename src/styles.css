@@ -151,3 +151,15 @@ a[href*="lovable.dev"], iframe[src*="lovable.dev"], div[style*="Edit with Lovabl
   position: absolute !important;
   z-index: -9999 !important;
 }
+
+/* Respect users who prefer reduced motion (saves battery / CPU on low-power devices) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
