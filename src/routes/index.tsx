@@ -709,7 +709,7 @@ function LandingPage() {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-white relative">
+      <section id="oferta" className="py-16 px-6 bg-white relative scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
             {/* Basic Plan */}
