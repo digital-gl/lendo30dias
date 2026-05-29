@@ -223,30 +223,7 @@ function LandingPage() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const socialVideoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (sessionStorage.getItem("discountShown")) return;
-
-    let shown = false;
-    const trigger = () => {
-      if (shown) return;
-      shown = true;
-      sessionStorage.setItem("discountShown", "1");
-      setShowDiscount(true);
-    };
-
-    const onMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0) trigger();
-    };
-
-    const timeoutId = window.setTimeout(trigger, 45000);
-    document.addEventListener("mouseleave", onMouseLeave);
-
-    return () => {
-      window.clearTimeout(timeoutId);
-      document.removeEventListener("mouseleave", onMouseLeave);
-    };
-  }, []);
+  // Pop-up de upsell abre apenas ao clicar no botão do plano de R$ 10
 
   const handlePlayVideo = () => {
     if (videoRef.current) {
@@ -738,14 +715,13 @@ function LandingPage() {
                 ))}
               </div>
 
-              <a
-                href="https://pay.kirvano.com/ed693073-011c-4fc0-a8f6-332ec1815d19"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => setShowDiscount(true)}
                 className="w-full py-5 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black uppercase tracking-tight mb-8 inline-block text-center shadow-lg"
               >
                 Quero apenas o básico
-              </a>
+              </button>
 
               <div className="bg-slate-900 text-white py-4 px-6 rounded-2xl text-center text-xs font-bold flex flex-col items-center justify-center gap-3 shadow-xl border border-[#D4AF37]/30">
                 <div className="flex items-center gap-2">
