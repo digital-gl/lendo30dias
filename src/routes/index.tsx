@@ -370,7 +370,7 @@ function LandingPage() {
             onPause={() => setShowPlayButton(true)}
             onPlay={() => setShowPlayButton(false)}
           >
-            <source src="https://i.imgur.com/1TVH4Pt.mp4" type="video/mp4" />
+            <source src="https://i.imgur.com/PNodnZZ.mp4" type="video/mp4" />
             Seu navegador não suporta vídeos.
           </video>
 
@@ -401,15 +401,16 @@ function LandingPage() {
           </AnimatePresence>
         </div>
 
-        <motion.button 
+        <motion.a
+          href="#oferta"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           animate={{ scale: [1, 1.02, 1] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-xl py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight w-full max-w-sm"
+          className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-xl py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight w-full max-w-sm inline-block text-center"
         >
           QUERO DESTRAVAR A LEITURA DO MEU FILHO
-        </motion.button>
+        </motion.a>
       </section>
 
       {/* Section 7: O que você desbloqueia agora mesmo */}
