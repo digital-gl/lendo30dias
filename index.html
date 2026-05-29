@@ -17,7 +17,17 @@
     <meta name="twitter:description" content="A Única Intervenção Fônica Capaz de Fazer Seu Filho Ler em 30 Dias, Gastando Apenas 10 Minutos por Dia." />
     <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4c5c6652-f971-4e8d-959f-a03814418308/id-preview-2ef08454--d55d8b9e-b51b-40d9-a732-e99578dbbad6.lovable.app-1779564946872.png" />
 
-    <!-- Utmify -->
+    <!-- Utmify Pixel -->
+    <script>
+      window.pixelId = "69d850698443413765fd0d96";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+
+    <!-- Utmify UTM Tracking -->
     <script
       src="https://cdn.utmify.com.br/scripts/utms/latest.js"
       data-utmify-prevent-xcod-sck
@@ -25,26 +35,8 @@
       async
       defer
     ></script>
-
-    <!-- Meta Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '2042581996684527');
-      fbq('track', 'PageView');
-    </script>
-    <!-- End Meta Pixel Code -->
   </head>
   <body>
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=2042581996684527&ev=PageView&noscript=1"
-    /></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
