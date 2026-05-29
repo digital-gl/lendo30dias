@@ -4,15 +4,6 @@ import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/ofertasecreta")({
-  head: () => ({
-    meta: [
-      { title: "Oferta Secreta - Última Chance por R$ 19,90 | Resgate Educacional" },
-      { name: "description", content: "Liberamos uma condição secreta: o Plano Premium completo + 6 bônus por apenas R$ 19,90. Só nesta página e por tempo limitado." },
-      { property: "og:title", content: "Oferta Secreta - Plano Premium por R$ 19,90" },
-      { property: "og:description", content: "Condição liberada apenas para mães que quase desistiram. Premium completo + 6 bônus por R$ 19,90." },
-      { name: "robots", content: "noindex,nofollow" },
-    ],
-  }),
   component: OfertaSecretaPage,
 });
 
