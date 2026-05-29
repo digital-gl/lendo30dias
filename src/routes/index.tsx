@@ -162,7 +162,7 @@ function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }
             </p>
 
             <div className="bg-[#FFFBEB] border-2 border-dashed border-[#D4AF37] rounded-2xl p-5 mb-5">
-              <p className="text-red-600 line-through text-base font-bold">De R$ 59,90</p>
+              <p className="text-red-600 line-through text-base font-bold">De R$ 39,90</p>
               <p className="text-xs uppercase tracking-widest text-slate-500 font-bold mb-1">Por apenas</p>
               <div className="flex items-baseline justify-center gap-1">
                 <span className="text-2xl font-bold text-slate-900">R$</span>
