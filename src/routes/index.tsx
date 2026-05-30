@@ -338,11 +338,11 @@ function LandingPage() {
           Chega de promessas escolares vazias. Assuma o controle com o passo a passo domiciliar que destrava a leitura e devolve a autoestima da criança, mesmo que você não seja professora.
         </p>
 
-        <div className="mb-12 max-w-2xl w-full">
+        <div className="mb-12 max-w-2xl w-full bg-white/50 backdrop-blur-sm p-4 md:p-6 rounded-[2.5rem] border border-white shadow-xl">
           <img 
             src="https://i.imgur.com/FXObkAW.png" 
             alt="Material do Método" 
-            className="w-full h-auto drop-shadow-2xl"
+            className="w-full h-auto drop-shadow-lg"
           />
         </div>
 

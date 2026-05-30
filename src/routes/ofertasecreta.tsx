@@ -82,11 +82,11 @@ function OfertaSecretaPage() {
           Como você chegou até o checkout, liberamos o <strong>Plano Premium completo</strong> + os <strong>6 bônus exclusivos</strong> por um preço que <strong className="text-red-600">não aparece em nenhum outro lugar do site</strong>.
         </p>
 
-        <div className="mb-8 max-w-xl w-full">
+        <div className="mb-8 max-w-xl w-full bg-white/50 backdrop-blur-sm p-4 md:p-6 rounded-[2rem] border border-white shadow-lg">
           <img 
             src="https://i.imgur.com/FXObkAW.png" 
             alt="Material do Método" 
-            className="w-full h-auto drop-shadow-xl"
+            className="w-full h-auto drop-shadow-md"
           />
         </div>
 
