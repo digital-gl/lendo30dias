@@ -480,9 +480,6 @@ function LandingPage() {
             <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight text-slate-900">
               A Técnica Comprovada por Harvard que Ensina Qualquer Criança a Ler em 30 Dias
             </h2>
-            <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Enquanto a escola usa memorização forçada, a ciência já descobriu o caminho certo e agora qualquer mãe pode aplicar em casa.
-            </p>
             <div className="flex justify-center py-8">
               <img
                 src="https://i.imgur.com/uCfFn2j.png"
@@ -499,30 +496,27 @@ function LandingPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center mt-12">
-            <ul className="space-y-6">
-              {[
-                { title: "Abordagem Clínica Simplificada:", text: " Traduzimos a ciência avançada em um passo a passo simples que qualquer mãe consegue aplicar sem ser professora." },
-                { title: "Retenção Acelerada:", text: " O cérebro infantil aprende por associação de sons, não por memorização forçada. É assim que Harvard explica, e é assim que o método funciona." },
-                { title: "Autonomia e Confiança:", text: " A criança passa a enxergar a leitura como um desafio lógico, não como um obstáculo e a autoestima vai junto." }
-              ].map((item, i) => (
-                <li key={i} className="flex gap-4 items-start">
-                  <div className="bg-[#D4AF37]/20 p-1 rounded-full mt-1 shrink-0">
-                    <Check className="text-[#D4AF37] w-5 h-5" />
-                  </div>
-                  <span className="text-base md:text-lg text-slate-700 font-medium">
-                    <strong className="text-slate-900">{item.title}</strong>{item.text}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <div className="relative w-full">
-              <img
-                src="https://i.imgur.com/sDHjn2m.png"
-                alt="Criança lendo com alegria"
-                className="w-full h-auto rounded-2xl shadow-xl"
-              />
-            </div>
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            {[
+              { icon: "🧠", iconBg: "bg-blue-100", title: "Ciência Simplificada", text: "Táticas avançadas traduzidas em passos simples para qualquer mãe aplicar." },
+              { icon: "⚡", iconBg: "bg-[#D4AF37]/20", title: "Aprendizado Acelerado", text: "O cérebro aprende por sons, não por decoreba. Resultado em dias, não meses." },
+              { icon: "🏆", iconBg: "bg-emerald-100", title: "Confiança de Volta", text: "A criança passa a encarar a leitura como um desafio e a autoestima cresce junto." }
+            ].map((card, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 flex flex-col items-center text-center gap-4 hover:shadow-xl transition-all"
+              >
+                <div className={`${card.iconBg} w-16 h-16 rounded-full flex items-center justify-center text-3xl`}>
+                  {card.icon}
+                </div>
+                <h3 className="text-xl font-extrabold text-slate-900">{card.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{card.text}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
