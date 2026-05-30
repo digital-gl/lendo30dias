@@ -316,14 +316,14 @@ function LandingPage() {
     const observerOptions = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5,
+      threshold: 0.3,
     };
 
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         const video = entry.target as HTMLVideoElement;
         if (entry.isIntersecting) {
-          // Tenta iniciar com som (0.75 como solicitado anteriormente)
+          // Tenta iniciar com som
           video.muted = false;
           video.volume = 0.75;
           
@@ -332,7 +332,7 @@ function LandingPage() {
             if (video === videoRef.current) setShowPlayButton(false);
             if (video === socialVideoRef.current) setShowSocialPlayButton(false);
           }).catch(() => {
-            // Se o navegador bloqueou som sem interação, iniciamos mudo
+            // Se o navegador bloqueou som sem interação prévia, iniciamos mudo
             video.muted = true;
             video.play();
           });
@@ -347,8 +347,30 @@ function LandingPage() {
     if (videoRef.current) observer.observe(videoRef.current);
     if (socialVideoRef.current) observer.observe(socialVideoRef.current);
 
+    // Evento global para "desmutar" os vídeos na primeira interação real
+    const unmuteAll = () => {
+      if (videoRef.current && !videoRef.current.paused) {
+        videoRef.current.muted = false;
+        setShowPlayButton(false);
+      }
+      if (socialVideoRef.current && !socialVideoRef.current.paused) {
+        socialVideoRef.current.muted = false;
+        setShowSocialPlayButton(false);
+      }
+      window.removeEventListener('click', unmuteAll);
+      window.removeEventListener('touchstart', unmuteAll);
+      window.removeEventListener('scroll', unmuteAll);
+    };
+
+    window.addEventListener('click', unmuteAll);
+    window.addEventListener('touchstart', unmuteAll);
+    window.addEventListener('scroll', unmuteAll);
+
     return () => {
       observer.disconnect();
+      window.removeEventListener('click', unmuteAll);
+      window.removeEventListener('touchstart', unmuteAll);
+      window.removeEventListener('scroll', unmuteAll);
     };
   }, []);
 
