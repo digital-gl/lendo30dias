@@ -602,7 +602,8 @@ function LandingPage() {
           </AnimatePresence>
         </div>
 
-        
+        <div className="max-w-xs mx-auto my-10 h-1 rounded-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
+
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
             <div className="flex gap-6">
