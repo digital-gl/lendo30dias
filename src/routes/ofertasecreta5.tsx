@@ -143,15 +143,12 @@ function OfertaSecreta5Page() {
         </div>
       </section>
 
-      {/* SOCIAL PROOF IMAGES */}
+      {/* SOCIAL PROOF IMAGES - DEPOIMENTOS ABAIXO DA OFERTA */}
       <section className="py-14 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-extrabold text-center mb-3 tracking-tight">
-            Veja mães reais comemorando o resultado
+          <h2 className="text-2xl md:text-4xl font-extrabold text-center mb-8 tracking-tight">
+            Depoimentos
           </h2>
-          <p className="text-center text-slate-600 font-medium mb-10">
-            Mensagens reais enviadas pelas mães que aplicaram o método em casa.
-          </p>
 
           <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-12">
             {proofs.map((src, i) => (
