@@ -782,6 +782,7 @@ function LandingPage() {
         <div className="mb-16 max-w-4xl mx-auto">
           <div 
             onMouseEnter={handlePlaySocialVideo}
+            onTouchStart={handlePlaySocialVideo}
             className="bg-black rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white aspect-[9/16] max-w-[320px] mx-auto relative group"
           >
             <video 
@@ -790,6 +791,7 @@ function LandingPage() {
               controls
               playsInline
               loop
+              muted
             >
               <source src="https://i.imgur.com/O6sRb8J.mp4" type="video/mp4" />
               Seu navegador não suporta vídeos.
