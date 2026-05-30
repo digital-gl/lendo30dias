@@ -591,7 +591,10 @@ function LandingPage() {
           <p className="text-xl text-slate-600 font-medium">Veja o que você vai receber</p>
         </div>
 
-        <div className="w-full max-w-[320px] aspect-[9/16] bg-black rounded-3xl mb-16 shadow-2xl overflow-hidden border-8 border-white relative mx-auto group">
+        <div 
+          onMouseEnter={handlePlayVideo}
+          className="w-full max-w-[320px] aspect-[9/16] bg-black rounded-3xl mb-16 shadow-2xl overflow-hidden border-8 border-white relative mx-auto group"
+        >
           <video 
             ref={videoRef}
             className="w-full h-full object-cover"
