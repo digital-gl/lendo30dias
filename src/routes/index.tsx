@@ -366,14 +366,10 @@ function LandingPage() {
             </span>
           </div>
           
-          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-slate-500 font-bold text-sm md:text-base">
+          <div className="flex flex-row items-center gap-6 md:gap-8 text-slate-500 font-bold text-sm md:text-base">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-emerald-600" />
               <span>Acesso Imediato</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Check className="w-5 h-5 text-emerald-600" />
-              <span>Método Comprovado</span>
             </div>
             <div className="flex items-center gap-2">
               <Trophy className="w-5 h-5 text-emerald-600" />

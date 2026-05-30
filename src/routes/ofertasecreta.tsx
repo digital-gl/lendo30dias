@@ -143,14 +143,10 @@ function OfertaSecretaPage() {
                 </span>
               </div>
 
-              <div className="flex flex-col items-center gap-1.5 text-slate-500 font-bold text-[11px] md:text-xs">
+              <div className="flex flex-row items-center gap-4 text-slate-500 font-bold text-[11px] md:text-xs">
                 <div className="flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                   <span>Acesso Imediato</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <Check className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Método Comprovado</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Star className="w-3.5 h-3.5 text-emerald-600" />
