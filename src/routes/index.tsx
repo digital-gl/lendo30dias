@@ -983,7 +983,7 @@ function LandingPage() {
           </div>
 
           <div className="text-center md:text-left">
-            <span className="font-bold text-[#D4AF37] text-sm md:text-base mb-3 block uppercase tracking-widest">Quem vai te guiar</span>
+            <span className="font-bold text-[#D4AF37] text-sm md:text-base mb-3 block uppercase tracking-widest">Quem criou tudo isso?</span>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-2 tracking-tight">Suzane Lopes</h2>
             <p className="italic text-slate-700 text-base md:text-lg mb-6">Especialista em Alfabetização e Desenvolvimento Infantil</p>
 
@@ -1048,11 +1048,8 @@ function LandingPage() {
       {/* Section 13: Rodapé (Footer) */}
       <footer className="bg-slate-900 py-12 px-6 text-white text-center">
         <div className="max-w-6xl mx-auto flex flex-col items-center">
-          <div className="text-[#D4AF37] font-black text-3xl mb-12">RESGATE EDUCACIONAL</div>
-          
-          <div className="flex gap-8 mb-12 text-slate-400 font-medium">
-            <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
-            <a href="#" className="hover:text-white transition-colors">Políticas de Privacidade</a>
+          <div className="w-32 h-32 rounded-full overflow-hidden mb-8 border-4 border-[#D4AF37]/30 shadow-xl">
+            <img src="https://i.imgur.com/wKX4vto.jpeg" alt="Lendo em 30 Dias" className="w-full h-full object-cover" />
           </div>
 
           <p className="text-slate-500 max-w-3xl mb-8 leading-relaxed">
@@ -1060,9 +1057,7 @@ function LandingPage() {
           </p>
           
           <div className="text-slate-600 text-sm">
-            © 2026 Resgate Educacional - Todos os direitos reservados. 
-            <br />
-            CNPJ: 00.000.000/0000-00
+            © 2026 Lendo em 30 Dias - Todos os direitos reservados.
           </div>
         </div>
       </footer>
