@@ -912,7 +912,7 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Section 11: Quem Somos */}
+
 
       <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
