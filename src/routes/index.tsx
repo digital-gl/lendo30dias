@@ -278,27 +278,22 @@ function LandingPage() {
     {
       title: "Caderno de Grafismo Fônico - Nível 1",
       subtitle: "Fundação fônica completa em Letra Bastão e Cursiva para acabar com o hábito de chutar palavras.",
-      image: "https://i.imgur.com/v8RHNIB.png"
+      image: "https://i.imgur.com/KO4maH3.png"
     },
     {
       title: "Conexão Silábica - Nível 2",
       subtitle: "O cérebro da criança começa a juntar os sons de forma automatizada para formar as primeiras palavras reais.",
-      image: "https://i.imgur.com/EjFLXae.png"
+      image: "https://i.imgur.com/GEhxP4N.png"
     },
     {
       title: "Domínio e Autonomia - Nível 3",
       subtitle: "Passo a passo avançado focado na leitura fluente de frases longas e fixação da escrita firme.",
-      image: "https://i.imgur.com/v8RHNIB.png"
+      image: "https://i.imgur.com/a9muPzM.png"
     },
     {
       title: "Jogos e Fichas Silábicas Práticas",
       subtitle: "Gamificação domiciliar para prender a atenção da criança e acelerar a memorização sem cansaço.",
-      image: "https://i.imgur.com/U2UOFMX.png"
-    },
-    {
-      title: "Protocolo de Fluência Leitora",
-      subtitle: "Tiras de leitura dinâmica de 10 minutos para eliminar o ritmo robotizado e destravar a leitura natural.",
-      image: "https://i.imgur.com/Nna0yec.png"
+      image: "https://i.imgur.com/22Rw9jC.png"
     }
   ];
 
@@ -649,28 +644,6 @@ function LandingPage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Section 6: Para quem é este material? */}
-      <section className="py-16 px-6 bg-white">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">Reconhece algum destes sinais no seu dia a dia?</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {[
-            { emoji: "🛑", text: "Você sente que a escola avança os conteúdos, mas seu filho fica para trás." },
-            { emoji: "⏰", text: "A hora da tarefa de casa é um verdadeiro desafio que sempre termina em choro ou estresse." },
-            { emoji: "🧩", text: "Ele até conhece as letras, mas não consegue formar a conexão entre elas para ler a palavra inteira." },
-            { emoji: "💸", text: "Você não tem orçamento para pagar centenas de reais mensais em profissionais particulares." }
-          ].map((item, i) => (
-            <motion.div 
-              key={i}
-              whileHover={{ y: -5 }}
-              className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm flex flex-col items-center text-center gap-4 h-full"
-            >
-              <span className="text-5xl">{item.emoji}</span>
-              <p className="text-slate-800 font-medium leading-relaxed">{item.text}</p>
-            </motion.div>
-          ))}
         </div>
       </section>
 
