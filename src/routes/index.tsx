@@ -762,7 +762,78 @@ function LandingPage() {
       </section>
 
       <section id="oferta" className="py-16 px-6 bg-white relative scroll-mt-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+              O Plano Premium Completo + 6 Bônus
+            </h2>
+            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              A solução definitiva para transformar a leitura de seu filho. Inclui todos os materiais e bônus exclusivos.
+            </p>
+          </div>
 
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-white p-8 rounded-3xl shadow-2xl border border-slate-100">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">O Plano Premium Completo</h3>
+              <div className="space-y-4">
+                {programItems.map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
+                    <div className="w-6 h-6 bg-[#D4AF37] text-white rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-sm font-bold">0{i+1}</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900">{item.title}</h4>
+                      <p className="text-slate-600 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-2xl border border-slate-100">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">6 Bônus Exclusivos</h3>
+              <div className="space-y-4">
+                {bonusItems.map((bonus, i) => (
+                  <div key={i} className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
+                    <div className="w-6 h-6 bg-[#D4AF37] text-white rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-sm font-bold">B{i+1}</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900">{bonus.title}</h4>
+                      <p className="text-slate-600 text-sm">{bonus.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] p-8 rounded-3xl shadow-2xl border border-slate-100 text-center">
+            <div className="text-4xl font-bold text-white mb-4">R$ 19,90</div>
+            <p className="text-white/90 text-lg mb-6">Por apenas 10 minutos por dia</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.a
+                href="https://pay.kirvano.com/a06e7ea1-ecef-4f82-a02d-14adcd5fe27f"
+                target="_blank"
+                rel="noopener noreferrer"
+                animate={{ scale: [1, 1.04, 1] }}
+                transition={{ repeat: Infinity, duration: 1.3 }}
+                className="block py-4 px-8 rounded-2xl bg-white text-[#D4AF37] font-bold text-lg shadow-lg hover:shadow-xl transition-all"
+              >
+                COMPRAR AGORA
+              </motion.a>
+              <a
+                href="https://pay.kirvano.com/ed693073-011c-4fc0-a8f6-332ec1815d19"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-4 px-8 rounded-2xl border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-[#D4AF37] transition-all"
+              >
+                Recusar Oferta
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Section 9: Garantia */}
       <section className="py-16 px-6 bg-slate-50">
@@ -925,4 +996,3 @@ function LandingPage() {
     </div>
   );
 }
-
