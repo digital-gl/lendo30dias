@@ -126,7 +126,29 @@ function OfertaSecretaPage() {
               SIM! QUERO POR R$ 19,90 AGORA
             </motion.a>
 
-            <p className="text-[11px] text-slate-500 font-medium flex items-center justify-center gap-1">
+            <div className="mt-6 flex flex-col items-center gap-4">
+              <img 
+                src="https://qtbkvshbmqlszncxlcuc.supabase.co/storage/v1/object/public/dsl-uploads/VgwwcY4OnnTnyzgELGOV23cI2Qu1/8546cab0-80e7-4182-9bf5-56f7847a6272.png" 
+                alt="+300 crianças transformadas" 
+                className="h-8 md:h-10 w-auto object-contain"
+              />
+              <div className="flex flex-col items-center gap-1.5 text-slate-500 font-bold text-[11px] md:text-xs">
+                <div className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Acesso Imediato</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Check className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Método Comprovado</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Star className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>7 Dias Garantia</span>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-[11px] text-slate-500 font-medium flex items-center justify-center gap-1 mt-4">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
               Pagamento 100% seguro · Acesso imediato
             </p>
