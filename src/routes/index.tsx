@@ -315,6 +315,38 @@ function LandingPage() {
     { q: "Quanto tempo demora para ver resultados?", a: "Seguindo o passo a passo de apenas 10 minutos por dia, muitas mães relatam mudanças significativas na percepção sonora já na primeira semana." }
   ];
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        const video = entry.target as HTMLVideoElement;
+        if (entry.isIntersecting) {
+          video.play().catch(() => {
+            // Autoplay might be blocked by browser policies if not muted
+            video.muted = true;
+            video.play();
+          });
+        } else {
+          video.pause();
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+    if (videoRef.current) observer.observe(videoRef.current);
+    if (socialVideoRef.current) observer.observe(socialVideoRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#D4AF37]/30">
       <SalesToast />
@@ -522,6 +554,7 @@ function LandingPage() {
             className="w-full h-full object-cover"
             controls
             playsInline
+            muted
             loop
             onPause={() => setShowPlayButton(true)}
             onPlay={() => setShowPlayButton(false)}
@@ -727,6 +760,7 @@ function LandingPage() {
               className="w-full h-full object-cover"
               controls
               playsInline
+              muted
               loop
               onPause={() => setShowSocialPlayButton(true)}
               onPlay={() => setShowSocialPlayButton(false)}
