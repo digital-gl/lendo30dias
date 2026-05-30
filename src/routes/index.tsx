@@ -172,7 +172,7 @@ function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }
                   className="text-6xl md:text-7xl font-black text-[#D4AF37] inline-block"
                   style={{ textShadow: "0 6px 24px rgba(212,175,55,0.4)" }}
                 >
-                  19,90
+                  14,90
                 </motion.span>
               </div>
               <p className="text-emerald-600 font-black text-xs uppercase tracking-tighter mt-2">
@@ -192,7 +192,7 @@ function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }
               transition={{ repeat: Infinity, duration: 1.3 }}
               className="block w-full py-5 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-3"
             >
-              SIM! QUERO AGORA POR R$ 19,90
+              SIM! QUERO AGORA POR R$ 14,90
             </motion.a>
 
             <a
@@ -870,10 +870,10 @@ function LandingPage() {
                     <div className="flex flex-col items-center justify-center gap-1">
                       <div className="flex items-baseline justify-center gap-2">
                         <span className="text-xl font-bold text-slate-900">R$</span>
-                        <span className="text-6xl md:text-7xl font-black text-slate-900">39,90</span>
+                        <span className="text-6xl md:text-7xl font-black text-slate-900">27,00</span>
                         <span className="text-slate-500 font-bold text-sm uppercase tracking-tighter">à vista</span>
                       </div>
-                      <p className="text-[#D4AF37] font-black text-lg md:text-xl mt-1 uppercase tracking-tighter">Ou 6x de R$ 6,65 no cartão</p>
+                      <p className="text-[#D4AF37] font-black text-lg md:text-xl mt-1 uppercase tracking-tighter">Ou 6x de R$ 4,50 no cartão</p>
                     </div>
                   </div>
 
