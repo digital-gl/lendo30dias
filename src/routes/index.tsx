@@ -738,6 +738,8 @@ function LandingPage() {
 
       <section id="oferta" className="py-16 px-6 bg-white relative scroll-mt-20">
         <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-12 tracking-tight">Escolha o Plano que mais combina com seu você...</h2>
+
           <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
             {/* Basic Plan */}
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-100 flex flex-col shadow-sm text-center">

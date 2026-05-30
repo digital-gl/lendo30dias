@@ -147,8 +147,9 @@ function OfertaSecreta5Page() {
       <section className="py-14 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-4xl font-extrabold text-center mb-8 tracking-tight">
-            Depoimentos
+            Escolha o Plano que mais combina com seu você...
           </h2>
+
 
           <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-12">
             {proofs.map((src, i) => (
