@@ -221,7 +221,6 @@ function LandingPage() {
   const [showSocialPlayButton, setShowSocialPlayButton] = useState(true);
   const [showDiscount, setShowDiscount] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const socialVideoRef = useRef<HTMLVideoElement>(null);
 
   // Pop-up de upsell abre apenas ao clicar no botão do plano de R$ 10
 
