@@ -584,18 +584,20 @@ function LandingPage() {
                 className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]"
               >
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
+                  animate={{ scale: [1, 1.12, 1] }}
+                  transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+                  whileHover={{ scale: 1.15 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={handlePlayVideo}
-                  className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] hover:from-[#D4AF37] hover:to-[#FFEA70] text-white p-6 rounded-full shadow-[0_0_50px_rgba(212,175,55,0.6)] mb-4 animate-pulse"
+                  className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white p-6 rounded-full shadow-[0_0_50px_rgba(34,197,94,0.6)] mb-4"
                 >
                   <Play className="w-10 h-10 fill-current" />
                 </motion.button>
                 <button 
                   onClick={handlePlayVideo}
-                  className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] hover:from-[#D4AF37] hover:to-[#FFEA70] text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20"
+                  className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20"
                 >
-                  Veja como seu filho aprenderá rapidinho!
+                  Clique aqui para ouvir
                 </button>
               </motion.div>
             )}
@@ -768,18 +770,20 @@ function LandingPage() {
                   className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]"
                 >
                   <motion.button
-                    whileHover={{ scale: 1.05 }}
+                    animate={{ scale: [1, 1.12, 1] }}
+                    transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+                    whileHover={{ scale: 1.15 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handlePlaySocialVideo}
-                    className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] hover:from-[#D4AF37] hover:to-[#FFEA70] text-white p-6 rounded-full shadow-[0_0_50px_rgba(212,175,55,0.6)] mb-4 animate-pulse"
+                    className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white p-6 rounded-full shadow-[0_0_50px_rgba(34,197,94,0.6)] mb-4"
                   >
                     <Play className="w-10 h-10 fill-current" />
                   </motion.button>
                   <button 
                     onClick={handlePlaySocialVideo}
-                    className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] hover:from-[#D4AF37] hover:to-[#FFEA70] text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20 flex items-center gap-2 animate-bounce"
+                    className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20 flex items-center gap-2"
                   >
-                    Olha o que aconteceu com essa mãe uma semana após adquirir o material! <ArrowDown className="w-4 h-4" />
+                    Clique aqui para ouvir <ArrowDown className="w-4 h-4" />
                   </button>
                 </motion.div>
               )}
