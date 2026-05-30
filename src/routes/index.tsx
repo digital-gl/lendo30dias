@@ -334,9 +334,17 @@ function LandingPage() {
           A Única Intervenção Fônica Capaz de Fazer Seu Filho Ler em <span className="text-[#D4AF37]">30 Dias</span>, Gastando Apenas <span className="text-[#D4AF37]">10 Minutos</span> por Dia.
         </h1>
         
-        <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mb-12 leading-relaxed">
+        <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mb-8 leading-relaxed">
           Chega de promessas escolares vazias. Assuma o controle com o passo a passo domiciliar que destrava a leitura e devolve a autoestima da criança, mesmo que você não seja professora.
         </p>
+
+        <div className="mb-12 max-w-2xl w-full">
+          <img 
+            src="https://i.imgur.com/FXObkAW.png" 
+            alt="Material do Método" 
+            className="w-full h-auto drop-shadow-2xl"
+          />
+        </div>
 
 
         <motion.a
