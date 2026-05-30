@@ -901,8 +901,19 @@ function LandingPage() {
         </div>
       </section>
 
+      {/* Section 9: Garantia */}
+      <section className="py-16 px-6 bg-slate-50">
+        <div className="max-w-4xl mx-auto bg-[#D4AF37] p-8 md:p-12 rounded-[3rem] shadow-2xl border-4 border-white/20 flex flex-col items-center text-center text-white">
+          <ShieldCheck className="w-16 h-16 md:w-20 md:h-20 text-white mb-6 md:mb-8" />
+          <h2 className="text-2xl md:text-4xl font-extrabold mb-6 md:mb-8 tracking-tight uppercase">Risco Zero para Você!</h2>
+          <p className="text-sm md:text-lg leading-relaxed max-w-2xl mb-0 font-medium">
+            Você tem <strong>7 dias de garantia incondicional</strong>. Baixe o material, aplique nosso método e veja com os próprios olhos. Se por qualquer motivo você achar que não é para o seu filho, devolvemos 100% do seu dinheiro. Sem burocracia.
+          </p>
+        </div>
+      </section>
 
       {/* Section 11: Quem Somos */}
+
       <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
           <div className="w-48 h-48 rounded-full bg-white p-2 shadow-2xl mb-12 overflow-hidden border-4 border-[#D4AF37]/20">
