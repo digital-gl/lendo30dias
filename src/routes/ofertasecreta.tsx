@@ -81,7 +81,7 @@ function OfertaSecretaPage() {
 
         <div className="mb-8 max-w-xl w-full bg-white/50 backdrop-blur-sm p-4 md:p-6 rounded-[2rem] border border-white shadow-lg">
           <img 
-            src="https://i.imgur.com/FXObkAW.png" 
+            src="https://i.imgur.com/Vmutht1.png" 
             alt="Material do Método" 
             className="w-full h-auto drop-shadow-md"
           />
