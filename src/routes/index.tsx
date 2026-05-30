@@ -975,24 +975,45 @@ function LandingPage() {
 
 
       <section className="py-16 px-6 bg-slate-50">
-        <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
-          <div className="w-48 h-48 rounded-full bg-white p-2 shadow-2xl mb-12 overflow-hidden border-4 border-[#D4AF37]/20">
-             <img src="https://i.imgur.com/L0YnL4p.jpeg" alt="Equipe Resgate Educacional" className="w-full h-full object-cover rounded-full" />
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="flex justify-center">
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-white p-2 shadow-2xl overflow-hidden border-4 border-[#D4AF37]/20">
+              <img src="https://i.imgur.com/atfjAG1.jpeg" alt="Suzane Lopes" className="w-full h-full object-cover rounded-full" />
+            </div>
           </div>
-          
-          <span className="font-bold text-[#D4AF37] text-xl mb-2 block uppercase tracking-widest">Quem somos</span>
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">Por trás do Resgate Educacional</h2>
-          
-          <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
-            <p>
-              Somos uma iniciativa focada em devolver às famílias o poder de transformar a educação de seus filhos dentro de casa.
-            </p>
-            <p>
-              Entendemos profundamente a angústia de uma mãe que vê o tempo passar e o filho ficar para trás. Por isso, criamos um método estruturado que foca no que realmente importa: resultados práticos e rápidos.
-            </p>
-            <p className="font-bold italic text-slate-900 text-xl">
-              Nossa missão é destravar o potencial de cada criança através de uma alfabetização consciente e acolhedora.
-            </p>
+
+          <div className="text-center md:text-left">
+            <span className="font-bold text-[#D4AF37] text-sm md:text-base mb-3 block uppercase tracking-widest">Quem vai te guiar</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-2 tracking-tight">Suzane Lopes</h2>
+            <p className="italic text-slate-700 text-base md:text-lg mb-6">Especialista em Alfabetização e Desenvolvimento Infantil</p>
+
+            <div className="space-y-5 text-base md:text-lg text-slate-600 leading-relaxed mb-6">
+              <p>
+                Depois de anos acompanhando crianças com dificuldade de leitura, Suzane percebeu que o problema não estava nas crianças, estava no método. A escola ensina do jeito que sempre ensinou. Suzane ensina do jeito que o cérebro infantil realmente aprende.
+              </p>
+              <p>
+                Foi assim que nasceu o Lendo em 30 Dias: um método estruturado, baseado em ciência e simplificado para que qualquer mãe possa aplicar em casa, sem precisar ser professora, sem pressão, sem traumas.
+              </p>
+            </div>
+
+            <blockquote className="bg-[#FFFDE7] border-l-4 border-[#D4AF37] rounded-r-2xl p-5 md:p-6 mb-8 text-left">
+              <p className="font-bold text-slate-900 text-base md:text-lg italic leading-relaxed">
+                "Minha missão é simples: devolver à sua criança a confiança que ela merece e provar que 10 minutos por dia são suficientes para mudar tudo."
+              </p>
+              <footer className="mt-3 text-sm font-semibold text-[#B8860B] not-italic">— Suzane Lopes</footer>
+            </blockquote>
+
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+              <span className="inline-flex items-center gap-2 bg-[#FFFDE7] border border-[#D4AF37]/30 rounded-full px-4 py-2 text-sm font-semibold text-slate-800">
+                <span className="text-lg">🎓</span> Especialista em Alfabetização
+              </span>
+              <span className="inline-flex items-center gap-2 bg-[#FFFDE7] border border-[#D4AF37]/30 rounded-full px-4 py-2 text-sm font-semibold text-slate-800">
+                <span className="text-lg">👶</span> +500 crianças transformadas
+              </span>
+              <span className="inline-flex items-center gap-2 bg-[#FFFDE7] border border-[#D4AF37]/30 rounded-full px-4 py-2 text-sm font-semibold text-slate-800">
+                <span className="text-lg">📚</span> Método baseado em neurociência
+              </span>
+            </div>
           </div>
         </div>
       </section>
