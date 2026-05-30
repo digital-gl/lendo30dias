@@ -228,6 +228,7 @@ function LandingPage() {
   const handlePlayVideo = () => {
     if (videoRef.current) {
       videoRef.current.muted = false;
+      videoRef.current.volume = 0.75;
       videoRef.current.play();
       setShowPlayButton(false);
     }
@@ -236,6 +237,7 @@ function LandingPage() {
   const handlePlaySocialVideo = () => {
     if (socialVideoRef.current) {
       socialVideoRef.current.muted = false;
+      socialVideoRef.current.volume = 0.75;
       socialVideoRef.current.play();
       setShowSocialPlayButton(false);
     }
@@ -325,8 +327,6 @@ function LandingPage() {
             video.muted = true;
             video.play();
           });
-          if (video === videoRef.current) setShowPlayButton(false);
-          if (video === socialVideoRef.current) setShowSocialPlayButton(false);
         } else {
           video.pause();
         }
@@ -353,7 +353,7 @@ function LandingPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-12 px-6 flex flex-col items-center text-center bg-[radial-gradient(50%_50%_at_50%_50%,_#FFFFFF_0%,_#FFF4CC_100%)]">
+      <section className="pt-4 pb-12 px-6 flex flex-col items-center text-center bg-[radial-gradient(50%_50%_at_50%_50%,_#FFFFFF_0%,_#FFF4CC_100%)]">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="px-4 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-sm mb-6 uppercase tracking-widest font-bold">
           O FIM DA GUERRA NA HORA DA TAREFA
         </motion.div>
@@ -383,9 +383,9 @@ function LandingPage() {
         <div className="mt-8 flex flex-col items-center gap-6">
           <div className="bg-white rounded-full px-6 py-2.5 shadow-xl border border-slate-100 flex items-center gap-3">
             <div className="flex -space-x-2">
-              <img src="https://i.imgur.com/sDHjn2m.png" alt="Criança 1" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-              <img src="https://i.imgur.com/PHQ6tpy.png" alt="Criança 2" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-              <img src="https://i.imgur.com/GcM5DRs.jpeg" alt="Criança 3" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+              <img src="https://i.imgur.com/tR994JQ.png" alt="Criança 1" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+              <img src="https://i.imgur.com/Ngnrla4.png" alt="Criança 2" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+              <img src="https://i.imgur.com/MIv4BCw.png" alt="Criança 3" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
             </div>
             <span className="text-slate-600 font-black text-sm uppercase tracking-tighter">
               +300 crianças transformadas
@@ -568,8 +568,6 @@ function LandingPage() {
             playsInline
             muted
             loop
-            onPause={() => setShowPlayButton(true)}
-            onPlay={() => setShowPlayButton(false)}
           >
             <source src="https://i.imgur.com/PNodnZZ.mp4" type="video/mp4" />
             Seu navegador não suporta vídeos.
@@ -754,8 +752,6 @@ function LandingPage() {
               playsInline
               muted
               loop
-              onPause={() => setShowSocialPlayButton(true)}
-              onPlay={() => setShowSocialPlayButton(false)}
             >
               <source src="https://i.imgur.com/O6sRb8J.mp4" type="video/mp4" />
               Seu navegador não suporta vídeos.
