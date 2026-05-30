@@ -126,12 +126,18 @@ function OfertaSecretaPage() {
               SIM! QUERO POR R$ 19,90 AGORA
             </motion.a>
 
-            <div className="mt-6 flex flex-col items-center gap-4">
-              <img 
-                src="https://qtbkvshbmqlszncxlcuc.supabase.co/storage/v1/object/public/dsl-uploads/VgwwcY4OnnTnyzgELGOV23cI2Qu1/8546cab0-80e7-4182-9bf5-56f7847a6272.png" 
-                alt="+300 crianças transformadas" 
-                className="h-8 md:h-10 w-auto object-contain"
-              />
+            <div className="mt-6 flex flex-col items-center gap-5">
+              <div className="bg-white rounded-full px-4 py-2 shadow-lg border border-slate-100 flex items-center gap-2">
+                <div className="flex -space-x-1.5">
+                  <img src="https://i.imgur.com/PHQ6tpy.png" alt="Criança 1" className="w-6 h-6 rounded-full border-2 border-white object-cover" />
+                  <img src="https://i.imgur.com/gpEBlEG.png" alt="Criança 2" className="w-6 h-6 rounded-full border-2 border-white object-cover" />
+                  <img src="https://i.imgur.com/CSHkF2d.png" alt="Criança 3" className="w-6 h-6 rounded-full border-2 border-white object-cover" />
+                </div>
+                <span className="text-slate-600 font-black text-[10px] uppercase tracking-tighter">
+                  +300 crianças transformadas
+                </span>
+              </div>
+
               <div className="flex flex-col items-center gap-1.5 text-slate-500 font-bold text-[11px] md:text-xs">
                 <div className="flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
