@@ -352,9 +352,9 @@ function LandingPage() {
         <div className="mt-8 flex flex-col items-center gap-6">
           <div className="bg-white rounded-full px-6 py-2.5 shadow-xl border border-slate-100 flex items-center gap-3">
             <div className="flex -space-x-2">
-              <img src="https://i.imgur.com/PHQ6tpy.png" alt="Criança 1" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-              <img src="https://i.imgur.com/gpEBlEG.png" alt="Criança 2" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-              <img src="https://i.imgur.com/CSHkF2d.png" alt="Criança 3" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+              <img src="https://i.imgur.com/sDHjn2m.png" alt="Criança 1" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+              <img src="https://i.imgur.com/PHQ6tpy.png" alt="Criança 2" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+              <img src="https://i.imgur.com/GcM5DRs.jpeg" alt="Criança 3" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
             </div>
             <span className="text-slate-600 font-black text-sm uppercase tracking-tighter">
               +300 crianças transformadas
