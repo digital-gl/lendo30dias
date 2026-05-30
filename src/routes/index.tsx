@@ -575,7 +575,6 @@ function LandingPage() {
             className="w-full h-full object-cover"
             controls
             playsInline
-            muted
             loop
           >
             <source src="https://i.imgur.com/PNodnZZ.mp4" type="video/mp4" />
