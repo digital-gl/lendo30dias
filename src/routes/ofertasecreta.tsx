@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, ShieldCheck, Star, Clock, Gift, AlertTriangle } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/ofertasecreta")({
