@@ -778,7 +778,10 @@ function LandingPage() {
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-8 tracking-tight">O que dizem as mamães</h2>
         
         <div className="mb-16 max-w-4xl mx-auto">
-          <div className="bg-black rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white aspect-[9/16] max-w-[320px] mx-auto relative group">
+          <div 
+            onMouseEnter={handlePlaySocialVideo}
+            className="bg-black rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white aspect-[9/16] max-w-[320px] mx-auto relative group"
+          >
             <video 
               ref={socialVideoRef}
               className="w-full h-full object-cover"
