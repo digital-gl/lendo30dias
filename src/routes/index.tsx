@@ -338,46 +338,6 @@ function LandingPage() {
           Chega de promessas escolares vazias. Assuma o controle com o passo a passo domiciliar que destrava a leitura e devolve a autoestima da criança, mesmo que você não seja professora.
         </p>
 
-        <div className="w-full max-w-[320px] aspect-[9/16] bg-black rounded-3xl mb-12 shadow-2xl overflow-hidden border-8 border-white relative mx-auto group">
-          <video 
-            ref={videoRef}
-            className="w-full h-full object-cover"
-            controls
-            playsInline
-            loop
-            onPause={() => setShowPlayButton(true)}
-            onPlay={() => setShowPlayButton(false)}
-          >
-            <source src="https://i.imgur.com/PNodnZZ.mp4" type="video/mp4" />
-            Seu navegador não suporta vídeos.
-          </video>
-
-          <AnimatePresence>
-            {showPlayButton && (
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]"
-              >
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={handlePlayVideo}
-                  className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] hover:from-[#D4AF37] hover:to-[#FFEA70] text-white p-6 rounded-full shadow-[0_0_50px_rgba(212,175,55,0.6)] mb-4 animate-pulse"
-                >
-                  <Play className="w-10 h-10 fill-current" />
-                </motion.button>
-                <button 
-                  onClick={handlePlayVideo}
-                  className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] hover:from-[#D4AF37] hover:to-[#FFEA70] text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20"
-                >
-                  Veja como seu filho aprenderá rapidinho!
-                </button>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
 
         <motion.a
           href="#oferta"
