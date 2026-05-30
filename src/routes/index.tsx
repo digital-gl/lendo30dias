@@ -687,6 +687,80 @@ function LandingPage() {
         </div>
       </section>
 
+      <section className="py-16 px-6 bg-white">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-8 tracking-tight">O que dizem as mamães</h2>
+        
+        <div className="mb-16 max-w-4xl mx-auto">
+          <div className="bg-black rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white aspect-[9/16] max-w-[320px] mx-auto relative group">
+            <video 
+              ref={socialVideoRef}
+              className="w-full h-full object-cover"
+              controls
+              playsInline
+              loop
+              onPause={() => setShowSocialPlayButton(true)}
+              onPlay={() => setShowSocialPlayButton(false)}
+            >
+              <source src="https://i.imgur.com/O6sRb8J.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeos.
+            </video>
+
+            <AnimatePresence>
+              {showSocialPlayButton && (
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]"
+                >
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handlePlaySocialVideo}
+                    className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] hover:from-[#D4AF37] hover:to-[#FFEA70] text-white p-6 rounded-full shadow-[0_0_50px_rgba(212,175,55,0.6)] mb-4 animate-pulse"
+                  >
+                    <Play className="w-10 h-10 fill-current" />
+                  </motion.button>
+                  <button 
+                    onClick={handlePlaySocialVideo}
+                    className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] hover:from-[#D4AF37] hover:to-[#FFEA70] text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20 flex items-center gap-2 animate-bounce"
+                  >
+                    Olha o que aconteceu com essa mãe uma semana após adquirir o material! <ArrowDown className="w-4 h-4" />
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3 sm:gap-6 max-w-4xl mx-auto mb-16">
+          {[
+            "https://i.imgur.com/X0ZwkvB.jpeg",
+            "https://i.imgur.com/GcM5DRs.jpeg",
+            "https://i.imgur.com/AVTtPHm.jpeg",
+            "https://i.imgur.com/keJhWpy.jpeg",
+          ].map((src, i) => (
+            <div key={i} className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
+              <img src={src} alt={`Prova social ${i + 1}`} className="w-full h-auto object-contain" loading="lazy" />
+            </div>
+          ))}
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {testimonials.map((t, i) => (
+            <div key={i} className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center text-center">
+              <p className="text-slate-600 italic mb-10 flex-1 text-lg leading-relaxed">"{t.text}"</p>
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-[#D4AF37]/20 overflow-hidden">
+                  <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                </div>
+                <span className="font-black text-slate-900 uppercase tracking-tight">{t.name}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section id="oferta" className="py-16 px-6 bg-white relative scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
@@ -838,82 +912,8 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Section 10: Prova Social (Avaliações) */}
-      <section className="py-16 px-6 bg-white">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-8 tracking-tight">O que dizem as mamães</h2>
-        
-        <div className="mb-16 max-w-4xl mx-auto">
-          <div className="bg-black rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white aspect-[9/16] max-w-[320px] mx-auto relative group">
-            <video 
-              ref={socialVideoRef}
-              className="w-full h-full object-cover"
-              controls
-              playsInline
-              loop
-              onPause={() => setShowSocialPlayButton(true)}
-              onPlay={() => setShowSocialPlayButton(false)}
-            >
-              <source src="https://i.imgur.com/O6sRb8J.mp4" type="video/mp4" />
-              Seu navegador não suporta vídeos.
-            </video>
 
-            <AnimatePresence>
-              {showSocialPlayButton && (
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]"
-                >
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={handlePlaySocialVideo}
-                    className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] hover:from-[#D4AF37] hover:to-[#FFEA70] text-white p-6 rounded-full shadow-[0_0_50px_rgba(212,175,55,0.6)] mb-4 animate-pulse"
-                  >
-                    <Play className="w-10 h-10 fill-current" />
-                  </motion.button>
-                  <button 
-                    onClick={handlePlaySocialVideo}
-                    className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] hover:from-[#D4AF37] hover:to-[#FFEA70] text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20 flex items-center gap-2 animate-bounce"
-                  >
-                    Olha o que aconteceu com essa mãe uma semana após adquirir o material! <ArrowDown className="w-4 h-4" />
-                  </button>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:gap-6 max-w-4xl mx-auto mb-16">
-          {[
-            "https://i.imgur.com/X0ZwkvB.jpeg",
-            "https://i.imgur.com/GcM5DRs.jpeg",
-            "https://i.imgur.com/AVTtPHm.jpeg",
-            "https://i.imgur.com/keJhWpy.jpeg",
-          ].map((src, i) => (
-            <div key={i} className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
-              <img src={src} alt={`Prova social ${i + 1}`} className="w-full h-auto object-contain" loading="lazy" />
-            </div>
-          ))}
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((t, i) => (
-            <div key={i} className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center text-center">
-              <p className="text-slate-600 italic mb-10 flex-1 text-lg leading-relaxed">"{t.text}"</p>
-              <div className="flex flex-col items-center gap-3">
-                <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-[#D4AF37]/20 overflow-hidden">
-                  <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
-                </div>
-                <span className="font-black text-slate-900 uppercase tracking-tight">{t.name}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Section 11: Quem Somos */}
       <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
           <div className="w-48 h-48 rounded-full bg-white p-2 shadow-2xl mb-12 overflow-hidden border-4 border-[#D4AF37]/20">
@@ -988,4 +988,3 @@ function LandingPage() {
     </div>
   );
 }
-

@@ -143,7 +143,47 @@ function OfertaSecreta5Page() {
         </div>
       </section>
 
+      {/* SOCIAL PROOF IMAGES */}
+      <section className="py-14 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-center mb-3 tracking-tight">
+            Veja mães reais comemorando o resultado
+          </h2>
+          <p className="text-center text-slate-600 font-medium mb-10">
+            Mensagens reais enviadas pelas mães que aplicaram o método em casa.
+          </p>
+
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-12">
+            {proofs.map((src, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
+                <img src={src} alt={`Prova social ${i + 1}`} className="w-full h-auto object-contain" loading="lazy" />
+              </div>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((t, i) => (
+              <div key={i} className="bg-[#FFFBEB] p-6 rounded-3xl shadow-md border border-[#D4AF37]/20 flex flex-col items-center text-center">
+                <div className="flex mb-3">
+                  {[...Array(5)].map((_, k) => (
+                    <Star key={k} className="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]" />
+                  ))}
+                </div>
+                <p className="text-slate-700 italic mb-5 flex-1 text-sm leading-relaxed">"{t.text}"</p>
+                <div className="flex flex-col items-center gap-2">
+                  <div className="w-12 h-12 rounded-full bg-slate-100 border-2 border-[#D4AF37]/30 overflow-hidden">
+                    <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                  </div>
+                  <span className="font-black text-slate-900 text-xs uppercase tracking-tight">{t.name}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* WHAT YOU GET */}
+
       <section className="py-14 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
@@ -192,44 +232,6 @@ function OfertaSecreta5Page() {
         </div>
       </section>
 
-      {/* SOCIAL PROOF IMAGES */}
-      <section className="py-14 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-extrabold text-center mb-3 tracking-tight">
-            Veja mães reais comemorando o resultado
-          </h2>
-          <p className="text-center text-slate-600 font-medium mb-10">
-            Mensagens reais enviadas pelas mães que aplicaram o método em casa.
-          </p>
-
-          <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-12">
-            {proofs.map((src, i) => (
-              <div key={i} className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
-                <img src={src} alt={`Prova social ${i + 1}`} className="w-full h-auto object-contain" loading="lazy" />
-              </div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <div key={i} className="bg-[#FFFBEB] p-6 rounded-3xl shadow-md border border-[#D4AF37]/20 flex flex-col items-center text-center">
-                <div className="flex mb-3">
-                  {[...Array(5)].map((_, k) => (
-                    <Star key={k} className="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]" />
-                  ))}
-                </div>
-                <p className="text-slate-700 italic mb-5 flex-1 text-sm leading-relaxed">"{t.text}"</p>
-                <div className="flex flex-col items-center gap-2">
-                  <div className="w-12 h-12 rounded-full bg-slate-100 border-2 border-[#D4AF37]/30 overflow-hidden">
-                    <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
-                  </div>
-                  <span className="font-black text-slate-900 text-xs uppercase tracking-tight">{t.name}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* GUARANTEE */}
       <section className="py-14 px-6 bg-slate-50">
