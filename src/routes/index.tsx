@@ -1052,12 +1052,10 @@ function LandingPage() {
             <img src="https://i.imgur.com/wKX4vto.jpeg" alt="Lendo em 30 Dias" className="w-full h-full object-cover" />
           </div>
 
-          <p className="text-slate-500 max-w-3xl mb-8 leading-relaxed">
-            Aviso Legal: Os resultados podem variar de acordo com o empenho e a dedicação de cada família no acompanhamento do método. Este produto não substitui o acompanhamento de profissionais da saúde quando necessário.
-          </p>
-          
+          <h3 className="text-[#D4AF37] font-black text-3xl md:text-4xl mb-8 tracking-tight">Lendo em 30 Dias</h3>
+
           <div className="text-slate-600 text-sm">
-            © 2026 Lendo em 30 Dias - Todos os direitos reservados.
+            © 2026 - Todos os direitos reservados.
           </div>
         </div>
       </footer>
