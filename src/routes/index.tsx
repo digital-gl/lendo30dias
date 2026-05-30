@@ -349,6 +349,27 @@ function LandingPage() {
         >
           QUERO DESTRAVAR A LEITURA DO MEU FILHO
         </motion.a>
+        <div className="mt-8 flex flex-col items-center gap-4">
+          <img 
+            src="https://qtbkvshbmqlszncxlcuc.supabase.co/storage/v1/object/public/dsl-uploads/VgwwcY4OnnTnyzgELGOV23cI2Qu1/8546cab0-80e7-4182-9bf5-56f7847a6272.png" 
+            alt="+300 crianças transformadas" 
+            className="h-10 md:h-12 w-auto object-contain"
+          />
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-slate-500 font-bold text-sm md:text-base">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-emerald-600" />
+              <span>Acesso Imediato</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-5 h-5 text-emerald-600" />
+              <span>Método Comprovado</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Trophy className="w-5 h-5 text-emerald-600" />
+              <span>7 Dias Garantia</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Section 7: O que você desbloqueia agora mesmo */}
