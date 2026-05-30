@@ -327,10 +327,11 @@ function LandingPage() {
         const video = entry.target as HTMLVideoElement;
         if (entry.isIntersecting) {
           video.play().catch(() => {
-            // Autoplay might be blocked by browser policies if not muted
             video.muted = true;
             video.play();
           });
+          if (video === videoRef.current) setShowPlayButton(false);
+          if (video === socialVideoRef.current) setShowSocialPlayButton(false);
         } else {
           video.pause();
         }
