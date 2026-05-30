@@ -323,7 +323,16 @@ function LandingPage() {
       entries.forEach((entry) => {
         const video = entry.target as HTMLVideoElement;
         if (entry.isIntersecting) {
-          video.play().catch(() => {
+          // Tenta iniciar com som (0.75 como solicitado anteriormente)
+          video.muted = false;
+          video.volume = 0.75;
+          
+          video.play().then(() => {
+            // Se o navegador permitiu com som, removemos o botão de overlay
+            if (video === videoRef.current) setShowPlayButton(false);
+            if (video === socialVideoRef.current) setShowSocialPlayButton(false);
+          }).catch(() => {
+            // Se o navegador bloqueou som sem interação, iniciamos mudo
             video.muted = true;
             video.play();
           });
