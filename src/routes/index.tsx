@@ -439,7 +439,7 @@ function LandingPage() {
             {[
               { 
                 emoji: "📘", 
-                title: "Caderno Nível 1: O Despertar Fonético", 
+                title: "Kit Nível 1: O Despertar Fonético", 
                 badge: "NÍVEL 1",
                 badgeClass: "bg-blue-600 text-white",
                 result: "🎯 Sílabas dominadas em dias",
@@ -452,7 +452,7 @@ function LandingPage() {
               },
               { 
                 emoji: "🧩", 
-                title: "Caderno Nível 2: Conexão e Aceleração", 
+                title: "Kit Nível 2: Conexão e Aceleração", 
                 badge: "NÍVEL 2",
                 badgeClass: "bg-emerald-600 text-white",
                 result: "🎯 Primeiras palavras reais",
@@ -465,7 +465,8 @@ function LandingPage() {
               },
               { 
                 emoji: "🏆", 
-                title: "Caderno Nível 3: Domínio e Confiança", 
+                title: "Kit Nível 3: Domínio e Confiança", 
+
                 badge: "NÍVEL 3 ⭐",
                 badgeClass: "bg-[#F5C518] text-slate-900",
                 result: "🎯 Leitura autônoma completa",
