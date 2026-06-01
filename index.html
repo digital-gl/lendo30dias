@@ -17,32 +17,31 @@
     <meta name="twitter:description" content="A Única Intervenção Fônica Capaz de Fazer Seu Filho Ler em 30 Dias, Gastando Apenas 10 Minutos por Dia." />
     <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4c5c6652-f971-4e8d-959f-a03814418308/id-preview-2ef08454--d55d8b9e-b51b-40d9-a732-e99578dbbad6.lovable.app-1779564946872.png" />
 
-    <!-- Utmify Pixel -->
-    <script>
-      window.pixelId = "69d850698443413765fd0d96";
-      var a = document.createElement("script");
-      a.setAttribute("async", "");
-      a.setAttribute("defer", "");
-      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-      document.head.appendChild(a);
-    </script>
+    <!-- Third-party analytics: deferred until after page load to keep main thread free -->
+    <script defer>
+      window.addEventListener('load', function () {
+        // Utmify Pixel
+        window.pixelId = "69d850698443413765fd0d96";
+        var p = document.createElement("script");
+        p.async = true; p.defer = true;
+        p.src = "https://cdn.utmify.com.br/scripts/pixel/pixel.js";
+        document.head.appendChild(p);
 
-    <!-- Utmify UTM Tracking -->
-    <script
-      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-      data-utmify-prevent-xcod-sck
-      data-utmify-prevent-subids
-      async
-      defer
-    ></script>
+        // Utmify UTM Tracking
+        var u = document.createElement("script");
+        u.async = true; u.defer = true;
+        u.src = "https://cdn.utmify.com.br/scripts/utms/latest.js";
+        u.setAttribute("data-utmify-prevent-xcod-sck", "");
+        u.setAttribute("data-utmify-prevent-subids", "");
+        document.head.appendChild(u);
 
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "wyve9xh9sc");
+        // Microsoft Clarity
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wyve9xh9sc");
+      });
     </script>
   </head>
   <body>
