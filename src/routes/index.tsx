@@ -418,7 +418,7 @@ function LandingPage() {
               <img src="https://i.imgur.com/MIv4BCw.png" alt="Criança 3" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
             </div>
             <span className="text-slate-600 font-black text-sm uppercase tracking-tighter">
-              +300 crianças transformadas
+              +847 crianças transformadas
             </span>
           </div>
           
