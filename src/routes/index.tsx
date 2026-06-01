@@ -445,31 +445,40 @@ function LandingPage() {
               { 
                 emoji: "📘", 
                 title: "Caderno Nível 1: O Despertar Fonético", 
+                badge: "NÍVEL 1",
+                badgeClass: "bg-blue-600 text-white",
+                result: "🎯 Sílabas dominadas em dias",
                 bullets: [
-                  "Material de apoio em PDF liberado na hora para baixar e imprimir.",
-                  "Conteúdo organizado em um passo a passo detalhado e à prova de falhas.",
-                  "Exercícios práticos de fixação em Letra Bastão e Letra Cursiva.",
-                  "Foco: Eliminar o vício de \"chutar\" palavras e fixar o som real de cada letra."
+                  "📥 PDF liberado na hora",
+                  "📋 Passo a passo à prova de falhas",
+                  "✏️ Bastão e Cursiva inclusos",
+                  "🎯 Elimina o vício de chutar"
                 ]
               },
               { 
                 emoji: "🧩", 
                 title: "Caderno Nível 2: Conexão e Aceleração", 
+                badge: "NÍVEL 2",
+                badgeClass: "bg-emerald-600 text-white",
+                result: "🎯 Primeiras palavras reais",
                 bullets: [
-                  "Material em PDF estruturado visualmente para reter a atenção da criança.",
-                  "Progressão lógica focada na junção rápida de sílabas e sons.",
-                  "Atividades completas disponíveis em Letra Bastão e Letra Cursiva.",
-                  "Foco: Fazer o cérebro da criança formar as primeiras palavras reais sem bloqueios."
+                  "👁️ Visual estruturado para focar",
+                  "🔗 Junção rápida de sílabas",
+                  "✏️ Bastão e Cursiva inclusos",
+                  "🧠 Primeiras palavras sem bloqueio"
                 ]
               },
               { 
                 emoji: "🏆", 
                 title: "Caderno Nível 3: Domínio e Confiança", 
+                badge: "NÍVEL 3 ⭐",
+                badgeClass: "bg-[#F5C518] text-slate-900",
+                result: "🎯 Leitura autônoma completa",
                 bullets: [
-                  "Material em PDF de nível avançado para consolidação da leitura.",
-                  "Páginas de treino estruturadas com frases inteiras e fixação da escrita.",
-                  "Refinamento motor final em Letra Bastão e Letra Cursiva.",
-                  "Foco: Garantir a autonomia absoluta para o seu filho ler sozinho."
+                  "📈 Nível avançado de consolidação",
+                  "📝 Frases inteiras e fixação",
+                  "✍️ Refinamento em Cursiva",
+                  "🏆 Leitura 100% autônoma"
                 ]
               }
             ].map((item, i) => (
@@ -479,12 +488,17 @@ function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-[#FFFBEB] p-10 rounded-[2.5rem] shadow-xl border border-[#D4AF37]/30 flex flex-col gap-6 text-left hover:shadow-2xl transition-all"
+                className="bg-[#FFFBEB] pt-8 px-8 pb-0 md:pt-10 md:px-10 rounded-[2.5rem] shadow-xl border border-[#D4AF37]/30 flex flex-col gap-6 text-left hover:shadow-2xl transition-all overflow-hidden"
               >
-                <div className="text-6xl text-center">{item.emoji}</div>
+                <div className="flex justify-center">
+                  <span className={`inline-block px-5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-md ${item.badgeClass}`}>
+                    {item.badge}
+                  </span>
+                </div>
+                <div className="text-7xl md:text-8xl text-center py-4 leading-none">{item.emoji}</div>
                 <div>
-                  <h3 className="text-xl font-black mb-6 text-slate-900 leading-tight text-center">{item.title}</h3>
-                  <ul className="space-y-4">
+                  <h3 className="text-xl font-black mb-6 leading-tight text-center" style={{ color: "#F5C518" }}>{item.title}</h3>
+                  <ul className="space-y-4 mb-6">
                     {item.bullets.map((bullet, idx) => (
                       <li key={idx} className="flex gap-3 items-start">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2 shrink-0" />
@@ -492,6 +506,9 @@ function LandingPage() {
                       </li>
                     ))}
                   </ul>
+                </div>
+                <div className="-mx-8 md:-mx-10 mt-auto bg-[#F5C518] text-slate-900 font-black text-center py-4 px-4 text-sm md:text-base uppercase tracking-tight rounded-b-[2.5rem]">
+                  {item.result}
                 </div>
               </motion.div>
             ))}
