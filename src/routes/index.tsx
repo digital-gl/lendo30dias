@@ -794,7 +794,6 @@ function LandingPage() {
               controls
               playsInline
               loop
-              muted
               preload="none"
             >
               <source src="https://i.imgur.com/O6sRb8J.mp4" type="video/mp4" />
