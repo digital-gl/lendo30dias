@@ -310,6 +310,23 @@ function LandingPage() {
   ];
 
   useEffect(() => {
+    const unmuteAll = () => {
+      if (videoRef.current) {
+        videoRef.current.muted = false;
+      }
+      if (socialVideoRef.current) {
+        socialVideoRef.current.muted = false;
+      }
+      // Uma vez que interagiu, podemos remover os listeners
+      window.removeEventListener('click', unmuteAll);
+      window.removeEventListener('touchstart', unmuteAll);
+      window.removeEventListener('scroll', unmuteAll);
+    };
+
+    window.addEventListener('click', unmuteAll);
+    window.addEventListener('touchstart', unmuteAll);
+    window.addEventListener('scroll', unmuteAll);
+
     const observerOptions = {
       root: null,
       rootMargin: '0px',
@@ -320,9 +337,13 @@ function LandingPage() {
       entries.forEach((entry) => {
         const video = entry.target as HTMLVideoElement;
         if (entry.isIntersecting) {
-          // Sempre inicia mudo para garantir autoplay automático
-          video.muted = true;
-          video.play().then(() => {
+          // Tenta tocar com som (pode falhar se não houve interação ainda)
+          video.muted = false;
+          video.play().catch(() => {
+            // Se falhar, toca mudo (padrão dos browsers para autoplay)
+            video.muted = true;
+            return video.play();
+          }).then(() => {
             // Remove overlay de play assim que o vídeo começa
             if (video === videoRef.current) setShowPlayButton(false);
             if (video === socialVideoRef.current) setShowSocialPlayButton(false);
@@ -340,6 +361,9 @@ function LandingPage() {
 
     return () => {
       observer.disconnect();
+      window.removeEventListener('click', unmuteAll);
+      window.removeEventListener('touchstart', unmuteAll);
+      window.removeEventListener('scroll', unmuteAll);
     };
   }, []);
 
@@ -501,7 +525,6 @@ function LandingPage() {
             controls
             playsInline
             loop
-            muted
             preload="none"
             poster="https://i.imgur.com/U0beZTE.png"
           >
@@ -771,7 +794,6 @@ function LandingPage() {
               controls
               playsInline
               loop
-              muted
               preload="none"
             >
               <source src="https://i.imgur.com/O6sRb8J.mp4" type="video/mp4" />
