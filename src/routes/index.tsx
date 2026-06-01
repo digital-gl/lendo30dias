@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: "https://i.imgur.com/U0beZTE.png",
+        href: "https://i.imgur.com/7UEy7hz.png",
         fetchpriority: "high",
       },
     ],
@@ -392,7 +392,7 @@ function LandingPage() {
         
 
         <img
-          src="https://i.imgur.com/U0beZTE.png"
+          src="https://i.imgur.com/7UEy7hz.png"
           alt="Material do Método"
           width={1024}
           height={1024}
