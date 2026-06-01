@@ -967,6 +967,16 @@ function LandingPage() {
                   >
                     QUERO O MATERIAL COMPLETO
                   </a>
+                  <div className="flex flex-row items-center justify-center gap-4 text-slate-500 font-bold text-xs uppercase mb-4">
+                    <div className="flex items-center gap-1">
+                      <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                      <span>Acesso Imediato</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Trophy className="w-4 h-4 text-emerald-600" />
+                      <span>7 Dias Garantia</span>
+                    </div>
+                  </div>
                   <p className="text-center text-red-600 font-black text-xs uppercase tracking-wider">
                     Último dia com desconto do material completo. 
                     <br />
