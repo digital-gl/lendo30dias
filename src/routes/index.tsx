@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, BookOpen, Puzzle, Trophy, ChevronLeft, ChevronRight, Star, ShieldCheck, ChevronDown, ChevronUp, ShoppingBag, ArrowDown, Play } from "lucide-react";
+import { Check, Trophy, ChevronLeft, ChevronRight, ShieldCheck, ChevronDown, ChevronUp, ArrowDown, Play } from "lucide-react";
 import { useEffect, useState, useCallback, useRef } from "react";
 import useEmblaCarousel from 'embla-carousel-react';
 import { createFileRoute } from "@tanstack/react-router";
@@ -430,9 +430,9 @@ function LandingPage() {
         <div className="mt-8 flex flex-col items-center gap-6">
           <div className="bg-white rounded-full px-6 py-2.5 shadow-xl border border-slate-100 flex items-center gap-3">
             <div className="flex -space-x-2">
-              <img src="https://i.imgur.com/tR994JQ.png" alt="Criança 1" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-              <img src="https://i.imgur.com/Ngnrla4.png" alt="Criança 2" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-              <img src="https://i.imgur.com/MIv4BCw.png" alt="Criança 3" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+              <img src="https://i.imgur.com/tR994JQ.png" alt="Criança 1" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+              <img src="https://i.imgur.com/Ngnrla4.png" alt="Criança 2" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+              <img src="https://i.imgur.com/MIv4BCw.png" alt="Criança 3" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
             </div>
             <span className="text-slate-600 font-black text-sm uppercase tracking-tighter">
               +300 crianças transformadas
@@ -539,6 +539,10 @@ function LandingPage() {
               <img
                 src="https://i.imgur.com/uCfFn2j.png"
                 alt="Harvard University"
+                width={400}
+                height={112}
+                loading="lazy"
+                decoding="async"
                 className="h-20 md:h-28 w-auto"
               />
             </div>
@@ -676,6 +680,10 @@ function LandingPage() {
                   <img 
                     src={example.image} 
                     alt={example.title}
+                    width={800}
+                    height={1000}
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 w-full h-full object-cover md:object-contain bg-white"
                   />
                   
@@ -772,7 +780,7 @@ function LandingPage() {
                 className="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-slate-100 flex flex-col md:flex-row items-center gap-6 group hover:shadow-2xl transition-all"
               >
                 <div className="w-full md:w-40 aspect-square bg-slate-100 rounded-2xl overflow-hidden shrink-0">
-                  <img src={bonus.img} alt={bonus.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img src={bonus.img} alt={bonus.title} width={400} height={400} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <div className="flex flex-col items-center md:items-start gap-1 mb-2">
@@ -1025,7 +1033,7 @@ function LandingPage() {
               <p className="text-slate-600 italic mb-10 flex-1 text-lg leading-relaxed">"{t.text}"</p>
               <div className="flex flex-col items-center gap-3">
                 <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-[#D4AF37]/20 overflow-hidden">
-                  <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                  <img src={t.image} alt={t.name} width={64} height={64} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </div>
                 <span className="font-black text-slate-900 uppercase tracking-tight">{t.name}</span>
               </div>
@@ -1051,7 +1059,7 @@ function LandingPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center">
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-white p-2 shadow-2xl overflow-hidden border-4 border-[#D4AF37]/20">
-              <img src="https://i.imgur.com/atfjAG1.jpeg" alt="Suzane Lopes" className="w-full h-full object-cover rounded-full" />
+              <img src="https://i.imgur.com/atfjAG1.jpeg" alt="Suzane Lopes" width={320} height={320} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full" />
             </div>
           </div>
 
@@ -1122,7 +1130,7 @@ function LandingPage() {
       <footer className="bg-slate-900 py-12 px-6 text-white text-center">
         <div className="max-w-6xl mx-auto flex flex-col items-center">
           <div className="w-32 h-32 rounded-full overflow-hidden mb-8 border-4 border-[#D4AF37]/30 shadow-xl">
-            <img src="https://i.imgur.com/wKX4vto.jpeg" alt="Lendo em 30 Dias" className="w-full h-full object-cover" />
+            <img src="https://i.imgur.com/wKX4vto.jpeg" alt="Lendo em 30 Dias" width={128} height={128} loading="lazy" decoding="async" className="w-full h-full object-cover" />
           </div>
 
           <h3 className="text-[#D4AF37] font-black text-3xl md:text-4xl mb-8 tracking-tight">Lendo em 30 Dias</h3>
