@@ -305,7 +305,7 @@ function LandingPage() {
   const faqs = [
     { q: "Como vou receber o material?", a: "O acesso é imediato e 100% digital. Após a confirmação do pagamento, você receberá o link para download em seu e-mail e poderá imprimir quando quiser." },
     { q: "Para qual idade é recomendado?", a: "O material foi desenvolvido para crianças em fase de alfabetização, geralmente entre 4 e 8 anos, ou crianças mais velhas que ainda apresentam dificuldades na leitura." },
-    { q: "O material é em PDF?", a: "Sim, todos os arquivos estão em formato PDF de alta qualidade, prontos para impressão em casa ou em gráficas." },
+    { q: "Não sou professora, vou conseguir aplicar com meu filho?", a: "Sim! O método foi criado justamente para mães, sem a necessidade de qualquer formação pedagógica. O material é intuitivo e guia você passo a passo em cada exercício, exigindo apenas 10 minutos do seu dia." },
     { q: "Quanto tempo demora para ver resultados?", a: "Seguindo o passo a passo de apenas 10 minutos por dia, muitas mães relatam mudanças significativas na percepção sonora já na primeira semana." }
   ];
 
