@@ -1022,7 +1022,7 @@ function LandingPage() {
             "https://i.imgur.com/keJhWpy.jpeg",
           ].map((src, i) => (
             <div key={i} className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
-              <img src={src} alt={`Prova social ${i + 1}`} className="w-full h-auto object-contain" loading="lazy" />
+              <img src={src} alt={`Prova social ${i + 1}`} width={600} height={800} loading="lazy" decoding="async" className="w-full h-auto object-contain" />
             </div>
           ))}
         </div>
