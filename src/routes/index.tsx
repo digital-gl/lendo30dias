@@ -1059,6 +1059,35 @@ function LandingPage() {
         </div>
       </section>
 
+      {/* Guarantee Section */}
+      <section className="py-12 px-6 bg-white overflow-hidden">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-slate-200 via-slate-100 to-slate-200 rounded-[2.5rem] blur-sm opacity-50 transition duration-1000 group-hover:opacity-100"></div>
+            <div className="relative bg-white p-8 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-2xl flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              <div className="relative shrink-0">
+                <div className="absolute inset-0 bg-[#D4AF37]/10 blur-3xl rounded-full"></div>
+                <div className="relative bg-[#FFFBEB] p-6 rounded-full border border-[#D4AF37]/20 shadow-inner group-hover:scale-110 transition-transform duration-500">
+                  <ShieldCheck className="w-16 h-16 md:w-20 md:h-20 text-[#D4AF37] stroke-[1.5]" />
+                </div>
+              </div>
+              
+              <div className="flex-1 text-center md:text-left">
+                <div className="inline-block px-4 py-1.5 rounded-full bg-slate-50 border border-slate-100 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
+                  Satisfação Garantida
+                </div>
+                <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight leading-tight">
+                  Seu filho lendo em <span className="text-[#D4AF37]">30 dias</span> ou seu dinheiro de volta
+                </h2>
+                <p className="text-slate-600 font-medium text-lg leading-relaxed max-w-xl">
+                  Confiamos tanto no <span className="font-bold text-slate-900">Método de 4 Pontas</span> que oferecemos 7 dias de garantia incondicional. O risco é todo nosso.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 px-6 bg-white">
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-8 tracking-tight">Depoimentos</h2>
         
