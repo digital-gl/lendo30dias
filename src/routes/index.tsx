@@ -773,7 +773,7 @@ function LandingPage() {
             <h4 className="text-xl md:text-2xl font-black text-slate-900 mb-2">
               Valor total dos bônus: <span className="text-red-600 line-through">R$ 277,30</span>
             </h4>
-            <div className="text-[#D4AF37] font-black text-3xl md:text-4xl uppercase tracking-tighter">
+            <div className="text-emerald-600 font-black text-3xl md:text-4xl uppercase tracking-tighter">
               Levando a oferta hoje: TUDO GRÁTIS
             </div>
           </div>
