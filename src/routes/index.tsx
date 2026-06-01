@@ -7,8 +7,8 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     links: [
-      { rel: "preconnect", href: "https://wsrv.nl", crossOrigin: "" },
-      { rel: "dns-prefetch", href: "https://wsrv.nl" },
+      { rel: "preconnect", href: "https://i.imgur.com", crossOrigin: "" },
+      { rel: "dns-prefetch", href: "https://i.imgur.com" },
       {
         rel: "preload",
         as: "image",
