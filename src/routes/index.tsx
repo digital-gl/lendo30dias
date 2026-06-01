@@ -65,38 +65,13 @@ function SalesToast() {
     const runSequence = async () => {
       const wait = (ms: number) => new Promise(resolve => timeoutId = setTimeout(resolve, ms));
 
+      // Wait 10 seconds before the first one appears
+      await wait(10000);
+
       while (true) {
-        // 1. Primeira aparece
         addNotification(1);
+        // Wait 10 seconds between each notification
         await wait(10000);
-
-        // 2. Aparece 3 em seguida com pausa maior
-        for (let i = 0; i < 3; i++) {
-          addNotification(1);
-          await wait(6000);
-        }
-
-        // 3. Pausa longa, depois 3 em seguida
-        await wait(35000);
-        for (let i = 0; i < 3; i++) {
-          addNotification(1);
-          await wait(6000);
-        }
-
-        // 4. 2 a cada 25 segundos
-        for (let i = 0; i < 2; i++) {
-          await wait(25000);
-          addNotification(1);
-        }
-
-        // 5. 2 a cada 20 segundos
-        for (let i = 0; i < 2; i++) {
-          await wait(20000);
-          addNotification(1);
-        }
-
-        // Reinicia o ciclo
-        await wait(30000);
       }
     };
 
