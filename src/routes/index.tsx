@@ -1062,9 +1062,9 @@ function LandingPage() {
       {/* Guarantee Section */}
       <section className="py-6 px-6 bg-white overflow-hidden">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-slate-50 py-3 px-6 rounded-full border border-slate-100 flex items-center justify-center shadow-sm">
-            <p className="text-slate-500 font-medium text-sm md:text-base tracking-tight text-center">
-              Garantia de Satisfação - <span className="text-slate-900 font-bold">Seu filho lendo em 30 dias</span>
+          <div className="bg-[#FFF1BF] py-3 px-6 rounded-full border border-[#FDE68A] flex items-center justify-center shadow-sm">
+            <p className="text-amber-900 font-bold text-sm md:text-base tracking-tight text-center">
+              Garantia de Satisfação de 7 dias
             </p>
           </div>
         </div>
