@@ -866,6 +866,16 @@ function LandingPage() {
               >
                 Quero apenas o básico
               </button>
+              <div className="flex flex-row items-center justify-center gap-4 text-slate-500 font-bold text-xs uppercase mb-8">
+                <div className="flex items-center gap-1">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                  <span>Acesso Imediato</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Trophy className="w-4 h-4 text-emerald-600" />
+                  <span>7 Dias Garantia</span>
+                </div>
+              </div>
 
               <div className="bg-slate-900 text-white py-4 px-6 rounded-2xl text-center text-xs font-bold flex flex-col items-center justify-center gap-3 shadow-xl border border-[#D4AF37]/30">
                 <div className="flex items-center gap-2">
@@ -957,6 +967,16 @@ function LandingPage() {
                   >
                     QUERO O MATERIAL COMPLETO
                   </a>
+                  <div className="flex flex-row items-center justify-center gap-4 text-slate-500 font-bold text-xs uppercase mb-4">
+                    <div className="flex items-center gap-1">
+                      <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                      <span>Acesso Imediato</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Trophy className="w-4 h-4 text-emerald-600" />
+                      <span>7 Dias Garantia</span>
+                    </div>
+                  </div>
                   <p className="text-center text-red-600 font-black text-xs uppercase tracking-wider">
                     Último dia com desconto do material completo. 
                     <br />
