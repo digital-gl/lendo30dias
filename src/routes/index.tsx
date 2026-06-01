@@ -751,12 +751,16 @@ function LandingPage() {
                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">BÔNUS {i + 1}</span>
                   </div>
                   <h3 className="text-lg font-black text-[#D4AF37] mb-1 uppercase tracking-tight">{bonus.title}</h3>
-                  <div className="flex flex-col items-center md:items-start mb-4">
-                    <span className="text-red-600 line-through text-xs font-bold">R$ {bonus.oldPrice}</span>
-                    <span className="text-emerald-600 text-sm font-black uppercase tracking-tighter">
+                  <motion.div
+                    animate={{ scale: [1, 1.06, 1] }}
+                    transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+                    className="flex flex-col items-center md:items-start mb-4"
+                  >
+                    <span className="text-red-600 line-through text-lg md:text-xl font-bold">R$ {bonus.oldPrice}</span>
+                    <span className="text-emerald-600 text-xl md:text-2xl font-black uppercase tracking-tighter">
                       Por R$ 0,00
                     </span>
-                  </div>
+                  </motion.div>
                   <p className="text-sm text-slate-600 font-medium leading-relaxed">{bonus.desc}</p>
                 </div>
               </motion.div>
