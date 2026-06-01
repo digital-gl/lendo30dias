@@ -911,7 +911,7 @@ function LandingPage() {
                   </div>
 
                   <div className="flex flex-col items-center gap-2 mb-5 text-slate-500 text-xs font-bold bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
-                    <span>+2.157 mães já usaram o material e conquistaram a leitura fluente</span>
+                    <span>+847 mães já usaram o material e conquistaram a leitura fluente</span>
                   </div>
 
                   <div className="space-y-2 mb-5 flex flex-col items-center">
