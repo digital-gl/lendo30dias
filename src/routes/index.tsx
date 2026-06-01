@@ -485,13 +485,9 @@ function LandingPage() {
                 ]
               }
             ].map((item, i) => (
-              <motion.div 
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-[#FFFBEB] pt-8 px-8 pb-0 md:pt-10 md:px-10 rounded-[2.5rem] shadow-xl border border-[#D4AF37]/30 flex flex-col gap-6 text-left hover:shadow-2xl transition-all overflow-hidden"
+                className="bg-[#FFFBEB] pt-8 px-8 pb-0 md:pt-10 md:px-10 rounded-[2.5rem] shadow-xl border border-[#D4AF37]/30 flex flex-col gap-6 text-left overflow-hidden"
               >
                 <div className="flex justify-center">
                   <span className={`inline-block px-5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-md ${item.badgeClass}`}>
@@ -513,7 +509,7 @@ function LandingPage() {
                 <div className="-mx-8 md:-mx-10 mt-auto bg-[#F5C518] text-slate-900 font-black text-center py-4 px-4 text-sm md:text-base uppercase tracking-tight rounded-b-[2.5rem]">
                   {item.result}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
