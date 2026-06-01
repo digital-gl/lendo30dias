@@ -894,11 +894,11 @@ function LandingPage() {
               <div className="relative group flex-1">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] rounded-[3rem] blur opacity-40 group-hover:opacity-60 transition duration-1000"></div>
                 <div className="relative bg-white p-6 md:p-8 rounded-[3rem] border-4 border-[#D4AF37] flex flex-col h-full shadow-[0_30px_60px_rgba(212,175,55,0.25)] overflow-hidden text-center">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 bg-red-600 text-white font-black px-8 py-2 md:rounded-bl-3xl rounded-b-xl text-sm shadow-xl flex items-center gap-2 z-10">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 bg-red-600 text-white font-black px-8 py-2 md:rounded-bl-3xl rounded-b-xl text-sm shadow-xl flex items-center gap-2 z-10 whitespace-nowrap">
                     🔥 MAIS VENDIDO
                   </div>
                   
-                  <h3 className="text-3xl font-black text-slate-900 mb-1 mt-6 md:mt-0 uppercase tracking-tight">Plano Premium</h3>
+                  <h3 className="text-3xl font-black text-slate-900 mb-1 mt-16 md:mt-0 uppercase tracking-tight">Plano Premium</h3>
                   <p className="text-[#D4AF37] font-black mb-4 uppercase tracking-widest text-xs">Acesso Vitalício + Todos os Bônus</p>
                   
                   <div className="mb-4">
