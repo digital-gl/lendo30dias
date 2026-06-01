@@ -793,8 +793,8 @@ function LandingPage() {
                     transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
                     className="flex flex-col items-center md:items-start mb-4"
                   >
-                    <span className="text-red-600 line-through text-lg md:text-xl font-bold">R$ {bonus.oldPrice}</span>
-                    <span className="text-emerald-600 text-xl md:text-2xl font-black uppercase tracking-tighter">
+                    <span className="text-red-600 line-through text-2xl md:text-3xl font-bold">R$ {bonus.oldPrice}</span>
+                    <span className="text-emerald-600 text-3xl md:text-4xl font-black uppercase tracking-tighter">
                       Por R$ 0,00
                     </span>
                   </motion.div>
