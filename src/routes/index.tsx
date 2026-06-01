@@ -68,7 +68,7 @@ function SalesToast() {
       while (true) {
         // 1. Primeira aparece
         addNotification(1);
-        await wait(25000);
+        await wait(10000);
 
         // 2. Aparece 3 em seguida com pausa maior
         for (let i = 0; i < 3; i++) {
