@@ -511,90 +511,6 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Logic */}
-      <section className="py-16 px-6 bg-[#FFFDE7]">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight text-slate-900">
-              A Técnica Comprovada por Harvard que Ensina Qualquer Criança a Ler em 30 Dias
-            </h2>
-            <div className="flex justify-center py-8">
-              <img
-                src="https://i.imgur.com/uCfFn2j.png"
-                alt="Harvard University"
-                width={400}
-                height={112}
-                loading="lazy"
-                decoding="async"
-                className="h-20 md:h-28 w-auto"
-              />
-            </div>
-            <p className="text-lg md:text-xl text-slate-800 max-w-3xl mx-auto leading-relaxed font-medium">
-              Você sabia que existe uma técnica{" "}
-              <span className="bg-[#F5C518] text-slate-900 font-bold px-2 py-0.5 rounded">
-                comprovada por Harvard
-              </span>{" "}
-              que permite qualquer criança aprender a ler de forma natural, rápida e sem traumas?
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            {[
-              { icon: "🧠", iconBg: "bg-blue-100", title: "Ciência Simplificada", text: "Táticas avançadas traduzidas em passos simples para qualquer mãe aplicar." },
-              { icon: "⚡", iconBg: "bg-[#D4AF37]/20", title: "Aprendizado Acelerado", text: "O cérebro aprende por sons, não por decoreba. Resultado em dias, não meses." },
-              { icon: "🏆", iconBg: "bg-emerald-100", title: "Confiança de Volta", text: "A criança passa a encarar a leitura como um desafio e a autoestima cresce junto." }
-            ].map((card, i) => (
-              <div
-                key={i}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 flex flex-col items-center text-center gap-4 hover:shadow-xl transition-all animate-fade-in"
-              >
-                <div className={`${card.iconBg} w-16 h-16 rounded-full flex items-center justify-center text-3xl`}>
-                  {card.icon}
-                </div>
-                <h3 className="text-xl font-extrabold text-slate-900">{card.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{card.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* NEW SECTION: Encontre o exercício certo em segundos */}
-      <section className="py-16 px-6 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
-              Encontre o exercício certo em segundos
-            </h2>
-            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Um ecossistema perfeitamente organizado para você identificar a dificuldade exata do seu filho e aplicar a solução imediata.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { emoji: "🅰️", title: "Sons das Vogais" },
-              { emoji: "✏️", title: "Letra Bastão Nativa" },
-              { emoji: "🖋️", title: "Transição Cursiva" },
-              { emoji: "🧩", title: "Conexão Silábica" },
-              
-              { emoji: "⏱️", title: "Treinos de 10 Minutos" },
-              { emoji: "🚀", title: "Sílabas Complexas" },
-              { emoji: "📖", title: "Fluência Leitora" },
-              { emoji: "✍️", title: "Escrita Firme" }
-            ].map((card, i) => (
-              <div
-                key={i}
-                className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all flex flex-col items-center text-center gap-3 hover:-translate-y-1 hover:border-[#D4AF37]"
-              >
-                <span className="text-3xl">{card.emoji}</span>
-                <h3 className="font-bold text-slate-900 leading-tight">{card.title}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Section 5: EXEMPLOS REAIS */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
@@ -689,6 +605,90 @@ function LandingPage() {
                 <div key={i} className={`w-2.5 h-2.5 rounded-full transition-all ${selectedIndex === i ? 'bg-[#D4AF37] w-8' : 'bg-slate-200'}`} />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Logic */}
+      <section className="py-16 px-6 bg-[#FFFDE7]">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight text-slate-900">
+              A Técnica Comprovada por Harvard que Ensina Qualquer Criança a Ler em 30 Dias
+            </h2>
+            <div className="flex justify-center py-8">
+              <img
+                src="https://i.imgur.com/uCfFn2j.png"
+                alt="Harvard University"
+                width={400}
+                height={112}
+                loading="lazy"
+                decoding="async"
+                className="h-20 md:h-28 w-auto"
+              />
+            </div>
+            <p className="text-lg md:text-xl text-slate-800 max-w-3xl mx-auto leading-relaxed font-medium">
+              Você sabia que existe uma técnica{" "}
+              <span className="bg-[#F5C518] text-slate-900 font-bold px-2 py-0.5 rounded">
+                comprovada por Harvard
+              </span>{" "}
+              que permite qualquer criança aprender a ler de forma natural, rápida e sem traumas?
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            {[
+              { icon: "🧠", iconBg: "bg-blue-100", title: "Ciência Simplificada", text: "Táticas avançadas traduzidas em passos simples para qualquer mãe aplicar." },
+              { icon: "⚡", iconBg: "bg-[#D4AF37]/20", title: "Aprendizado Acelerado", text: "O cérebro aprende por sons, não por decoreba. Resultado em dias, não meses." },
+              { icon: "🏆", iconBg: "bg-emerald-100", title: "Confiança de Volta", text: "A criança passa a encarar a leitura como um desafio e a autoestima cresce junto." }
+            ].map((card, i) => (
+              <div
+                key={i}
+                className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 flex flex-col items-center text-center gap-4 hover:shadow-xl transition-all animate-fade-in"
+              >
+                <div className={`${card.iconBg} w-16 h-16 rounded-full flex items-center justify-center text-3xl`}>
+                  {card.icon}
+                </div>
+                <h3 className="text-xl font-extrabold text-slate-900">{card.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{card.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION: Encontre o exercício certo em segundos */}
+      <section className="py-16 px-6 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+              Encontre o exercício certo em segundos
+            </h2>
+            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Um ecossistema perfeitamente organizado para você identificar a dificuldade exata do seu filho e aplicar a solução imediata.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { emoji: "🅰️", title: "Sons das Vogais" },
+              { emoji: "✏️", title: "Letra Bastão Nativa" },
+              { emoji: "🖋️", title: "Transição Cursiva" },
+              { emoji: "🧩", title: "Conexão Silábica" },
+              
+              { emoji: "⏱️", title: "Treinos de 10 Minutos" },
+              { emoji: "🚀", title: "Sílabas Complexas" },
+              { emoji: "📖", title: "Fluência Leitora" },
+              { emoji: "✍️", title: "Escrita Firme" }
+            ].map((card, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all flex flex-col items-center text-center gap-3 hover:-translate-y-1 hover:border-[#D4AF37]"
+              >
+                <span className="text-3xl">{card.emoji}</span>
+                <h3 className="font-bold text-slate-900 leading-tight">{card.title}</h3>
+              </div>
+            ))}
           </div>
         </div>
       </section>
