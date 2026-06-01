@@ -780,7 +780,7 @@ function LandingPage() {
       </section>
 
       <section className="py-16 px-6 bg-white">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-8 tracking-tight">O que dizem as mamães</h2>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-8 tracking-tight">Veja os resultados reais</h2>
         
         <div className="mb-16 max-w-4xl mx-auto">
           <div 
