@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: "https://wsrv.nl/?url=i.imgur.com/U0beZTE.png&output=webp&q=82",
+        href: "https://wsrv.nl/?url=i.imgur.com/U0beZTE.png&w=900&output=webp&q=78",
         fetchpriority: "high",
       },
     ],
@@ -405,7 +405,7 @@ function LandingPage() {
         
 
         <img
-          src="https://wsrv.nl/?url=i.imgur.com/U0beZTE.png&output=webp&q=82"
+          src="https://wsrv.nl/?url=i.imgur.com/U0beZTE.png&w=900&output=webp&q=78"
           alt="Material do Método"
           width={1024}
           height={1024}
@@ -636,6 +636,8 @@ function LandingPage() {
             playsInline
             loop
             muted
+            preload="none"
+            poster="https://wsrv.nl/?url=i.imgur.com/U0beZTE.png&w=480&output=webp&q=70"
           >
             <source src="https://i.imgur.com/PNodnZZ.mp4" type="video/mp4" />
             Seu navegador não suporta vídeos.
@@ -833,6 +835,7 @@ function LandingPage() {
               playsInline
               loop
               muted
+              preload="none"
             >
               <source src="https://i.imgur.com/O6sRb8J.mp4" type="video/mp4" />
               Seu navegador não suporta vídeos.
