@@ -1,4 +1,4 @@
-import { Check, Trophy, ChevronLeft, ChevronRight, ShieldCheck, ChevronDown, ChevronUp, ArrowDown, Play } from "lucide-react";
+import { Check, Trophy, ChevronLeft, ChevronRight, ShieldCheck, ChevronDown, ChevronUp, ArrowDown, Play, Target, Puzzle, Timer, BookOpen } from "lucide-react";
 import { useEffect, useState, useCallback, useRef } from "react";
 import useEmblaCarousel from 'embla-carousel-react';
 import { createFileRoute } from "@tanstack/react-router";
@@ -657,38 +657,65 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* NEW SECTION: Encontre o exercício certo em segundos */}
-      <section className="py-16 px-6 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
+      {/* Section: Como funciona o "Método de 4 Pontas" na prática? */}
+      <section className="py-24 px-6 bg-white relative overflow-hidden">
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
-              Encontre o exercício certo em segundos
+            <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
+              Como funciona o <span className="text-[#D4AF37]">"Método de 4 Pontas"</span> na prática?
             </h2>
-            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Um ecossistema perfeitamente organizado para você identificar a dificuldade exata do seu filho e aplicar a solução imediata.
+            <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-medium">
+              Um passo a passo tão simples que seu filho aprende brincando, sem exigir que você seja pedagoga.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { emoji: "🅰️", title: "Sons das Vogais" },
-              { emoji: "✏️", title: "Letra Bastão Nativa" },
-              { emoji: "🖋️", title: "Transição Cursiva" },
-              { emoji: "🧩", title: "Conexão Silábica" },
-              
-              { emoji: "⏱️", title: "Treinos de 10 Minutos" },
-              { emoji: "🚀", title: "Sílabas Complexas" },
-              { emoji: "📖", title: "Fluência Leitora" },
-              { emoji: "✍️", title: "Escrita Firme" }
+              {
+                icon: <Target className="w-8 h-8 text-[#D4AF37]" />,
+                title: "PONTA 1: O Fim do \"Chute\" (Som e Base)",
+                desc: "A escola foca no nome da letra. Nós focamos no som. O cérebro da criança é mapeado para entender a fonética exata, eliminando de vez o vício de tentar \"adivinhar\" as palavras. O destrave começa aqui."
+              },
+              {
+                icon: <Puzzle className="w-8 h-8 text-[#D4AF37]" />,
+                title: "PONTA 2: Conexão Automática",
+                desc: "Com os sons dominados, usamos blocos visuais estratégicos. A criança aprende a juntar as sílabas sem esforço cognitivo, formando as primeiras palavras reais nos primeiros dias. Sem travar e sem leitura robotizada."
+              },
+              {
+                icon: <BookOpen className="w-8 h-8 text-[#D4AF37]" />,
+                title: "PONTA 3: Domínio e Autonomia",
+                desc: "O salto da palavra solta para a frase completa. Introduzimos textos curtos e fazemos a transição suave para a Letra Cursiva. A insegurança some e a criança passa a ler com confiança e fluência."
+              },
+              {
+                icon: <Timer className="w-8 h-8 text-[#D4AF37]" />,
+                title: "PONTA 4: O Ciclo de 10 Minutos",
+                desc: "Chega de chorar por horas na mesa da sala. O método é blindado por pílulas diárias de 10 minutos com jogos e desafios rápidos. A criança retém 3x mais porque sente que está apenas se divertindo."
+              }
             ].map((card, i) => (
               <div
                 key={i}
-                className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all flex flex-col items-center text-center gap-3 hover:-translate-y-1 hover:border-[#D4AF37]"
+                className="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col items-center text-center gap-6 group hover:-translate-y-2"
               >
-                <span className="text-3xl">{card.emoji}</span>
-                <h3 className="font-bold text-slate-900 leading-tight">{card.title}</h3>
+                <div className="bg-white p-5 rounded-2xl shadow-md group-hover:scale-110 transition-transform">
+                  {card.icon}
+                </div>
+                <h3 className="text-xl font-black text-slate-900 leading-tight">
+                  {card.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed font-medium">
+                  {card.desc}
+                </p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <a
+              href="#oferta"
+              className="inline-block bg-slate-900 text-white font-black text-lg py-6 px-12 rounded-2xl shadow-xl hover:bg-slate-800 hover:scale-105 active:scale-95 transition-all uppercase tracking-tight"
+            >
+              Quero receber o método
+            </a>
           </div>
         </div>
       </section>
