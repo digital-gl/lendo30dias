@@ -1083,7 +1083,7 @@ function LandingPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center">
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-white p-2 shadow-2xl overflow-hidden border-4 border-[#D4AF37]/20">
-              <img src="https://i.imgur.com/atfjAG1.jpeg" alt="Suzane Lopes" width={320} height={320} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full" />
+              <img src="https://i.imgur.com/6o9r43s.png" alt="Suzane Lopes" width={320} height={320} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full" />
             </div>
           </div>
 
