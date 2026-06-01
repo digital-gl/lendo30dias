@@ -765,7 +765,7 @@ function LandingPage() {
 
           <div className="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl border-4 border-[#D4AF37]/20 text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]" />
-            <p className="text-slate-500 font-bold mb-2 uppercase tracking-widest text-sm">Empilhamento Total de Valor</p>
+            <p className="text-slate-500 font-bold mb-2 uppercase tracking-widest text-sm">Quanto você economiza levando hoje:</p>
             <h4 className="text-xl md:text-2xl font-black text-slate-900 mb-2">
               Valor total dos bônus: <span className="text-red-600 line-through">R$ 277,30</span>
             </h4>
