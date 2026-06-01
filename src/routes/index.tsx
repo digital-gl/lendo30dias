@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: "https://wsrv.nl/?url=i.imgur.com/U0beZTE.png&w=900&output=webp&q=78",
+        href: "https://i.imgur.com/U0beZTE.png",
         fetchpriority: "high",
       },
     ],
@@ -292,29 +292,29 @@ function LandingPage() {
     {
       title: "Caderno de Grafismo Fônico - Nível 1",
       subtitle: "Fundação fônica completa em Letra Bastão e Cursiva para acabar com o hábito de chutar palavras.",
-      image: "https://wsrv.nl/?url=i.imgur.com/KO4maH3.png&output=webp&q=82"
+      image: "https://i.imgur.com/KO4maH3.png"
     },
     {
       title: "Conexão Silábica - Nível 2",
       subtitle: "O cérebro da criança começa a juntar os sons de forma automatizada para formar as primeiras palavras reais.",
-      image: "https://wsrv.nl/?url=i.imgur.com/GEhxP4N.png&output=webp&q=82"
+      image: "https://i.imgur.com/GEhxP4N.png"
     },
     {
       title: "Domínio e Autonomia - Nível 3",
       subtitle: "Passo a passo avançado focado na leitura fluente de frases longas e fixação da escrita firme.",
-      image: "https://wsrv.nl/?url=i.imgur.com/a9muPzM.png&output=webp&q=82"
+      image: "https://i.imgur.com/a9muPzM.png"
     },
     {
       title: "Jogos e Fichas Silábicas Práticas",
       subtitle: "Gamificação domiciliar para prender a atenção da criança e acelerar a memorização sem cansaço.",
-      image: "https://wsrv.nl/?url=i.imgur.com/22Rw9jC.png&output=webp&q=82"
+      image: "https://i.imgur.com/22Rw9jC.png"
     }
   ];
 
   const testimonials = [
-    { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!", image: "https://wsrv.nl/?url=i.imgur.com/PHQ6tpy.png&output=webp&q=82" },
-    { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado.", image: "https://wsrv.nl/?url=i.imgur.com/gpEBlEG.png&output=webp&q=82" },
-    { name: "Patrícia Mendes", text: "O método é muito simples de aplicar, mesmo eu não sendo pedagoga.", image: "https://wsrv.nl/?url=i.imgur.com/CSHkF2d.png&output=webp&q=82" }
+    { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!", image: "https://i.imgur.com/PHQ6tpy.png" },
+    { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado.", image: "https://i.imgur.com/gpEBlEG.png" },
+    { name: "Patrícia Mendes", text: "O método é muito simples de aplicar, mesmo eu não sendo pedagoga.", image: "https://i.imgur.com/CSHkF2d.png" }
   ];
 
   const faqs = [
@@ -407,7 +407,7 @@ function LandingPage() {
         
 
         <img
-          src="https://wsrv.nl/?url=i.imgur.com/U0beZTE.png&w=900&output=webp&q=78"
+          src="https://i.imgur.com/U0beZTE.png"
           alt="Material do Método"
           width={1024}
           height={1024}
@@ -432,9 +432,9 @@ function LandingPage() {
         <div className="mt-8 flex flex-col items-center gap-6">
           <div className="bg-white rounded-full px-6 py-2.5 shadow-xl border border-slate-100 flex items-center gap-3">
             <div className="flex -space-x-2">
-              <img src="https://wsrv.nl/?url=i.imgur.com/tR994JQ.png&output=webp&q=82" alt="Criança 1" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-              <img src="https://wsrv.nl/?url=i.imgur.com/Ngnrla4.png&output=webp&q=82" alt="Criança 2" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-              <img src="https://wsrv.nl/?url=i.imgur.com/MIv4BCw.png&output=webp&q=82" alt="Criança 3" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+              <img src="https://i.imgur.com/tR994JQ.png" alt="Criança 1" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+              <img src="https://i.imgur.com/Ngnrla4.png" alt="Criança 2" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+              <img src="https://i.imgur.com/MIv4BCw.png" alt="Criança 3" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
             </div>
             <span className="text-slate-600 font-black text-sm uppercase tracking-tighter">
               +300 crianças transformadas
@@ -539,7 +539,7 @@ function LandingPage() {
             </h2>
             <div className="flex justify-center py-8">
               <img
-                src="https://wsrv.nl/?url=i.imgur.com/uCfFn2j.png&output=webp&q=82"
+                src="https://i.imgur.com/uCfFn2j.png"
                 alt="Harvard University"
                 width={400}
                 height={112}
@@ -639,7 +639,7 @@ function LandingPage() {
             loop
             muted
             preload="none"
-            poster="https://wsrv.nl/?url=i.imgur.com/U0beZTE.png&w=480&output=webp&q=70"
+            poster="https://i.imgur.com/U0beZTE.png"
           >
             <source src="https://i.imgur.com/PNodnZZ.mp4" type="video/mp4" />
             Seu navegador não suporta vídeos.
@@ -742,37 +742,37 @@ function LandingPage() {
                 title: "Acelerador de Consciência Silábica", 
                 desc: "Técnicas práticas para a criança dominar a estrutura das sílabas rapidamente.",
                 oldPrice: "47,90",
-                img: "https://wsrv.nl/?url=i.imgur.com/K1FlMpX.png&output=webp&q=82"
+                img: "https://i.imgur.com/K1FlMpX.png"
               },
               { 
                 title: "Jogo de Retenção Acelerada - Fichas Silábicas", 
                 desc: "Material lúdico para fixar o aprendizado de forma divertida e eficiente.",
                 oldPrice: "37,90",
-                img: "https://wsrv.nl/?url=i.imgur.com/b6Is6u1.png&output=webp&q=82"
+                img: "https://i.imgur.com/b6Is6u1.png"
               },
               { 
                 title: "Protocolo de Fluência Leitora", 
                 desc: "O guia definitivo para eliminar a leitura pausada e robotizada.",
                 oldPrice: "57,90",
-                img: "https://wsrv.nl/?url=i.imgur.com/G0VWwVm.png&output=webp&q=82"
+                img: "https://i.imgur.com/G0VWwVm.png"
               },
               { 
                 title: "Tiras de Leitura Dinâmica", 
                 desc: "Exercícios rápidos de 10 minutos para destravar a leitura natural.",
                 oldPrice: "27,90",
-                img: "https://wsrv.nl/?url=i.imgur.com/hW2TZJo.png&output=webp&q=82"
+                img: "https://i.imgur.com/hW2TZJo.png"
               },
               { 
                 title: "Desafio dos 50 Textos Fatiados", 
                 desc: "Atividades progressivas que constroem a confiança na leitura de frases.",
                 oldPrice: "67,90",
-                img: "https://wsrv.nl/?url=i.imgur.com/iOWJrLt.png&output=webp&q=82"
+                img: "https://i.imgur.com/iOWJrLt.png"
               },
               { 
                 title: "Fundação da Leitura Rápida", 
                 desc: "O segredo para acelerar a compreensão de textos sem cansaço.",
                 oldPrice: "37,90",
-                img: "https://wsrv.nl/?url=i.imgur.com/2q7pzfO.png&output=webp&q=82"
+                img: "https://i.imgur.com/2q7pzfO.png"
               }
             ].map((bonus, i) => (
               <motion.div 
@@ -1021,10 +1021,10 @@ function LandingPage() {
         
         <div className="grid grid-cols-2 gap-3 sm:gap-6 max-w-4xl mx-auto mb-16">
           {[
-            "https://wsrv.nl/?url=i.imgur.com/X0ZwkvB.jpeg&output=webp&q=82",
-            "https://wsrv.nl/?url=i.imgur.com/GcM5DRs.jpeg&output=webp&q=82",
-            "https://wsrv.nl/?url=i.imgur.com/AVTtPHm.jpeg&output=webp&q=82",
-            "https://wsrv.nl/?url=i.imgur.com/keJhWpy.jpeg&output=webp&q=82",
+            "https://i.imgur.com/X0ZwkvB.jpeg",
+            "https://i.imgur.com/GcM5DRs.jpeg",
+            "https://i.imgur.com/AVTtPHm.jpeg",
+            "https://i.imgur.com/keJhWpy.jpeg",
           ].map((src, i) => (
             <div key={i} className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
               <img src={src} alt={`Prova social ${i + 1}`} width={600} height={800} loading="lazy" decoding="async" className="w-full h-auto object-contain" />
@@ -1064,7 +1064,7 @@ function LandingPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center">
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-white p-2 shadow-2xl overflow-hidden border-4 border-[#D4AF37]/20">
-              <img src="https://wsrv.nl/?url=i.imgur.com/atfjAG1.jpeg&output=webp&q=82" alt="Suzane Lopes" width={320} height={320} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full" />
+              <img src="https://i.imgur.com/atfjAG1.jpeg" alt="Suzane Lopes" width={320} height={320} loading="lazy" decoding="async" className="w-full h-full object-cover rounded-full" />
             </div>
           </div>
 
@@ -1135,7 +1135,7 @@ function LandingPage() {
       <footer className="bg-slate-900 py-12 px-6 text-white text-center">
         <div className="max-w-6xl mx-auto flex flex-col items-center">
           <div className="w-32 h-32 rounded-full overflow-hidden mb-8 border-4 border-[#D4AF37]/30 shadow-xl">
-            <img src="https://wsrv.nl/?url=i.imgur.com/wKX4vto.jpeg&output=webp&q=82" alt="Lendo em 30 Dias" width={128} height={128} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+            <img src="https://i.imgur.com/wKX4vto.jpeg" alt="Lendo em 30 Dias" width={128} height={128} loading="lazy" decoding="async" className="w-full h-full object-cover" />
           </div>
 
           <h3 className="text-[#D4AF37] font-black text-3xl md:text-4xl mb-8 tracking-tight">Lendo em 30 Dias</h3>
