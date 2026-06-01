@@ -689,40 +689,40 @@ function LandingPage() {
 
           <div className="relative">
             <div className="overflow-hidden md:overflow-visible" ref={methodEmblaRef}>
-              <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="flex md:grid md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
                 {[
                   {
                     icon: <Target className="w-8 h-8 text-[#D4AF37]" />,
-                    title: "PONTA 1: O Fim do \"Chute\" (Som e Base)",
-                    desc: "A escola foca no nome da letra. Nós focamos no som. O cérebro da criança é mapeado para entender a fonética exata, eliminando de vez o vício de tentar \"adivinhar\" as palavras. O destrave começa aqui."
+                    title: "PONTA 1: Fim do Chute",
+                    desc: "Focamos no som real de cada letra, eliminando o vício da criança de tentar adivinhar palavras."
                   },
                   {
                     icon: <Puzzle className="w-8 h-8 text-[#D4AF37]" />,
-                    title: "PONTA 2: Conexão Automática",
-                    desc: "Com os sons dominados, usamos blocos visuais estratégicos. A criança aprende a juntar as sílabas sem esforço cognitivo, formando as primeiras palavras reais nos primeiros dias. Sem travar e sem leitura robotizada."
+                    title: "PONTA 2: Conexão",
+                    desc: "Uso de blocos visuais para juntar sílabas sem esforço, formando palavras reais logo nos primeiros dias."
                   },
                   {
                     icon: <BookOpen className="w-8 h-8 text-[#D4AF37]" />,
-                    title: "PONTA 3: Domínio e Autonomia",
-                    desc: "O salto da palavra solta para a frase completa. Introduzimos textos curtos e fazemos a transição suave para a Letra Cursiva. A insegurança some e a criança passa a ler com confiança e fluência."
+                    title: "PONTA 3: Autonomia",
+                    desc: "Transição suave para frases e letra cursiva, construindo confiança para uma leitura fluente."
                   },
                   {
                     icon: <Timer className="w-8 h-8 text-[#D4AF37]" />,
-                    title: "PONTA 4: O Ciclo de 10 Minutos",
-                    desc: "Chega de chorar por horas na mesa da sala. O método é blindado por pílulas diárias de 10 minutos com jogos e desafios rápidos. A criança retém 3x mais porque sente que está apenas se divertindo."
+                    title: "PONTA 4: 10 Minutos",
+                    desc: "Pílulas diárias de diversão que garantem 3x mais retenção sem estresse ou cansaço."
                   }
                 ].map((card, i) => (
                   <div
                     key={i}
-                    className="flex-[0_0_85%] md:flex-none bg-[#FFFBEB] p-8 rounded-[2.5rem] border-2 border-[#D4AF37]/30 shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center gap-6 group hover:-translate-y-2 mr-4 md:mr-0"
+                    className="flex-[0_0_85%] md:flex-none bg-[#FFFBEB] p-6 md:p-8 rounded-[2.5rem] border-2 border-[#D4AF37]/30 shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center gap-4 md:gap-6 group hover:-translate-y-2 mr-4 md:mr-0"
                   >
-                    <div className="bg-white p-5 rounded-2xl shadow-md group-hover:scale-110 transition-transform border border-[#D4AF37]/20">
+                    <div className="bg-white p-4 md:p-5 rounded-2xl shadow-md group-hover:scale-110 transition-transform border border-[#D4AF37]/20">
                       {card.icon}
                     </div>
-                    <h3 className="text-xl font-black text-slate-900 leading-tight">
+                    <h3 className="text-lg md:text-xl font-black text-slate-900 leading-tight">
                       {card.title}
                     </h3>
-                    <p className="text-slate-600 leading-relaxed font-medium">
+                    <p className="text-sm md:text-base text-slate-600 leading-relaxed font-medium">
                       {card.desc}
                     </p>
                   </div>
