@@ -5,6 +5,16 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    links: [
+      {
+        rel: "preload",
+        as: "image",
+        href: "https://i.imgur.com/U0beZTE.png",
+        fetchpriority: "high",
+      },
+    ],
+  }),
   component: LandingPage,
 });
 
@@ -394,14 +404,17 @@ function LandingPage() {
         </h1>
         
 
-        <picture className="mb-12 max-w-2xl w-full">
-          <source media="(max-width: 767px)" srcSet="https://i.imgur.com/9gRz4da.png" />
-          <img
-            src="https://i.imgur.com/2wuXEOB.png"
-            alt="Material do Método"
-            className="w-full h-auto rounded-2xl shadow-2xl"
-          />
-        </picture>
+        <img
+          src="https://i.imgur.com/U0beZTE.png"
+          alt="Material do Método"
+          width={1024}
+          height={1024}
+          loading="eager"
+          decoding="async"
+          // @ts-ignore - fetchpriority is a valid HTML attribute
+          fetchpriority="high"
+          className="mb-12 max-w-2xl w-full h-auto rounded-2xl shadow-2xl"
+        />
 
 
         <motion.a
