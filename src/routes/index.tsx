@@ -408,7 +408,7 @@ function LandingPage() {
           href="#oferta"
           className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-xl py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight w-full max-w-sm inline-block text-center animate-pulse-sm hover:scale-105 active:scale-95 transition-transform"
         >
-          QUERO DESTRAVAR A LEITURA DO MEU FILHO
+          Quero receber meu acesso
         </a>
         <div className="mt-8 flex flex-col items-center gap-6">
           <div className="bg-white rounded-full px-6 py-2.5 shadow-xl border border-slate-100 flex items-center gap-3">
@@ -864,7 +864,7 @@ function LandingPage() {
                 onClick={() => setShowDiscount(true)}
                 className="w-full py-5 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black uppercase tracking-tight mb-8 inline-block text-center shadow-lg"
               >
-                Quero apenas o básico
+                Quero receber o básico
               </button>
               <div className="flex flex-row items-center justify-center gap-4 text-slate-500 font-bold text-xs uppercase mb-8">
                 <div className="flex items-center gap-1">
@@ -965,7 +965,7 @@ function LandingPage() {
                     rel="noopener noreferrer"
                     className="w-full py-5 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg md:text-xl shadow-[0_15px_40px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-3 inline-block text-center animate-pulse-cta hover:scale-105 active:scale-95 transition-transform"
                   >
-                    QUERO O MATERIAL COMPLETO
+                    Quero receber o plano completo
                   </a>
                   <div className="flex flex-row items-center justify-center gap-4 text-slate-500 font-bold text-xs uppercase mb-4">
                     <div className="flex items-center gap-1">
