@@ -5,6 +5,16 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    links: [
+      {
+        rel: "preload",
+        as: "image",
+        href: "https://i.imgur.com/U0beZTE.png",
+        fetchpriority: "high",
+      },
+    ],
+  }),
   component: LandingPage,
 });
 
