@@ -382,7 +382,7 @@ function LandingPage() {
 
       {/* Hero Section */}
       <section className="pt-4 pb-12 px-6 flex flex-col items-center text-center bg-[radial-gradient(50%_50%_at_50%_50%,_#FFFFFF_0%,_#FFF4CC_100%)]">
-        <div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="px-4 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-sm mb-6 uppercase tracking-widest font-bold animate-fade-in">
+        <div className="px-4 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-sm mb-6 uppercase tracking-widest font-bold animate-fade-in">
           O FIM DA GUERRA NA HORA DA TAREFA
         </div>
         
