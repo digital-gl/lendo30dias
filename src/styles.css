@@ -151,3 +151,16 @@ a[href*="lovable.dev"], iframe[src*="lovable.dev"], div[style*="Edit with Lovabl
   position: absolute !important;
   z-index: -9999 !important;
 }
+
+/* Looping animation utilities (replace framer-motion loops with pure CSS) */
+@keyframes pulse-scale-sm { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+@keyframes pulse-scale-md { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+@keyframes pulse-scale-lg { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@keyframes pulse-scale-xl { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+@keyframes bounce-down { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+
+.animate-pulse-sm { animation: pulse-scale-sm 2s ease-in-out infinite; }
+.animate-pulse-cta { animation: pulse-scale-md 1.3s ease-in-out infinite; }
+.animate-pulse-lg { animation: pulse-scale-lg 2.4s ease-in-out infinite; }
+.animate-pulse-xl { animation: pulse-scale-xl 1.4s ease-in-out infinite; }
+.animate-bounce-down { animation: bounce-down 1s ease-in-out infinite; }
