@@ -394,11 +394,14 @@ function LandingPage() {
         </h1>
         
 
-        <img
-          src="https://i.imgur.com/U0beZTE.png"
-          alt="Material do Método"
-          className="mb-12 max-w-2xl w-full h-auto rounded-2xl shadow-2xl"
-        />
+        <picture className="mb-12 max-w-2xl w-full">
+          <source media="(max-width: 767px)" srcSet="https://i.imgur.com/9gRz4da.png" />
+          <img
+            src="https://i.imgur.com/U0beZTE.png"
+            alt="Material do Método"
+            className="w-full h-auto rounded-2xl shadow-2xl"
+          />
+        </picture>
 
 
         <motion.a
