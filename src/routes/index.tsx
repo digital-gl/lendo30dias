@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from "framer-motion";
 import { Check, Trophy, ChevronLeft, ChevronRight, ShieldCheck, ChevronDown, ChevronUp, ArrowDown, Play } from "lucide-react";
 import { useEffect, useState, useCallback, useRef } from "react";
 import useEmblaCarousel from 'embla-carousel-react';
@@ -107,14 +106,11 @@ function SalesToast() {
 
   return (
     <div className="fixed bottom-4 left-4 z-[100] flex flex-col-reverse gap-3 pointer-events-none">
-      <AnimatePresence>
+      <>
         {notifications.map((n) => (
-          <motion.div
+          <div
             key={n.id}
-            initial={{ opacity: 0, x: -50, scale: 0.9 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: -50, scale: 0.9 }}
-            className="bg-white border border-slate-100 shadow-2xl rounded-2xl p-4 flex items-center gap-4 min-w-[260px] pointer-events-auto"
+            className="bg-white border border-slate-100 shadow-2xl rounded-2xl p-4 flex items-center gap-4 min-w-[260px] pointer-events-auto animate-fade-in"
           >
             <div className="bg-green-100 p-2 rounded-full">
               <span className="text-xl">🛒</span>
@@ -127,31 +123,24 @@ function SalesToast() {
                 Comprou o Premium
               </span>
             </div>
-          </motion.div>
+          </div>
         ))}
-      </AnimatePresence>
+      </>
     </div>
   );
 }
 
 function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }) {
   return (
-    <AnimatePresence>
+    <>
       {open && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+        <div
+          className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
           onClick={onClose}
         >
-          <motion.div
-            initial={{ scale: 0.8, y: 40, opacity: 0 }}
-            animate={{ scale: 1, y: 0, opacity: 1 }}
-            exit={{ scale: 0.8, y: 40, opacity: 0 }}
-            transition={{ type: "spring", duration: 0.5 }}
+          <div
             onClick={(e) => e.stopPropagation()}
-            className="relative bg-white rounded-[2rem] max-w-md w-full p-6 md:p-8 shadow-2xl border-4 border-[#D4AF37] text-center overflow-hidden"
+            className="relative bg-white rounded-[2rem] max-w-md w-full p-6 md:p-8 shadow-2xl border-4 border-[#D4AF37] text-center overflow-hidden animate-scale-in"
           >
             <button
               onClick={onClose}
@@ -178,14 +167,12 @@ function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }
               <p className="text-xs uppercase tracking-widest text-slate-500 font-bold mb-1">Por apenas</p>
               <div className="flex items-baseline justify-center gap-1">
                 <span className="text-2xl font-bold text-slate-900">R$</span>
-                <motion.span
-                  animate={{ scale: [1, 1.12, 1] }}
-                  transition={{ repeat: Infinity, duration: 1 }}
-                  className="text-6xl md:text-7xl font-black text-[#D4AF37] inline-block"
+                <span
+                  className="text-6xl md:text-7xl font-black text-[#D4AF37] inline-block animate-pulse-xl"
                   style={{ textShadow: "0 6px 24px rgba(212,175,55,0.4)" }}
                 >
                   14,90
-                </motion.span>
+                </span>
               </div>
               <p className="text-emerald-600 font-black text-xs uppercase tracking-tighter mt-2">
                 Economia de R$ 40,00 agora
@@ -196,16 +183,14 @@ function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }
               ⏳ Essa oferta some assim que você fechar esta janela
             </p>
 
-            <motion.a
+            <a
               href="https://pay.kirvano.com/a06e7ea1-ecef-4f82-a02d-14adcd5fe27f"
               target="_blank"
               rel="noopener noreferrer"
-              animate={{ scale: [1, 1.04, 1] }}
-              transition={{ repeat: Infinity, duration: 1.3 }}
-              className="block w-full py-5 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-3"
+              className="block w-full py-5 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-3 animate-pulse-cta hover:scale-105 active:scale-95 transition-transform"
             >
               SIM! QUERO AGORA POR R$ 14,90
-            </motion.a>
+            </a>
 
             <a
               href="https://pay.kirvano.com/ed693073-011c-4fc0-a8f6-332ec1815d19"
@@ -216,10 +201,10 @@ function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }
             >
               Não, prefiro recusar essa oferta única
             </a>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       )}
-    </AnimatePresence>
+    </>
   );
 }
 
@@ -397,9 +382,9 @@ function LandingPage() {
 
       {/* Hero Section */}
       <section className="pt-4 pb-12 px-6 flex flex-col items-center text-center bg-[radial-gradient(50%_50%_at_50%_50%,_#FFFFFF_0%,_#FFF4CC_100%)]">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="px-4 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-sm mb-6 uppercase tracking-widest font-bold">
+        <div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="px-4 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-sm mb-6 uppercase tracking-widest font-bold animate-fade-in">
           O FIM DA GUERRA NA HORA DA TAREFA
-        </motion.div>
+        </div>
         
         <h1 className="text-4xl md:text-7xl font-extrabold max-w-5xl leading-tight mb-8 tracking-tight">
           A Única Intervenção Fônica Capaz de Fazer Seu Filho Ler em <span className="text-[#D4AF37]">30 Dias</span>, Gastando Apenas <span className="text-[#D4AF37]">10 Minutos</span> por Dia.
@@ -419,16 +404,12 @@ function LandingPage() {
         />
 
 
-        <motion.a
+        <a
           href="#oferta"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          animate={{ scale: [1, 1.02, 1] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-xl py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight w-full max-w-sm inline-block text-center"
+          className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-xl py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight w-full max-w-sm inline-block text-center animate-pulse-sm hover:scale-105 active:scale-95 transition-transform"
         >
           QUERO DESTRAVAR A LEITURA DO MEU FILHO
-        </motion.a>
+        </a>
         <div className="mt-8 flex flex-col items-center gap-6">
           <div className="bg-white rounded-full px-6 py-2.5 shadow-xl border border-slate-100 flex items-center gap-3">
             <div className="flex -space-x-2">
@@ -563,20 +544,16 @@ function LandingPage() {
               { icon: "⚡", iconBg: "bg-[#D4AF37]/20", title: "Aprendizado Acelerado", text: "O cérebro aprende por sons, não por decoreba. Resultado em dias, não meses." },
               { icon: "🏆", iconBg: "bg-emerald-100", title: "Confiança de Volta", text: "A criança passa a encarar a leitura como um desafio e a autoestima cresce junto." }
             ].map((card, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 flex flex-col items-center text-center gap-4 hover:shadow-xl transition-all"
+                className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 flex flex-col items-center text-center gap-4 hover:shadow-xl transition-all animate-fade-in"
               >
                 <div className={`${card.iconBg} w-16 h-16 rounded-full flex items-center justify-center text-3xl`}>
                   {card.icon}
                 </div>
                 <h3 className="text-xl font-extrabold text-slate-900">{card.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{card.text}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -606,14 +583,13 @@ function LandingPage() {
               { emoji: "📖", title: "Fluência Leitora" },
               { emoji: "✍️", title: "Escrita Firme" }
             ].map((card, i) => (
-              <motion.div
+              <div
                 key={i}
-                whileHover={{ y: -5, borderColor: "#D4AF37" }}
-                className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all flex flex-col items-center text-center gap-3"
+                className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all flex flex-col items-center text-center gap-3 hover:-translate-y-1 hover:border-[#D4AF37]"
               >
                 <span className="text-3xl">{card.emoji}</span>
                 <h3 className="font-bold text-slate-900 leading-tight">{card.title}</h3>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -645,33 +621,26 @@ function LandingPage() {
             Seu navegador não suporta vídeos.
           </video>
 
-          <AnimatePresence>
+          <>
             {showPlayButton && (
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]"
+              <div 
+                className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px] animate-fade-in"
               >
-                <motion.button
-                  animate={{ scale: [1, 1.12, 1] }}
-                  transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-                  whileHover={{ scale: 1.15 }}
-                  whileTap={{ scale: 0.95 }}
+                <button
                   onClick={handlePlayVideo}
-                  className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white p-6 rounded-full shadow-[0_0_50px_rgba(34,197,94,0.6)] mb-4"
+                  className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white p-6 rounded-full shadow-[0_0_50px_rgba(34,197,94,0.6)] mb-4 animate-pulse-xl hover:scale-110 active:scale-95 transition-transform"
                 >
                   <Play className="w-10 h-10 fill-current" />
-                </motion.button>
+                </button>
                 <button 
                   onClick={handlePlayVideo}
                   className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20"
                 >
                   Clique aqui para ouvir
                 </button>
-              </motion.div>
+              </div>
             )}
-          </AnimatePresence>
+          </>
         </div>
 
         <div className="max-w-xs mx-auto my-10 h-1 rounded-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
@@ -775,13 +744,9 @@ function LandingPage() {
                 img: "https://i.imgur.com/2q7pzfO.png"
               }
             ].map((bonus, i) => (
-              <motion.div 
+              <div 
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-slate-100 flex flex-col md:flex-row items-center gap-6 group hover:shadow-2xl transition-all"
+                className="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-slate-100 flex flex-col md:flex-row items-center gap-6 group hover:shadow-2xl transition-all animate-fade-in"
               >
                 <div className="w-full md:w-40 aspect-square bg-slate-100 rounded-2xl overflow-hidden shrink-0">
                   <img src={bonus.img} alt={bonus.title} width={400} height={400} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -792,19 +757,17 @@ function LandingPage() {
                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">BÔNUS {i + 1}</span>
                   </div>
                   <h3 className="text-lg font-black text-[#D4AF37] mb-1 uppercase tracking-tight">{bonus.title}</h3>
-                  <motion.div
-                    animate={{ scale: [1, 1.06, 1] }}
-                    transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-                    className="flex flex-col items-center md:items-start mb-4"
+                  <div
+                    className="flex flex-col items-center md:items-start mb-4 animate-pulse-lg origin-left"
                   >
                     <span className="text-red-600 line-through text-2xl md:text-3xl font-bold">R$ {bonus.oldPrice}</span>
                     <span className="text-emerald-600 text-3xl md:text-4xl font-black uppercase tracking-tighter">
                       Por R$ 0,00
                     </span>
-                  </motion.div>
+                  </div>
                   <p className="text-sm text-slate-600 font-medium leading-relaxed">{bonus.desc}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -843,33 +806,26 @@ function LandingPage() {
               Seu navegador não suporta vídeos.
             </video>
 
-            <AnimatePresence>
+            <>
               {showSocialPlayButton && (
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]"
+                <div 
+                  className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px] animate-fade-in"
                 >
-                  <motion.button
-                    animate={{ scale: [1, 1.12, 1] }}
-                    transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-                    whileHover={{ scale: 1.15 }}
-                    whileTap={{ scale: 0.95 }}
+                  <button
                     onClick={handlePlaySocialVideo}
-                    className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white p-6 rounded-full shadow-[0_0_50px_rgba(34,197,94,0.6)] mb-4"
+                    className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white p-6 rounded-full shadow-[0_0_50px_rgba(34,197,94,0.6)] mb-4 animate-pulse-xl hover:scale-110 active:scale-95 transition-transform"
                   >
                     <Play className="w-10 h-10 fill-current" />
-                  </motion.button>
+                  </button>
                   <button 
                     onClick={handlePlaySocialVideo}
                     className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-tight shadow-xl border-2 border-white/20 flex items-center gap-2"
                   >
                     Clique aqui para ouvir <ArrowDown className="w-4 h-4" />
                   </button>
-                </motion.div>
+                </div>
               )}
-            </AnimatePresence>
+            </>
           </div>
         </div>
       </section>
@@ -919,13 +875,13 @@ function LandingPage() {
                 </div>
                 <div className="flex justify-center gap-4">
                   {[1, 2, 3].map((i) => (
-                    <motion.div
+                    <div
                       key={i}
-                      animate={{ y: [0, 5, 0] }}
-                      transition={{ repeat: Infinity, duration: 1, delay: i * 0.2 }}
+                      className="animate-bounce-down"
+                      style={{ animationDelay: `${i * 0.2}s` }}
                     >
                       <ArrowDown className="w-5 h-5 text-[#D4AF37]" />
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -994,16 +950,14 @@ function LandingPage() {
                     ))}
                   </div>
 
-                  <motion.a
+                  <a
                     href="https://pay.kirvano.com/d8d06c9f-e81b-4a4e-af6a-1a259dfe4fc7"
                     target="_blank"
                     rel="noopener noreferrer"
-                    animate={{ scale: [1, 1.03, 1] }}
-                    transition={{ repeat: Infinity, duration: 1.5 }}
-                    className="w-full py-5 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg md:text-xl shadow-[0_15px_40px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-3 inline-block text-center"
+                    className="w-full py-5 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg md:text-xl shadow-[0_15px_40px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-3 inline-block text-center animate-pulse-cta hover:scale-105 active:scale-95 transition-transform"
                   >
                     QUERO O MATERIAL COMPLETO
-                  </motion.a>
+                  </a>
                   <p className="text-center text-red-600 font-black text-xs uppercase tracking-wider">
                     Último dia com desconto do material completo. 
                     <br />
@@ -1118,13 +1072,11 @@ function LandingPage() {
                 {openFaq === i ? <ChevronUp className="text-[#D4AF37]" /> : <ChevronDown className="text-slate-400" />}
               </button>
               {openFaq === i && (
-                <motion.div 
-                  initial={{ height: 0 }}
-                  animate={{ height: "auto" }}
-                  className="p-6 bg-slate-50 text-slate-600 border-t border-slate-100"
+                <div 
+                  className="p-6 bg-slate-50 text-slate-600 border-t border-slate-100 animate-fade-in"
                 >
                   {faq.a}
-                </motion.div>
+                </div>
               )}
             </div>
           ))}
