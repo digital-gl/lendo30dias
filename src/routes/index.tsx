@@ -383,8 +383,12 @@ function LandingPage() {
         </div>
         
         <h1 className="text-4xl md:text-7xl font-extrabold max-w-5xl leading-tight mb-8 tracking-tight">
-          A Única Intervenção Fônica Capaz de Fazer Seu Filho Ler em <span className="text-[#D4AF37]">30 Dias</span>, Gastando Apenas <span className="text-[#D4AF37]">10 Minutos</span> por Dia.
+          Descubra como +847 mães estão usando o "Método de 4 Pontas" para destravar a leitura dos filhos em exatos 30 dias.
         </h1>
+        
+        <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-12 font-medium leading-relaxed">
+          A estratégia simples que a escola não ensina, mas que seu filho precisa.
+        </p>
         
 
         <img
