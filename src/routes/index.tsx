@@ -889,31 +889,31 @@ function LandingPage() {
             <div className="flex flex-col gap-4">
               <div className="relative group flex-1">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] rounded-[3rem] blur opacity-40 group-hover:opacity-60 transition duration-1000"></div>
-                <div className="relative bg-white p-8 md:p-10 rounded-[3rem] border-4 border-[#D4AF37] flex flex-col h-full shadow-[0_30px_60px_rgba(212,175,55,0.25)] overflow-hidden text-center">
+                <div className="relative bg-white p-6 md:p-8 rounded-[3rem] border-4 border-[#D4AF37] flex flex-col h-full shadow-[0_30px_60px_rgba(212,175,55,0.25)] overflow-hidden text-center">
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 bg-red-600 text-white font-black px-8 py-2 md:rounded-bl-3xl rounded-b-xl text-sm shadow-xl flex items-center gap-2 z-10">
                     🔥 MAIS VENDIDO
                   </div>
                   
-                  <h3 className="text-3xl font-black text-slate-900 mb-2 mt-6 md:mt-0 uppercase tracking-tight">Plano Premium</h3>
-                  <p className="text-[#D4AF37] font-black mb-8 uppercase tracking-widest text-xs">Acesso Vitalício + Todos os Bônus</p>
+                  <h3 className="text-3xl font-black text-slate-900 mb-1 mt-6 md:mt-0 uppercase tracking-tight">Plano Premium</h3>
+                  <p className="text-[#D4AF37] font-black mb-4 uppercase tracking-widest text-xs">Acesso Vitalício + Todos os Bônus</p>
                   
-                  <div className="mb-6">
-                     <p className="text-red-600 line-through text-lg">R$ 297,00</p>
+                  <div className="mb-4">
+                     <p className="text-red-600 line-through text-base">R$ 297,00</p>
                     <div className="flex flex-col items-center justify-center gap-1">
                       <div className="flex items-baseline justify-center gap-2">
                         <span className="text-xl font-bold text-slate-900">R$</span>
-                        <span className="text-6xl md:text-7xl font-black text-slate-900">27,00</span>
+                        <span className="text-5xl md:text-6xl font-black text-slate-900">27,00</span>
                         <span className="text-slate-500 font-bold text-sm uppercase tracking-tighter">à vista</span>
                       </div>
-                      <p className="text-[#D4AF37] font-black text-lg md:text-xl mt-1 uppercase tracking-tighter">Ou 6x de R$ 4,50 no cartão</p>
+                      <p className="text-[#D4AF37] font-black text-base md:text-lg mt-1 uppercase tracking-tighter">Ou 6x de R$ 4,50 no cartão</p>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center gap-2 mb-8 text-slate-500 text-xs font-bold bg-slate-50 p-4 rounded-xl border border-slate-100 text-center">
+                  <div className="flex flex-col items-center gap-2 mb-5 text-slate-500 text-xs font-bold bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
                     <span>+2.157 mães já usaram o material e conquistaram a leitura fluente</span>
                   </div>
 
-                  <div className="space-y-4 mb-8 flex flex-col items-center">
+                  <div className="space-y-2 mb-5 flex flex-col items-center">
                     {[
                       "O Programa Completo (Níveis 1, 2 e 3).",
                       "Letra Bastão e Cursiva detalhado em passo a passo.",
@@ -926,13 +926,13 @@ function LandingPage() {
                     ))}
                   </div>
 
-                  <div className="h-px bg-slate-100 mb-8" />
+                  <div className="h-px bg-slate-100 mb-5" />
                   
-                  <h4 className="font-black text-slate-900 mb-6 flex items-center justify-center gap-2 uppercase tracking-widest text-xs">
+                  <h4 className="font-black text-slate-900 mb-4 flex items-center justify-center gap-2 uppercase tracking-widest text-xs">
                     <span>🎁</span> 6 Bônus Exclusivos (Acesso Imediato)
                   </h4>
                   
-                  <div className="space-y-4 mb-10 flex flex-col items-center">
+                  <div className="space-y-2 mb-6 flex flex-col items-center">
                     {[
                       "Bônus 1: Acelerador de Consciência Silábica",
                       "Bônus 2: Jogo de Retenção Acelerada",
@@ -954,7 +954,7 @@ function LandingPage() {
                     rel="noopener noreferrer"
                     animate={{ scale: [1, 1.03, 1] }}
                     transition={{ repeat: Infinity, duration: 1.5 }}
-                    className="w-full py-7 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-xl md:text-2xl shadow-[0_15px_40px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-4 inline-block text-center"
+                    className="w-full py-5 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg md:text-xl shadow-[0_15px_40px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-3 inline-block text-center"
                   >
                     QUERO O MATERIAL COMPLETO
                   </motion.a>
