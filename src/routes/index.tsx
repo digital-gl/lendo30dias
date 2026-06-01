@@ -525,7 +525,6 @@ function LandingPage() {
             controls
             playsInline
             loop
-            muted
             preload="none"
             poster="https://i.imgur.com/U0beZTE.png"
           >
