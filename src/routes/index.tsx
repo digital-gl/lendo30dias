@@ -212,7 +212,16 @@ function LandingPage() {
   const [date, setDate] = useState("");
   const [tomorrow, setTomorrow] = useState("");
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [methodEmblaRef, methodEmblaApi] = useEmblaCarousel({ 
+    loop: true,
+    align: 'start',
+    slidesToScroll: 1,
+    breakpoints: {
+      '(min-width: 768px)': { active: false }
+    }
+  });
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [methodSelectedIndex, setMethodSelectedIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showPlayButton, setShowPlayButton] = useState(true);
   const [showSocialPlayButton, setShowSocialPlayButton] = useState(true);
@@ -248,6 +257,15 @@ function LandingPage() {
       emblaApi.off('select', onSelect);
     };
   }, [emblaApi]);
+
+  useEffect(() => {
+    if (!methodEmblaApi) return;
+    const onSelect = () => setMethodSelectedIndex(methodEmblaApi.selectedScrollSnap());
+    methodEmblaApi.on('select', onSelect);
+    return () => {
+      methodEmblaApi.off('select', onSelect);
+    };
+  }, [methodEmblaApi]);
 
   useEffect(() => {
     const today = new Date();
@@ -669,44 +687,69 @@ function LandingPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: <Target className="w-8 h-8 text-[#D4AF37]" />,
-                title: "PONTA 1: O Fim do \"Chute\" (Som e Base)",
-                desc: "A escola foca no nome da letra. Nós focamos no som. O cérebro da criança é mapeado para entender a fonética exata, eliminando de vez o vício de tentar \"adivinhar\" as palavras. O destrave começa aqui."
-              },
-              {
-                icon: <Puzzle className="w-8 h-8 text-[#D4AF37]" />,
-                title: "PONTA 2: Conexão Automática",
-                desc: "Com os sons dominados, usamos blocos visuais estratégicos. A criança aprende a juntar as sílabas sem esforço cognitivo, formando as primeiras palavras reais nos primeiros dias. Sem travar e sem leitura robotizada."
-              },
-              {
-                icon: <BookOpen className="w-8 h-8 text-[#D4AF37]" />,
-                title: "PONTA 3: Domínio e Autonomia",
-                desc: "O salto da palavra solta para a frase completa. Introduzimos textos curtos e fazemos a transição suave para a Letra Cursiva. A insegurança some e a criança passa a ler com confiança e fluência."
-              },
-              {
-                icon: <Timer className="w-8 h-8 text-[#D4AF37]" />,
-                title: "PONTA 4: O Ciclo de 10 Minutos",
-                desc: "Chega de chorar por horas na mesa da sala. O método é blindado por pílulas diárias de 10 minutos com jogos e desafios rápidos. A criança retém 3x mais porque sente que está apenas se divertindo."
-              }
-            ].map((card, i) => (
-              <div
-                key={i}
-                className="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col items-center text-center gap-6 group hover:-translate-y-2"
-              >
-                <div className="bg-white p-5 rounded-2xl shadow-md group-hover:scale-110 transition-transform">
-                  {card.icon}
-                </div>
-                <h3 className="text-xl font-black text-slate-900 leading-tight">
-                  {card.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed font-medium">
-                  {card.desc}
-                </p>
+          <div className="relative">
+            <div className="overflow-hidden md:overflow-visible" ref={methodEmblaRef}>
+              <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {[
+                  {
+                    icon: <Target className="w-8 h-8 text-[#D4AF37]" />,
+                    title: "PONTA 1: O Fim do \"Chute\" (Som e Base)",
+                    desc: "A escola foca no nome da letra. Nós focamos no som. O cérebro da criança é mapeado para entender a fonética exata, eliminando de vez o vício de tentar \"adivinhar\" as palavras. O destrave começa aqui."
+                  },
+                  {
+                    icon: <Puzzle className="w-8 h-8 text-[#D4AF37]" />,
+                    title: "PONTA 2: Conexão Automática",
+                    desc: "Com os sons dominados, usamos blocos visuais estratégicos. A criança aprende a juntar as sílabas sem esforço cognitivo, formando as primeiras palavras reais nos primeiros dias. Sem travar e sem leitura robotizada."
+                  },
+                  {
+                    icon: <BookOpen className="w-8 h-8 text-[#D4AF37]" />,
+                    title: "PONTA 3: Domínio e Autonomia",
+                    desc: "O salto da palavra solta para a frase completa. Introduzimos textos curtos e fazemos a transição suave para a Letra Cursiva. A insegurança some e a criança passa a ler com confiança e fluência."
+                  },
+                  {
+                    icon: <Timer className="w-8 h-8 text-[#D4AF37]" />,
+                    title: "PONTA 4: O Ciclo de 10 Minutos",
+                    desc: "Chega de chorar por horas na mesa da sala. O método é blindado por pílulas diárias de 10 minutos com jogos e desafios rápidos. A criança retém 3x mais porque sente que está apenas se divertindo."
+                  }
+                ].map((card, i) => (
+                  <div
+                    key={i}
+                    className="flex-[0_0_85%] md:flex-none bg-[#FFFBEB] p-8 rounded-[2.5rem] border-2 border-[#D4AF37]/30 shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center gap-6 group hover:-translate-y-2 mr-4 md:mr-0"
+                  >
+                    <div className="bg-white p-5 rounded-2xl shadow-md group-hover:scale-110 transition-transform border border-[#D4AF37]/20">
+                      {card.icon}
+                    </div>
+                    <h3 className="text-xl font-black text-slate-900 leading-tight">
+                      {card.title}
+                    </h3>
+                    <p className="text-slate-600 leading-relaxed font-medium">
+                      {card.desc}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Navigation Buttons - Only visible on mobile since grid is used on desktop */}
+            <div className="flex md:hidden items-center justify-center mt-8 gap-4">
+              <button 
+                onClick={() => methodEmblaApi?.scrollPrev()} 
+                className="w-12 h-12 bg-white shadow-lg border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] active:scale-95 transition-all"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <div className="flex gap-1.5">
+                {[0, 1, 2, 3].map((i) => (
+                  <div key={i} className={`w-2 h-2 rounded-full transition-all ${methodSelectedIndex === i ? 'bg-[#D4AF37] w-4' : 'bg-slate-200'}`} />
+                ))}
+              </div>
+              <button 
+                onClick={() => methodEmblaApi?.scrollNext()} 
+                className="w-12 h-12 bg-white shadow-lg border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] active:scale-95 transition-all"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
           </div>
 
           <div className="mt-16 text-center">
