@@ -22,4 +22,18 @@ export default defineConfig({
     host: "::",
     port: 8080,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          router: ["@tanstack/react-router", "@tanstack/react-query"],
+          carousel: ["embla-carousel-react"],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
+    minify: "esbuild",
+    target: "esnext",
+  },
 });
