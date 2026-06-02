@@ -967,10 +967,10 @@ function LandingPage() {
                     <div className="flex flex-col items-center justify-center gap-1">
                       <div className="flex items-baseline justify-center gap-2">
                         <span className="text-xl font-bold text-slate-900">R$</span>
-                        <span className="text-5xl md:text-6xl font-black text-slate-900">19,90</span>
+                        <span className="text-5xl md:text-6xl font-black text-slate-900">24,90</span>
                         <span className="text-slate-500 font-bold text-sm uppercase tracking-tighter">à vista</span>
                       </div>
-                      <p className="text-[#D4AF37] font-black text-base md:text-lg mt-1 uppercase tracking-tighter">Ou 2x de R$ 10,38 no cartão</p>
+                      <p className="text-[#D4AF37] font-black text-base md:text-lg mt-1 uppercase tracking-tighter">Ou 3x de R$ 8,87 no cartão</p>
                     </div>
                   </div>
 
