@@ -203,7 +203,7 @@ function LandingPage() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [methodEmblaRef, methodEmblaApi] = useEmblaCarousel({ 
     loop: true,
-    align: 'start',
+    align: 'center',
     slidesToScroll: 1,
     breakpoints: {
       '(min-width: 768px)': { active: false }
