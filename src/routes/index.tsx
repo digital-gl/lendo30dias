@@ -684,7 +684,7 @@ function LandingPage() {
               href="#oferta"
               className="inline-block bg-slate-900 text-white font-black text-lg py-6 px-12 rounded-2xl shadow-xl hover:bg-slate-800 hover:scale-105 active:scale-95 transition-all uppercase tracking-tight"
             >
-              Quero receber o método
+              Sim, Quero Transformar a Leitura do Meu Filho Hoje
             </a>
           </div>
         </div>
