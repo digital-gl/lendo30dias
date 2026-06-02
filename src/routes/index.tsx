@@ -710,40 +710,46 @@ function LandingPage() {
               { 
                 title: "Acelerador de Consciência Silábica", 
                 desc: "Domine a estrutura das sílabas rapidamente.",
-                img: "https://i.imgur.com/K1FlMpX.png"
+                img: "https://i.imgur.com/K1FlMpX.png",
+                price: "R$ 47,00"
               },
               { 
                 title: "Jogo de Retenção Acelerada - Fichas Silábicas", 
                 desc: "Material lúdico para fixar o aprendizado brincando.",
-                img: "https://i.imgur.com/b6Is6u1.png"
+                img: "https://i.imgur.com/b6Is6u1.png",
+                price: "R$ 37,00"
               },
               { 
                 title: "Protocolo de Fluência Leitora", 
                 desc: "Elimine a leitura pausada e robotizada.",
-                img: "https://i.imgur.com/G0VWwVm.png"
+                img: "https://i.imgur.com/G0VWwVm.png",
+                price: "R$ 57,00"
               },
               { 
                 title: "Tiras de Leitura Dinâmica", 
                 desc: "Exercícios de 10 minutos para destravar a leitura.",
-                img: "https://i.imgur.com/hW2TZJo.png"
+                img: "https://i.imgur.com/hW2TZJo.png",
+                price: "R$ 47,00"
               },
               { 
                 title: "Desafio dos 50 Textos Fatiados", 
                 desc: "Atividades progressivas para ler frases com confiança.",
-                img: "https://i.imgur.com/iOWJrLt.png"
+                img: "https://i.imgur.com/iOWJrLt.png",
+                price: "R$ 47,00"
               },
               { 
                 title: "Fundação da Leitura Rápida", 
                 desc: "Acelere a compreensão de textos sem cansaço.",
-                img: "https://i.imgur.com/2q7pzfO.png"
+                img: "https://i.imgur.com/2q7pzfO.png",
+                price: "R$ 42,30"
               }
             ].map((bonus, i) => (
               <div 
                 key={i}
-                className="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-slate-100 flex flex-col md:flex-row items-center gap-6 group hover:shadow-2xl transition-all animate-fade-in"
+                className="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-slate-100 flex flex-col md:flex-row items-center gap-6"
               >
                 <div className="w-full md:w-40 aspect-square bg-slate-100 rounded-2xl overflow-hidden shrink-0">
-                  <img src={bonus.img} alt={bonus.title} width={400} height={400} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img src={bonus.img} alt={bonus.title} width={400} height={400} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <div className="flex flex-col items-center md:items-start gap-1 mb-2">
@@ -752,6 +758,10 @@ function LandingPage() {
                   </div>
                   <h3 className="text-lg font-black text-[#D4AF37] mb-2 uppercase tracking-tight">{bonus.title}</h3>
                   <p className="text-sm text-slate-600 font-medium leading-relaxed">{bonus.desc}</p>
+                  <div className="mt-4 flex items-center justify-center md:justify-start gap-3">
+                    <span className="text-slate-400 line-through font-bold text-base">De {bonus.price}</span>
+                    <span className="text-emerald-600 font-black text-lg uppercase tracking-wide">Por R$ 0,00</span>
+                  </div>
                 </div>
               </div>
             ))}
