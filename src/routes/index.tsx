@@ -324,10 +324,15 @@ function LandingPage() {
       threshold: 0.3,
     };
 
+    const hasAutoPlayed = new WeakSet<HTMLVideoElement>();
+
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         const video = entry.target as HTMLVideoElement;
         if (entry.isIntersecting) {
+          // Autoplay apenas na primeira vez que a seção aparece
+          if (hasAutoPlayed.has(video)) return;
+          hasAutoPlayed.add(video);
           // Tenta tocar com som (pode falhar se não houve interação ainda)
           video.muted = false;
           video.play().catch(() => {
@@ -341,6 +346,9 @@ function LandingPage() {
           });
         } else {
           video.pause();
+          // Ao sair da seção, reexibe o botão de play padronizado
+          if (video === videoRef.current) setShowPlayButton(true);
+          if (video === socialVideoRef.current) setShowSocialPlayButton(true);
         }
       });
     };
