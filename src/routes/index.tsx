@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: "https://i.imgur.com/7UEy7hz.png",
+        href: "https://i.imgur.com/Tr7zGoR.png",
         fetchpriority: "high",
       },
     ],
