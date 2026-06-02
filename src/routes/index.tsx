@@ -853,6 +853,19 @@ function LandingPage() {
         </div>
       </section>
 
+      {/* Virada Emocional */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-2xl md:text-4xl font-extrabold text-slate-900 leading-snug tracking-tight">
+            Seu filho merece aprender.
+            <br />
+            Você merece ver isso acontecer.
+            <br />
+            E isso pode começar hoje por menos do que uma pizza.
+          </p>
+        </div>
+      </section>
+
       <section id="oferta" className="py-16 px-6 bg-white relative scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-6 tracking-tight">Escolha como quer começar e garanta hoje com desconto</h2>
