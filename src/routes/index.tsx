@@ -462,9 +462,9 @@ function LandingPage() {
                 result: "🎯 Sílabas dominadas em dias",
                 bullets: [
                   "📥 PDF liberado na hora",
-                  "📋 Passo a passo à prova de falhas",
                   "✏️ Bastão e Cursiva inclusos",
-                  "🎯 Elimina o vício de chutar"
+                  "🎯 Elimina o vício de chutar",
+                  "📋 Passo a passo à prova de falhas"
                 ]
               },
               { 
@@ -488,26 +488,26 @@ function LandingPage() {
                 badgeClass: "bg-[#F5C518] text-slate-900",
                 result: "🎯 Leitura autônoma completa",
                 bullets: [
-                  "📈 Nível avançado de consolidação",
                   "📝 Frases inteiras e fixação",
                   "✍️ Refinamento em Cursiva",
-                  "🏆 Leitura 100% autônoma"
+                  "🏆 Leitura 100% autônoma",
+                  "📈 Nível avançado de consolidação"
                 ]
               }
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-[#FFFBEB] pt-8 px-8 pb-0 md:pt-10 md:px-10 rounded-[2.5rem] shadow-xl border border-[#D4AF37]/30 flex flex-col gap-6 text-left overflow-hidden"
+                className="bg-[#FFFBEB] pt-6 px-8 pb-0 md:pt-8 md:px-10 rounded-[2.5rem] shadow-xl border border-[#D4AF37]/30 flex flex-col gap-4 text-left overflow-hidden"
               >
                 <div className="flex justify-center">
                   <span className={`inline-block px-5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-md ${item.badgeClass}`}>
                     {item.badge}
                   </span>
                 </div>
-                <div className="text-7xl md:text-8xl text-center py-4 leading-none">{item.emoji}</div>
+                <div className="text-6xl md:text-7xl text-center py-2 leading-none">{item.emoji}</div>
                 <div>
-                  <h3 className="text-xl font-black mb-6 leading-tight text-center" style={{ color: "#F5C518" }}>{item.title}</h3>
-                  <ul className="space-y-4 mb-6">
+                  <h3 className="text-xl font-black mb-4 leading-tight text-center" style={{ color: "#F5C518" }}>{item.title}</h3>
+                  <ul className="space-y-2 mb-4">
                     {item.bullets.map((bullet, idx) => (
                       <li key={idx} className="flex gap-3 items-start">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2 shrink-0" />
@@ -516,7 +516,7 @@ function LandingPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="-mx-8 md:-mx-10 mt-auto bg-[#F5C518] text-slate-900 font-black text-center py-4 px-4 text-sm md:text-base uppercase tracking-tight rounded-b-[2.5rem]">
+                <div className="-mx-8 md:-mx-10 mt-auto bg-[#F5C518] text-slate-900 font-black text-center py-3 px-4 text-sm md:text-base uppercase tracking-tight rounded-b-[2.5rem]">
                   {item.result}
                 </div>
               </div>
@@ -818,11 +818,6 @@ function LandingPage() {
       <section id="oferta" className="py-16 px-6 bg-white relative scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-6 tracking-tight">Escolha como quer começar e garanta hoje com desconto</h2>
-          <div className="max-w-2xl mx-auto mb-12 bg-red-50 border-2 border-red-300 rounded-2xl px-6 py-4 text-center">
-            <p className="text-red-700 font-black text-base md:text-lg uppercase tracking-tight">
-              ⚠️ Oferta válida somente hoje. O preço volta ao normal amanhã.
-            </p>
-          </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
             {/* Basic Plan */}
