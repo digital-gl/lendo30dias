@@ -626,12 +626,9 @@ function LandingPage() {
       <section className="py-24 px-6 bg-white relative overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
-              Por que seu filho ainda não lê e <span className="text-[#D4AF37]">como resolver isso em 30 dias</span>
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
+              Não deixe seu filho ficar para trás na sala, outras crianças aprendem em casa <span className="text-[#D4AF37]">10 minutinhos por dia</span>.
             </h2>
-            <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-medium">
-Não deixe seu filho ficar para trás na sala, outras crianças aprendem em casa 10 minutinhos por dia.
-            </p>
           </div>
 
           <div className="relative">
