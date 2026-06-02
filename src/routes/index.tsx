@@ -698,7 +698,7 @@ function LandingPage() {
               <span className="text-5xl md:text-7xl">🎁</span> BÔNUS
             </h3>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-8">
-              Ao garantir seu acesso hoje, você leva 6 Presentes Exclusivos
+              Tudo que você leva hoje sem precisar comprar nada separado
             </h2>
             <div className="flex justify-center mb-12">
               <img 
@@ -715,38 +715,32 @@ function LandingPage() {
             {[
               { 
                 title: "Acelerador de Consciência Silábica", 
-                desc: "Técnicas práticas para a criança dominar a estrutura das sílabas rapidamente.",
-                oldPrice: "47,90",
+                desc: "Domine a estrutura das sílabas rapidamente.",
                 img: "https://i.imgur.com/K1FlMpX.png"
               },
               { 
                 title: "Jogo de Retenção Acelerada - Fichas Silábicas", 
-                desc: "Material lúdico para fixar o aprendizado de forma divertida e eficiente.",
-                oldPrice: "37,90",
+                desc: "Material lúdico para fixar o aprendizado brincando.",
                 img: "https://i.imgur.com/b6Is6u1.png"
               },
               { 
                 title: "Protocolo de Fluência Leitora", 
-                desc: "O guia definitivo para eliminar a leitura pausada e robotizada.",
-                oldPrice: "57,90",
+                desc: "Elimine a leitura pausada e robotizada.",
                 img: "https://i.imgur.com/G0VWwVm.png"
               },
               { 
                 title: "Tiras de Leitura Dinâmica", 
-                desc: "Exercícios rápidos de 10 minutos para destravar a leitura natural.",
-                oldPrice: "27,90",
+                desc: "Exercícios de 10 minutos para destravar a leitura.",
                 img: "https://i.imgur.com/hW2TZJo.png"
               },
               { 
                 title: "Desafio dos 50 Textos Fatiados", 
-                desc: "Atividades progressivas que constroem a confiança na leitura de frases.",
-                oldPrice: "67,90",
+                desc: "Atividades progressivas para ler frases com confiança.",
                 img: "https://i.imgur.com/iOWJrLt.png"
               },
               { 
                 title: "Fundação da Leitura Rápida", 
-                desc: "O segredo para acelerar a compreensão de textos sem cansaço.",
-                oldPrice: "37,90",
+                desc: "Acelere a compreensão de textos sem cansaço.",
                 img: "https://i.imgur.com/2q7pzfO.png"
               }
             ].map((bonus, i) => (
@@ -762,15 +756,7 @@ function LandingPage() {
                     <span className="text-xl">🎁</span>
                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">BÔNUS {i + 1}</span>
                   </div>
-                  <h3 className="text-lg font-black text-[#D4AF37] mb-1 uppercase tracking-tight">{bonus.title}</h3>
-                  <div
-                    className="flex flex-col items-center md:items-start mb-4 animate-pulse-lg origin-left"
-                  >
-                    <span className="text-red-600 line-through text-2xl md:text-3xl font-bold">R$ {bonus.oldPrice}</span>
-                    <span className="text-emerald-600 text-3xl md:text-4xl font-black uppercase tracking-tighter">
-                      Por R$ 0,00
-                    </span>
-                  </div>
+                  <h3 className="text-lg font-black text-[#D4AF37] mb-2 uppercase tracking-tight">{bonus.title}</h3>
                   <p className="text-sm text-slate-600 font-medium leading-relaxed">{bonus.desc}</p>
                 </div>
               </div>
@@ -779,12 +765,9 @@ function LandingPage() {
 
           <div className="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl border-4 border-[#D4AF37]/20 text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]" />
-            <p className="text-slate-500 font-bold mb-2 uppercase tracking-widest text-sm">Quanto você economiza levando hoje:</p>
-            <h4 className="text-xl md:text-2xl font-black text-slate-900 mb-2">
-              Valor total dos bônus: <span className="text-red-600 line-through">R$ 277,30</span>
-            </h4>
-            <div className="text-emerald-600 font-black text-3xl md:text-4xl uppercase tracking-tighter">
-              Levando a oferta hoje: TUDO GRÁTIS
+            <p className="text-slate-500 font-bold mb-2 uppercase tracking-widest text-sm">Resumo dos bônus</p>
+            <div className="text-emerald-600 font-black text-2xl md:text-3xl tracking-tight leading-snug">
+              Você economiza <span className="text-emerald-700">R$ 277,30</span> levando tudo hoje incluso no plano
             </div>
           </div>
         </div>
