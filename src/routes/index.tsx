@@ -392,7 +392,7 @@ function LandingPage() {
           O FIM DA GUERRA NA HORA DA TAREFA
         </div>
         
-        <h1 className="text-4xl md:text-7xl font-extrabold max-w-5xl leading-tight mb-8 tracking-tight">
+        <h1 className="text-3xl md:text-6xl font-extrabold max-w-5xl leading-tight mb-8 tracking-tight">
           Seu filho ainda não lê sozinho? <span className="text-[#D4AF37]">+847 mães</span> resolveram isso em <span className="text-[#D4AF37]">30 dias</span> com um método simples
         </h1>
         
@@ -416,7 +416,7 @@ function LandingPage() {
 
         <a
           href="#oferta"
-          className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-xl py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight w-full max-w-sm inline-block text-center animate-pulse-sm hover:scale-105 active:scale-95 transition-transform"
+          className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight w-full max-w-sm inline-block text-center animate-pulse-sm hover:scale-105 active:scale-95 transition-transform"
         >
           Quero Destravar a Leitura do Meu Filho Agora
         </a>
