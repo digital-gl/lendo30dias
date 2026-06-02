@@ -723,15 +723,6 @@ function LandingPage() {
             <p className="text-xl text-slate-600 font-medium mb-8 max-w-3xl mx-auto leading-relaxed">
               Tudo que você precisava ter desde o começo para evitar a recuperação e a repetência.
             </p>
-            <div className="flex justify-center mb-12">
-              <img 
-                src="https://i.imgur.com/fIEjlwd.png" 
-                alt="Presentes Exclusivos" 
-                className="w-full max-w-4xl h-auto"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 mb-16">
