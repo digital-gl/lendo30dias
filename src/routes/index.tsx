@@ -429,7 +429,10 @@ function LandingPage() {
       {/* Section 7: O que você desbloqueia agora mesmo */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">Tudo que seu filho precisa para ler com confiança do zero à leitura fluente</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-4 tracking-tight">Tudo que seu filho precisa para ler com confiança do zero à leitura fluente</h2>
+          <p className="text-center text-xl text-slate-600 font-medium mb-16 max-w-3xl mx-auto leading-relaxed">
+            Feito para crianças que já tentaram aprender e não conseguiram.
+          </p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { 
