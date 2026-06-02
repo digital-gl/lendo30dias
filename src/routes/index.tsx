@@ -374,7 +374,7 @@ function LandingPage() {
         </h1>
         
         <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-12 font-medium leading-relaxed">
-          Enquanto a escola continua falhando, mães estão resolvendo isso em casa em 30 dias.
+          Seu filho só precisa de alguém que acredite nele e de 10 minutos por dia.
         </p>
         
 
