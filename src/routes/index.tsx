@@ -751,7 +751,7 @@ function LandingPage() {
       </section>
 
       <section className="py-16 px-6 bg-white">
-        <h2 className="text-2xl md:text-4xl font-extrabold text-center mb-8 tracking-tight max-w-4xl mx-auto leading-tight">Esse é o Henrique. Há 30 dias ele travava em cada sílaba. Hoje ele e a mãe tem esses momentos todos os dias: ⬇️</h2>
+        <h2 className="text-2xl md:text-4xl font-extrabold text-center mb-8 tracking-tight max-w-4xl mx-auto leading-tight">Esse é o Henrique. <span className="text-[#D4AF37]">Há 30 dias ele travava em cada sílaba.</span> Hoje ele e a mãe tem esses momentos todos os dias: ⬇️</h2>
         
         <div className="mb-16 max-w-4xl mx-auto">
           <div 
