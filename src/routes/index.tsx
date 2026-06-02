@@ -8,12 +8,8 @@ export const Route = createFileRoute("/")({
     links: [
       { rel: "preconnect", href: "https://i.imgur.com", crossOrigin: "" },
       { rel: "dns-prefetch", href: "https://i.imgur.com" },
-      {
-        rel: "preload",
-        as: "image",
-        href: "https://i.imgur.com/Tr7zGoR.png",
-        fetchpriority: "high",
-      },
+      { rel: "preconnect", href: "https://s.imgur.com", crossOrigin: "" },
+      { rel: "dns-prefetch", href: "https://s.imgur.com" },
     ],
   }),
   component: LandingPage,
@@ -184,6 +180,32 @@ function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }
         </div>
       )}
     </>
+  );
+}
+
+function ImgurHeroEmbed() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const existing = containerRef.current.querySelector('script[src="https://s.imgur.com/min/embed.js"]');
+    if (existing) return;
+    const script = document.createElement('script');
+    script.src = 'https://s.imgur.com/min/embed.js';
+    script.async = true;
+    script.charset = 'utf-8';
+    containerRef.current.appendChild(script);
+    return () => {
+      if (containerRef.current && script.parentNode === containerRef.current) {
+        containerRef.current.removeChild(script);
+      }
+    };
+  }, []);
+  return (
+    <div ref={containerRef} className="mb-12 max-w-2xl w-full">
+      <blockquote className="imgur-embed-pub" lang="en" data-id="CMbUBLf">
+        <a href="https://imgur.com/CMbUBLf">View post on imgur.com</a>
+      </blockquote>
+    </div>
   );
 }
 
@@ -401,17 +423,7 @@ function LandingPage() {
         </p>
         
 
-        <img
-          src="https://i.imgur.com/Tr7zGoR.png"
-          alt="Material do Método"
-          width={1024}
-          height={1024}
-          loading="eager"
-          decoding="async"
-          // @ts-ignore - fetchpriority is a valid HTML attribute
-          fetchpriority="high"
-          className="mb-12 max-w-2xl w-full h-auto rounded-2xl shadow-2xl"
-        />
+        <ImgurHeroEmbed />
 
 
         <a
