@@ -745,9 +745,18 @@ function LandingPage() {
             <h3 className="text-4xl md:text-6xl font-black text-[#D4AF37] mb-4 flex items-center justify-center gap-3">
               <span className="text-5xl md:text-7xl">🎁</span> BÔNUS
             </h3>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-8">
               Ao garantir seu acesso hoje, você leva 6 Presentes Exclusivos
             </h2>
+            <div className="flex justify-center mb-12">
+              <img 
+                src="https://i.imgur.com/A6cmrTe.png" 
+                alt="Presentes Exclusivos" 
+                className="w-full max-w-4xl h-auto"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 mb-16">
