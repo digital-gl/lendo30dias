@@ -636,38 +636,24 @@ function LandingPage() {
               <div className="flex md:grid md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
                 {[
                   {
-                    icon: <Target className="w-8 h-8 text-[#D4AF37]" />,
-                    title: "PONTA 1: Fim do Chute",
-                    desc: "Focamos no som real de cada letra, eliminando o vício da criança de tentar adivinhar palavras."
+                    image: "https://i.imgur.com/sDHjn2m.png"
                   },
                   {
-                    icon: <Puzzle className="w-8 h-8 text-[#D4AF37]" />,
-                    title: "PONTA 2: Conexão",
-                    desc: "Uso de blocos visuais para juntar sílabas sem esforço, formando palavras reais logo nos primeiros dias."
-                  },
-                  {
-                    icon: <BookOpen className="w-8 h-8 text-[#D4AF37]" />,
-                    title: "PONTA 3: Autonomia",
-                    desc: "Transição suave para frases e letra cursiva, construindo confiança para uma leitura fluente."
-                  },
-                  {
-                    icon: <Timer className="w-8 h-8 text-[#D4AF37]" />,
-                    title: "PONTA 4: 10 Minutos",
-                    desc: "Pílulas diárias de diversão que garantem 3x mais retenção sem estresse ou cansaço."
+                    image: "https://i.imgur.com/QJdsxyF.png"
                   }
                 ].map((card, i) => (
                   <div
                     key={i}
-                    className="flex-[0_0_92%] md:flex-none bg-[#FFFBEB] p-6 md:p-8 rounded-[2.5rem] border-2 border-[#D4AF37]/30 shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center gap-4 md:gap-6 group hover:-translate-y-2 mx-2 md:mx-0"
+                    className="flex-[0_0_92%] md:flex-none bg-[#FFFBEB] p-4 md:p-6 rounded-[2.5rem] border-2 border-[#D4AF37]/30 shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center gap-4 md:gap-6 group hover:-translate-y-2 mx-2 md:mx-0"
                   >
-                    <div className="bg-white p-4 md:p-5 rounded-2xl shadow-md group-hover:scale-110 transition-transform border border-[#D4AF37]/20">
-                      {card.icon}
-                    </div>
-                    <h3 className="text-lg md:text-xl font-black text-slate-900 leading-tight">
-                      {card.title}
-                    </h3>
-                    <p className="text-sm md:text-base text-slate-600 leading-relaxed font-medium">
-                      {card.desc}
+                    <img
+                      src={card.image}
+                      alt="Resultado do método"
+                      loading="lazy"
+                      className="w-full rounded-2xl shadow-md"
+                    />
+                    <p className="text-base md:text-lg text-slate-800 leading-relaxed font-bold">
+                      Imagine as outras mães e a professora vendo seu filho lendo sozinho.
                     </p>
                   </div>
                 ))}
