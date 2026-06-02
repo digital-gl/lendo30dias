@@ -358,11 +358,22 @@ function LandingPage() {
     if (videoRef.current) observer.observe(videoRef.current);
     if (socialVideoRef.current) observer.observe(socialVideoRef.current);
 
+    const v1 = videoRef.current;
+    const v2 = socialVideoRef.current;
+    const onPause1 = () => { if (!v1!.ended) setShowPlayButton(true); };
+    const onPlay1 = () => setShowPlayButton(false);
+    const onPause2 = () => { if (!v2!.ended) setShowSocialPlayButton(true); };
+    const onPlay2 = () => setShowSocialPlayButton(false);
+    if (v1) { v1.addEventListener('pause', onPause1); v1.addEventListener('play', onPlay1); }
+    if (v2) { v2.addEventListener('pause', onPause2); v2.addEventListener('play', onPlay2); }
+
     return () => {
       observer.disconnect();
       window.removeEventListener('click', unmuteAll);
       window.removeEventListener('touchstart', unmuteAll);
       window.removeEventListener('scroll', unmuteAll);
+      if (v1) { v1.removeEventListener('pause', onPause1); v1.removeEventListener('play', onPlay1); }
+      if (v2) { v2.removeEventListener('pause', onPause2); v2.removeEventListener('play', onPlay2); }
     };
   }, []);
 
