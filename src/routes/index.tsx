@@ -392,7 +392,7 @@ function LandingPage() {
           O FIM DA GUERRA NA HORA DA TAREFA
         </div>
         
-        <h1 className="text-4xl md:text-7xl font-extrabold max-w-5xl leading-tight mb-8 tracking-tight">
+        <h1 className="text-3xl md:text-6xl font-extrabold max-w-5xl leading-tight mb-8 tracking-tight">
           Seu filho ainda não lê sozinho? <span className="text-[#D4AF37]">+847 mães</span> resolveram isso em <span className="text-[#D4AF37]">30 dias</span> com um método simples
         </h1>
         
