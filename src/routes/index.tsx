@@ -602,60 +602,12 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Logic */}
-      <section className="py-16 px-6 bg-[#FFFDE7]">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight text-slate-900">
-              A Técnica Comprovada por Harvard que Ensina Qualquer Criança a Ler em 30 Dias
-            </h2>
-            <div className="flex justify-center py-8">
-              <img
-                src="https://i.imgur.com/uCfFn2j.png"
-                alt="Harvard University"
-                width={400}
-                height={112}
-                loading="lazy"
-                decoding="async"
-                className="h-20 md:h-28 w-auto"
-              />
-            </div>
-            <p className="text-lg md:text-xl text-slate-800 max-w-3xl mx-auto leading-relaxed font-medium">
-              Você sabia que existe uma técnica{" "}
-              <span className="bg-[#F5C518] text-slate-900 font-bold px-2 py-0.5 rounded">
-                comprovada por Harvard
-              </span>{" "}
-              que permite qualquer criança aprender a ler de forma natural, rápida e sem traumas?
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            {[
-              { icon: "🧠", iconBg: "bg-blue-100", title: "Ciência Simplificada", text: "Táticas avançadas traduzidas em passos simples para qualquer mãe aplicar." },
-              { icon: "⚡", iconBg: "bg-[#D4AF37]/20", title: "Aprendizado Acelerado", text: "O cérebro aprende por sons, não por decoreba. Resultado em dias, não meses." },
-              { icon: "🏆", iconBg: "bg-emerald-100", title: "Confiança de Volta", text: "A criança passa a encarar a leitura como um desafio e a autoestima cresce junto." }
-            ].map((card, i) => (
-              <div
-                key={i}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 flex flex-col items-center text-center gap-4 hover:shadow-xl transition-all animate-fade-in"
-              >
-                <div className={`${card.iconBg} w-16 h-16 rounded-full flex items-center justify-center text-3xl`}>
-                  {card.icon}
-                </div>
-                <h3 className="text-xl font-extrabold text-slate-900">{card.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{card.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Section: Como funciona o "Método de 4 Pontas" na prática? */}
       <section className="py-24 px-6 bg-white relative overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
-              Como funciona o <span className="text-[#D4AF37]">"Método de 4 Pontas"</span> na prática?
+              Por que seu filho ainda não lê e <span className="text-[#D4AF37]">como resolver isso em 30 dias</span>
             </h2>
             <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-medium">
               Um passo a passo tão simples que seu filho aprende brincando, sem exigir que você seja pedagoga.
