@@ -65,13 +65,13 @@ function SalesToast() {
     const runSequence = async () => {
       const wait = (ms: number) => new Promise(resolve => timeoutId = setTimeout(resolve, ms));
 
-      // Wait 10 seconds before the first one appears
-      await wait(10000);
+      // Wait 15 seconds before the first one appears
+      await wait(15000);
 
       while (true) {
         addNotification(1);
-        // Wait 10 seconds between each notification
-        await wait(10000);
+        // Wait 15 seconds between each notification
+        await wait(15000);
       }
     };
 
