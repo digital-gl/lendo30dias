@@ -658,7 +658,7 @@ function LandingPage() {
                 ].map((card, i) => (
                   <div
                     key={i}
-                    className="flex-[0_0_85%] md:flex-none bg-[#FFFBEB] p-6 md:p-8 rounded-[2.5rem] border-2 border-[#D4AF37]/30 shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center gap-4 md:gap-6 group hover:-translate-y-2 mr-4 md:mr-0"
+                    className="flex-[0_0_92%] md:flex-none bg-[#FFFBEB] p-6 md:p-8 rounded-[2.5rem] border-2 border-[#D4AF37]/30 shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center gap-4 md:gap-6 group hover:-translate-y-2 mx-2 md:mx-0"
                   >
                     <div className="bg-white p-4 md:p-5 rounded-2xl shadow-md group-hover:scale-110 transition-transform border border-[#D4AF37]/20">
                       {card.icon}
