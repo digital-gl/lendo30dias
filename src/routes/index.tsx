@@ -632,53 +632,22 @@ function LandingPage() {
           </div>
 
           <div className="relative">
-            <div className="overflow-hidden md:overflow-visible" ref={methodEmblaRef}>
-              <div className="flex md:grid md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-                {[
-                  {
-                    image: "https://i.imgur.com/sDHjn2m.png"
-                  },
-                  {
-                    image: "https://i.imgur.com/QJdsxyF.png"
-                  }
-                ].map((card, i) => (
-                  <div
-                    key={i}
-                    className="flex-[0_0_92%] md:flex-none bg-[#FFFBEB] p-4 md:p-6 rounded-[2.5rem] border-2 border-[#D4AF37]/30 shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center gap-4 md:gap-6 group hover:-translate-y-2 mx-2 md:mx-0"
-                  >
-                    <img
-                      src={card.image}
-                      alt="Resultado do método"
-                      loading="lazy"
-                      className="w-full rounded-2xl shadow-md"
-                    />
-                    <p className="text-base md:text-lg text-slate-800 leading-relaxed font-bold">
-                      Imagine as outras mães e a professora vendo seu filho lendo sozinho.
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Navigation Buttons - Only visible on mobile since grid is used on desktop */}
-            <div className="flex md:hidden items-center justify-center mt-8 gap-4">
-              <button 
-                onClick={() => methodEmblaApi?.scrollPrev()} 
-                className="w-12 h-12 bg-white shadow-lg border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] active:scale-95 transition-all"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <div className="flex gap-1.5">
-                {[0, 1, 2, 3].map((i) => (
-                  <div key={i} className={`w-2 h-2 rounded-full transition-all ${methodSelectedIndex === i ? 'bg-[#D4AF37] w-4' : 'bg-slate-200'}`} />
-                ))}
-              </div>
-              <button 
-                onClick={() => methodEmblaApi?.scrollNext()} 
-                className="w-12 h-12 bg-white shadow-lg border border-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-[#D4AF37] active:scale-95 transition-all"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
+            <div className="max-w-2xl mx-auto flex flex-col gap-6 md:gap-8">
+              {[
+                "https://i.imgur.com/sDHjn2m.png",
+                "https://i.imgur.com/QJdsxyF.png"
+              ].map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt="Resultado do método"
+                  loading="lazy"
+                  className="w-full rounded-3xl border-4 border-[#D4AF37] shadow-xl"
+                />
+              ))}
+              <p className="text-center text-base md:text-lg text-slate-800 leading-relaxed font-bold">
+                Imagine as outras mães e a professora vendo seu filho lendo sozinho.
+              </p>
             </div>
           </div>
 
