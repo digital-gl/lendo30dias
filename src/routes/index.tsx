@@ -645,7 +645,7 @@ function LandingPage() {
                   className="w-full rounded-3xl border-4 border-[#D4AF37] shadow-xl"
                 />
               ))}
-              <p className="text-center text-base md:text-lg text-slate-800 leading-relaxed font-bold">
+              <p className="text-center text-xl md:text-2xl text-slate-800 leading-relaxed font-bold">
                 Imagine as outras mães e a professora vendo seu filho lendo sozinho.
               </p>
             </div>
