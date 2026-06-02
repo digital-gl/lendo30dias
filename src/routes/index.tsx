@@ -289,12 +289,6 @@ function LandingPage() {
     }
   ];
 
-  const testimonials = [
-    { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!", image: "https://i.imgur.com/PHQ6tpy.png" },
-    { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado.", image: "https://i.imgur.com/gpEBlEG.png" },
-    { name: "Patrícia Mendes", text: "O método é muito simples de aplicar, mesmo eu não sendo pedagoga.", image: "https://i.imgur.com/CSHkF2d.png" }
-  ];
-
   const faqs = [
     { q: "Como vou receber o material?", a: "O acesso é imediato e 100% digital. Após a confirmação do pagamento, você receberá o link para download em seu e-mail e poderá imprimir quando quiser." },
     { q: "Para qual idade é recomendado?", a: "O material foi desenvolvido para crianças em fase de alfabetização, geralmente entre 4 e 8 anos, ou crianças mais velhas que ainda apresentam dificuldades na leitura." },
@@ -380,7 +374,7 @@ function LandingPage() {
         </h1>
         
         <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-12 font-medium leading-relaxed">
-          A estratégia simples que a escola não ensina, mas que seu filho precisa.
+          Enquanto a escola continua falhando, mães estão resolvendo isso em casa em 30 dias.
         </p>
         
 
@@ -401,7 +395,7 @@ function LandingPage() {
           href="#oferta"
           className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-xl py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight w-full max-w-sm inline-block text-center animate-pulse-sm hover:scale-105 active:scale-95 transition-transform"
         >
-          Quero receber meu acesso
+          Quero Destravar a Leitura do Meu Filho Agora
         </a>
         <div className="mt-8 flex flex-col items-center gap-6">
           <div className="bg-white rounded-full px-6 py-2.5 shadow-xl border border-slate-100 flex items-center gap-3">
@@ -431,7 +425,7 @@ function LandingPage() {
       {/* Section 7: O que você desbloqueia agora mesmo */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que você desbloqueia agora mesmo</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">Tudo que seu filho precisa para ler com confiança do zero à leitura fluente</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { 
@@ -508,7 +502,7 @@ function LandingPage() {
       {/* Section 5: EXEMPLOS REAIS */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-          <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">EXEMPLOS REAIS</h2>
+          <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">Veja o método funcionando na prática</h2>
           <p className="text-xl text-slate-600 font-medium">Veja o que você vai receber</p>
         </div>
 
@@ -602,60 +596,12 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Logic */}
-      <section className="py-16 px-6 bg-[#FFFDE7]">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight text-slate-900">
-              A Técnica Comprovada por Harvard que Ensina Qualquer Criança a Ler em 30 Dias
-            </h2>
-            <div className="flex justify-center py-8">
-              <img
-                src="https://i.imgur.com/uCfFn2j.png"
-                alt="Harvard University"
-                width={400}
-                height={112}
-                loading="lazy"
-                decoding="async"
-                className="h-20 md:h-28 w-auto"
-              />
-            </div>
-            <p className="text-lg md:text-xl text-slate-800 max-w-3xl mx-auto leading-relaxed font-medium">
-              Você sabia que existe uma técnica{" "}
-              <span className="bg-[#F5C518] text-slate-900 font-bold px-2 py-0.5 rounded">
-                comprovada por Harvard
-              </span>{" "}
-              que permite qualquer criança aprender a ler de forma natural, rápida e sem traumas?
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            {[
-              { icon: "🧠", iconBg: "bg-blue-100", title: "Ciência Simplificada", text: "Táticas avançadas traduzidas em passos simples para qualquer mãe aplicar." },
-              { icon: "⚡", iconBg: "bg-[#D4AF37]/20", title: "Aprendizado Acelerado", text: "O cérebro aprende por sons, não por decoreba. Resultado em dias, não meses." },
-              { icon: "🏆", iconBg: "bg-emerald-100", title: "Confiança de Volta", text: "A criança passa a encarar a leitura como um desafio e a autoestima cresce junto." }
-            ].map((card, i) => (
-              <div
-                key={i}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 flex flex-col items-center text-center gap-4 hover:shadow-xl transition-all animate-fade-in"
-              >
-                <div className={`${card.iconBg} w-16 h-16 rounded-full flex items-center justify-center text-3xl`}>
-                  {card.icon}
-                </div>
-                <h3 className="text-xl font-extrabold text-slate-900">{card.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{card.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Section: Como funciona o "Método de 4 Pontas" na prática? */}
       <section className="py-24 px-6 bg-white relative overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
-              Como funciona o <span className="text-[#D4AF37]">"Método de 4 Pontas"</span> na prática?
+              Por que seu filho ainda não lê e <span className="text-[#D4AF37]">como resolver isso em 30 dias</span>
             </h2>
             <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-medium">
               Um passo a passo tão simples que seu filho aprende brincando, sem exigir que você seja pedagoga.
@@ -732,7 +678,7 @@ function LandingPage() {
               href="#oferta"
               className="inline-block bg-slate-900 text-white font-black text-lg py-6 px-12 rounded-2xl shadow-xl hover:bg-slate-800 hover:scale-105 active:scale-95 transition-all uppercase tracking-tight"
             >
-              Quero receber o método
+              Sim, Quero Transformar a Leitura do Meu Filho Hoje
             </a>
           </div>
         </div>
@@ -746,7 +692,7 @@ function LandingPage() {
               <span className="text-5xl md:text-7xl">🎁</span> BÔNUS
             </h3>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-8">
-              Ao garantir seu acesso hoje, você leva 6 Presentes Exclusivos
+              Tudo que você leva hoje sem precisar comprar nada separado
             </h2>
             <div className="flex justify-center mb-12">
               <img 
@@ -763,38 +709,32 @@ function LandingPage() {
             {[
               { 
                 title: "Acelerador de Consciência Silábica", 
-                desc: "Técnicas práticas para a criança dominar a estrutura das sílabas rapidamente.",
-                oldPrice: "47,90",
+                desc: "Domine a estrutura das sílabas rapidamente.",
                 img: "https://i.imgur.com/K1FlMpX.png"
               },
               { 
                 title: "Jogo de Retenção Acelerada - Fichas Silábicas", 
-                desc: "Material lúdico para fixar o aprendizado de forma divertida e eficiente.",
-                oldPrice: "37,90",
+                desc: "Material lúdico para fixar o aprendizado brincando.",
                 img: "https://i.imgur.com/b6Is6u1.png"
               },
               { 
                 title: "Protocolo de Fluência Leitora", 
-                desc: "O guia definitivo para eliminar a leitura pausada e robotizada.",
-                oldPrice: "57,90",
+                desc: "Elimine a leitura pausada e robotizada.",
                 img: "https://i.imgur.com/G0VWwVm.png"
               },
               { 
                 title: "Tiras de Leitura Dinâmica", 
-                desc: "Exercícios rápidos de 10 minutos para destravar a leitura natural.",
-                oldPrice: "27,90",
+                desc: "Exercícios de 10 minutos para destravar a leitura.",
                 img: "https://i.imgur.com/hW2TZJo.png"
               },
               { 
                 title: "Desafio dos 50 Textos Fatiados", 
-                desc: "Atividades progressivas que constroem a confiança na leitura de frases.",
-                oldPrice: "67,90",
+                desc: "Atividades progressivas para ler frases com confiança.",
                 img: "https://i.imgur.com/iOWJrLt.png"
               },
               { 
                 title: "Fundação da Leitura Rápida", 
-                desc: "O segredo para acelerar a compreensão de textos sem cansaço.",
-                oldPrice: "37,90",
+                desc: "Acelere a compreensão de textos sem cansaço.",
                 img: "https://i.imgur.com/2q7pzfO.png"
               }
             ].map((bonus, i) => (
@@ -810,15 +750,7 @@ function LandingPage() {
                     <span className="text-xl">🎁</span>
                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">BÔNUS {i + 1}</span>
                   </div>
-                  <h3 className="text-lg font-black text-[#D4AF37] mb-1 uppercase tracking-tight">{bonus.title}</h3>
-                  <div
-                    className="flex flex-col items-center md:items-start mb-4 animate-pulse-lg origin-left"
-                  >
-                    <span className="text-red-600 line-through text-2xl md:text-3xl font-bold">R$ {bonus.oldPrice}</span>
-                    <span className="text-emerald-600 text-3xl md:text-4xl font-black uppercase tracking-tighter">
-                      Por R$ 0,00
-                    </span>
-                  </div>
+                  <h3 className="text-lg font-black text-[#D4AF37] mb-2 uppercase tracking-tight">{bonus.title}</h3>
                   <p className="text-sm text-slate-600 font-medium leading-relaxed">{bonus.desc}</p>
                 </div>
               </div>
@@ -827,19 +759,16 @@ function LandingPage() {
 
           <div className="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl border-4 border-[#D4AF37]/20 text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]" />
-            <p className="text-slate-500 font-bold mb-2 uppercase tracking-widest text-sm">Quanto você economiza levando hoje:</p>
-            <h4 className="text-xl md:text-2xl font-black text-slate-900 mb-2">
-              Valor total dos bônus: <span className="text-red-600 line-through">R$ 277,30</span>
-            </h4>
-            <div className="text-emerald-600 font-black text-3xl md:text-4xl uppercase tracking-tighter">
-              Levando a oferta hoje: TUDO GRÁTIS
+            <p className="text-slate-500 font-bold mb-2 uppercase tracking-widest text-sm">Resumo dos bônus</p>
+            <div className="text-emerald-600 font-black text-2xl md:text-3xl tracking-tight leading-snug">
+              Você economiza <span className="text-emerald-700">R$ 277,30</span> levando tudo hoje incluso no plano
             </div>
           </div>
         </div>
       </section>
 
       <section className="py-16 px-6 bg-white">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-8 tracking-tight">Veja os resultados reais</h2>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-8 tracking-tight">Mães reais. Crianças reais. Resultados reais.</h2>
         
         <div className="mb-16 max-w-4xl mx-auto">
           <div 
@@ -885,14 +814,19 @@ function LandingPage() {
 
       <section id="oferta" className="py-16 px-6 bg-white relative scroll-mt-20">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-12 tracking-tight">Escolha o Plano que mais combina com seu você...</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-6 tracking-tight">Escolha como quer começar e garanta hoje com desconto</h2>
+          <div className="max-w-2xl mx-auto mb-12 bg-red-50 border-2 border-red-300 rounded-2xl px-6 py-4 text-center">
+            <p className="text-red-700 font-black text-base md:text-lg uppercase tracking-tight">
+              ⚠️ Oferta válida somente hoje. O preço volta ao normal amanhã.
+            </p>
+          </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
             {/* Basic Plan */}
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-100 flex flex-col shadow-sm text-center">
               <h3 className="text-2xl font-black text-slate-400 mb-8 uppercase tracking-widest">Plano Básico</h3>
               <div className="mb-10">
-                <p className="text-red-600 line-through text-lg">R$ 27,90</p>
+                <p className="text-red-600 line-through text-lg">R$ 47,00</p>
                 <div className="flex flex-wrap items-baseline justify-center gap-1">
                   <span className="text-2xl font-bold text-slate-900">R$</span>
                   <span className="text-6xl font-black text-slate-900">10,00</span>
@@ -918,7 +852,7 @@ function LandingPage() {
                 onClick={() => setShowDiscount(true)}
                 className="w-full py-5 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black uppercase tracking-tight mb-8 inline-block text-center shadow-lg"
               >
-                Quero receber o básico
+                Quero Começar com o Básico
               </button>
               <div className="flex flex-row items-center justify-center gap-4 text-slate-500 font-bold text-xs uppercase mb-8">
                 <div className="flex items-center gap-1">
@@ -963,14 +897,14 @@ function LandingPage() {
                   <p className="text-[#D4AF37] font-black mb-4 uppercase tracking-widest text-xs">Acesso Vitalício + Todos os Bônus</p>
                   
                   <div className="mb-4">
-                     <p className="text-red-600 line-through text-base">R$ 297,00</p>
+                     <p className="text-red-600 line-through text-base">R$ 97,00</p>
                     <div className="flex flex-col items-center justify-center gap-1">
                       <div className="flex items-baseline justify-center gap-2">
                         <span className="text-xl font-bold text-slate-900">R$</span>
-                        <span className="text-5xl md:text-6xl font-black text-slate-900">24,90</span>
+                        <span className="text-5xl md:text-6xl font-black text-slate-900">27,00</span>
                         <span className="text-slate-500 font-bold text-sm uppercase tracking-tighter">à vista</span>
                       </div>
-                      <p className="text-[#D4AF37] font-black text-base md:text-lg mt-1 uppercase tracking-tighter">Ou 3x de R$ 8,87 no cartão</p>
+                      <p className="text-[#D4AF37] font-black text-base md:text-lg mt-1 uppercase tracking-tighter">Ou 3x de R$ 9,90 no cartão</p>
                     </div>
                   </div>
 
@@ -1019,7 +953,7 @@ function LandingPage() {
                     rel="noopener noreferrer"
                     className="w-full py-5 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg md:text-xl shadow-[0_15px_40px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-3 inline-block text-center animate-pulse-cta hover:scale-105 active:scale-95 transition-transform"
                   >
-                    Quero receber o plano completo
+                    Quero o Método Completo -  Garantir Agora
                   </a>
                   <div className="flex flex-row items-center justify-center gap-4 text-slate-500 font-bold text-xs uppercase mb-4">
                     <div className="flex items-center gap-1">
@@ -1031,8 +965,8 @@ function LandingPage() {
                       <span>7 Dias Garantia</span>
                     </div>
                   </div>
-                  <p className="text-center text-red-600 font-black text-xs uppercase tracking-wider">
-                    Último dia com desconto do material completo. 
+                  <p className="text-center text-red-600 font-black text-sm md:text-base uppercase tracking-wider">
+                    ⚠️ Último dia com desconto do material completo.
                     <br />
                     Preço normal a partir do dia {tomorrow}
                   </p>
@@ -1057,7 +991,7 @@ function LandingPage() {
       <section className="py-16 px-6 bg-white">
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-8 tracking-tight">Depoimentos</h2>
         
-        <div className="grid grid-cols-2 gap-3 sm:gap-6 max-w-4xl mx-auto mb-16">
+        <div className="flex flex-col gap-6 max-w-[480px] mx-auto">
           {[
             "https://i.imgur.com/X0ZwkvB.jpeg",
             "https://i.imgur.com/GcM5DRs.jpeg",
@@ -1066,20 +1000,6 @@ function LandingPage() {
           ].map((src, i) => (
             <div key={i} className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
               <img src={src} alt={`Prova social ${i + 1}`} width={600} height={800} loading="lazy" decoding="async" className="w-full h-auto object-contain" />
-            </div>
-          ))}
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((t, i) => (
-            <div key={i} className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center text-center">
-              <p className="text-slate-600 italic mb-10 flex-1 text-lg leading-relaxed">"{t.text}"</p>
-              <div className="flex flex-col items-center gap-3">
-                <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-[#D4AF37]/20 overflow-hidden">
-                  <img src={t.image} alt={t.name} width={64} height={64} loading="lazy" decoding="async" className="w-full h-full object-cover" />
-                </div>
-                <span className="font-black text-slate-900 uppercase tracking-tight">{t.name}</span>
-              </div>
             </div>
           ))}
         </div>
