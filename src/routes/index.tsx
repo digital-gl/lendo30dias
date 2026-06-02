@@ -8,12 +8,8 @@ export const Route = createFileRoute("/")({
     links: [
       { rel: "preconnect", href: "https://i.imgur.com", crossOrigin: "" },
       { rel: "dns-prefetch", href: "https://i.imgur.com" },
-      {
-        rel: "preload",
-        as: "image",
-        href: "https://i.imgur.com/Tr7zGoR.png",
-        fetchpriority: "high",
-      },
+      { rel: "preconnect", href: "https://s.imgur.com", crossOrigin: "" },
+      { rel: "dns-prefetch", href: "https://s.imgur.com" },
     ],
   }),
   component: LandingPage,
