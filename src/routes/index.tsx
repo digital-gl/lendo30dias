@@ -702,7 +702,7 @@ function LandingPage() {
           <div className="mt-16 text-center">
             <a
               href="#oferta"
-              className="inline-block bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] hover:scale-105 active:scale-95 transition-all uppercase tracking-tight"
+              className="inline-block bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-sm md:text-base py-5 px-8 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] hover:scale-105 active:scale-95 transition-all uppercase tracking-tight"
             >
               Sim, Quero Transformar a Leitura do Meu Filho Hoje
             </a>
