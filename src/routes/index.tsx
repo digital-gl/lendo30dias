@@ -378,7 +378,7 @@ function LandingPage() {
         </h1>
         
         <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-12 font-medium leading-relaxed">
-          Seu filho só precisa de alguém que acredite nele e de 10 minutos por dia.
+          Seu filho trava nas sílabas e a escola diz que é normal. Não é.
         </p>
         
 
@@ -429,7 +429,10 @@ function LandingPage() {
       {/* Section 7: O que você desbloqueia agora mesmo */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">Tudo que seu filho precisa para ler com confiança do zero à leitura fluente</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-4 tracking-tight">Tudo que seu filho precisa para ler com confiança do zero à leitura fluente</h2>
+          <p className="text-center text-xl text-slate-600 font-medium mb-16 max-w-3xl mx-auto leading-relaxed">
+            Feito para crianças que já tentaram aprender e não conseguiram.
+          </p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { 
@@ -608,7 +611,7 @@ function LandingPage() {
               Por que seu filho ainda não lê e <span className="text-[#D4AF37]">como resolver isso em 30 dias</span>
             </h2>
             <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-medium">
-              Um passo a passo tão simples que seu filho aprende brincando, sem exigir que você seja pedagoga.
+              Enquanto seu filho fica pra trás na sala, outras crianças aprendem em casa em 30 dias.
             </p>
           </div>
 
@@ -695,9 +698,12 @@ function LandingPage() {
             <h3 className="text-4xl md:text-6xl font-black text-[#D4AF37] mb-4 flex items-center justify-center gap-3">
               <span className="text-5xl md:text-7xl">🎁</span> BÔNUS
             </h3>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-8">
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
               Tudo que você leva hoje sem precisar comprar nada separado
             </h2>
+            <p className="text-xl text-slate-600 font-medium mb-8 max-w-3xl mx-auto leading-relaxed">
+              Tudo que você precisava ter desde o começo para evitar a recuperação e a repetência.
+            </p>
             <div className="flex justify-center mb-12">
               <img 
                 src="https://i.imgur.com/fIEjlwd.png" 
@@ -822,6 +828,27 @@ function LandingPage() {
                 </div>
               )}
             </>
+          </div>
+        </div>
+      </section>
+
+      {/* Virada Emocional */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-3xl mx-auto bg-[#FFFBEB] rounded-[2.5rem] border-2 border-[#D4AF37]/30 shadow-2xl p-10 md:p-14 text-center relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1.5 bg-[#D4AF37]" />
+          <div className="space-y-5">
+            <p className="text-2xl md:text-3xl font-black text-slate-900 leading-tight">
+              Seu filho merece aprender.
+            </p>
+            <p className="text-2xl md:text-3xl font-black text-slate-900 leading-tight">
+              Você merece ver isso acontecer.
+            </p>
+            <p className="text-xl md:text-2xl font-bold text-red-600 leading-tight">
+              Cada semana que passa é mais atraso.
+            </p>
+            <p className="text-xl md:text-2xl font-bold text-[#D4AF37] leading-tight">
+              Isso muda hoje por menos do que uma pizza.
+            </p>
           </div>
         </div>
       </section>
