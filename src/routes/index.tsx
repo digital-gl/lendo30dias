@@ -997,7 +997,7 @@ function LandingPage() {
       <section className="py-16 px-6 bg-white">
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-8 tracking-tight">Depoimentos</h2>
         
-        <div className="grid grid-cols-2 gap-3 sm:gap-6 max-w-4xl mx-auto mb-16">
+        <div className="flex flex-col gap-6 max-w-[480px] mx-auto">
           {[
             "https://i.imgur.com/X0ZwkvB.jpeg",
             "https://i.imgur.com/GcM5DRs.jpeg",
@@ -1006,20 +1006,6 @@ function LandingPage() {
           ].map((src, i) => (
             <div key={i} className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
               <img src={src} alt={`Prova social ${i + 1}`} width={600} height={800} loading="lazy" decoding="async" className="w-full h-auto object-contain" />
-            </div>
-          ))}
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((t, i) => (
-            <div key={i} className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center text-center">
-              <p className="text-slate-600 italic mb-10 flex-1 text-lg leading-relaxed">"{t.text}"</p>
-              <div className="flex flex-col items-center gap-3">
-                <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-[#D4AF37]/20 overflow-hidden">
-                  <img src={t.image} alt={t.name} width={64} height={64} loading="lazy" decoding="async" className="w-full h-full object-cover" />
-                </div>
-                <span className="font-black text-slate-900 uppercase tracking-tight">{t.name}</span>
-              </div>
             </div>
           ))}
         </div>
