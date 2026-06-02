@@ -416,7 +416,7 @@ function LandingPage() {
 
         <a
           href="#oferta"
-          className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-xl py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight w-full max-w-sm inline-block text-center animate-pulse-sm hover:scale-105 active:scale-95 transition-transform"
+          className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight w-full max-w-sm inline-block text-center animate-pulse-sm hover:scale-105 active:scale-95 transition-transform"
         >
           Quero Destravar a Leitura do Meu Filho Agora
         </a>
