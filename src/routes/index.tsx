@@ -872,7 +872,15 @@ function LandingPage() {
 
               <button
                 type="button"
-                onClick={() => setShowDiscount(true)}
+                onClick={() => {
+                  const seen = typeof window !== "undefined" && sessionStorage.getItem("basicUpsellSeen");
+                  if (seen) {
+                    window.open(BASIC_CHECKOUT_URL, "_blank", "noopener,noreferrer");
+                  } else {
+                    if (typeof window !== "undefined") sessionStorage.setItem("basicUpsellSeen", "1");
+                    setShowDiscount(true);
+                  }
+                }}
                 className="w-full py-5 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black uppercase tracking-tight mb-8 inline-block text-center shadow-lg"
               >
                 Quero Começar com o Básico
