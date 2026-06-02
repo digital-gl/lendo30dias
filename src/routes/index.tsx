@@ -739,37 +739,37 @@ function LandingPage() {
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {[
               { 
-                title: "Acelerador de Consciência Silábica", 
+                title: "O truque que faz seu filho dominar sílabas em dias", 
                 desc: "Domine a estrutura das sílabas rapidamente.",
                 img: "https://i.imgur.com/K1FlMpX.png",
                 price: "R$ 47,00"
               },
               { 
-                title: "Jogo de Retenção Acelerada - Fichas Silábicas", 
+                title: "O jogo que fixa o que aprendeu sem parecer estudo", 
                 desc: "Material lúdico para fixar o aprendizado brincando.",
                 img: "https://i.imgur.com/b6Is6u1.png",
                 price: "R$ 37,00"
               },
               { 
-                title: "Protocolo de Fluência Leitora", 
+                title: "Como acabar com a leitura travada de vez", 
                 desc: "Elimine a leitura pausada e robotizada.",
                 img: "https://i.imgur.com/G0VWwVm.png",
                 price: "R$ 57,00"
               },
               { 
-                title: "Tiras de Leitura Dinâmica", 
+                title: "10 minutos por dia que destravam a leitura natural", 
                 desc: "Exercícios de 10 minutos para destravar a leitura.",
                 img: "https://i.imgur.com/hW2TZJo.png",
                 price: "R$ 47,00"
               },
               { 
-                title: "Desafio dos 50 Textos Fatiados", 
+                title: "O desafio que constrói confiança frase por frase", 
                 desc: "Atividades progressivas para ler frases com confiança.",
                 img: "https://i.imgur.com/iOWJrLt.png",
                 price: "R$ 47,00"
               },
               { 
-                title: "Fundação da Leitura Rápida", 
+                title: "O segredo para seu filho entender o que lê", 
                 desc: "Acelere a compreensão de textos sem cansaço.",
                 img: "https://i.imgur.com/2q7pzfO.png",
                 price: "R$ 42,30"
@@ -982,12 +982,12 @@ function LandingPage() {
                   
                   <div className="space-y-2 mb-6 flex flex-col items-center">
                     {[
-                      "Bônus 1: Acelerador de Consciência Silábica",
-                      "Bônus 2: Jogo de Retenção Acelerada",
-                      "Bônus 3: Protocolo de Fluência Leitora",
-                      "Bônus 4: Tiras de Leitura Dinâmica",
-                      "Bônus 5: Desafio dos 50 Textos Fatiados",
-                      "Bônus 6: Fundação da Leitura Rápida"
+                      "Bônus 1: O truque que faz seu filho dominar sílabas em dias",
+                      "Bônus 2: O jogo que fixa o que aprendeu sem parecer estudo",
+                      "Bônus 3: Como acabar com a leitura travada de vez",
+                      "Bônus 4: 10 minutos por dia que destravam a leitura natural",
+                      "Bônus 5: O desafio que constrói confiança frase por frase",
+                      "Bônus 6: O segredo para seu filho entender o que lê"
                     ].map((item, i) => (
                       <div key={i} className="flex gap-3 items-center justify-start w-full max-w-[280px] text-left">
                         <Check className="text-[#D4AF37] w-4 h-4 shrink-0" />
@@ -1002,7 +1002,7 @@ function LandingPage() {
                     rel="noopener noreferrer"
                     className="w-full py-5 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg md:text-xl shadow-[0_15px_40px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-3 inline-block text-center animate-pulse-cta hover:scale-105 active:scale-95 transition-transform"
                   >
-                    Quero o Método Completo -  Garantir Agora
+                    Quero o Método Completo Agora
                   </a>
                   <div className="flex flex-row items-center justify-center gap-4 text-slate-500 font-bold text-xs uppercase mb-4">
                     <div className="flex items-center gap-1">
