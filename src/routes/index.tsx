@@ -289,12 +289,6 @@ function LandingPage() {
     }
   ];
 
-  const testimonials = [
-    { name: "Mariana Silva", text: "Meu filho tinha muita dificuldade e hoje lê livrinhos sozinho. Mudou nossa vida!", image: "https://i.imgur.com/PHQ6tpy.png" },
-    { name: "Carla Oliveira", text: "A hora da tarefa era um choro só. Agora ele se sente capaz e motivado.", image: "https://i.imgur.com/gpEBlEG.png" },
-    { name: "Patrícia Mendes", text: "O método é muito simples de aplicar, mesmo eu não sendo pedagoga.", image: "https://i.imgur.com/CSHkF2d.png" }
-  ];
-
   const faqs = [
     { q: "Como vou receber o material?", a: "O acesso é imediato e 100% digital. Após a confirmação do pagamento, você receberá o link para download em seu e-mail e poderá imprimir quando quiser." },
     { q: "Para qual idade é recomendado?", a: "O material foi desenvolvido para crianças em fase de alfabetização, geralmente entre 4 e 8 anos, ou crianças mais velhas que ainda apresentam dificuldades na leitura." },
