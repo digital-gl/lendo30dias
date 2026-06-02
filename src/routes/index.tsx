@@ -773,15 +773,16 @@ function LandingPage() {
           <div className="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl border-4 border-[#D4AF37]/20 text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]" />
             <p className="text-slate-500 font-bold mb-2 uppercase tracking-widest text-sm">Resumo dos bônus</p>
+            <p className="text-slate-400 line-through font-bold text-lg md:text-xl mb-1">De R$ 277,30</p>
             <div className="text-emerald-600 font-black text-2xl md:text-3xl tracking-tight leading-snug">
-              Você economiza <span className="text-emerald-700">R$ 277,30</span> levando tudo hoje incluso no plano
+              Você economiza <span className="text-emerald-700">R$ 277,30</span> adquirindo hoje
             </div>
           </div>
         </div>
       </section>
 
       <section className="py-16 px-6 bg-white">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-8 tracking-tight">Mães reais. Crianças reais. Resultados reais.</h2>
+        <h2 className="text-2xl md:text-4xl font-extrabold text-center mb-8 tracking-tight max-w-4xl mx-auto leading-tight">Esse é o Henrique. Há 30 dias ele travava em cada sílaba. Hoje ele e a mãe tem esses momentos todos os dias: ⬇️</h2>
         
         <div className="mb-16 max-w-4xl mx-auto">
           <div 
