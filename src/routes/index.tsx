@@ -774,7 +774,7 @@ function LandingPage() {
       </section>
 
       <section className="py-16 px-6 bg-white">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-8 tracking-tight">Veja os resultados reais</h2>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-8 tracking-tight">Mães reais. Crianças reais. Resultados reais.</h2>
         
         <div className="mb-16 max-w-4xl mx-auto">
           <div 
@@ -820,14 +820,19 @@ function LandingPage() {
 
       <section id="oferta" className="py-16 px-6 bg-white relative scroll-mt-20">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-12 tracking-tight">Escolha o Plano que mais combina com seu você...</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-6 tracking-tight">Escolha como quer começar e garanta hoje com desconto</h2>
+          <div className="max-w-2xl mx-auto mb-12 bg-red-50 border-2 border-red-300 rounded-2xl px-6 py-4 text-center">
+            <p className="text-red-700 font-black text-base md:text-lg uppercase tracking-tight">
+              ⚠️ Oferta válida somente hoje. O preço volta ao normal amanhã.
+            </p>
+          </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
             {/* Basic Plan */}
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-100 flex flex-col shadow-sm text-center">
               <h3 className="text-2xl font-black text-slate-400 mb-8 uppercase tracking-widest">Plano Básico</h3>
               <div className="mb-10">
-                <p className="text-red-600 line-through text-lg">R$ 27,90</p>
+                <p className="text-red-600 line-through text-lg">R$ 47,00</p>
                 <div className="flex flex-wrap items-baseline justify-center gap-1">
                   <span className="text-2xl font-bold text-slate-900">R$</span>
                   <span className="text-6xl font-black text-slate-900">10,00</span>
@@ -853,7 +858,7 @@ function LandingPage() {
                 onClick={() => setShowDiscount(true)}
                 className="w-full py-5 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black uppercase tracking-tight mb-8 inline-block text-center shadow-lg"
               >
-                Quero receber o básico
+                Quero Começar com o Básico
               </button>
               <div className="flex flex-row items-center justify-center gap-4 text-slate-500 font-bold text-xs uppercase mb-8">
                 <div className="flex items-center gap-1">
@@ -898,14 +903,14 @@ function LandingPage() {
                   <p className="text-[#D4AF37] font-black mb-4 uppercase tracking-widest text-xs">Acesso Vitalício + Todos os Bônus</p>
                   
                   <div className="mb-4">
-                     <p className="text-red-600 line-through text-base">R$ 297,00</p>
+                     <p className="text-red-600 line-through text-base">R$ 97,00</p>
                     <div className="flex flex-col items-center justify-center gap-1">
                       <div className="flex items-baseline justify-center gap-2">
                         <span className="text-xl font-bold text-slate-900">R$</span>
-                        <span className="text-5xl md:text-6xl font-black text-slate-900">24,90</span>
+                        <span className="text-5xl md:text-6xl font-black text-slate-900">27,00</span>
                         <span className="text-slate-500 font-bold text-sm uppercase tracking-tighter">à vista</span>
                       </div>
-                      <p className="text-[#D4AF37] font-black text-base md:text-lg mt-1 uppercase tracking-tighter">Ou 3x de R$ 8,87 no cartão</p>
+                      <p className="text-[#D4AF37] font-black text-base md:text-lg mt-1 uppercase tracking-tighter">Ou 3x de R$ 9,90 no cartão</p>
                     </div>
                   </div>
 
@@ -954,7 +959,7 @@ function LandingPage() {
                     rel="noopener noreferrer"
                     className="w-full py-5 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg md:text-xl shadow-[0_15px_40px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-3 inline-block text-center animate-pulse-cta hover:scale-105 active:scale-95 transition-transform"
                   >
-                    Quero receber o plano completo
+                    Quero o Método Completo -  Garantir Agora
                   </a>
                   <div className="flex flex-row items-center justify-center gap-4 text-slate-500 font-bold text-xs uppercase mb-4">
                     <div className="flex items-center gap-1">
@@ -966,8 +971,8 @@ function LandingPage() {
                       <span>7 Dias Garantia</span>
                     </div>
                   </div>
-                  <p className="text-center text-red-600 font-black text-xs uppercase tracking-wider">
-                    Último dia com desconto do material completo. 
+                  <p className="text-center text-red-600 font-black text-sm md:text-base uppercase tracking-wider">
+                    ⚠️ Último dia com desconto do material completo.
                     <br />
                     Preço normal a partir do dia {tomorrow}
                   </p>
