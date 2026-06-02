@@ -378,7 +378,7 @@ function LandingPage() {
         </h1>
         
         <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-12 font-medium leading-relaxed">
-          Seu filho só precisa de alguém que acredite nele e de 10 minutos por dia.
+          A escola faz o que pode. Mas 10 minutos por dia em casa podem mudar tudo.
         </p>
         
 
@@ -429,7 +429,10 @@ function LandingPage() {
       {/* Section 7: O que você desbloqueia agora mesmo */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">Tudo que seu filho precisa para ler com confiança do zero à leitura fluente</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-4 tracking-tight">Tudo que seu filho precisa para ler com confiança do zero à leitura fluente</h2>
+          <p className="text-lg md:text-xl text-slate-600 text-center mb-16 font-medium max-w-3xl mx-auto">
+            Cada nível respeita o ritmo do seu filho. Sem pressão. Sem trauma.
+          </p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { 
@@ -549,6 +552,10 @@ function LandingPage() {
             )}
           </>
         </div>
+
+        <p className="max-w-2xl mx-auto text-center text-base md:text-lg text-slate-600 font-medium leading-relaxed px-6 -mt-8 mb-4">
+          Esse é o grafismo fônico. A primeira coisa que seu filho vai aprender. Simples assim.
+        </p>
 
         <div className="max-w-xs mx-auto my-10 h-1 rounded-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
 
@@ -682,8 +689,28 @@ function LandingPage() {
               href="#oferta"
               className="inline-block bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] hover:scale-105 active:scale-95 transition-all uppercase tracking-tight"
             >
-              Sim, Quero Transformar a Leitura do Meu Filho Hoje
+              Garantir Meu Acesso Agora
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Bloco de Dor */}
+      <section className="py-20 px-6 bg-slate-50">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-10 tracking-tight">
+            Você já passou por isso?
+          </h2>
+          <div className="space-y-6 text-lg md:text-xl text-slate-700 leading-relaxed font-medium text-left md:text-center">
+            <p>A hora da tarefa vira choro. Seu filho trava nas sílabas e você não sabe como ajudar sem pressionar.</p>
+            <p>Ele chega da escola calado. Você descobre que os colegas zoaram porque ele não consegue ler.</p>
+            <p>A professora chama e fala baixinho que ele pode repetir o ano.</p>
+            <p>Você sente que o tempo está passando. Que ele está ficando pra trás. Que você deveria estar fazendo mais.</p>
+            <p className="font-black text-slate-900">
+              Isso não é falta de esforço seu. Não é falta de inteligência dele.
+              <br />
+              É só o método errado.
+            </p>
           </div>
         </div>
       </section>
