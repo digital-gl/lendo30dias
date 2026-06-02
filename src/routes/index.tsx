@@ -423,17 +423,7 @@ function LandingPage() {
         </p>
         
 
-        <img
-          src="https://i.imgur.com/Tr7zGoR.png"
-          alt="Material do Método"
-          width={1024}
-          height={1024}
-          loading="eager"
-          decoding="async"
-          // @ts-ignore - fetchpriority is a valid HTML attribute
-          fetchpriority="high"
-          className="mb-12 max-w-2xl w-full h-auto rounded-2xl shadow-2xl"
-        />
+        <ImgurHeroEmbed />
 
 
         <a
