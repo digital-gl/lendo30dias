@@ -403,7 +403,7 @@ function LandingPage() {
         </div>
 
         <h1 className="text-3xl md:text-5xl font-extrabold max-w-5xl leading-tight mb-4 tracking-tight">
-          Imagina seu filho pegando um livro sozinho e chamando você pra ouvir. É isso que aconteceu com +847 mães com 10 minutinhos por dia.
+          Imagina seu filho pegando <span className="text-[#D4AF37]">um livro sozinho</span> e chamando você pra ouvir. É isso que aconteceu com <span className="text-[#D4AF37]">+847 mães com 10 minutinhos</span> por dia.
         </h1>
 
         <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-8 font-medium leading-relaxed">
@@ -645,7 +645,7 @@ function LandingPage() {
                   className="w-full rounded-3xl border-4 border-[#D4AF37] shadow-xl"
                 />
               ))}
-              <p className="text-center text-base md:text-lg text-slate-800 leading-relaxed font-bold">
+              <p className="text-center text-xl md:text-2xl text-slate-800 leading-relaxed font-bold">
                 Imagine as outras mães e a professora vendo seu filho lendo sozinho.
               </p>
             </div>
@@ -751,7 +751,7 @@ function LandingPage() {
       </section>
 
       <section className="py-16 px-6 bg-white">
-        <h2 className="text-2xl md:text-4xl font-extrabold text-center mb-8 tracking-tight max-w-4xl mx-auto leading-tight">Esse é o Henrique. Há 30 dias ele travava em cada sílaba. Hoje ele e a mãe tem esses momentos todos os dias: ⬇️</h2>
+        <h2 className="text-2xl md:text-4xl font-extrabold text-center mb-8 tracking-tight max-w-4xl mx-auto leading-tight">Esse é o Henrique. <span className="text-[#D4AF37]">Há 30 dias ele travava em cada sílaba.</span> Hoje ele e a mãe tem esses momentos todos os dias: ⬇️</h2>
         
         <div className="mb-16 max-w-4xl mx-auto">
           <div 
@@ -817,7 +817,7 @@ function LandingPage() {
 
       <section id="oferta" className="py-16 px-6 bg-white relative scroll-mt-20">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-6 tracking-tight">Escolha como quer começar e garanta hoje com desconto</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-6 tracking-tight">Escolha como quer começar e garanta hoje <span className="text-[#D4AF37]">com desconto</span></h2>
 
           <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
             {/* Basic Plan */}
