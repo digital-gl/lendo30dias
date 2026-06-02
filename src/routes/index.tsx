@@ -183,6 +183,32 @@ function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }
   );
 }
 
+function ImgurHeroEmbed() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const existing = containerRef.current.querySelector('script[src="https://s.imgur.com/min/embed.js"]');
+    if (existing) return;
+    const script = document.createElement('script');
+    script.src = 'https://s.imgur.com/min/embed.js';
+    script.async = true;
+    script.charset = 'utf-8';
+    containerRef.current.appendChild(script);
+    return () => {
+      if (containerRef.current && script.parentNode === containerRef.current) {
+        containerRef.current.removeChild(script);
+      }
+    };
+  }, []);
+  return (
+    <div ref={containerRef} className="mb-12 max-w-2xl w-full">
+      <blockquote className="imgur-embed-pub" lang="en" data-id="CMbUBLf">
+        <a href="https://imgur.com/CMbUBLf">View post on imgur.com</a>
+      </blockquote>
+    </div>
+  );
+}
+
 function LandingPage() {
   const [date, setDate] = useState("");
   const [tomorrow, setTomorrow] = useState("");
