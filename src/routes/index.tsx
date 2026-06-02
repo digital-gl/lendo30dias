@@ -849,15 +849,13 @@ function LandingPage() {
             </>
           </div>
         </div>
-      </section>
 
-      {/* Virada Emocional */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-3xl mx-auto bg-[#FFFBEB] rounded-[2.5rem] border-2 border-[#D4AF37]/30 shadow-2xl p-10 md:p-14 text-center relative overflow-hidden">
+        {/* Virada Emocional */}
+        <div className="mt-12 max-w-3xl mx-auto bg-[#FFFBEB] rounded-[2.5rem] border-2 border-[#D4AF37]/30 shadow-2xl p-10 md:p-14 text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1.5 bg-[#D4AF37]" />
           <div className="space-y-5">
             <p className="text-2xl md:text-3xl font-black text-slate-900 leading-tight">
-              Seu filho merece aprender.
+              Seu filho também merece aprender.
             </p>
             <p className="text-2xl md:text-3xl font-black text-slate-900 leading-tight">
               Você merece ver isso acontecer.
@@ -871,6 +869,7 @@ function LandingPage() {
           </div>
         </div>
       </section>
+
 
       <section id="oferta" className="py-16 px-6 bg-white relative scroll-mt-20">
         <div className="max-w-6xl mx-auto">
