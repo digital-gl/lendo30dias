@@ -403,7 +403,7 @@ function LandingPage() {
         </div>
 
         <h1 className="text-3xl md:text-5xl font-extrabold max-w-5xl leading-tight mb-4 tracking-tight">
-          Imagina seu filho pegando um livro sozinho e chamando você pra ouvir. É isso que aconteceu com +847 mães com 10 minutinhos por dia.
+          Imagina seu filho pegando <span className="text-[#D4AF37]">um livro sozinho</span> e chamando você pra ouvir. É isso que aconteceu com <span className="text-[#D4AF37]">+847 mães com 10 minutinhos</span> por dia.
         </h1>
 
         <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-8 font-medium leading-relaxed">
