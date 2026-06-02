@@ -546,7 +546,7 @@ function LandingPage() {
             preload="none"
             poster="https://i.imgur.com/U0beZTE.png"
           >
-            <source src="https://i.imgur.com/PNodnZZ.mp4" type="video/mp4" />
+            <source src="https://i.imgur.com/CYuQIDg.mp4" type="video/mp4" />
             Seu navegador não suporta vídeos.
           </video>
 
