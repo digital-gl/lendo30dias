@@ -630,7 +630,7 @@ function LandingPage() {
               Por que seu filho ainda não lê e <span className="text-[#D4AF37]">como resolver isso em 30 dias</span>
             </h2>
             <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-medium">
-              Enquanto seu filho fica pra trás na sala, outras crianças aprendem em casa em 30 dias.
+Não deixe seu filho ficar para trás na sala, outras crianças aprendem em casa 10 minutinhos por dia.
             </p>
           </div>
 
