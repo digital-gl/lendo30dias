@@ -378,7 +378,7 @@ function LandingPage() {
         </h1>
         
         <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-12 font-medium leading-relaxed">
-          A escola faz o que pode. Mas 10 minutos por dia em casa podem mudar tudo.
+          Seu filho só precisa de alguém que acredite nele e de 10 minutos por dia.
         </p>
         
 
@@ -429,10 +429,7 @@ function LandingPage() {
       {/* Section 7: O que você desbloqueia agora mesmo */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-4 tracking-tight">Tudo que seu filho precisa para ler com confiança do zero à leitura fluente</h2>
-          <p className="text-lg md:text-xl text-slate-600 text-center mb-16 font-medium max-w-3xl mx-auto">
-            Cada nível respeita o ritmo do seu filho. Sem pressão. Sem trauma.
-          </p>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">Tudo que seu filho precisa para ler com confiança do zero à leitura fluente</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { 
@@ -552,10 +549,6 @@ function LandingPage() {
             )}
           </>
         </div>
-
-        <p className="max-w-2xl mx-auto text-center text-base md:text-lg text-slate-600 font-medium leading-relaxed px-6 -mt-8 mb-4">
-          Esse é o grafismo fônico. A primeira coisa que seu filho vai aprender. Simples assim.
-        </p>
 
         <div className="max-w-xs mx-auto my-10 h-1 rounded-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
 
@@ -689,28 +682,8 @@ function LandingPage() {
               href="#oferta"
               className="inline-block bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] hover:scale-105 active:scale-95 transition-all uppercase tracking-tight"
             >
-              Garantir Meu Acesso Agora
+              Sim, Quero Transformar a Leitura do Meu Filho Hoje
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Bloco de Dor */}
-      <section className="py-20 px-6 bg-slate-50">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-10 tracking-tight">
-            Você já passou por isso?
-          </h2>
-          <div className="space-y-6 text-lg md:text-xl text-slate-700 leading-relaxed font-medium text-left md:text-center">
-            <p>A hora da tarefa vira choro. Seu filho trava nas sílabas e você não sabe como ajudar sem pressionar.</p>
-            <p>Ele chega da escola calado. Você descobre que os colegas zoaram porque ele não consegue ler.</p>
-            <p>A professora chama e fala baixinho que ele pode repetir o ano.</p>
-            <p>Você sente que o tempo está passando. Que ele está ficando pra trás. Que você deveria estar fazendo mais.</p>
-            <p className="font-black text-slate-900">
-              Isso não é falta de esforço seu. Não é falta de inteligência dele.
-              <br />
-              É só o método errado.
-            </p>
           </div>
         </div>
       </section>
@@ -739,37 +712,37 @@ function LandingPage() {
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {[
               { 
-                title: "O truque que faz seu filho dominar sílabas em dias", 
+                title: "Acelerador de Consciência Silábica", 
                 desc: "Domine a estrutura das sílabas rapidamente.",
                 img: "https://i.imgur.com/K1FlMpX.png",
                 price: "R$ 47,00"
               },
               { 
-                title: "O jogo que fixa o que aprendeu sem parecer estudo", 
+                title: "Jogo de Retenção Acelerada - Fichas Silábicas", 
                 desc: "Material lúdico para fixar o aprendizado brincando.",
                 img: "https://i.imgur.com/b6Is6u1.png",
                 price: "R$ 37,00"
               },
               { 
-                title: "Como acabar com a leitura travada de vez", 
+                title: "Protocolo de Fluência Leitora", 
                 desc: "Elimine a leitura pausada e robotizada.",
                 img: "https://i.imgur.com/G0VWwVm.png",
                 price: "R$ 57,00"
               },
               { 
-                title: "10 minutos por dia que destravam a leitura natural", 
+                title: "Tiras de Leitura Dinâmica", 
                 desc: "Exercícios de 10 minutos para destravar a leitura.",
                 img: "https://i.imgur.com/hW2TZJo.png",
                 price: "R$ 47,00"
               },
               { 
-                title: "O desafio que constrói confiança frase por frase", 
+                title: "Desafio dos 50 Textos Fatiados", 
                 desc: "Atividades progressivas para ler frases com confiança.",
                 img: "https://i.imgur.com/iOWJrLt.png",
                 price: "R$ 47,00"
               },
               { 
-                title: "O segredo para seu filho entender o que lê", 
+                title: "Fundação da Leitura Rápida", 
                 desc: "Acelere a compreensão de textos sem cansaço.",
                 img: "https://i.imgur.com/2q7pzfO.png",
                 price: "R$ 42,30"
@@ -850,19 +823,6 @@ function LandingPage() {
               )}
             </>
           </div>
-        </div>
-      </section>
-
-      {/* Virada Emocional */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-2xl md:text-4xl font-extrabold text-slate-900 leading-snug tracking-tight">
-            Seu filho merece aprender.
-            <br />
-            Você merece ver isso acontecer.
-            <br />
-            E isso pode começar hoje por menos do que uma pizza.
-          </p>
         </div>
       </section>
 
@@ -995,12 +955,12 @@ function LandingPage() {
                   
                   <div className="space-y-2 mb-6 flex flex-col items-center">
                     {[
-                      "Bônus 1: O truque que faz seu filho dominar sílabas em dias",
-                      "Bônus 2: O jogo que fixa o que aprendeu sem parecer estudo",
-                      "Bônus 3: Como acabar com a leitura travada de vez",
-                      "Bônus 4: 10 minutos por dia que destravam a leitura natural",
-                      "Bônus 5: O desafio que constrói confiança frase por frase",
-                      "Bônus 6: O segredo para seu filho entender o que lê"
+                      "Bônus 1: Acelerador de Consciência Silábica",
+                      "Bônus 2: Jogo de Retenção Acelerada",
+                      "Bônus 3: Protocolo de Fluência Leitora",
+                      "Bônus 4: Tiras de Leitura Dinâmica",
+                      "Bônus 5: Desafio dos 50 Textos Fatiados",
+                      "Bônus 6: Fundação da Leitura Rápida"
                     ].map((item, i) => (
                       <div key={i} className="flex gap-3 items-center justify-start w-full max-w-[280px] text-left">
                         <Check className="text-[#D4AF37] w-4 h-4 shrink-0" />
@@ -1015,7 +975,7 @@ function LandingPage() {
                     rel="noopener noreferrer"
                     className="w-full py-5 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg md:text-xl shadow-[0_15px_40px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-3 inline-block text-center animate-pulse-cta hover:scale-105 active:scale-95 transition-transform"
                   >
-                    Quero o Método Completo Agora
+                    Quero o Método Completo -  Garantir Agora
                   </a>
                   <div className="flex flex-row items-center justify-center gap-4 text-slate-500 font-bold text-xs uppercase mb-4">
                     <div className="flex items-center gap-1">
@@ -1136,18 +1096,6 @@ function LandingPage() {
               )}
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* CTA Final */}
-      <section className="py-20 px-6 bg-gradient-to-b from-[#FFFBEB] to-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <a
-            href="#oferta"
-            className="inline-block bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg md:text-xl py-6 px-10 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight hover:scale-105 active:scale-95 transition-transform"
-          >
-            Sim, Quero Transformar a Leitura do Meu Filho Hoje
-          </a>
         </div>
       </section>
 
