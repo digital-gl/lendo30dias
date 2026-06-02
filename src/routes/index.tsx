@@ -397,16 +397,16 @@ function LandingPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="pt-4 pb-12 px-6 flex flex-col items-center text-center bg-[radial-gradient(50%_50%_at_50%_50%,_#FFFFFF_0%,_#FFF4CC_100%)]">
-        <div className="px-4 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-sm mb-6 uppercase tracking-widest font-bold animate-fade-in">
+      <section className="pt-2 pb-8 px-6 flex flex-col items-center text-center bg-[radial-gradient(50%_50%_at_50%_50%,_#FFFFFF_0%,_#FFF4CC_100%)]">
+        <div className="px-4 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-sm mb-4 uppercase tracking-widest font-bold animate-fade-in">
           O FIM DA GUERRA NA HORA DA TAREFA
         </div>
-        
-        <h1 className="text-3xl md:text-6xl font-extrabold max-w-5xl leading-tight mb-8 tracking-tight">
-          Seu filho ainda não lê sozinho? <span className="text-[#D4AF37]">+847 mães</span> resolveram isso em <span className="text-[#D4AF37]">30 dias</span> com um método simples
+
+        <h1 className="text-3xl md:text-5xl font-extrabold max-w-5xl leading-tight mb-4 tracking-tight">
+          +847 mães ensinaram os filhos a ler em casa em 30 dias. Sem ser professora. Sem pressão.
         </h1>
-        
-        <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-12 font-medium leading-relaxed">
+
+        <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-8 font-medium leading-relaxed">
           Seu filho trava nas sílabas e a escola diz que é normal. Não é.
         </p>
         
