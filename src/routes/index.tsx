@@ -378,7 +378,7 @@ function LandingPage() {
         </h1>
         
         <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-12 font-medium leading-relaxed">
-          Seu filho só precisa de alguém que acredite nele e de 10 minutos por dia.
+          Seu filho trava nas sílabas e a escola diz que é normal. Não é.
         </p>
         
 
