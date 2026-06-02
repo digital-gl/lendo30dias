@@ -1139,6 +1139,18 @@ function LandingPage() {
         </div>
       </section>
 
+      {/* CTA Final */}
+      <section className="py-20 px-6 bg-gradient-to-b from-[#FFFBEB] to-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <a
+            href="#oferta"
+            className="inline-block bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg md:text-xl py-6 px-10 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight hover:scale-105 active:scale-95 transition-transform"
+          >
+            Sim, Quero Transformar a Leitura do Meu Filho Hoje
+          </a>
+        </div>
+      </section>
+
       {/* Section 13: Rodapé (Footer) */}
       <footer className="bg-slate-900 py-12 px-6 text-white text-center">
         <div className="max-w-6xl mx-auto flex flex-col items-center">
