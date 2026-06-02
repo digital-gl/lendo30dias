@@ -105,6 +105,9 @@ function SalesToast() {
   );
 }
 
+const BASIC_CHECKOUT_URL = "https://pay.kirvano.com/ed693073-011c-4fc0-a8f6-332ec1815d19";
+const PREMIUM_UPSELL_CHECKOUT_URL = "https://pay.kirvano.com/a06e7ea1-ecef-4f82-a02d-14adcd5fe27f";
+
 function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }) {
   return (
     <>
@@ -138,7 +141,7 @@ function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }
             </p>
 
             <div className="bg-[#FFFBEB] border-2 border-dashed border-[#D4AF37] rounded-2xl p-5 mb-5">
-              <p className="text-red-600 line-through text-base font-bold">De R$ 39,90</p>
+              <p className="text-red-600 line-through text-base font-bold">De R$ 27,00</p>
               <p className="text-xs uppercase tracking-widest text-slate-500 font-bold mb-1">Por apenas</p>
               <div className="flex items-baseline justify-center gap-1">
                 <span className="text-2xl font-bold text-slate-900">R$</span>
@@ -146,11 +149,11 @@ function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }
                   className="text-6xl md:text-7xl font-black text-[#D4AF37] inline-block animate-pulse-xl"
                   style={{ textShadow: "0 6px 24px rgba(212,175,55,0.4)" }}
                 >
-                  14,90
+                  17,00
                 </span>
               </div>
               <p className="text-emerald-600 font-black text-xs uppercase tracking-tighter mt-2">
-                Economia de R$ 40,00 agora
+                Economia de R$ 10,00 agora
               </p>
             </div>
 
@@ -159,16 +162,26 @@ function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }
             </p>
 
             <a
-              href="https://pay.kirvano.com/a06e7ea1-ecef-4f82-a02d-14adcd5fe27f"
+              href={PREMIUM_UPSELL_CHECKOUT_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full py-5 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-lg shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight mb-3 animate-pulse-cta hover:scale-105 active:scale-95 transition-transform"
             >
-              SIM! QUERO AGORA POR R$ 14,90
+              SIM! QUERO AGORA POR R$ 17,00
             </a>
 
             <a
-              href="https://pay.kirvano.com/ed693073-011c-4fc0-a8f6-332ec1815d19"
+              href={BASIC_CHECKOUT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onClose}
+              className="block w-full py-4 rounded-2xl bg-slate-200 hover:bg-slate-300 text-slate-700 font-black text-sm uppercase tracking-tight mb-3 text-center transition-colors"
+            >
+              NÃO! QUERO O BÁSICO SEM OS BÔNUS POR R$10
+            </a>
+
+            <a
+              href={BASIC_CHECKOUT_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={onClose}
@@ -859,7 +872,15 @@ function LandingPage() {
 
               <button
                 type="button"
-                onClick={() => setShowDiscount(true)}
+                onClick={() => {
+                  const seen = typeof window !== "undefined" && sessionStorage.getItem("basicUpsellSeen");
+                  if (seen) {
+                    window.open(BASIC_CHECKOUT_URL, "_blank", "noopener,noreferrer");
+                  } else {
+                    if (typeof window !== "undefined") sessionStorage.setItem("basicUpsellSeen", "1");
+                    setShowDiscount(true);
+                  }
+                }}
                 className="w-full py-5 rounded-2xl bg-[#D4AF37] hover:bg-[#B8860B] text-white font-black uppercase tracking-tight mb-8 inline-block text-center shadow-lg"
               >
                 Quero Começar com o Básico
