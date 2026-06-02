@@ -718,7 +718,7 @@ function LandingPage() {
               <span className="text-5xl md:text-7xl">🎁</span> BÔNUS
             </h3>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
-              Tudo que você leva hoje sem precisar comprar nada separado
+              O que você ganha adquirindo hoje! ⬇️
             </h2>
             <p className="text-xl text-slate-600 font-medium mb-8 max-w-3xl mx-auto leading-relaxed">
               Tudo que você precisava ter desde o começo para evitar a recuperação e a repetência.
