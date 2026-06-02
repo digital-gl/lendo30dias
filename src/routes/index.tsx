@@ -528,7 +528,7 @@ function LandingPage() {
       {/* Section 5: EXEMPLOS REAIS */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-          <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">Veja o método funcionando na prática</h2>
+          <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">Mas como funciona na prática?</h2>
           <p className="text-xl text-slate-600 font-medium">Veja o que você vai receber</p>
         </div>
 
