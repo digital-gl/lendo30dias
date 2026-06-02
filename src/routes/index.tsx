@@ -370,7 +370,7 @@ function LandingPage() {
         </div>
         
         <h1 className="text-4xl md:text-7xl font-extrabold max-w-5xl leading-tight mb-8 tracking-tight">
-          Descubra como +847 mães estão usando o <span className="text-[#D4AF37]">"Método de 4 Pontas"</span> para destravar a leitura dos filhos em <span className="text-[#D4AF37]">30 dias</span>.
+          Seu filho ainda não lê sozinho? <span className="text-[#D4AF37]">+847 mães</span> resolveram isso em <span className="text-[#D4AF37]">30 dias</span> com um método simples
         </h1>
         
         <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-12 font-medium leading-relaxed">
