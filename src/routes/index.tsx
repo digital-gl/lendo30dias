@@ -380,7 +380,7 @@ function LandingPage() {
         </h1>
         
         <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-12 font-medium leading-relaxed">
-          A estratégia simples que a escola não ensina, mas que seu filho precisa.
+          Enquanto a escola continua falhando, mães estão resolvendo isso em casa em 30 dias.
         </p>
         
 
@@ -401,7 +401,7 @@ function LandingPage() {
           href="#oferta"
           className="bg-gradient-to-r from-green-600 to-emerald-400 hover:from-green-700 hover:to-emerald-500 text-white font-black text-xl py-6 px-12 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.4)] uppercase tracking-tight w-full max-w-sm inline-block text-center animate-pulse-sm hover:scale-105 active:scale-95 transition-transform"
         >
-          Quero receber meu acesso
+          Quero Destravar a Leitura do Meu Filho Agora
         </a>
         <div className="mt-8 flex flex-col items-center gap-6">
           <div className="bg-white rounded-full px-6 py-2.5 shadow-xl border border-slate-100 flex items-center gap-3">
@@ -431,7 +431,7 @@ function LandingPage() {
       {/* Section 7: O que você desbloqueia agora mesmo */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">O que você desbloqueia agora mesmo</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">Tudo que seu filho precisa para ler com confiança do zero à leitura fluente</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { 
@@ -508,7 +508,7 @@ function LandingPage() {
       {/* Section 5: EXEMPLOS REAIS */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-          <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">EXEMPLOS REAIS</h2>
+          <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">Veja o método funcionando na prática</h2>
           <p className="text-xl text-slate-600 font-medium">Veja o que você vai receber</p>
         </div>
 
