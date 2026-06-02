@@ -180,15 +180,6 @@ function DiscountPopup({ open, onClose }: { open: boolean; onClose: () => void }
               NÃO! QUERO O BÁSICO SEM OS BÔNUS POR R$10
             </a>
 
-            <a
-              href={BASIC_CHECKOUT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={onClose}
-              className="block text-slate-400 hover:text-slate-600 text-xs font-medium underline underline-offset-2"
-            >
-              Não, prefiro recusar essa oferta única
-            </a>
           </div>
         </div>
       )}
