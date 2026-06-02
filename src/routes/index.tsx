@@ -750,7 +750,7 @@ function LandingPage() {
             </h2>
             <div className="flex justify-center mb-12">
               <img 
-                src="https://i.imgur.com/A6cmrTe.png" 
+                src="https://i.imgur.com/fIEjlwd.png" 
                 alt="Presentes Exclusivos" 
                 className="w-full max-w-4xl h-auto"
                 loading="lazy"
