@@ -385,7 +385,7 @@ function LandingPage() {
         
 
         <img
-          src="https://i.imgur.com/7UEy7hz.png"
+          src="https://i.imgur.com/Tr7zGoR.png"
           alt="Material do Método"
           width={1024}
           height={1024}
