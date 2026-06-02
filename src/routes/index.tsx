@@ -403,7 +403,7 @@ function LandingPage() {
         </div>
 
         <h1 className="text-3xl md:text-5xl font-extrabold max-w-5xl leading-tight mb-4 tracking-tight">
-          +847 mães ensinaram os filhos a ler em casa em 30 dias. Sem ser professora. Sem pressão.
+          Imagina seu filho pegando um livro sozinho e chamando você pra ouvir. É isso que aconteceu com +847 mães com 10 minutinhos por dia.
         </h1>
 
         <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-8 font-medium leading-relaxed">
